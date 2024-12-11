@@ -1,0 +1,588 @@
+main {
+    padding-top: 4rem;
+}
+
+/* Hero Section */
+.hero-nosotros {
+    background: url('/images/vistaNosotros/CasaLD-08.jpeg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero-nosotros .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-nosotros .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-nosotros h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    font-family: 'nunito', sans-serif;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.hero-content a {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #71C6D4;
+    border-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+.hero-content a:hover {
+    color: white;
+    background-color: #e0a800;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* Historia Section */
+
+.historia-section {
+    position: relative;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Video de fondo */
+.historia-section .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.historia-section .video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay para mejorar contraste del texto */
+.historia-section .content-overlay {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0); /* Capa oscura translúcida */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Encabezado */
+.historia-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #71C6D4;
+    margin-bottom: 3rem;
+    background-color: #0000008e;
+    border-radius: 10px;
+}
+
+/* Línea de tiempo */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    
+    background-color: #5A4E4E;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h3 {
+    font-size: 1.8rem;
+    color: #71C6D4;
+    margin-bottom: 0.5rem;
+   font-weight: bold;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Punto en la línea de tiempo */
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #318491;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    animation: pulse 1.5s infinite;
+}
+
+/* Línea conectora */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #71C6D4;
+    z-index: 0;
+}
+
+.timeline-item:last-child .timeline-dot::after {
+    display: none;
+}
+
+/* Animación del punto */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .historia-section {
+        padding: 3rem 1rem;
+    }
+
+    .timeline {
+        gap: 1.5rem;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+/* Valores Section */
+
+.valores-section {
+    padding: 3rem 1rem;
+    background: #5A4E4E;
+}
+
+.valores-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #71C6D4;
+}
+
+.valores-section .valores-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.valor-card {
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 0%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.valor-card i {
+    font-size: 2.5rem;
+    color: #71C6D4;
+    margin-bottom: 1rem;
+}
+
+.valor-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.valor-card p {
+    font-size: 1rem;
+}
+
+
+/* Swiper Custom Styles */
+
+.estiloSwiper h3{
+     color: #000000 !important;
+}
+
+.estiloSwiper i{
+    color: #71C6D4 !important;
+}
+
+.estiloSwiper a{
+    margin-top: 0.2rem;
+    color: #ffffff;    
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #71C6D4;
+    border-color: transparent;
+}
+
+.estiloSwiper a:hover{
+    color: #ffffff; 
+    background-color: #e0a800;    
+    transform: scale(1.05);
+}
+
+/* Swiper Custom Styles */
+#swiper-valores {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #ffffff00;
+    padding: 1.5rem;
+    border-radius: 10px;
+    
+}
+
+.swiper-slide i {
+    font-size: 2.5rem;
+    color: #71C6D4;
+    margin-bottom: 1rem;
+}
+
+.swiper-slide h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #71C6D4;
+    margin-bottom: 1rem;
+}
+
+.swiper-slide p {
+    font-size: 1rem;
+    color: #5A4E4E;
+}
+
+/* Ajustes para la paginación del Swiper */
+.swiper-container {
+    position: relative;
+}
+
+.swiper-pagination {
+    bottom: 15px; 
+    z-index: 10; 
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-pagination-bullet {
+    background-color: #c4c4c4;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #71C6D4;
+    opacity: 1;
+    transform: scale(1.2); /* Resalta la posición activa */
+}
+
+
+
+
+
+
+/* Equipo Section */
+
+.equipo-section {
+    background-color: #F8F9FA;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.equipo-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #71C6D4;
+    margin-bottom: 2rem;
+}
+
+.equipo-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.equipo-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipo-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.equipo-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #13373b;
+    margin: 1rem 0 0.5rem;
+}
+
+.equipo-card p {
+    font-size: 1rem;
+    color: #30646b;
+    margin-bottom: 1.5rem;
+}
+
+.equipo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* equipo version 2  */
+
+.team .member {
+    text-align: center;
+    margin-bottom: 20px;
+    background: #343a40;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .team .member .member-info {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.2s;
+  }
+  
+  .team .member .member-info-content {
+    position: absolute;
+    left: 50px;
+    right: 0;
+    bottom: 0;
+    transition: bottom 0.4s;
+  }
+  
+  .team .member .member-info-content h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .team .member .member-info-content span {
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+    color: #fff;
+  }
+  
+  .team .member .social {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    transition: left ease-in-out 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .team .member .social a {
+    transition: color 0.3s;
+    display: block;
+    color: #fff;
+    margin-top: 15px;
+  }
+  
+  .team .member .social a:hover {
+    color: #1bac91;
+  }
+  
+  .team .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+  }
+  
+  .team .member:hover .member-info {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 212, 255, 0) 100%);
+    opacity: 1;
+    transition: 0.4s;
+  }
+  
+  .team .member:hover .member-info-content {
+    bottom: 30px;
+    transition: bottom 0.4s;
+  }
+  
+  .team .member:hover .social {
+    left: 0;
+    transition: left ease-in-out 0.3s;
+  }
+
+/* •----------------Contacto Section----------------• */
+
+
+
+#secContacto {
+    background-color: #f9f9f9;
+}
+
+#secContacto h2 {
+    font-family: 'nunito', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #71C6D4 !important;
+}
+
+#secContacto p {
+    font-size: 1.2rem;
+    color: #606060;
+}
+
+form .form-label {
+    font-weight: bold;
+    color: #13373b;
+}
+
+form input,
+form textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+form button {
+    background-color: #71C6D4 !important;
+    color: rgb(255, 255, 255) !important;
+    border-color: transparent !important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e0a800 !important;
+    transform: translateY(-3px);
+}
+
+/* Redes Sociales */
+#secContacto .fab {
+    color: #71C6D4;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#secContacto .fab:hover {
+    color: #e0a800;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #contacto h2 {
+        font-size: 2rem;
+    }
+
+    #contacto p {
+        font-size: 1rem;
+    }
+
+    #contacto .fab {
+        font-size: 1.5rem;
+    }
+}

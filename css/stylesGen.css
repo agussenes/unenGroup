@@ -1,0 +1,357 @@
+/* •----------------General----------------• */
+
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+    /* Fondo claro para uniformidad */
+}
+
+main{
+    padding-top: 3rem;
+}
+
+
+
+/* •----------------Navbar----------------• */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1020;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #887878 !important;
+    padding: 0.8rem 1rem;
+
+}
+
+.navbar-brand img {
+    height: 40px;
+    /* Ajusta el tamaño del logo */
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link.active {
+    color: #71C6D4 !important;
+}
+
+.nav-link:hover {
+    color: #71C6D4;
+
+    transform: translateY(-3px);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    color: #71C6D4 !important;
+}
+
+
+
+/* •----------------Footer----------------• */
+footer {
+    font-size: 0.9rem;
+    background-color: #887878 !important;
+    padding: 2rem 1rem;
+}
+
+footer h5 {
+    color: #71C6D4;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+footer a {
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    color: #71C6D4;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #e0a800;
+}
+
+.social-icons i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icons i:hover {
+    transform: translateY(-3px);
+    color: #e0a800;
+}
+
+#telefonoFooter a{
+    color: white;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#telefonoFooter a:hover {
+    color: #e0a800;
+}
+
+.linkSenestrariDev {
+    text-decoration: none;
+    color: aqua;
+    font-weight: 600;
+}
+
+/* Adjust layout for "Sobre Nosotros" section */
+.sobre-nosotros-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.sobre-nosotros-container img {
+    max-width: 150px;
+}
+
+.sobre-nosotros-container p {
+    flex: 1;
+}
+
+@media (max-width: 576px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 1.5rem 0.5rem;
+    }
+
+    footer h5 {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+
+    .social-icons i {
+        font-size: 1rem;
+    }
+
+    .linkSenestrariDev {
+        font-size: 0.85rem;
+    }
+
+    .sobre-nosotros-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+       
+    }
+
+    .sobre-nosotros-container img {
+        max-width: 120px;
+       
+    }
+
+   #espacioFotoMobile{
+    margin-bottom: 2rem;
+
+   }
+
+   #espacioFotoMobile img{
+    display: none;
+   }
+
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+    
+    #espacioFotoMobile img{
+        display: block;
+       }
+
+    .ocultarMobile{
+        display: none;
+    }
+    
+    footer {
+        font-size: 0.85rem;
+        padding: 2rem 1rem;
+    }
+
+    footer h5 {
+        font-size: 1.1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    .social-icons i {
+        font-size: 1.1rem;
+    }
+
+    .linkSenestrariDev {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1439px) {
+    footer {
+        font-size: 0.95rem;
+        padding: 2.5rem 1.5rem;
+    }
+
+    footer h5 {
+        font-size: 1.3rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    .social-icons i {
+        font-size: 1.3rem;
+    }
+
+    .linkSenestrariDev {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    footer {
+        font-size: 1rem;
+        padding: 3rem 2rem;
+    }
+
+    footer h5 {
+        font-size: 1.4rem;
+    }
+
+    footer p {
+        font-size: 1.1rem;
+    }
+
+    .social-icons i {
+        font-size: 1.4rem;
+    }
+
+    .linkSenestrariDev {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    footer {
+        font-size: 1.1rem;
+        padding: 3.5rem 2.5rem;
+    }
+
+    footer h5 {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 1.2rem;
+    }
+
+    .social-icons i {
+        font-size: 1.5rem;
+    }
+
+    .linkSenestrariDev {
+        font-size: 1.2rem;
+    }
+
+    .sobre-nosotros-container img {
+        max-width: 180px;
+    }
+}
+
+
+
+/* •----------------Scrollbar----------------• */
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Ancho de la barra de desplazamiento */
+    height: 10px;
+    /* Alto para la barra horizontal */
+}
+
+/* Track (Fondo de la barra) */
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    /* Color claro para el fondo */
+    border-radius: 10px;
+    /* Bordes redondeados para un diseño limpio */
+}
+
+/* Thumb (la parte que se mueve) */
+::-webkit-scrollbar-thumb {
+    background: #71C6D4;
+    /* Color cálido (amarillo) para destacar */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    border: 2px solid #f4f4f4;
+    /* Un borde que combine con el fondo */
+}
+
+/* Thumb al pasar el ratón (hover) */
+::-webkit-scrollbar-thumb:hover {
+    background: #71C6D4;
+    /* Color ligeramente más oscuro para interacción */
+}
+
+/* Thumb al estar activo (clic) */
+::-webkit-scrollbar-thumb:active {
+    background: #71C6D4;
+    /* Color aún más oscuro al hacer clic */
+}
+
+/* Horizontal scrollbar track */
+::-webkit-scrollbar-track:horizontal {
+    background: #eaeaea;
+    /* Color diferente para barras horizontales */
+}
+
+/* For Firefox - General Scrollbar Styling */
+html {
+    scrollbar-color: #71C6D4 #f4f4f4;
+    /* Thumb y fondo */
+    scrollbar-width: thin;
+    /* Barra más delgada */
+}
+
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #71C6D4;
+    }
+
+    html {
+        scrollbar-width: none;
+        /* Ocultar la barra de desplazamiento en Firefox */
+    }
+}

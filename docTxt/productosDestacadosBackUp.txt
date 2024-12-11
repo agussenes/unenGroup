@@ -1,0 +1,59 @@
+// Datos de Propiedades Destacadas
+const propiedadesDestacadas = [
+    {
+        id: 1,
+        tipo: "venta",
+        titulo: "Casa Moderna en Venta",
+        precio: 150000,
+        localidad: "Córdoba",
+        imagenes: [
+            "/images/carouselHome/CasaLD-01.jpeg",
+            "/images/carouselHome/CasaLD-12.jpeg",
+            "/images/carouselHome/CasaLD-00.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
+            <li><i class="fas fa-bath"></i> 2 Baños</li>
+            <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
+            <li><i class="fas fa-car"></i> Cochera</li>
+            <li><i class="fas fa-map-marker-alt"></i> Ubicación: Córdoba</li>
+        </ul>`,
+        vista360: "/images/360/casa1.jpg"
+    },
+    {
+        id: 2,
+        tipo: "alquiler",
+        titulo: "Departamento en Alquiler",
+        precio: 50000,
+        localidad: "Buenos Aires",
+        imagenes: [
+            "/images/carouselHome/CasaLD-12.jpeg",
+            "/images/carouselHome/CasaLD-00.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-bed"></i> 2 dormitorios y 1 baño completo</li>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor amplio y luminoso</li>
+        </ul>`,
+        vista360: "/images/360/departamento1.jpg"
+    },
+    {
+        id: 3,
+        tipo: "alquiler-temporario",
+        titulo: "Casa en Alquiler Temporario",
+        precio: 1200,
+        localidad: "Villa Belgrano",
+        imagenes: [
+            "/images/carouselHome/CasaLD-01.jpeg",
+            "/images/carouselHome/CasaLD-00.jpeg",
+            "/images/carouselHome/CasaLD-12.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-bed"></i> Dormitorio principal en suite</li>
+            <li><i class="fas fa-swimming-pool"></i> Amplio jardín con piscina</li>
+        </ul>`,
+        vista360: "/images/360/casa2.jpg"
+    }
+];

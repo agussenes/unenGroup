@@ -1,0 +1,51 @@
+descripcion: `
+    <ul>
+        <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
+        <li><i class="fas fa-bath"></i> 2 Baños</li>
+        <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
+        <li><i class="fas fa-car"></i> Cochera</li>
+        <li><i class="fas fa-map-marker-alt"></i> Ubicación: Villa Belgrano</li>
+        <li><i class="fas fa-paw"></i> Apto para mascotas</li>
+    </ul>`
+
+    <ul>
+    <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
+    <li><i class="fas fa-bath"></i> 2 Baños</li>
+    <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
+    <li><i class="fas fa-car"></i> Cochera</li>
+    <li><i class="fas fa-map-marker-alt"></i> Ubicación: Villa Belgrano</li>
+    <li><i class="fas fa-paw"></i> Apto para mascotas</li>
+</ul
+
+
+Aquí tienes sugerencias de iconos de Font Awesome (ya que usas esa librería) que podrías aplicar según el contexto de las propiedades o características. Cada icono está pensado para destacar visualmente los detalles de la descripción:
+
+Sugerencias de Iconos para Características de Propiedades:
+General (Usados en todas las propiedades):
+
+Precio: <i class="fas fa-dollar-sign"></i> (Para destacar precios)
+Localidad: <i class="fas fa-map-marker-alt"></i> (Para mostrar la ubicación)
+Venta:
+
+Propiedad de Lujo: <i class="fas fa-gem"></i> (Para propiedades de alta gama)
+Diseño Exclusivo: <i class="fas fa-paint-brush"></i> (Para destacar el diseño)
+Jardín y Piscina: <i class="fas fa-tree"></i> / <i class="fas fa-swimming-pool"></i>
+Habitaciones: <i class="fas fa-bed"></i> (Número de habitaciones)
+Baños: <i class="fas fa-bath"></i> (Número de baños)
+Alquiler:
+
+Vivienda Céntrica: <i class="fas fa-building"></i> (Para departamentos en zonas urbanas)
+Amueblado: <i class="fas fa-couch"></i> (Para destacar que está amoblado)
+Vista Panorámica: <i class="fas fa-binoculars"></i> (Si tiene una vista destacada)
+Alquiler Temporario:
+
+Cercano a la Naturaleza: <i class="fas fa-leaf"></i> (Para ubicaciones naturales)
+Apto para Mascotas: <i class="fas fa-paw"></i> (Para propiedades pet-friendly)
+Área de Recreación: <i class="fas fa-futbol"></i> (Si tiene áreas de esparcimiento)
+Espacios Amplios: <i class="fas fa-expand-arrows-alt"></i> (Para destacar espacios amplios)
+Servicios Adicionales:
+
+Calefacción y Aire Acondicionado: <i class="fas fa-temperature-high"></i> / <i class="fas fa-wind"></i>
+Cochera: <i class="fas fa-car"></i>
+Quincho/Parrilla: <i class="fas fa-utensils"></i>
+Internet Incluido: <i class="fas fa-wifi"></i>

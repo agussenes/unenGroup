@@ -1,0 +1,487 @@
+
+
+
+
+
+/* •-------------------------Estilos específicos para la sección de propiedades -------------------------•*/
+#propiedades {
+    background-color: #f8f9fa; /* Fondo general de la sección */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#propiedades h2 {
+    font-size: 2.5rem;
+    color: #71C6D4;
+    font-family: 'nunito', sans-serif;
+    margin-bottom: 2rem;
+}
+
+#propiedades .card {
+    border: 1px solid #dddddd; /* Bordes suaves */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#propiedades .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#propiedades .card-img-top {
+    object-fit: cover;
+}
+
+#propiedades .swiper-container {
+    width: 100%;
+    height: 250px; /* Altura ajustable del carousel */
+    border-bottom: 1px solid #dddddd;
+}
+
+#propiedades .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+#propiedades .swiper-pagination {
+    position: relative;
+    margin-top: -10px; /* Espacio justo encima del título */
+}
+
+#propiedades .card-body {
+    padding: 1.5rem;
+}
+
+#propiedades .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+#propiedades .card-text {
+    color: #606060;
+    margin-bottom: 1rem;
+}
+
+#propiedades .btn {
+    background-color: #71C6D4;
+    color: #ffffff;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#propiedades .btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+}
+
+/* Estilo de los botones "Me interesa" y "Vista 360°" */
+#propiedades .btn-primary {
+    background-color: #71C6D4;
+    color: #ffffff;
+}
+
+#propiedades .btn-primary:hover {
+    background-color: #e0a800;
+}
+
+#propiedades .btn-secondary {
+    background-color: #5A4E4E;
+    color: #ffffff;
+}
+
+#propiedades .btn-secondary:hover {
+    background-color: #887878;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    #propiedades .swiper-container {
+        height: 200px; /* Ajusta la altura en móviles */
+    }
+
+    #propiedades h2 {
+        font-size: 1.8rem;
+    }
+
+    #propiedades .card-title {
+        font-size: 1rem;
+    }
+
+    #propiedades .btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    #propiedades .swiper-container {
+        height: 220px; /* Ajusta la altura en tabletas pequeñas */
+    }
+
+    #propiedades h2 {
+        font-size: 2rem;
+    }
+
+    #propiedades .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    #propiedades .swiper-container {
+        height: 240px;
+    }
+
+    #propiedades h2 {
+        font-size: 2.2rem;
+    }
+
+    #propiedades .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #propiedades .swiper-container {
+        height: 250px;
+    }
+
+    #propiedades h2 {
+        font-size: 2.5rem;
+    }
+
+    #propiedades .card-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* --------------------------------- Hero Section --------------------------------- */
+/* ------------------------- Hero Section Mejorado ------------------------- */
+
+#hero-propiedades {
+    position: relative;
+    height: 70vh; /* Altura ajustada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000; /* Fallback color */
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/carouselHome/CasaLD-01.jpeg'); /* Cambia la URL por tu imagen */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Capa negra transparente */
+    z-index: 2;
+  }
+  
+  .hero-content {
+    z-index: 3; /* Asegura que el texto esté por encima */
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-family: 'Nunito', sans-serif;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #e0e0e0;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    #hero-propiedades {
+      height: 50vh; /* Ajusta la altura para pantallas pequeñas */
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    #hero-propiedades {
+      height: 40vh;
+    }
+  
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+  }
+  
+
+/* --------------------------------- Filtros Section --------------------------------- */
+#filtros {
+    padding: 2rem 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+#filtros .form-label {
+    font-weight: bold;
+    color: #13373b;
+}
+
+#filtros .form-control,
+#filtros .form-select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#filtros .form-control:focus,
+#filtros .form-select:focus {
+    border-color: #71C6D4;
+    box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+    #filtros {
+        padding: 1.5rem 0;
+    }
+}
+
+
+/* ---------------------------------Detalles propiedades modal Section --------------------------------- */
+
+#propertyDetailsContent{
+    overflow: hidden;
+}
+
+#propertyDetailsContent ul{
+
+}
+
+#propertyDetailsContent ul li{
+    list-style: none !important;
+}
+
+
+.swiper-pagination-bullet{
+    background-color: #71C6D4 !important;
+}
+
+.pagination{
+    position: relative;
+}
+
+/* General Styles for Modal */
+.modal-content {
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #71C6D4;
+    color: #fff;
+    border-bottom: none;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-body {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+/* Swiper Container */
+#propertyDetailsContent .swiper-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#propertyDetailsContent .swiper-slide img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Property Title */
+#propertyDetailsContent h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 1rem 0 0.5rem;
+}
+
+/* Price and Details */
+#propertyDetailsContent p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+#propertyDetailsContent p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Description */
+#descripcionDetalle {
+    margin-top: 1rem;
+    text-align: left;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Buttons */
+#propertyDetailsContent .btn {
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+#propertyDetailsContent .btn-secondary {
+    background-color: #71C6D4;
+    color: #fff;
+    border: none;
+}
+
+#propertyDetailsContent .btn-secondary:hover {
+    background-color: #5aafb0;
+    transform: translateY(-3px);
+}
+
+#propertyDetailsContent .btn-secondary:last-child {
+    background-color: #71C6D4;
+}
+
+#propertyDetailsContent .btn-secondary:last-child:hover {
+    background-color: #e0a800;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #propertyDetailsContent h3 {
+        font-size: 1.2rem;
+    }
+
+    #propertyDetailsContent p {
+        font-size: 0.9rem;
+    }
+
+    #propertyDetailsContent .btn {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* --------------------------------- Contacto Section --------------------------------- */
+#contacto {
+    background-color: #5A4E4E !important;
+    padding: 4rem 0;
+}
+
+#contacto h2 {
+    font-family: 'nunito', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #71C6D4 !important;
+    margin-bottom: 2rem;
+}
+
+#contacto .form-label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#contacto input,
+#contacto textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+    border-color: #71C6D4;
+    box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
+}
+
+#contacto button {
+    background-color: #71C6D4;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contacto button:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+}
+
+/* Redes Sociales */
+#contacto .fab {
+    font-size: 1.5rem;
+    color: #71C6D4;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#contacto .fab:hover {
+    color: #e0a800;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+    #contacto h2 {
+        font-size: 2rem;
+    }
+
+    #contacto .fab {
+        font-size: 1.2rem;
+    }
+}

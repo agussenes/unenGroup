@@ -1,0 +1,16 @@
+marron: #5A4E4E
+marron mas claro #887878
+Celeste: #71C6D4
+
+
+HOVER BOTON: #949e49
+BOTON: #D1DE75
+
+cremita test
+
+F6E6C9
+
+blanco gris 
+F8F9FA
+
+fondo blanco acelestado: F8F9FA

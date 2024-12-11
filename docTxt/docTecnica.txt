@@ -1,0 +1,109 @@
+ Swiper.js: Para Carousels Modernos
+Instalación
+Por CDN (recomendado para proyectos simples): Incluye el archivo CSS y JS en tu <head> y antes de cerrar el <body>.
+
+html
+Copiar código
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+link documentacion: https://swiperjs.com/
+
+ejemplo
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- Botones de Navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Paginación -->
+    <div class="swiper-pagination"></div>
+</div>
+
+js:
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 3000,
+    },
+});
+
+--------------------------------------------------------------------------------------------
+2. Animate.css: Para Animaciones
+Instalación
+Por CDN:
+
+html
+Copiar código
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+ejemplo:
+Uso Básico
+Agrega clases de animación a tus elementos:
+
+html
+Copiar código
+<h1 class="animate__animated animate__bounce">¡Hola, Mundo!</h1>
+Clases Comunes:
+
+Entradas: animate__fadeIn, animate__bounceIn, animate__slideInLeft.
+Salidas: animate__fadeOut, animate__bounceOut, animate__slideOutRight.
+Repeticiones:
+html
+Copiar código
+<h1 class="animate__animated animate__infinite animate__pulse">Repetir</h1>
+
+link documentacion: https://animate.style/
+
+---------------------------------------------------------------------------------------------------
+
+3. Bootstrap: Framework de Diseño
+Instalación
+Por CDN:
+
+html
+Copiar código
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+link documentacion: https://getbootstrap.com/
+
+-----------------------------------------------------------------------------------------------------------
+
+Consejos para Usarlas Juntas
+Swiper.js con Animate.css:
+
+Combina animaciones al cambiar de slide:
+javascript
+Copiar código
+swiper.on('slideChangeTransitionStart', function () {
+    const activeSlide = document.querySelector('.swiper-slide-active');
+    activeSlide.classList.add('animate__animated', 'animate__fadeIn');
+});
+Bootstrap con Animate.css:
+
+Agrega animaciones en los componentes de Bootstrap como modales y carruseles.
+Estas herramientas juntas pueden transformar tu sitio en algo moderno y funcional. 🚀
+
+------------------------------------------------------------------------------
+
+CDN de Pannellum
+html
+Copiar código
+<!-- Pannellum CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css">
+
+<!-- Pannellum JS -->
+<script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+
