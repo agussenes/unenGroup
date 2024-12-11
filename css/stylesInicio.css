@@ -460,7 +460,27 @@
 }
 
 
+
+
 /* ---------------------------------Detalles propiedades modal Section --------------------------------- */
+
+#propertyDetailsContent .row {
+    margin-top: 1rem;
+}
+
+#propertyDetailsContent .col-md-6 {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+#propertyDetailsContent .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
 
 #propertyDetailsContent{
     overflow: hidden;

@@ -200,31 +200,39 @@ function viewPropertyDetails(id) {
     const property = propiedades.find((prop) => prop.id === id);
     if (property) {
         const content = `
-         <div class="swiper-container" id="modal-swiper-${property.id}">
-            <div class="swiper-wrapper">
-              ${property.imagenes
-                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
-                .join("")}
-            </div>
-            <div class="pagination">
+            <div class="swiper-container mb-4" id="modal-swiper-${property.id}">
+                <div class="swiper-wrapper">
+                    ${property.imagenes
+                        .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
+                        .join("")}
+                </div>
+                <div class="pagination">
             <div class="swiper-pagination"></div>
            </div>
-          </div>
-          <div class="text-center">
-            <h3>${property.titulo}</h3>
-            <p class="card-text"><strong>Categoria:</strong> ${property.tipo}</p>
-            <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
-            <p><strong>Localidad:</strong> ${property.localidad}</p>
-            <p id="descripcionDetalle">${property.descripcion}</p>
-            <button class="btn btn-secondary" onclick="goToContact('${property.titulo}')" data-bs-dismiss="modal">Me interesa</button>
-          </div>
-         
+            </div>
+            <div class="row">
+            <h3 class="text-center">${property.titulo}</h3>
+                <div class="col-md-6">
+                    
+                    <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
+                    <p><strong>Categoría:</strong> ${property.tipo}</p>
+                    <p><strong>Localidad:</strong> ${property.localidad}</p>
+                </div>
+                <div class="col-md-6">
+                    
+                    <p id="descripcionDetalle">${property.descripcion}</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button class="btn btn-secondary" onclick="goToContact('${property.titulo}')" data-bs-dismiss="modal">Me interesa</button>
+            </div>
         `;
         document.getElementById("propertyDetailsContent").innerHTML = content;
         initializeSwiper(`modal-swiper-${property.id}`);
         new bootstrap.Modal(document.getElementById("propertyDetailsModal")).show();
     }
 }
+
 
 // Redirigir al Formulario de Contacto
 function goToContact(propiedad) {
