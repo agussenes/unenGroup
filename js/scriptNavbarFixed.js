@@ -1,10 +1,11 @@
 document.addEventListener("scroll", function () {
     const navbarImg = document.querySelector("#logoNavbar");
     if (window.scrollY > 50) {
-        navbarImg.style.height = '38px';
+         navbarImg.style.width = '150px'
         navbarImg.style.transition = 'all 0.5s ease';
     } else {
-        navbarImg.style.height = '68px';
+        navbarImg.style.height = 'auto';
+        navbarImg.style.width = '200px'
     }
 });
 

@@ -26,13 +26,15 @@ main {
     z-index: 1020;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #887878 !important;
-    padding: 0.8rem 1rem;
+    
 
 }
 
+
+
 .navbar-brand img {
-    height: 40px;
-    /* Ajusta el tamaño del logo */
+   width:   200px;
+   height: auto;
 }
 
 .nav-link {

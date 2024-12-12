@@ -7,6 +7,7 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
+            "/images/pruebaPortadaCa3.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
@@ -31,6 +32,7 @@ const propiedades = [
         precio: 50000,
         localidad: "Buenos Aires",
         imagenes: [
+            "/images/pruebaPortadaCa3.jpg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
         ],
@@ -52,6 +54,7 @@ const propiedades = [
         precio: 1200,
         localidad: "Villa Belgrano",
         imagenes: [
+            "/images/pruebaPortadaCa3.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg"
@@ -276,7 +279,7 @@ function renderProperties(data) {
                     <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
                     <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
                     <div class="d-flex justify-content-between">
-                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más info</button>
+                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
                         <button class="btn btn-secondary" onclick="abrirVista360(${prop.id})">Vista 360°</button>
                     </div>
                 </div>
