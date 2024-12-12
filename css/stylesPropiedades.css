@@ -1,11 +1,7 @@
-
-
-
-
-
 /* •-------------------------Estilos específicos para la sección de propiedades -------------------------•*/
 #propiedades {
-    background-color: #f8f9fa; /* Fondo general de la sección */
+    background-color: #f8f9fa;
+    /* Fondo general de la sección */
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
@@ -18,10 +14,12 @@
 }
 
 #propiedades .card {
-    border: 1px solid #dddddd; /* Bordes suaves */
+    border: 1px solid #dddddd;
+    /* Bordes suaves */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -36,7 +34,8 @@
 
 #propiedades .swiper-container {
     width: 100%;
-    height: 250px; /* Altura ajustable del carousel */
+    height: 250px;
+    /* Altura ajustable del carousel */
     border-bottom: 1px solid #dddddd;
 }
 
@@ -49,7 +48,8 @@
 
 #propiedades .swiper-pagination {
     position: relative;
-    margin-top: -10px; /* Espacio justo encima del título */
+    margin-top: -10px;
+    /* Espacio justo encima del título */
 }
 
 #propiedades .card-body {
@@ -80,7 +80,7 @@
     transform: translateY(-3px);
 }
 
-/* Estilo de los botones "Me interesa" y "Vista 360°" */
+/* Estilo de los botones "Me interesa" y "ver mas°" */
 #propiedades .btn-primary {
     background-color: #71C6D4;
     color: #000000;
@@ -103,11 +103,12 @@
 .swiper-button-next,
 .swiper-button-prev {
     color: #ffffff;
+    margin-top: -50px;
 }
 
 
 
-.botonesSwiperDes div{
+.botonesSwiperDes div {
     background-color: #5a4e4e6e !important;
     padding: 1rem;
     border-radius: 50%;
@@ -121,7 +122,8 @@
 /* Responsive Design */
 @media (max-width: 576px) {
     #propiedades .swiper-container {
-        height: 200px; /* Ajusta la altura en móviles */
+        height: 200px;
+        /* Ajusta la altura en móviles */
     }
 
     #propiedades h2 {
@@ -139,11 +141,14 @@
     #propiedadesContainer {
         row-gap: 1.5rem !important;
     }
+
+    
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
     #propiedades .swiper-container {
-        height: 220px; /* Ajusta la altura en tabletas pequeñas */
+        height: 220px;
+        /* Ajusta la altura en tabletas pequeñas */
     }
 
     #propiedades h2 {
@@ -180,7 +185,7 @@
 
 @media (min-width: 992px) {
 
-     #propiedadesContainer {
+    #propiedadesContainer {
         row-gap: 2rem !important;
     }
 
@@ -196,124 +201,6 @@
         font-size: 1.3rem;
     }
 }
-
-/* --------------------------------- Hero Section --------------------------------- */
-/* ------------------------- Hero Section Mejorado ------------------------- */
-
-#hero-propiedades {
-    position: relative;
-    height: 70vh; /* Altura ajustada */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: #000; /* Fallback color */
-  }
-  
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/carouselHome/CasaLD-01.jpeg'); /* Cambia la URL por tu imagen */
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Capa negra transparente */
-    z-index: 2;
-  }
-  
-  .hero-content {
-    z-index: 3; /* Asegura que el texto esté por encima */
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-    font-family: 'Nunito', sans-serif;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #e0e0e0;
-  }
-  
-  /* Responsive */
-  @media screen and (max-width: 768px) {
-    #hero-propiedades {
-      height: 50vh; /* Ajusta la altura para pantallas pequeñas */
-    }
-  
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-  
-    .hero-content p {
-      font-size: 1rem;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    #hero-propiedades {
-      height: 40vh;
-    }
-  
-    .hero-content h1 {
-      font-size: 1.8rem;
-    }
-  
-    .hero-content p {
-      font-size: 0.9rem;
-    }
-  }
-  
-
-/* --------------------------------- Filtros Section --------------------------------- */
-#filtros {
-    padding: 2rem 0;
-    background-color: #ffffff;
-    border-bottom: 1px solid #dddddd;
-}
-
-#filtros .form-label {
-    font-weight: bold;
-    color: #13373b;
-}
-
-#filtros .form-control,
-#filtros .form-select {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-#filtros .form-control:focus,
-#filtros .form-select:focus {
-    border-color: #71C6D4;
-    box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
-}
-
-/* Responsive */
-@media screen and (max-width: 576px) {
-    #filtros {
-        padding: 1.5rem 0;
-    }
-}
-
 
 /* ---------------------------------Detalles propiedades modal Section --------------------------------- */
 
@@ -334,24 +221,22 @@
     border-radius: 5px;
 }
 
-#propertyDetailsContent{
+#propertyDetailsContent {
     overflow: hidden;
 }
 
-#propertyDetailsContent ul{
+#propertyDetailsContent ul {}
 
-}
-
-#propertyDetailsContent ul li{
+#propertyDetailsContent ul li {
     list-style: none !important;
 }
 
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     background-color: #71C6D4 !important;
 }
 
-.pagination{
+.pagination {
     position: relative;
 }
 
@@ -467,14 +352,147 @@
         font-size: 0.9rem;
     }
 
-    #botonNextP{
+    #botonNextP {
         display: none;
     }
 
-    #botonPrevP{
+    #botonPrevP {
         display: none;
     }
 
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    #botonNextP {
+        display: none;
+    }
+
+    #botonPrevP {
+        display: none;
+    }
+}
+
+
+/* --------------------------------- Hero Section --------------------------------- */
+
+#hero-propiedades {
+    position: relative;
+    height: 70vh;
+    /* Altura ajustada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+    /* Fallback color */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/carouselHome/CasaLD-01.jpeg');
+    /* Cambia la URL por tu imagen */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Capa negra transparente */
+    z-index: 2;
+}
+
+.hero-content {
+    z-index: 3;
+    /* Asegura que el texto esté por encima */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-family: 'Nunito', sans-serif;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #e0e0e0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #hero-propiedades {
+        height: 50vh;
+        /* Ajusta la altura para pantallas pequeñas */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #hero-propiedades {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* --------------------------------- Filtros Section --------------------------------- */
+#filtros {
+    padding: 2rem 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+#filtros .form-label {
+    font-weight: bold;
+    color: #13373b;
+}
+
+#filtros .form-control,
+#filtros .form-select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#filtros .form-control:focus,
+#filtros .form-select:focus {
+    border-color: #71C6D4;
+    box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+    #filtros {
+        padding: 1.5rem 0;
+    }
 }
 
 

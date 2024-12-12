@@ -497,6 +497,11 @@ main {}
     #propiedades .card-title {
         font-size: 1.1rem;
     }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -511,7 +516,15 @@ main {}
     #propiedades .card-title {
         font-size: 1.2rem;
     }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+
 }
+
+   
 
 @media (min-width: 992px) {
     #propiedades .swiper-container {

@@ -108,7 +108,7 @@ function renderProperties(data) {
                     <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
                     <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
                     <div class="d-flex justify-content-between">
-                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más info</button>
+                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
                         <button class="btn btn-secondary" onclick="abrirVista360(1)">Vista 360°</button>
                     </div>
                 </div>
