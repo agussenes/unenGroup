@@ -21,7 +21,7 @@ const propiedades = [
             <li><i class="fas fa-paw"></i> Apto para mascotas</li>
         </ul>`,
         vista360: [
-            "https://pannellum.org/images/alma.jpg" 
+            "https://pannellum.org/images/alma.jpg"
         ],
     },
     {
@@ -42,7 +42,7 @@ const propiedades = [
             <li><i class="fas fa-building"></i> Zona céntrica con acceso rápido a transporte</li>
         </ul>`,
         vista360: [
-            "https://pannellum.org/images/alma.jpg" 
+            "https://pannellum.org/images/alma.jpg"
         ],
     },
     {
@@ -64,7 +64,7 @@ const propiedades = [
             <li><i class="fas fa-swimming-pool"></i> Amplio jardín con piscina apta para mascotas</li>
         </ul>`,
         vista360: [
-            "https://pannellum.org/images/alma.jpg" 
+            "https://pannellum.org/images/alma.jpg"
         ],
     }
 ];
@@ -78,6 +78,10 @@ function initializeSwiper(id) {
             el: `.swiper-pagination`,
             clickable: true,
         },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
     });
 }
 
@@ -95,7 +99,9 @@ function renderProperties(data) {
                     .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
                     .join("")}
                     </div>
+                    
                     <div class="swiper-pagination visores"></div>
+                    
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">${prop.titulo}</h5>
@@ -124,13 +130,19 @@ function viewPropertyDetails(id) {
             <div class="swiper-container mb-4" id="modal-swiper-${property.id}">
                 <div class="swiper-wrapper">
                     ${property.imagenes
-                        .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
-                        .join("")}
+                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
+                .join("")}
                 </div>
+                <div class="botonesSwiperDes">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                 </div>
                 <div class="pagination">
-            <div class="swiper-pagination"></div>
-           </div>
+                     <div class="swiper-pagination"></div>
+                    
+                </div>
             </div>
+            
             <div class="row">
             <h3 class="text-center">${property.titulo}</h3>
                 <div class="col-md-6">
@@ -252,6 +264,10 @@ function renderProperties(data) {
                     .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
                     .join("")}
                     </div>
+                     <div class="botonesSwiperDes">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                 </div>
                     <div class="swiper-pagination visores"></div>
                 </div>
                 <div class="card-body">

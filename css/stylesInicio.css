@@ -1,3 +1,17 @@
+/* general  */
+
+main {}
+
+@media screen and (max-width: 576px) {
+    main {
+        padding-top: 6rem;
+    }
+
+
+}
+
+
+
 /* •----------------Hero Section----------------• */
 
 /* Hero Section */
@@ -45,15 +59,15 @@
     color: rgb(255, 255, 255);
     font-size: 1rem;
     font-weight: bold;
-    background-color:#71C6D4;
+    background-color: #71C6D4;
     border-color: transparent;
 }
 
-.hero-content a:hover{
+.hero-content a:hover {
     color: white;
-    background-color:#e0a800 ;
+    background-color: #e0a800;
     border-color: transparent;
-    
+
 }
 
 .swiper-pagination-bullet {
@@ -65,6 +79,17 @@
     color: #ffffff;
 }
 
+.botonesSwiperDes{
+    
+    
+}
+
+.botonesSwiperDes div{
+    background-color: #5a4e4e6e !important;
+    padding: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 
 /* Responsive Design */
@@ -86,6 +111,7 @@
 
     .hero-content p {
         font-size: 1rem;
+        padding: 1rem;
     }
 
     .hero-content a {
@@ -178,140 +204,164 @@
 /* •----------------Vision Section----------------• */
 
 
-#sobre-unengroup h2{
+#sobre-unengroup h2 {
     font-family: 'nunito', sans-serif;
-    color:#71C6D4;
+    color: #71C6D4;
 }
 
-#iconosColor i{
-    color: #71C6D4!important;
+#iconosColor i {
+    color: #71C6D4 !important;
 }
 
-.historiaHome a{
+.historiaHome a {
     color: rgb(255, 255, 255);
     font-size: 1rem;
     font-weight: bold;
-    background-color:#71C6D4;
+    background-color: #71C6D4;
     border-color: transparent;
     transition: transform 0.3s ease;
 }
 
-.imgHistoriaHome{
+.imgHistoriaHome {
     display: flex;
 }
 
-.historiaHome a:hover{
+.historiaHome a:hover {
     color: white;
-    background-color:#e0a800 ;
+    background-color: #e0a800;
     border-color: transparent;
     transform: scale(1.1);
 }
 
-.imgHistoriaHome img{
+.imgHistoriaHome img {
     width: 60%;
 }
+
+@media screen and (max-width: 576px) {
+    .imgHistoriaHome img {
+        margin-top: 2rem;
+    }
+
+    #propiedadesContainer {
+        row-gap: 1.5rem;
+    }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .imgHistoriaHome img {
+        margin-top: 3rem;
+    }
+
+    #propiedadesContainer {
+        row-gap: 2rem;
+    }
+
+  }
+  
 
 /* •----------------Servicio Section----------------• */
 
 #servicios {
     background-color: #f1d28f;
-  }
-  
-  #servicios h2 {
+}
+
+#servicios h2 {
     font-family: 'Nunito', sans-serif;
     font-size: 2.5rem;
     color: #71c6d4;
-  }
-  
-  #servicios p {
+}
+
+#servicios p {
     color: #13373b;
     font-size: 1.1rem;
-  }
-  
-  #servicios i {
+}
+
+#servicios i {
     color: #71c6d4 !important;
     transition: transform 0.3s ease;
-  }
-  
-  #servicios i:hover {
+}
+
+#servicios i:hover {
     transform: scale(1.2);
-  }
-  
-  #servicios .btn {
+}
+
+#servicios .btn {
     background-color: #71c6d4;
     border-color: transparent;
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-weight: bold;
-  }
-  
-  #servicios .btn:hover {
+}
+
+#servicios .btn:hover {
     background-color: #e0a800;
     transform: translateY(-3px);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .servicio-card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.servicio-card {
     background-color: white;
     border: 1px solid #887878;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .servicio-card:hover {
+}
+
+.servicio-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 576px) {
+}
+
+/* Responsiveness */
+@media (max-width: 576px) {
     #servicios h2 {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
-  
+
     #servicios p {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  
+
     #servicios i {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  }
-  
-  @media (min-width: 577px) and (max-width: 768px) {
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
     #servicios h2 {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  
+
     #servicios p {
-      font-size: 1.1rem;
+        font-size: 1.1rem;
     }
-  
+
     #servicios i {
-      font-size: 2.5rem;
+        font-size: 2.5rem;
     }
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     #servicios h2 {
-      font-size: 2.5rem;
+        font-size: 2.5rem;
     }
-  
+
     #servicios p {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     #servicios i {
-      font-size: 3rem;
+        font-size: 3rem;
     }
-  }
-  
+}
+
 
 
 /* •-------------------------Estilos específicos para la sección de propiedades -------------------------•*/
 #propiedades {
-    background-color: #5A4E4E !important; /* Fondo general de la sección */
+    background-color: #5A4E4E !important;
+    /* Fondo general de la sección */
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
@@ -324,10 +374,12 @@
 }
 
 #propiedades .card {
-    border: 1px solid #dddddd; /* Bordes suaves */
+    border: 1px solid #dddddd;
+    /* Bordes suaves */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -342,7 +394,8 @@
 
 #propiedades .swiper-container {
     width: 100%;
-    height: 250px; /* Altura ajustable del carousel */
+    height: 250px;
+    /* Altura ajustable del carousel */
     border-bottom: 1px solid #dddddd;
 }
 
@@ -355,7 +408,8 @@
 
 #propiedades .swiper-pagination {
     position: relative;
-    margin-top: -10px; /* Espacio justo encima del título */
+    margin-top: -10px;
+    /* Espacio justo encima del título */
 }
 
 #propiedades .card-body {
@@ -408,7 +462,8 @@
 /* Responsive Design */
 @media (max-width: 576px) {
     #propiedades .swiper-container {
-        height: 200px; /* Ajusta la altura en móviles */
+        height: 200px;
+        /* Ajusta la altura en móviles */
     }
 
     #propiedades h2 {
@@ -426,7 +481,8 @@
 
 @media (min-width: 577px) and (max-width: 768px) {
     #propiedades .swiper-container {
-        height: 220px; /* Ajusta la altura en tabletas pequeñas */
+        height: 220px;
+        /* Ajusta la altura en tabletas pequeñas */
     }
 
     #propiedades h2 {
@@ -489,24 +545,22 @@
 }
 
 
-#propertyDetailsContent{
+#propertyDetailsContent {
     overflow: hidden;
 }
 
-#propertyDetailsContent ul{
+#propertyDetailsContent ul {}
 
-}
-
-#propertyDetailsContent ul li{
+#propertyDetailsContent ul li {
     list-style: none !important;
 }
 
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     background-color: #71C6D4 !important;
 }
 
-.pagination{
+.pagination {
     position: relative;
 }
 
@@ -665,12 +719,14 @@
 
 /* Swiper Styles */
 .swiper-container {
-    min-height: 300px; /* Previene el colapso del contenedor */
+    min-height: 300px;
+    /* Previene el colapso del contenedor */
 }
 
 .swiper-wrapper {
     display: flex;
-    align-items: center; /* Centra los elementos */
+    align-items: center;
+    /* Centra los elementos */
 }
 
 .swiper-slide {
@@ -709,7 +765,8 @@
 
 /* Opcional: Fondo para debugging */
 #testimoniales {
-    padding: 2rem 0; /* Asegura espacio consistente */
+    padding: 2rem 0;
+    /* Asegura espacio consistente */
 }
 
 
@@ -758,7 +815,7 @@ form textarea:focus {
 }
 
 form button {
-    background-color:#71C6D4 !important;
+    background-color: #71C6D4 !important;
     color: rgb(255, 255, 255) !important;
     border-color: transparent !important;
     padding: 10px 20px;
@@ -768,7 +825,7 @@ form button {
 }
 
 form button:hover {
-    background-color:#e0a800 !important;
+    background-color: #e0a800 !important;
     transform: translateY(-3px);
 }
 
@@ -796,4 +853,9 @@ form button:hover {
     #contacto .fab {
         font-size: 1.5rem;
     }
+
+    #contenedorSocialHome{
+        margin-top: 2rem;
+    }
+
 }

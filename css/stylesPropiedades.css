@@ -83,7 +83,7 @@
 /* Estilo de los botones "Me interesa" y "Vista 360°" */
 #propiedades .btn-primary {
     background-color: #71C6D4;
-    color: #ffffff;
+    color: #000000;
 }
 
 #propiedades .btn-primary:hover {
@@ -98,6 +98,25 @@
 #propiedades .btn-secondary:hover {
     background-color: #887878;
 }
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff;
+}
+
+
+
+.botonesSwiperDes div{
+    background-color: #5a4e4e6e !important;
+    padding: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    color: white;
+    z-index: 300;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 576px) {
@@ -116,6 +135,10 @@
     #propiedades .btn {
         font-size: 0.9rem;
     }
+
+    #propiedadesContainer {
+        row-gap: 1.5rem !important;
+    }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
@@ -130,9 +153,18 @@
     #propiedades .card-title {
         font-size: 1.1rem;
     }
+
+    #propiedadesContainer {
+        row-gap: 2rem !important;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
+
+    #propiedadesContainer {
+        row-gap: 2rem !important;
+    }
+
     #propiedades .swiper-container {
         height: 240px;
     }
@@ -147,6 +179,11 @@
 }
 
 @media (min-width: 992px) {
+
+     #propiedadesContainer {
+        row-gap: 2rem !important;
+    }
+
     #propiedades .swiper-container {
         height: 250px;
     }

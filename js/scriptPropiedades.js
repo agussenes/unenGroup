@@ -42,7 +42,7 @@ const propiedades = [
     {
         id: 3,
         tipo: "alquiler-temporario",
-        titulo: "Casa en Alquiler Temporario en Villa Belgrano",
+        titulo: "Casa en Villa Belgrano",
         precio: 1200,
         localidad: "Villa Belgrano",
         imagenes: [
@@ -162,6 +162,10 @@ function initializeSwiper(id) {
             el: `.swiper-pagination`,
             clickable: true,
         },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
     });
 }
 
@@ -177,6 +181,10 @@ function renderProperties(data) {
                 .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
                 .join("")}
             </div>
+                <div class="botonesSwiperDes">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                 </div>
             <div class="swiper-pagination visores"></div>
           </div>
           <div class="card-body">
@@ -206,9 +214,13 @@ function viewPropertyDetails(id) {
                         .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
                         .join("")}
                 </div>
+                 <div class="botonesSwiperDes">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                 </div>
                 <div class="pagination">
-            <div class="swiper-pagination"></div>
-           </div>
+                 <div class="swiper-pagination"></div>
+                </div>
             </div>
             <div class="row">
             <h3 class="text-center">${property.titulo}</h3>

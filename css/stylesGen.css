@@ -10,7 +10,7 @@ body {
     /* Fondo claro para uniformidad */
 }
 
-main{
+main {
     padding-top: 3rem;
 }
 
@@ -55,6 +55,10 @@ main{
 
 .navbar-toggler {
     border: none;
+    background-color: #71C6D4;
+    padding: 0.2rem;
+    font-size: 1rem;
+    border: 1px solid whitesmoke;
 }
 
 .navbar-toggler-icon {
@@ -103,7 +107,7 @@ footer a:hover {
     color: #e0a800;
 }
 
-#telefonoFooter a{
+#telefonoFooter a {
     color: white;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -160,35 +164,38 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
-       
+
     }
 
     .sobre-nosotros-container img {
         max-width: 120px;
-       
+
     }
 
-   #espacioFotoMobile{
-    margin-bottom: 2rem;
+    #espacioFotoMobile {
+        margin-bottom: 2rem;
 
-   }
+    }
 
-   #espacioFotoMobile img{
-    display: none;
-   }
+    #espacioFotoMobile img {
+        display: none;
+    }
 
 }
 
 @media (min-width: 577px) and (max-width: 991px) {
-    
-    #espacioFotoMobile img{
-        display: block;
-       }
 
-    .ocultarMobile{
+    #espacioFotoMobile img {
+        display: block;
+        margin-bottom: 2rem;
+       
+
+    }
+
+    .ocultarMobile {
         display: none;
     }
-    
+
     footer {
         font-size: 0.85rem;
         padding: 2rem 1rem;
