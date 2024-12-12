@@ -182,8 +182,8 @@ function renderProperties(data) {
                 .join("")}
             </div>
                 <div class="botonesSwiperDes">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div id="botonNextP" class="swiper-button-next"></div>
+                    <div id="botonPrevP" class="swiper-button-prev"></div>
                  </div>
             <div class="swiper-pagination visores"></div>
           </div>

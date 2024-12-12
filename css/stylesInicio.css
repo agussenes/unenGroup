@@ -240,10 +240,15 @@ main {}
 @media screen and (max-width: 576px) {
     .imgHistoriaHome img {
         margin-top: 2rem;
+        padding: 1rem !important;
     }
 
     #propiedadesContainer {
         row-gap: 1.5rem;
+    }
+
+    #visionText{
+        padding: 1rem !important;
     }
 
 }

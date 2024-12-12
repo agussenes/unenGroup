@@ -466,6 +466,15 @@
     #propertyDetailsContent .btn {
         font-size: 0.9rem;
     }
+
+    #botonNextP{
+        display: none;
+    }
+
+    #botonPrevP{
+        display: none;
+    }
+
 }
 
 
