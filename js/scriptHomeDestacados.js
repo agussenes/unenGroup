@@ -94,7 +94,7 @@ function renderProperties(data) {
     container.innerHTML = data
         .map(
             (prop) => `
-        <div class="col-md-4">
+        <div class="col-12 col-md-12 col-lg-4 d-flex flex-wrap">
             <div class="card shadow">
                 <div class="swiper-container" id="swiper-${prop.id}">
                     <div class="swiper-wrapper">
@@ -259,7 +259,7 @@ function renderProperties(data) {
     container.innerHTML = data
         .map(
             (prop) => `
-        <div class="col-md-4">
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap g-3">
             <div class="card shadow">
                 <div class="swiper-container" id="swiper-${prop.id}">
                     <div class="swiper-wrapper">

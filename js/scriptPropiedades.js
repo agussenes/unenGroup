@@ -181,7 +181,7 @@ function initializeSwiper(id) {
 function renderProperties(data) {
     const container = document.getElementById("propiedadesContainer");
     container.innerHTML = data.map((prop) => `
-      <div class="col-md-4">
+      <div class=" col-12 col-md-6 col-lg-4 d-flex flex-wrap">
         <div class="card shadow">
           <div class="swiper-container" id="swiper-${prop.id}">
             <div class="swiper-wrapper">
