@@ -260,7 +260,7 @@ function renderProperties(data) {
         .map(
             (prop) => `
         <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap g-3">
-            <div class="card shadow">
+            <div class="card shadow d-flex flex-colum">
                 <div class="swiper-container" id="swiper-${prop.id}">
                     <div class="swiper-wrapper">
                         ${prop.imagenes

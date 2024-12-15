@@ -30,19 +30,23 @@
 
 #propiedades .card-img-top {
     object-fit: cover;
+    
 }
 
 #propiedades .swiper-container {
     width: 100%;
-    height: 250px;
+    height: 300px;
     /* Altura ajustable del carousel */
     border-bottom: 1px solid #dddddd;
 }
+
+
 
 #propiedades .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     border-radius: 0;
 }
 
@@ -122,7 +126,7 @@
 /* Responsive Design */
 @media (max-width: 576px) {
     #propiedades .swiper-container {
-        height: 200px;
+        height: auto;
         /* Ajusta la altura en móviles */
     }
 
@@ -147,7 +151,7 @@
 
 @media (min-width: 577px) and (max-width: 768px) {
     #propiedades .swiper-container {
-        height: 220px;
+        height: auto;
         /* Ajusta la altura en tabletas pequeñas */
     }
 
@@ -171,7 +175,7 @@
     }
 
     #propiedades .swiper-container {
-        height: 240px;
+        height: auto;
     }
 
     #propiedades h2 {
@@ -190,7 +194,7 @@
     }
 
     #propiedades .swiper-container {
-        height: 250px;
+        height: auto;
     }
 
     #propiedades h2 {

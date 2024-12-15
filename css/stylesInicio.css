@@ -467,7 +467,7 @@ main {}
 /* Responsive Design */
 @media (max-width: 576px) {
     #propiedades .swiper-container {
-        height: 200px;
+        height: auto;
         /* Ajusta la altura en móviles */
     }
 
@@ -486,7 +486,7 @@ main {}
 
 @media (min-width: 577px) and (max-width: 768px) {
     #propiedades .swiper-container {
-        height: 220px;
+        height: auto;
         /* Ajusta la altura en tabletas pequeñas */
     }
 
@@ -506,7 +506,7 @@ main {}
 
 @media (min-width: 769px) and (max-width: 991px) {
     #propiedades .swiper-container {
-        height: 240px;
+        height: auto;
     }
 
     #propiedades h2 {
@@ -528,7 +528,7 @@ main {}
 
 @media (min-width: 992px) {
     #propiedades .swiper-container {
-        height: 250px;
+        height: auto;
     }
 
     #propiedades h2 {
