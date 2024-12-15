@@ -364,3 +364,32 @@ html {
         /* Ocultar la barra de desplazamiento en Firefox */
     }
 }
+
+/* •-----------Botón de WhatsApp-----------• */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+    right: 20px;  /* Ajusta la distancia desde el borde derecho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Tamaño del contenedor */
+    height: 60px;
+    background-color: #25D366; /* Color de fondo de WhatsApp */
+    border-radius: 50%; /* Forma circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.whatsapp-icon {
+    width: 45px; /* Tamaño del icono */
+    height: 45px;
+    /*filter: invert(1) !important;  */
+}
