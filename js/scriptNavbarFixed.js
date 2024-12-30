@@ -36,3 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+// Leer el parámetro "filter" de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const filter = urlParams.get("filter");
+
+if (filter) {
+  // Aplicar lógica según el filtro
+  if (filter === "terrenos") {
+    console.log("Filtrando por terrenos...");
+    // Aquí puedes mostrar solo terrenos
+  } else if (filter === "locales") {
+    console.log("Filtrando por locales...");
+    // Aquí puedes mostrar solo locales
+  }
+} else {
+  console.log("Mostrando todas las propiedades...");
+  // Muestra todas las propiedades por defecto
+}

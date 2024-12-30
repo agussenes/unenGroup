@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Icono del Sitio -->
-    <link rel="icon" href="/images/logoConNombre.png" type="image/x-icon">
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
 
     <!-- CSS Frameworks y Librerías -->
     <!-- Bootstrap -->
@@ -67,8 +67,36 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/#servicios">Servicios</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/propiedades.html">Propiedades</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/propiedades.html" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tipos de propiedades
+                            </a>
+                            <ul class="dropdown-menu animate__animated" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=alquiler">Alquiler </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=venta">Venta</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=alquiler-temporario">Alquiler
+                                        Temporario</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=alquiler-temporario">Alquiler
+                                        Vacacional</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=terreno">Terrenos</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=local">Locales</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=all">Todas</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/nosotros.html">Nosotros</a>
@@ -144,9 +172,9 @@
         <section class="valores-section py-5">
             <div class="container">
                 <h2 class="text-center mb-4 animate__animated animate__fadeInUp">Visión, valores y misión</h2>
-                <div class="row justify-content-center align-items-center" id="row-masInfo">
+                <div class="row justify-content-center align-items-center g-3" id="row-masInfo">
                     <!-- Visión -->
-                    <div class="col-md-4">
+                    <div class="col-lg-6 col-xl-4">
                         <div class="valor-card text-center p-4 shadow estaticContent estiloSwiper" data-aos="zoom-in">
                             <i class="fas fa-eye fa-2x text-primary mb-3"></i>
                             <h3>Visión</h3>
@@ -159,7 +187,7 @@
                     </div>
 
                     <!-- Swiper Central -->
-                    <div class="col-md-4">
+                    <div class="col-lg-6 col-xl-4">
                         <div class="valor-card p-4 shadow " style="overflow: hidden;">
                             <div class="swiper-container" id="swiper-valores">
                                 <div class="swiper-wrapper estiloSwiper">
@@ -230,7 +258,7 @@
                     </div>
 
                     <!-- Misión -->
-                    <div class="col-md-4">
+                    <div class="col-lg-6 col-xl-4">
                         <div class="valor-card text-center p-4 shadow estaticContent estiloSwiper" data-aos="zoom-in"
                             data-aos-delay="200">
                             <i class="fas fa-rocket fa-2x text-primary mb-3"></i>
@@ -363,7 +391,7 @@
                                     <i class="fab fa-linkedin-in fa-2x"></i>
                                 </a>
                             </div>
-                            <p class="text-center mt-4">O llámanos al <strong>+54 9 351 389 3394</strong></p>
+                            <p class="text-center mt-4">O llámanos al <strong>+54 9 351 6837691</strong></p>
                         </div>
                     </div>
                 </div>
@@ -392,14 +420,16 @@
                 <!-- Contact Section -->
                 <div class="col-md-4">
                     <h5 class="text-uppercase mb-3">Contacto</h5>
-                    <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123, Ciudad</p>
-                    <p id="telefonoFooter"><a href="http://"><i class="fas fa-phone"></i> Teléfono: +54 9 351 389 3394
+                    <p id="telefonoFooter"><a href="https://wa.me/5493516837691"><i class="fas fa-phone"></i> Teléfono:
+                            +54 9 351 6837691
                     </p></a>
-                    <p><i class="fas fa-envelope"></i> Email: info@unengroup.com</p>
+                    <p id="telefonoFooter"><a href="mailto:info@unengroup.com.ar"><i class="fas fa-envelope"></i>
+                            info@unengroup.com.ar</a></p>
                     <div class="social-icons">
-                        <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/coty_gg/" class="text-light me-2"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/coty.garcia" class="text-light me-2"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

@@ -13,11 +13,12 @@
 
 .swiper-container {
     width: 100%;
+   
 }
 
 .main-slider .swiper-slide img {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     filter: brightness(0.6);
 }
@@ -51,13 +52,15 @@
     font-weight: bold;
     background-color: #71C6D4;
     border-color: transparent;
+    transition: 0.3s ease;
 }
 
 .hero-content a:hover {
     color: white;
-    background-color: #e0a800;
+    background-color: #ffcc80;
     border-color: transparent;
-
+    text-shadow: 2px 5px 8px #00000000;
+    
 }
 
 .swiper-pagination-bullet {
@@ -66,7 +69,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: #ffffff;
+    color: #ffcc80;
 }
 
 .botonesSwiperDes{
@@ -75,7 +78,7 @@
 }
 
 .botonesSwiperDes div{
-    background-color: #5a4e4e6e !important;
+    background-color: #00000060 !important;
     padding: 1rem;
     border-radius: 50%;
     overflow: hidden;
@@ -210,6 +213,7 @@
     background-color: #71C6D4;
     border-color: transparent;
     transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .imgHistoriaHome {
@@ -218,7 +222,8 @@
 
 .historiaHome a:hover {
     color: white;
-    background-color: #e0a800;
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
     border-color: transparent;
     transform: scale(1.1);
 }
@@ -287,10 +292,12 @@
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-weight: bold;
+    transition: 0.3s ease;
 }
 
 #servicios .btn:hover {
-    background-color: #e0a800;
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
     transform: translateY(-3px);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -370,11 +377,9 @@
 
 #propiedades .card {
     border: 1px solid #dddddd;
-    /* Bordes suaves */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra ligera */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -389,8 +394,7 @@
 
 #propiedades .swiper-container {
     width: 100%;
-    height: 250px;
-    /* Altura ajustable del carousel */
+    height: auto;
     border-bottom: 1px solid #dddddd;
 }
 
@@ -428,10 +432,13 @@
     color: #ffffff;
     border: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: 0.3s ease;
+    font-weight: bold;
 }
 
 #propiedades .btn:hover {
-    background-color: #e0a800;
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
     transform: translateY(-3px);
 }
 
@@ -439,10 +446,12 @@
 #propiedades .btn-primary {
     background-color: #71C6D4;
     color: #ffffff;
+    transition: 0.3s ease;
 }
 
 #propiedades .btn-primary:hover {
-    background-color: #e0a800;
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
 }
 
 #propiedades .btn-secondary {
@@ -561,6 +570,11 @@
 
 #propertyDetailsContent ul li {
     list-style: none !important;
+    color: #000000;
+}
+
+#propertyDetailsContent i{   
+    color: #71C6D4;
 }
 
 
@@ -600,7 +614,7 @@
 /* Swiper Container */
 #propertyDetailsContent .swiper-container {
     width: 100%;
-    height: 300px;
+    height: auto;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -658,7 +672,8 @@
 }
 
 #propertyDetailsContent .btn-secondary:hover {
-    background-color: #5aafb0;
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
     transform: translateY(-3px);
 }
 
@@ -667,7 +682,7 @@
 }
 
 #propertyDetailsContent .btn-secondary:last-child:hover {
-    background-color: #e0a800;
+    background-color: #887878;
 }
 
 /* Responsive Styles */
@@ -684,6 +699,47 @@
         font-size: 0.9rem;
     }
 }
+
+/* Estilo específico para los botones del Swiper en el modal */
+#propertyDetailsContent .swiper-button-next,
+#propertyDetailsContent .swiper-button-prev {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    color: #ffcc80; /* Color del icono */
+    border-radius: 50%; /* Forma circular */
+    width: 40px; /* Tamaño del botón */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#propertyDetailsContent .swiper-button-next:hover,
+#propertyDetailsContent .swiper-button-prev:hover {
+    background-color: #71c6d4; /* Cambia el fondo al pasar el cursor */
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+/* Posicionar los botones */
+#propertyDetailsContent .swiper-button-next {
+    right: -5px; /* Ajusta la posición desde el borde derecho */
+    top: 35%; /* Centra verticalmente */
+    
+}
+
+#propertyDetailsContent .swiper-button-prev {
+    left: -5px; /* Ajusta la posición desde el borde izquierdo */
+    top: 35%; /* Centra verticalmente */
+   
+}
+
+/* Asegurarse de que no afecten otros Swipers */
+#propertyDetailsContent .swiper-button-next,
+#propertyDetailsContent .swiper-button-prev {
+    z-index: 10; /* Asegura que estén encima de las imágenes */
+    position: absolute; /* Asegura que se posicionen dentro del contenedor del Swiper */
+}
+
 
 
 
@@ -734,7 +790,6 @@
 .swiper-wrapper {
     display: flex;
     align-items: center;
-    /* Centra los elementos */
 }
 
 .swiper-slide {
@@ -771,10 +826,10 @@
     justify-content: center;
 }
 
-/* Opcional: Fondo para debugging */
+
 #testimoniales {
     padding: 2rem 0;
-    /* Asegura espacio consistente */
+    
 }
 
 
@@ -829,12 +884,14 @@ form button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 form button:hover {
-    background-color: #e0a800 !important;
-    transform: translateY(-3px);
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80 !important;
+    
 }
 
 /* Redes Sociales */
@@ -844,7 +901,7 @@ form button:hover {
 }
 
 #contacto .fab:hover {
-    color: #e0a800;
+    color: #ffcc80 !important;
     transform: scale(1.2);
 }
 

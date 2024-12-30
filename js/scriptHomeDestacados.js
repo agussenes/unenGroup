@@ -7,6 +7,7 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/pruebaPortadaCa3.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg",
@@ -32,7 +33,7 @@ const propiedades = [
         precio: 50000,
         localidad: "Buenos Aires",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
         ],
@@ -54,6 +55,7 @@ const propiedades = [
         precio: 1200,
         localidad: "Villa Belgrano",
         imagenes: [
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/pruebaPortadaCa3.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg",
@@ -88,43 +90,6 @@ function initializeSwiper(id) {
     });
 }
 
-// Renderizar Propiedades
-function renderProperties(data) {
-    const container = document.getElementById("propiedadesContainer");
-    container.innerHTML = data
-        .map(
-            (prop) => `
-        <div class="col-12 col-md-12 col-lg-4 d-flex flex-wrap">
-            <div class="card shadow">
-                <div class="swiper-container" id="swiper-${prop.id}">
-                    <div class="swiper-wrapper">
-                        ${prop.imagenes
-                    .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-                    .join("")}
-                    </div>
-                    
-                    <div class="swiper-pagination visores"></div>
-                    
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">${prop.titulo}</h5>
-                    <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-                        <button class="btn btn-secondary" onclick="abrirVista360(1)">Vista 360°</button>
-                    </div>
-                </div>
-            </div>
-        </div>`
-        )
-        .join("");
-
-    // Inicializar carruseles Swiper
-    data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
-}
-
-
 // Ver detalles de la propiedad
 function viewPropertyDetails(id) {
     const property = propiedades.find((prop) => prop.id === id);
@@ -146,15 +111,14 @@ function viewPropertyDetails(id) {
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row text-center text-xl-start ">
             <h3 class="text-center">${property.titulo}</h3>
-                <div class="col-md-6">
-                    
+                <div class="col-xl-6 detalleProp">                    
                     <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
                     <p><strong>Categoría:</strong> ${property.tipo}</p>
-                    <p><strong>Localidad:</strong> ${property.localidad}</p>
+                    <p ><strong>Localidad:</strong> ${property.localidad}</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xl-6">
                     
                     <p id="descripcionDetalle">${property.descripcion}</p>
                 </div>

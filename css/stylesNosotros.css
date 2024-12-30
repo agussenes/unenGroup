@@ -56,7 +56,8 @@ main {
 
 .hero-content a:hover {
     color: white;
-    background-color: #e0a800;
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80 !important;
     border-color: transparent;
     transform: translateY(-3px);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
@@ -327,11 +328,13 @@ main {
     transition: background-color 0.3s ease, transform 0.3s ease;
     background-color: #71C6D4;
     border-color: transparent;
+    transition: 0.3s ease;
 }
 
 .estiloSwiper a:hover{
     color: #ffffff; 
-    background-color: #e0a800;    
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80 !important; 
     transform: scale(1.05);
 }
 
@@ -581,21 +584,23 @@ form button {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 form button:hover {
-    background-color: #e0a800 !important;
-    transform: translateY(-3px);
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80 !important;
 }
 
 /* Redes Sociales */
 #secContacto .fab {
     color: #71C6D4;
     transition: transform 0.3s ease, color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 #secContacto .fab:hover {
-    color: #e0a800;
+    color: #ffcc80 !important;
     transform: scale(1.2);
 }
 

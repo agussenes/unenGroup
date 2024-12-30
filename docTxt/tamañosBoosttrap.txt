@@ -1,0 +1,8 @@
+Visualización Simplificada
+Tamaño	Clase	Columnas
+Mobile (≤576px)	col-12	1 columna
+Tablet pequeña (≤768px)	col-md-12	1 columna
+Tablet grande (≥768px)	col-lg-6	2 columnas
+PC (≥1200px)	col-xl-4	3 columnas
+
+<div class="row g-3"> <!-- g-3 agrega espacio entre elementos -->

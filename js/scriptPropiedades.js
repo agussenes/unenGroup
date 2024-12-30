@@ -7,7 +7,7 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
@@ -29,7 +29,7 @@ const propiedades = [
         precio: 50000,
         localidad: "Buenos Aires",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
         ],
@@ -48,7 +48,7 @@ const propiedades = [
         precio: 1200,
         localidad: "Villa Belgrano",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg"
@@ -68,7 +68,7 @@ const propiedades = [
         precio: 200000,
         localidad: "Rosario",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg"
         ],
@@ -88,7 +88,7 @@ const propiedades = [
         precio: 2000,
         localidad: "La Deseada",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
@@ -108,7 +108,7 @@ const propiedades = [
         precio: 2500,
         localidad: "Bariloche",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg",
             "/images/carouselHome/CasaLD-01.jpeg"
@@ -128,7 +128,7 @@ const propiedades = [
         precio: 180000,
         localidad: "Salta",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg"
         ],
@@ -147,7 +147,83 @@ const propiedades = [
         precio: 30000,
         localidad: "San Juan",
         imagenes: [
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselHome/CasaLD-00-p.jpg",
+            "/images/carouselHome/CasaLD-00.jpeg",
+            "/images/carouselHome/CasaLD-12.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
+        </ul>`
+    },
+    {
+        id: 9,
+        tipo: "terreno",
+        titulo: "Terreno ejemplo",
+        precio: 80000,
+        localidad: "Córdoba",
+        imagenes: [
+            "/images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg",
+            "/images/carouselHome/CasaLD-00.jpeg",
+            "/images/carouselHome/CasaLD-12.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
+        </ul>`
+    },
+    {
+        id: 10,
+        tipo: "terreno",
+        titulo: "Terreno ejemplo2",
+        precio: 100000,
+        localidad: "Córdoba",
+        imagenes: [
+            "/images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg",
+            "/images/carouselHome/CasaLD-00.jpeg",
+            "/images/carouselHome/CasaLD-12.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
+        </ul>`
+    },
+    {
+        id: 11,
+        tipo: "local",
+        titulo: "Local Ejemplo",
+        precio: 100000,
+        localidad: "Córdoba",
+        imagenes: [
+            "/images/carouselesPropiedades/locales/localPrueba.jpg",
+            "/images/carouselHome/CasaLD-00.jpeg",
+            "/images/carouselHome/CasaLD-12.jpeg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
+        </ul>`
+    },
+    {
+        id: 12,
+        tipo: "local",
+        titulo: "Local Ejemplo2",
+        precio: 100000,
+        localidad: "Córdoba",
+        imagenes: [
+            "/images/carouselesPropiedades/locales/localPrueba.jpg",
             "/images/carouselHome/CasaLD-00.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg"
         ],
@@ -186,8 +262,8 @@ function renderProperties(data) {
           <div class="swiper-container" id="swiper-${prop.id}">
             <div class="swiper-wrapper">
               ${prop.imagenes
-                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-                .join("")}
+            .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
+            .join("")}
             </div>
                 <div class="botonesSwiperDes">
                     <div id="botonNextP" class="swiper-button-next"></div>
@@ -219,8 +295,8 @@ function viewPropertyDetails(id) {
             <div class="swiper-container mb-4" id="modal-swiper-${property.id}">
                 <div class="swiper-wrapper">
                     ${property.imagenes
-                        .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
-                        .join("")}
+                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
+                .join("")}
                 </div>
                  <div class="botonesSwiperDes">
                     <div class="swiper-button-next"></div>
@@ -230,15 +306,15 @@ function viewPropertyDetails(id) {
                  <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row text-center text-xl-start">
             <h3 class="text-center">${property.titulo}</h3>
-                <div class="col-md-6">
+                <div class="col-xl-6">
                     
                     <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
                     <p><strong>Categoría:</strong> ${property.tipo}</p>
                     <p><strong>Localidad:</strong> ${property.localidad}</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xl-6">
                     
                     <p id="descripcionDetalle">${property.descripcion}</p>
                 </div>
@@ -274,7 +350,15 @@ function applyFilters() {
         );
     });
 
-    renderProperties(filtered);
+    if (filtered.length === 0) {
+        document.getElementById("propiedadesContainer").innerHTML = `
+            <div class="alert alert-warning text-center">
+                No se encontraron propiedades. Intenta con otros filtros.
+            </div>
+        `;
+    } else {
+        renderProperties(filtered);
+    }
 }
 
 // Obtén los parámetros de la URL
