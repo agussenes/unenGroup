@@ -11,29 +11,26 @@ document.addEventListener("scroll", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-    // URL actual
-    const currentUrl = window.location.pathname;
-
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-
-        if (linkPath === currentUrl) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            link.classList.add('active');
-        }
-    });
-
-    // Cerrar el menú hamburguesa al hacer clic en un enlace
+    const dropdownMenu = document.querySelector('.dropdown-menu');
     const navCollapse = document.querySelector('.navbar-collapse');
     const toggler = document.querySelector('.navbar-toggler');
 
+    // Cerrar el menú hamburguesa al hacer clic en un enlace
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            // Verificar si el clic ocurrió en el dropdown
+            if (e.target.closest('.dropdown-menu') || e.target.closest('.dropdown-toggle')) {
+                return; // No cerrar el menú si es un dropdown
+            }
             if (window.innerWidth <= 992 && navCollapse.classList.contains('show')) {
                 toggler.click(); // Simula el clic en el botón de toggle para cerrar el menú
             }
         });
+    });
+
+    // Evitar que el menú hamburguesa se cierre al interactuar con el dropdown
+    dropdownMenu.addEventListener('click', (e) => {
+        e.stopPropagation(); // Detiene la propagación del evento para evitar conflictos
     });
 });
 

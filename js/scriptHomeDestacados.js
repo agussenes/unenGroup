@@ -7,8 +7,7 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselHome/CasaLD-00-p.jpg",
-            "/images/pruebaPortadaCa3.jpg",
+            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
             "/images/carouselHome/CasaLD-01.jpeg",
             "/images/carouselHome/CasaLD-12.jpeg",
             "/images/carouselHome/CasaLD-00.jpeg"
@@ -27,46 +26,42 @@ const propiedades = [
         ],
     },
     {
-        id: 2,
-        tipo: "alquiler",
-        titulo: "Departamento",
-        precio: 50000,
-        localidad: "Buenos Aires",
+        id: 9,
+        tipo: "terreno",
+        titulo: "Terreno ejemplo",
+        precio: 80000,
+        localidad: "Córdoba",
         imagenes: [
-            "/images/carouselHome/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
+            "/images/carouselHome/terrenoEjemplo.jpg",
+            "/images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-bed"></i> 2 dormitorios y 1 baño completo</li>
-            <li><i class="fas fa-paint-brush"></i> Living-comedor amplio y luminoso</li>
-            <li><i class="fas fa-building"></i> Balcón con vista panorámica</li>
-            <li><i class="fas fa-building"></i> Zona céntrica con acceso rápido a transporte</li>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
         </ul>`,
         vista360: [
             "https://pannellum.org/images/alma.jpg"
         ],
     },
     {
-        id: 3,
-        tipo: "alquiler-temporario",
-        titulo: "casa en Villa Belgrano",
-        precio: 1200,
-        localidad: "Villa Belgrano",
+        id: 11,
+        tipo: "local",
+        titulo: "Local Ejemplo",
+        precio: 100000,
+        localidad: "Córdoba",
         imagenes: [
-            "/images/carouselHome/CasaLD-00-p.jpg",
-            "/images/pruebaPortadaCa3.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
+            "/images/carouselesPropiedades/locales/localPrueba1.jpg",
+            "/images/carouselesPropiedades/locales/localPrueba.jpg"
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-paint-brush"></i>Living, comedor y cocina/comedor</li>
-            <li><i class="fas fa-expand-arrows-alt"></i> Lavadero y escritorio pequeño</li>
-            <li><i class="fas fa-bed"></i> Dormitorio principal en suite con vestidor y baño</li>
-            <li><i class="fas fa-swimming-pool"></i> Amplio jardín con piscina apta para mascotas</li>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
         </ul>`,
         vista360: [
             "https://pannellum.org/images/alma.jpg"
