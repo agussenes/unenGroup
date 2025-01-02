@@ -315,6 +315,22 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.admPropiedades button, .admPropiedades a{
+    background-color: #71C6D4;
+    color: #ffffff;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+.admPropiedades button:hover, .admPropiedades a:hover {
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
+    transform: translateY(-3px);
+    color: white !important;
+}
+
 /* Responsiveness */
 @media (max-width: 576px) {
     #servicios h2 {

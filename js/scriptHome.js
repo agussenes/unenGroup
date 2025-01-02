@@ -1,17 +1,36 @@
-// Función para preseleccionar el tipo de contacto
 function setContactType(type) {
-    // Encuentra el elemento select de tipo de contacto
+    // Encuentra el campo select de tipo de contacto
     const tipoContacto = document.getElementById('tipoContacto');
     if (tipoContacto) {
-        tipoContacto.value = type; // Establece el valor preseleccionado
+        tipoContacto.value = type; // Asigna el valor al select
     }
 
-    // Enfoca la sección del formulario de contacto
-    const contactoSection = document.getElementById('contacto');
-    if (contactoSection) {
-        contactoSection.scrollIntoView({ behavior: 'smooth' });
+    // Identifica el modal actualmente abierto
+    const modal = document.querySelector('.modal.show');
+    if (modal) {
+        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+
+        // Espera a que el modal se cierre completamente antes de desplazar la pantalla
+        modal.addEventListener('hidden.bs.modal', function () {
+            const contactoSection = document.getElementById('contacto');
+            if (contactoSection) {
+                contactoSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Cierra el modal manualmente si no está ya cerrado
+        if (bootstrapModal) {
+            bootstrapModal.hide();
+        }
+    } else {
+        // Si no hay modal abierto, desplaza directamente a la sección de contacto
+        const contactoSection = document.getElementById('contacto');
+        if (contactoSection) {
+            contactoSection.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
+
 
 
 // Función para abrir el modal con la vista 360°

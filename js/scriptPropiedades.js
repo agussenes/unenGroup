@@ -197,7 +197,7 @@ const propiedades = [
     },
     {
         id: 11,
-        tipo: "local",
+        tipo: "local-oficina",
         titulo: "Local Ejemplo",
         precio: 100000,
         localidad: "Córdoba",
@@ -215,7 +215,7 @@ const propiedades = [
     },
     {
         id: 12,
-        tipo: "local",
+        tipo: "local-oficina",
         titulo: "Local Ejemplo2",
         precio: 100000,
         localidad: "Córdoba",

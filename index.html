@@ -9,21 +9,21 @@
 
     <!-- Meta SEO -->
     <title>UnenGroup | Home</title>
-    <meta name="description" content="Descripción breve y precisa para buscadores.">
+    <!-- <meta name="description" content="Descripción breve y precisa para buscadores.">
     <meta name="keywords" content="palabras clave, separadas, por, comas">
     <meta name="author" content="Tu Nombre o Empresa">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow"> -->
 
     <!-- Meta Redes Sociales (Open Graph y Twitter Cards) -->
-    <meta property="og:title" content="Nombre de tu Sitio | Título de la Página">
+    <!-- <meta property="og:title" content="Nombre de tu Sitio | Título de la Página">
     <meta property="og:description" content="Descripción atractiva para compartir en redes sociales.">
     <meta property="og:image" content="URL_de_la_imagen_destacada">
     <meta property="og:url" content="https://tusitioweb.com">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image"> -->
 
     <!-- Icono del Sitio -->
-    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="icon" href="./images/logo.png" type="image/x-icon">
 
     <!-- CSS Frameworks y Librerías -->
     <!-- Bootstrap -->
@@ -38,8 +38,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@300&display=swap"
         rel="stylesheet">
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="/css/stylesGen.css">
-    <link rel="stylesheet" href="/css/stylesInicio.css">
+    <link rel="stylesheet" href="./css/stylesGen.css">
+    <link rel="stylesheet" href="./css/stylesInicio.css">
 
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/a720cb8047.js" crossorigin="anonymous"></script>
@@ -52,7 +52,7 @@
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="/">
-                    <img src="/images/logoNavBarprueba.png" alt="Logo" id="logoNavbar">
+                    <img src="./images/logoNavBarprueba.png" alt="Logo" id="logoNavbar">
                 </a>
                 <!-- Toggle Button for Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -92,7 +92,8 @@
                                     <a class="dropdown-item" href="propiedades.html?tipo=terreno">Terrenos</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="propiedades.html?tipo=local">Locales</a>
+                                    <a class="dropdown-item" href="propiedades.html?tipo=local-oficina">Locales |
+                                        Oficinas</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="propiedades.html?tipo=all">Todas</a>
@@ -217,19 +218,28 @@
             <div class="container">
                 <!-- Encabezado -->
                 <h2 class="text-center fw-bold mb-4">Nuestros servicios</h2>
-                <p class="text-center mb-5">Soluciones personalizadas para todas las necesidades inmobiliarias. Déjanos
-                    ayudarte.</p>
-
+                <p class="text-center mb-5"></p>
+                <p class="text-center mb-5">En Unen group garantizamos soluciones personalizadas para cada tipo de
+                    cliente</p>
                 <!-- Grid de Servicios -->
                 <div class="row g-4 justify-content-center">
                     <!-- Fila 1 -->
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="card servicio-card">
                             <div class="card-body">
-                                <i class="fas fa-home fa-3x text-warning mb-3"></i>
-                                <h4 class="fw-bold">Venta de propiedades</h4>
-                                <p>Encuentra el hogar perfecto con nuestro apoyo y asistencia especializada.</p>
-                                <a href="/propiedades.html" class="btn btn-warning">Ver propiedades</a>
+                                <div class="container">
+                                    <img src="./images/servicios/Venta-propiedades.jpg"
+                                        alt="venta de propiedades por Unen Group"
+                                        style="width: 100%; border-radius: 10px;">
+                                </div>
+                                <h4 class="fw-bold my-3">Venta de propiedades</h4>
+                                <p>Encuentra el hogar perfecto con asesoramiento personalizado y una experiencia sin
+                                    complicaciones</p>
+                                <div class="d-flex justify-content-center flex-column gap-2">
+                                    <a href="/propiedades.html" class="btn btn-warning">Ver propiedades</a>
+                                    <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#ventasModal">Ver más</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -237,11 +247,20 @@
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="card servicio-card">
                             <div class="card-body">
-                                <i class="fas fa-key fa-3x text-warning mb-3"></i>
-                                <h4 class="fw-bold">Alquiler</h4>
-                                <p>Ofrecemos opciones de alquiler para corto y largo plazo con facilidad.</p>
-                                <a href="/propiedades.html?tipo=alquiler" class="btn btn-warning">Encuentra Tu
-                                    Espacio</a>
+                                <div class="container">
+                                    <img src="./images/servicios/Alquiler.jpg" alt="venta de propiedades por Unen Group"
+                                        style="width: 100%; border-radius: 10px;">
+                                </div>
+                                <h4 class="fw-bold my-3">Alquiler</h4>
+                                <p>Opciones de alquiler flexibles para corto o largo plazo, adaptadas a tus necesidades.
+                                </p>
+                                <div class="d-flex justify-content-center flex-column gap-2">
+                                    <a href="/propiedades.html?tipo=alquiler" class="btn btn-warning">Encuentra tu
+                                        espacio</a>
+                                    <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#alquilerModal">Ver más</button>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -249,11 +268,21 @@
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="card servicio-card">
                             <div class="card-body">
-                                <i class="fas fa-calendar-alt fa-3x text-warning mb-3"></i>
-                                <h4 class="fw-bold">Alquiler temporario </h4>
-                                <p>Gestionamos alquileres temporales para maximizar tus ingresos fácilmente.</p>
-                                <a href="/propiedades.html?tipo=alquiler-temporario" class="btn btn-warning">Tu lugar
-                                    temporal te espera</a>
+                                <div class="container">
+                                    <img src="./images/servicios/Alquiler-temporario.jpg"
+                                        alt="venta de propiedades por Unen Group"
+                                        style="width: 100%; border-radius: 10px;">
+                                </div>
+                                <h4 class="fw-bold my-3">Alquiler temporario </h4>
+                                <p>Alquileres por días o meses con propiedades amobladas, ideales para estancias
+                                    cómodas.</p>
+                                <div class="d-flex justify-content-center flex-column gap-2">
+                                    <a href="/propiedades.html?tipo=alquiler-temporario" class="btn btn-warning">Tu
+                                        lugar temporal te espera</a>
+                                    <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#alquilerTempModal">Ver más</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -263,12 +292,21 @@
                 <div class="row g-4 justify-content-center mt-4">
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="card servicio-card">
-                            <div class="card-body ">
-                                <i class="fas fa-balance-scale fa-3x text-warning mb-3"></i>
-                                <h4 class="fw-bold">Tasaciones</h4>
-                                <p>Solicita una evaluación profesional y precisa para tu propiedad hoy mismo.</p>
-                                <a href="#contacto" onclick="setContactType('tasaciones')"
-                                    class="btn btn-warning">Solicitar Tasación</a>
+                            <div class="card-body">
+                                <div class="container">
+                                    <img src="./images/servicios/compra-propiedades.jpg"
+                                        alt="venta de propiedades por Unen Group"
+                                        style="width: 100%; border-radius: 10px;">
+                                </div>
+                                <h4 class="fw-bold my-3">Compra de propiedades</h4>
+                                <p>Compra tu casa, terreno o local con confianza y un equipo experto a tu lado.</p>
+
+                                <div class="d-flex justify-content-center flex-column gap-2">
+                                    <a href="#contacto" onclick="setContactType('quiero-vender')"
+                                        class="btn btn-warning">Quiero vender</a>
+                                    <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#compraPropiedades">Ver más</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -276,18 +314,380 @@
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="card servicio-card">
                             <div class="card-body">
-                                <i class="fas fa-chart-line fa-3x text-warning mb-3"></i>
-                                <h4 class="fw-bold">Inversiones</h4>
-                                <p>Explora oportunidades únicas de inversión en bienes raíces de calidad.</p>
-                                <a href="#contacto" class="btn btn-warning"
-                                    onclick="setContactType('inversiones')">Contactame</a>
+                                <div class="container">
+                                    <img src="./images/servicios/administracion-prop.jpg"
+                                        alt="venta de propiedades por Unen Group"
+                                        style="width: 100%; border-radius: 10px;">
+                                </div>
+                                <h4 class="fw-bold my-3">Administración de propiedades</h4>
+                                <p>Tu tranquilidad, nuestra responsabilidad: gestionamos tu propiedad como si fuera
+                                    nuestra.</p>
+                                <div class="d-flex flex-column justify-content-center gap-2">
+                                    <a href="#contacto" class="btn btn-warning"
+                                        onclick="setContactType('adm-propiedades')">Contactame</a>
+                                    <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#adminPropiedadesModal">Ver más</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="card servicio-card">
+                            <div class="card-body ">
+                                <div class="container">
+                                    <img src="./images/servicios/tasacion.jpg"
+                                        alt="venta de propiedades por Unen Group"
+                                        style="width: 100%; border-radius: 10px;">
+                                </div>
+                                <h4 class="fw-bold my-3">Tasaciones</h4>
+                                <p>Determinamos el valor real de tu propiedad para garantizar decisiones inteligentes.
+                                </p>
+                                <div class="d-flex flex-column justify-content-center gap-2 ">
+                                    <a href="#contacto" onclick="setContactType('tasaciones')"
+                                        class="btn btn-warning">Solicitar Tasación</a>
+                                    <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#tasacionesModal">Ver más</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+             
             </div>
         </section>
 
+        <!-- modal Administración propiedades  -->
+
+        <div class="modal fade" id="adminPropiedadesModal" tabindex="-1" aria-labelledby="adminPropiedadesLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="adminPropiedadesLabel">Administración de propiedades</h5>
+                        <button style="background-color: white;" type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:black;">La tarea principal de <strong>Unen Group</strong> en la administración
+                            de propiedades es gestionar de manera integral todos los aspectos relacionados con el
+                            mantenimiento, el alquiler y la optimización de los bienes inmobiliarios de nuestros
+                            clientes.</p>
+                        <p style="color:black;"><strong>Nos encargamos de:</strong></p>
+                        <ul style="list-style: none; color:black;">
+                            <li><i class="fas fa-user-check" style="color:#71C6D4;"></i> <strong>Selección de
+                                    inquilinos:</strong> Encontramos candidatos confiables a través de procesos de
+                                evaluación exhaustivos.</li>
+                            <li><i class="fas fa-hand-holding-usd " style="color:#71C6D4;"></i> <strong>Cobro de
+                                    alquileres:</strong> Garantizamos la puntualidad en los pagos y manejamos retrasos
+                                de manera profesional.</li>
+                            <li><i class="fas fa-tools" style="color:#71C6D4;"></i> <strong>Mantenimiento preventivo y
+                                    correctivo:</strong> Coordinamos reparaciones para preservar y aumentar el valor de
+                                tus propiedades.</li>
+                            <li><i class="fas fa-file-contract" style="color:#71C6D4;"></i> <strong>Resolución de
+                                    problemas técnicos y legales:</strong> Actuamos como intermediarios entre
+                                propietarios e inquilinos.</li>
+                            <li><i class="fas fa-chart-line" style="color:#71C6D4;"></i> <strong>Optimización de
+                                    ingresos:</strong> Asesoramos sobre precios de mercado y estrategias de mejora.</li>
+                        </ul>
+                        <p style="color:black;">Siempre aseguramos la <strong>preservación y valorización</strong> de
+                            las propiedades administradas, liberándote de preocupaciones y permitiéndote disfrutar de
+                            los beneficios sin complicaciones.</p>
+                    </div>
+                    <div class="modal-footer admPropiedades">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a id="admProp" href="#contacto" class="btn btn-warning" data-bs-dismiss="modal"
+                            onclick="setContactType('adm-propiedades')">Quiero más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Ventas de Propiedades -->
+        <div class="modal fade" id="ventasModal" tabindex="-1" aria-labelledby="ventasModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="ventasModalLabel">Venta de Propiedades</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" style="background-color: white;"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:black;"><strong>Tu hogar ideal para cada etapa de tu vida.</strong></p>
+                        <p style="color:black;">
+                            Facilitamos la compra y venta de propiedades residenciales y comerciales en Córdoba,
+                            brindando asesoramiento personalizado y apoyo integral en todo el proceso.
+                        </p>
+
+                        <h6 style="color:black;"><strong>Beneficios de nuestros servicios de venta:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li><i class="fas fa-home" style="color:#71C6D4;"></i> Acceso a una amplia cartera de
+                                propiedades en venta, adaptadas a tus necesidades.</li>
+                            <li><i class="fas fa-handshake" style="color:#71C6D4;"></i> Asistencia profesional en la
+                                negociación para garantizar los mejores acuerdos.</li>
+                            <li><i class="fas fa-search" style="color:#71C6D4;"></i> Evaluación detallada de las
+                                propiedades para tomar decisiones informadas.</li>
+                            <li><i class="fas fa-balance-scale" style="color:#71C6D4;"></i> Orientación legal y
+                                administrativa para evitar complicaciones.</li>
+                            <li><i class="fas fa-thumbs-up" style="color:#71C6D4;"></i> Una experiencia sin
+                                complicaciones para compradores y vendedores.</li>
+                        </ul>
+
+                        <p style="color:black;">
+                            Nuestro compromiso es ofrecerte una experiencia fluida y segura en cada transacción,
+                            asegurando que encuentres el hogar ideal o logres una venta exitosa.
+                        </p>
+                    </div>
+                    <div class="modal-footer admPropiedades">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="/propiedades.html" class="btn btn-warning">Ver propiedades</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Alquiler -->
+        <div class="modal fade" id="alquilerModal" tabindex="-1" aria-labelledby="alquilerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="alquilerModalLabel">Alquiler</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" style="background-color: white;"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:black;">
+                            Ofrecemos una amplia gama de opciones de alquiler que se ajustan a diferentes necesidades,
+                            desde contratos clásicos hasta opciones temporales y vacacionales. Garantizamos un proceso
+                            transparente y sencillo para propietarios e inquilinos.
+                        </p>
+
+                        <h6 style="color:black;"><strong>Tipos de alquileres:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li>
+                                <i class="fas fa-building" style="color:#71C6D4;"></i>
+                                <strong>Alquileres residenciales y comerciales:</strong> Contratos clásicos de 2 años
+                                que garantizan estabilidad y seguridad.
+                            </li>
+                            <li>
+                                <i class="fas fa-calendar" style="color:#71C6D4;"></i>
+                                <strong>Alquileres temporales:</strong> Opciones flexibles que varían por día o hasta
+                                plazos cortos de 3 meses, completamente amoblados.
+                            </li>
+                            <li>
+                                <i class="fas fa-umbrella-beach" style="color:#71C6D4;"></i>
+                                <strong>Alquileres vacacionales:</strong> Propiedades amobladas ubicadas en destinos
+                                fuera de Córdoba, ideales para escapadas o vacaciones.
+                            </li>
+                        </ul>
+
+                        <h6 style="color:black;"><strong>Beneficios de elegirnos:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li><i class="fas fa-user-check" style="color:#71C6D4;"></i> Proceso transparente y seguro
+                                para propietarios e inquilinos.</li>
+                            <li><i class="fas fa-handshake" style="color:#71C6D4;"></i> Gestión integral de contratos y
+                                requisitos legales.</li>
+                            <li><i class="fas fa-check-circle" style="color:#71C6D4;"></i> Opciones personalizadas para
+                                satisfacer tus necesidades específicas.</li>
+                        </ul>
+
+                        <p style="color:black;">
+                            Nos aseguramos de ofrecerte el espacio adecuado, ya sea para vivir, trabajar o disfrutar de
+                            unas vacaciones inolvidables.
+                        </p>
+                    </div>
+                    <div class="modal-footer admPropiedades">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="/propiedades.html?tipo=alquiler" class="btn btn-warning">Encuentra tu
+                            espacio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Tasaciones -->
+        <div class="modal fade" id="tasacionesModal" tabindex="-1" aria-labelledby="tasacionesModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="tasacionesModalLabel">Tasaciones</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"
+                            style="background-color: white;"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:black;"><strong>Conoce el valor, maximiza tus oportunidades.</strong></p>
+                        <p style="color:black;">
+                            Las tasaciones profesionales ayudan a determinar el valor real de mercado de una propiedad,
+                            evitando sobrevaloraciones o subvaloraciones y garantizando negociaciones justas.
+                        </p>
+                        <p style="color:black;">
+                            Facilitan la venta, compra o alquiler de inmuebles al establecer precios competitivos y
+                            justificados. Además, son clave para obtener financiamiento, ya que respaldan solicitudes de
+                            créditos hipotecarios o garantías.
+                        </p>
+                        <p style="color:black;">
+                            También sirven para planificación financiera, ayudando a conocer el valor patrimonial y
+                            tomar decisiones estratégicas. En casos legales, como herencias o divisiones de bienes,
+                            proporcionan bases sólidas para acuerdos equitativos.
+                        </p>
+                        <p style="color:black;">
+                            Asimismo, identifican áreas de mejora que pueden aumentar el valor del inmueble. Por último,
+                            generan confianza y profesionalismo, ofreciendo seguridad a compradores, vendedores o
+                            inversionistas.
+                        </p>
+
+                        <h6 style="color:black;"><strong>Beneficios de nuestras tasaciones:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li><i class="fas fa-balance-scale" style="color:#71C6D4;"></i> Determinación del valor real
+                                de mercado.</li>
+                            <li><i class="fas fa-piggy-bank" style="color:#71C6D4;"></i> Respaldo para solicitudes de
+                                créditos hipotecarios o garantías.</li>
+                            <li><i class="fas fa-chart-line" style="color:#71C6D4;"></i> Planificación financiera para
+                                conocer el valor patrimonial y tomar decisiones estratégicas.</li>
+                            <li><i class="fas fa-gavel" style="color:#71C6D4;"></i> Apoyo en casos legales, como
+                                herencias o divisiones de bienes.</li>
+                            <li><i class="fas fa-tools" style="color:#71C6D4;"></i> Identificación de áreas de mejora
+                                que pueden aumentar el valor del inmueble.</li>
+                            <li><i class="fas fa-handshake" style="color:#71C6D4;"></i> Generación de confianza y
+                                profesionalismo, asegurando negociaciones justas.</li>
+                        </ul>
+
+                        <p style="color:black;">
+                            Realizamos tasaciones con precisión y profesionalismo para brindarte la información clave
+                            que necesitas para tomar decisiones estratégicas y maximizar tus oportunidades.
+                        </p>
+                    </div>
+                    <div class="modal-footer admPropiedades">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a id="admProp" href="#contacto" class="btn btn-warning" data-bs-dismiss="modal"
+                            onclick="setContactType('tasaciones')">Solicitar tasacion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal Alquileres temporarios -->
+        <div class="modal fade" id="alquilerTempModal" tabindex="-1" aria-labelledby="alquilerTempModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="alquilerTempModalLabel">Alquileres Temporarios |
+                            Vacacionales</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" style="background-color: white;"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:black;">
+                            Descubre nuestras opciones de alquileres temporarios y vacacionales diseñadas para brindarte
+                            flexibilidad, comodidad y experiencias inolvidables. Desde estancias cortas hasta escapadas
+                            únicas, tenemos el lugar perfecto para ti.
+                        </p>
+
+                        <h6 style="color:black;"><strong>Características principales:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li>
+                                <i class="fas fa-calendar" style="color:#71C6D4;"></i>
+                                <strong>Alquileres Temporarios:</strong> Propiedades completamente amobladas con
+                                duraciones flexibles, desde días hasta 3 meses. Ideales para negocios o estancias
+                                cortas.
+                            </li>
+                            <li>
+                                <i class="fas fa-umbrella-beach" style="color:#71C6D4;"></i>
+                                <strong>Alquileres Vacacionales:</strong> Espacios diseñados para el descanso en
+                                destinos únicos fuera de Córdoba, equipados para garantizar una experiencia placentera.
+                            </li>
+                        </ul>
+
+                        <h6 style="color:black;"><strong>Beneficios de elegirnos:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li><i class="fas fa-check-circle" style="color:#71C6D4;"></i> Propiedades listas para
+                                habitar con todo lo necesario para tu comodidad.</li>
+                            <li><i class="fas fa-map-marker-alt" style="color:#71C6D4;"></i> Ubicación estratégica en
+                                áreas clave y destinos turísticos destacados.</li>
+                            <li><i class="fas fa-handshake" style="color:#71C6D4;"></i> Contratos flexibles y
+                                transparentes, adaptados a tus necesidades.</li>
+                            <li><i class="fas fa-smile-beam" style="color:#71C6D4;"></i> Atención personalizada para
+                                garantizar una experiencia sin complicaciones.</li>
+                        </ul>
+
+                        <p style="color:black;">
+                            Ya sea por negocios, descanso o turismo, nuestras opciones de alquileres temporarios y
+                            vacacionales están diseñadas para ofrecerte una experiencia excepcional.
+                        </p>
+                    </div>
+                    <div class="modal-footer admPropiedades">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="/propiedades.html?tipo=alquiler-temporario#propiedades" class="btn btn-warning">Tu
+                            lugar temporal te espera</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Comprar propiedades -->
+        <div class="modal fade" id="compraPropiedades" tabindex="-1" aria-labelledby="compraPropiedadesLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="alquilerTempModalLabel">Compra de propiedades</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" style="background-color: white;"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:black;"><strong>Tu hogar ideal para cada etapa de tu vida.</strong></p>
+                        <p style="color:black;">
+                            Facilitamos la compra de propiedades residenciales y comerciales en Córdoba, garantizando un
+                            proceso claro, confiable y personalizado para ayudarte a encontrar tu lugar ideal.
+                        </p>
+
+                        <h6 style="color:black;"><strong>Nuestros servicios incluyen:</strong></h6>
+                        <ul style="list-style: none; color:black;">
+                            <li>
+                                <i class="fas fa-home" style="color:#71C6D4;"></i>
+                                <strong>Acceso exclusivo:</strong> A una amplia cartera de propiedades disponibles en
+                                venta, adaptadas a todas las necesidades.
+                            </li>
+                            <li>
+                                <i class="fas fa-handshake" style="color:#71C6D4;"></i>
+                                <strong>Asesoramiento profesional:</strong> Recibirás orientación personalizada durante
+                                todo el proceso de compra.
+                            </li>
+                            <li>
+                                <i class="fas fa-search" style="color:#71C6D4;"></i>
+                                <strong>Evaluaciones detalladas:</strong> Análisis exhaustivo de propiedades para
+                                asegurar la mejor elección.
+                            </li>
+                            <li>
+                                <i class="fas fa-file-contract" style="color:#71C6D4;"></i>
+                                <strong>Gestión legal y administrativa:</strong> Acompañamos en cada etapa del proceso
+                                para que todo sea seguro y eficiente.
+                            </li>
+                            <li>
+                                <i class="fas fa-heart" style="color:#71C6D4;"></i>
+                                <strong>Experiencia sin complicaciones:</strong> Simplificamos los trámites para que
+                                disfrutes del camino hacia tu nuevo hogar.
+                            </li>
+                        </ul>
+
+                        <p style="color:black;">
+                            Contamos con un equipo comprometido en garantizar que cada paso de la compra sea claro,
+                            eficiente y satisfactorio.
+                        </p>
+                    </div>
+                    <div class="modal-footer admPropiedades">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a id="admProp" href="#contacto" class="btn btn-warning" data-bs-dismiss="modal"
+                            onclick="setContactType('quiero-vender')">Quiero vender</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- •-----------------porpiedades---------------- -->
 
@@ -360,7 +760,7 @@
                             <div
                                 class="testimonial-card p-4 shadow-sm rounded bg-white animate__animated animate__fadeInUp">
                                 <div class="testimonial-header d-flex align-items-center mb-3">
-                                    <img src="/images//team-3.jpg" alt="Cliente 1" class="rounded-circle me-3"
+                                    <img src="./images//team-3.jpg" alt="Cliente 1" class="rounded-circle me-3"
                                         width="60" height="auto">
                                     <div>
                                         <h5 class="fw-bold mb-0 text-secondary">Juan Pérez</h5>
@@ -386,7 +786,7 @@
                             <div
                                 class="testimonial-card p-4 shadow-sm rounded bg-white animate__animated animate__fadeInUp">
                                 <div class="testimonial-header d-flex align-items-center mb-3">
-                                    <img src="/images//team-2.jpg" alt="Cliente 2" class="rounded-circle me-3"
+                                    <img src="./images//team-2.jpg" alt="Cliente 2" class="rounded-circle me-3"
                                         width="60" height="auto">
                                     <div>
                                         <h5 class="fw-bold mb-0 text-secondary">Ana López</h5>
@@ -451,7 +851,7 @@
                 <div class="row">
                     <!-- Formulario de Contacto -->
                     <div class="col-md-6 animate__animated animate__fadeInLeft">
-                        <form action="/enviar-mensaje" method="POST" class="bg-white p-4 rounded shadow">
+                        <form id="contacto" action="/enviar-mensaje" method="POST" class="bg-white p-4 rounded shadow">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
                                 <input type="text" id="nombre" name="nombre" class="form-control"
@@ -466,9 +866,9 @@
                                 <label for="tipoContacto" class="form-label">Tipo de contacto</label>
                                 <select id="tipoContacto" name="tipoContacto" class="form-control" required>
                                     <option value="" disabled selected>Seleccione un tipo de contacto</option>
-                                    <option value="inversiones">Inversiones</option>
+                                    <option value="adm-propiedades">Administrar propiedad</option>
                                     <option value="alquiler">Alquiler</option>
-                                    <option value="soy-propietario">Soy propietario</option>
+                                    <option value="quiero-vender">Quiero vender</option>
                                     <option value="tasaciones">Tasaciones</option>
                                     <option value="consulta">Consulta</option>
                                     <option value="otro">Otro</option>
@@ -481,6 +881,7 @@
                             </div>
                             <button type="submit" class="btn btn-warning w-100 fw-bold">Enviar mensaje</button>
                         </form>
+
                     </div>
 
                     <!-- Redes Sociales -->
@@ -518,7 +919,7 @@
             <div class="row">
                 <!-- About Section -->
                 <div class="col-md-8">
-                    <h5 class="text-uppercase mb-3">Sobre nosotros</h5>
+                    <h5 class="text-uppercase mb-3">Sobre Nosotros</h5>
                     <div class="d-flex align-items-center" id="espacioFotoMobile">
                         <img src="/images/fotoEjemploCoty.jpg" alt="logo" class="me-3 ocultarMobile"
                             style="max-width: 150px; border-radius:50%;">
@@ -547,8 +948,17 @@
             </div>
             <hr class="my-4">
             <div class="row">
-                <div class="col text-center">
-                    <p class="mb-0">&copy; 2024 <a class="linkSenestrariDev"
+                <div class="col text-start">
+                    <p>
+                        <h7 style="color: #71C6D4;" class="text-uppercase fw-bold">Legales</h7><br><small>La información
+                            detallada es exclusiva de Unen Group Real Estate y es
+                            susceptible a modificación sin previo aviso. Todas las medidas enunciadas son meramente
+                            orientativas, las medidas exactas serán las que se expresen en el respectivo título de
+                            propiedad de cada inmueble. Todas las fotos, imágenes y videos son meramente ilustrativos,
+                            referenciales y no contractuales. Los precios enunciados son meramente orientativos y están
+                            sujetos a modificación sin previo aviso, como así también su disponibilidad.</small>
+                    </p>
+                    <p class="mb-0 text-center">&copy; 2024 <a class="linkSenestrariDev"
                             href="https://senestraridev.com/">Senestrari
                             Dev.</a> Todos los derechos reservados.</p>
                 </div>
@@ -570,11 +980,11 @@
     <!-- Pannellum  -->
     <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
     <!-- Script Propio -->
-    <script src="/js/scriptSwiperHome.js"></script>
-    <script src="/js/scriptSwiperTestimonials.js"></script>
-    <script src="/js/scriptNavbarFixed.js"></script>
-    <script src="/js/scriptHome.js"></script>
-    <script src="/js/scriptHomeDestacados.js"></script>
+    <script src="./js/scriptSwiperHome.js"></script>
+    <script src="./js/scriptSwiperTestimonials.js"></script>
+    <script src="./js/scriptNavbarFixed.js"></script>
+    <script src="./js/scriptHome.js"></script>
+    <script src="./js/scriptHomeDestacados.js"></script>
 </body>
 
 </html>
