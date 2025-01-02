@@ -263,7 +263,7 @@
 /* •----------------Servicio Section----------------• */
 
 #servicios {
-    background-color: #f1d28f;
+    background-color: #5A4E4E !important;
 }
 
 #servicios h2 {
@@ -274,7 +274,7 @@
 
 #servicios p {
     color: #13373b;
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
 }
 
 #servicios i {
@@ -373,6 +373,28 @@
         font-size: 3rem;
     }
 }
+
+/* hr divider props y serv  */
+
+.hr-with-text {
+    background-color: #5A4E4E;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hr-with-text hr {
+    flex-grow: 1;
+    border: none;
+    height: 2px;
+    background: #ffffff;
+}
+
+.hr-with-text span {
+    font-weight: bold;
+    color: #ffffff;
+}
+
 
 
 
