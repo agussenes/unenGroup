@@ -7,7 +7,7 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
-            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/CasaLD-00-prueba.jpg",
             "./images/carouselHome/CasaLD-01.jpeg",
             "./images/carouselHome/CasaLD-12.jpeg",
             "./images/carouselHome/CasaLD-00.jpeg"
