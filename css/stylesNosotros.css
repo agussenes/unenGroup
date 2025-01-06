@@ -51,7 +51,7 @@ main {
     background-color: #71C6D4;
     border-color: transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
- 
+
 }
 
 .hero-content a:hover {
@@ -60,7 +60,7 @@ main {
     background-color: #ffcc80 !important;
     border-color: transparent;
     transform: translateY(-3px);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -91,21 +91,17 @@ main {
     object-fit: cover;
 }
 
-@media screen and (max-width: 576px) {
- 
+@media screen and (max-width: 576px) {}
 
-}
-
-@media (min-width: 577px) and (max-width: 768px) {
- 
-}
+@media (min-width: 577px) and (max-width: 768px) {}
 
 
 /* Overlay para mejorar contraste del texto */
 .historia-section .content-overlay {
     position: relative;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0); /* Capa oscura translúcida */
+    background-color: rgba(0, 0, 0, 0);
+    /* Capa oscura translúcida */
     padding: 2rem;
     border-radius: 10px;
 }
@@ -118,7 +114,7 @@ main {
     margin-bottom: 3rem;
     background-color: #0000008e;
     border-radius: 10px;
-    
+
 }
 
 
@@ -145,7 +141,7 @@ main {
 }
 
 .timeline-content {
-    
+
     background-color: #5A4E4E;
     border-radius: 10px;
     padding: 1.5rem;
@@ -163,8 +159,8 @@ main {
     font-size: 1.8rem;
     color: #71C6D4;
     margin-bottom: 0.5rem;
-   font-weight: bold;
-   
+    font-weight: bold;
+
 }
 
 .timeline-content p {
@@ -205,10 +201,12 @@ main {
         transform: scale(1);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.2);
         opacity: 0.7;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -222,7 +220,7 @@ main {
     }
 
     .timeline::before {
-      
+
         background-color: #00000000;
     }
 
@@ -238,10 +236,11 @@ main {
     .timeline-content p {
         font-size: 0.9rem;
     }
-    .timeline-dot{
+
+    .timeline-dot {
         display: none;
     }
-    
+
 }
 
 
@@ -253,7 +252,7 @@ main {
 .valores-section {
     padding: 3rem 1rem;
     background: #5A4E4E;
-   
+
 }
 
 .valores-section h2 {
@@ -269,7 +268,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     text-align: center;
-   
+
 }
 
 .valor-card {
@@ -303,27 +302,27 @@ main {
 }
 
 @media (max-width: 768px) {
-   #row-masInfo{
-    row-gap: 2rem;
-   }
-    
+    #row-masInfo {
+        row-gap: 2rem;
+    }
+
 }
 
 
 
 /* Swiper Custom Styles */
 
-.estiloSwiper h3{
-     color: #000000 !important;
+.estiloSwiper h3 {
+    color: #000000 !important;
 }
 
-.estiloSwiper i{
+.estiloSwiper i {
     color: #71C6D4 !important;
 }
 
-.estiloSwiper a{
+.estiloSwiper a {
     margin-top: 0.2rem;
-    color: #ffffff;    
+    color: #ffffff;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
     background-color: #71C6D4;
@@ -331,10 +330,10 @@ main {
     transition: 0.3s ease;
 }
 
-.estiloSwiper a:hover{
-    color: #ffffff; 
+.estiloSwiper a:hover {
+    color: #ffffff;
     text-shadow: 2px 5px 8px #000000;
-    background-color: #ffcc80 !important; 
+    background-color: #ffcc80 !important;
     transform: scale(1.05);
 }
 
@@ -349,7 +348,7 @@ main {
     background: #ffffff00;
     padding: 1.5rem;
     border-radius: 10px;
-    
+
 }
 
 .swiper-slide i {
@@ -376,8 +375,8 @@ main {
 }
 
 .swiper-pagination {
-    bottom: 15px; 
-    z-index: 10; 
+    bottom: 15px;
+    z-index: 10;
     display: flex;
     justify-content: center;
 }
@@ -391,7 +390,8 @@ main {
 .swiper-pagination-bullet-active {
     background-color: #71C6D4;
     opacity: 1;
-    transform: scale(1.2); /* Resalta la posición activa */
+    transform: scale(1.2);
+    /* Resalta la posición activa */
 }
 
 
@@ -459,9 +459,9 @@ main {
     background: #343a40;
     position: relative;
     overflow: hidden;
-  }
-  
-  .team .member .member-info {
+}
+
+.team .member .member-info {
     opacity: 0;
     position: absolute;
     bottom: 0;
@@ -469,31 +469,30 @@ main {
     left: 0;
     right: 0;
     transition: 0.2s;
-  }
-  
-  .team .member .member-info-content {
+}
+
+.team .member .member-info-content {
     position: absolute;
     left: 50px;
     right: 0;
     bottom: 0;
     transition: bottom 0.4s;
-  }
-  
-  .team .member .member-info-content h4 {
+}
+
+.team .member .member-info-content h4 {
     font-weight: 700;
     margin-bottom: 2px;
-    font-size: 18px;
     color: #fff;
-  }
-  
-  .team .member .member-info-content span {
+}
+
+.team .member .member-info-content span {
     font-style: italic;
     display: block;
     font-size: 13px;
     color: #fff;
-  }
-  
-  .team .member .social {
+}
+
+.team .member .social {
     position: absolute;
     left: -50px;
     top: 0;
@@ -502,119 +501,94 @@ main {
     transition: left ease-in-out 0.3s;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
-  }
-  
-  .team .member .social a {
+}
+
+.team .member .social a {
     transition: color 0.3s;
     display: block;
     color: #fff;
     margin-top: 15px;
-  }
-  
-  .team .member .social a:hover {
+}
+
+.team .member .social a:hover {
     color: #1bac91;
-  }
-  
-  .team .member .social i {
+}
+
+.team .member .social i {
     font-size: 18px;
     margin: 0 2px;
-  }
-  
-  .team .member:hover .member-info {
+}
+
+.team .member:hover .member-info {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 212, 255, 0) 100%);
     opacity: 1;
     transition: 0.4s;
-  }
-  
-  .team .member:hover .member-info-content {
+}
+
+.team .member:hover .member-info-content {
     bottom: 30px;
     transition: bottom 0.4s;
-  }
-  
-  .team .member:hover .social {
+}
+
+.team .member:hover .social {
     left: 0;
     transition: left ease-in-out 0.3s;
-  }
+}
 
 /* •----------------Contacto Section----------------• */
 
 
+#secContactoNosotros {}
 
-#secContacto {
-    background-color: #f9f9f9;
-}
-
-#secContacto h2 {
-    font-family: 'nunito', sans-serif;
-    font-size: 2.5rem;
+#secContactoNosotros h2 {
+    font-size: 2.5rem !important;
+    color: #71C6D4;
     font-weight: bold;
-    color: #71C6D4 !important;
 }
 
-#secContacto p {
-    font-size: 1.2rem;
-    color: #606060;
+#secContactoNosotros h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #000000;
 }
 
-form .form-label {
+#contenedorContactoSci {
+
+}
+
+#contenedorContactoSci i{
+ font-size: 1.5rem !important;
+ color: #71C6D4;
+}
+
+#contenedorContactoSci a{
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#contenedorContactoSci a:hover{
+   color: #71C6D4;
+}
+
+#wpContactoBoton {
+    color: #1bac91 !important;
+    font-size: 1.5rem !important;
+}
+
+.botonSecNosotrosForm a {
+    margin-top: 0.2rem;
+    color: #ffffff !important;
     font-weight: bold;
-    color: #13373b;
-}
-
-form input,
-form textarea {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-form input:focus,
-form textarea:focus {
-    border-color: #ffc107;
-    box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
-}
-
-form button {
-    background-color: #71C6D4 !important;
-    color: rgb(255, 255, 255) !important;
-    border-color: transparent !important;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #71C6D4;
+    border-color: transparent;
     transition: 0.3s ease;
 }
 
-form button:hover {
+.botonSecNosotrosForm a:hover {
+    color: #ffffff !important;
     text-shadow: 2px 5px 8px #000000;
     background-color: #ffcc80 !important;
-}
-
-/* Redes Sociales */
-#secContacto .fab {
-    color: #71C6D4;
-    transition: transform 0.3s ease, color 0.3s ease;
-    transition: 0.3s ease;
-}
-
-#secContacto .fab:hover {
-    color: #ffcc80 !important;
-    transform: scale(1.2);
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-    #contacto h2 {
-        font-size: 2rem;
-    }
-
-    #contacto p {
-        font-size: 1rem;
-    }
-
-    #contacto .fab {
-        font-size: 1.5rem;
-    }
+    transform: scale(1.05);
 }
