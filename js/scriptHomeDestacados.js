@@ -7,10 +7,10 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
+            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-01.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg",
+            "./images/carouselHome/CasaLD-00.jpeg"
         ],
         descripcion: `
         <ul>
@@ -32,8 +32,8 @@ const propiedades = [
         precio: 80000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselHome/terrenoEjemplo.jpg",
-            "/images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
+            "./images/carouselHome/terrenoEjemplo.jpg",
+            "./images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
         ],
         descripcion: `
         <ul>
@@ -53,8 +53,8 @@ const propiedades = [
         precio: 100000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselesPropiedades/locales/localPrueba1.jpg",
-            "/images/carouselesPropiedades/locales/localPrueba.jpg"
+            "./images/carouselesPropiedades/locales/localPrueba1.jpg",
+            "./images/carouselesPropiedades/locales/localPrueba.jpg"
         ],
         descripcion: `
         <ul>

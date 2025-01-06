@@ -1,6 +1,10 @@
 /* •----------------General----------------• */
 
-
+html {
+    scroll-padding-top: 50px;
+    scroll-behavior: smooth;
+    /* Para un desplazamiento suave */
+}
 
 body {
     font-family: 'Raleway', sans-serif;

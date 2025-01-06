@@ -7,10 +7,10 @@ const propiedades = [
         precio: 150000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
+            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-01.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg",
+            "./images/carouselHome/CasaLD-00.jpeg"
         ],
         descripcion: `
         <ul>
@@ -29,9 +29,9 @@ const propiedades = [
         precio: 50000,
         localidad: "Buenos Aires",
         imagenes: [
-            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
+            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-12.jpeg",
+            "./images/carouselHome/CasaLD-00.jpeg"
         ],
         descripcion: `
         <ul>
@@ -48,10 +48,10 @@ const propiedades = [
         precio: 1200,
         localidad: "Villa Belgrano",
         imagenes: [
-          "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
+          "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-01.jpeg",
+            "./images/carouselHome/CasaLD-00.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg"
         ],
         descripcion: `
         <ul>
@@ -68,9 +68,9 @@ const propiedades = [
         precio: 200000,
         localidad: "Rosario",
         imagenes: [
-           "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
+           "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-01.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg"
         ],
         descripcion: `
         <ul>
@@ -88,10 +88,10 @@ const propiedades = [
         precio: 2000,
         localidad: "La Deseada",
         imagenes: [
-            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
+            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-01.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg",
+            "./images/carouselHome/CasaLD-00.jpeg"
         ],
         descripcion: `
         <ul>
@@ -108,10 +108,10 @@ const propiedades = [
         precio: 2500,
         localidad: "Bariloche",
         imagenes: [
-           "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-01.jpeg"
+           "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-12.jpeg",
+            "./images/carouselHome/CasaLD-00.jpeg",
+            "./images/carouselHome/CasaLD-01.jpeg"
         ],
         descripcion: `
         <ul>
@@ -128,9 +128,9 @@ const propiedades = [
         precio: 180000,
         localidad: "Salta",
         imagenes: [
-            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
+            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-01.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg"
         ],
         descripcion: `
         <ul>
@@ -147,9 +147,9 @@ const propiedades = [
         precio: 30000,
         localidad: "San Juan",
         imagenes: [
-            "/images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
+            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
+            "./images/carouselHome/CasaLD-00.jpeg",
+            "./images/carouselHome/CasaLD-12.jpeg"
         ],
         descripcion: `
         <ul>
@@ -184,8 +184,8 @@ const propiedades = [
         precio: 100000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselHome/terrenoEjemplo.jpg",
-            "/images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
+            "./images/carouselHome/terrenoEjemplo.jpg",
+            "./images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
         ],
         descripcion: `
         <ul>
@@ -202,8 +202,8 @@ const propiedades = [
         precio: 100000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselesPropiedades/locales/localPrueba1.jpg",
-            "/images/carouselesPropiedades/locales/localPrueba.jpg"
+            "./images/carouselesPropiedades/locales/localPrueba1.jpg",
+            "./images/carouselesPropiedades/locales/localPrueba.jpg"
         ],
         descripcion: `
         <ul>
@@ -220,8 +220,8 @@ const propiedades = [
         precio: 100000,
         localidad: "Córdoba",
         imagenes: [
-            "/images/carouselesPropiedades/locales/localPrueba1.jpg",
-            "/images/carouselesPropiedades/locales/localPrueba.jpg"
+            "./images/carouselesPropiedades/locales/localPrueba1.jpg",
+            "./images/carouselesPropiedades/locales/localPrueba.jpg"
         ],
         descripcion: `
         <ul>
