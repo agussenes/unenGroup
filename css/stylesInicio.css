@@ -524,7 +524,6 @@
 @media (min-width: 577px) and (max-width: 768px) {
     #propiedades .swiper-container {
         height: auto;
-        /* Ajusta la altura en tabletas pequeñas */
     }
 
     #propiedades h2 {
@@ -741,7 +740,7 @@
 /* Estilo específico para los botones del Swiper en el modal */
 #propertyDetailsContent .swiper-button-next,
 #propertyDetailsContent .swiper-button-prev {
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.6); 
     color: #ffcc80; /* Color del icono */
     border-radius: 50%; /* Forma circular */
     width: 40px; /* Tamaño del botón */
@@ -754,8 +753,8 @@
 
 #propertyDetailsContent .swiper-button-next:hover,
 #propertyDetailsContent .swiper-button-prev:hover {
-    background-color: #71c6d4; /* Cambia el fondo al pasar el cursor */
-    transform: scale(1.1); /* Efecto de zoom */
+    /* background-color: #71c6d4 !important;  */
+    transform: scale(1.1); 
 }
 
 /* Posicionar los botones */
@@ -891,13 +890,14 @@
 }
 
 #contacto p {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
     color: #606060;
 }
 
 form .form-label {
     font-weight: bold;
     color: #13373b;
+    font-size: 1.2rem !important;
 }
 
 form input,
