@@ -208,7 +208,7 @@ function viewPropertyDetails(id) {
 
 // Redirigir al Formulario de Contacto
 function goToContact(propiedad) {
-    const url = new URL("propiedades.html", window.location.origin);
+    const url = new URL("propiedades.html#contacto", window.location.origin);
     url.searchParams.set("propiedad", propiedad); // Añade la propiedad como parámetro en la URL
     window.location.href = url.toString(); // Redirige a la página con el parámetro
 }
