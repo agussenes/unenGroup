@@ -1,14 +1,14 @@
 // Datos de Propiedades
 const propiedades = [
     {
-        id: 1,
-        tipo: "venta",
-        titulo: "Vivienda a estrenar en La Deseada",
-        precio: "2000 Alquiler mensual",
-        localidad: "Córdoba",
-        metrosCuadrados: 120,
-        habitaciones: 3,
-        banos: 2,
+        id: 5,
+        tipo: "alquiler",
+        titulo: "Vivienda a Estrenar en La Deseada",
+        precio: 2000,
+        localidad: "La Deseada",
+        metrosCuadrados: 80,
+        habitaciones: 1,
+        banos: 1,
         petFriendly: true,
         imagenes: [
             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
@@ -22,12 +22,10 @@ const propiedades = [
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-bed"></i> 2 Habitaciones</li>
-            <li><i class="fas fa-bath"></i> 2 Baños</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
+            <li><i class="fas fa-couch"></i Completamente amoblada</li>
+            <li><i class="fas fa-bed"></i> Dormitorio principal con baño en suite y vestidor</li>
+            <li><i class="fas fa-tree"></i> / <i class="fas fa-swimming-pool"></i> Amplia galería y jardín con piscina</li>
             <li><i class="fas fa-car"></i> Cochera con asador</li>
-            <li><i class="fas fa-map-marker-alt"></i> Ubicación: Villa Belgrano</li>
-            <li><i class="fas fa-paw"></i> Apto para mascotas</li>
         </ul>`,
         vista360: [
             "https://pannellum.org/images/alma.jpg"
@@ -36,7 +34,7 @@ const propiedades = [
     {
         id: 9,
         tipo: "terreno",
-        titulo: "Terreno Ejemplo",
+        titulo: "Terreno ejemplo",
         precio: 80000,
         localidad: "Córdoba",
         metrosCuadrados: 250,
@@ -44,14 +42,15 @@ const propiedades = [
         banos: 0,
         petFriendly: false,
         imagenes: [
-            "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg",
-            "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg"
+            "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg",
+            "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg"
         ],
         descripcion: `
         <ul>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-            <li><i class="fas fa-tree"></i> Ideal para construcción de viviendas</li>
-            <li><i class="fas fa-building"></i> Terreno nivelado y listo para construir</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
         </ul>`,
         vista360: [
             "https://pannellum.org/images/alma.jpg"

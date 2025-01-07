@@ -587,70 +587,32 @@
     padding: 4rem 0;
 }
 
-#contacto h2 {
-    font-family: 'nunito', sans-serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #71C6D4 !important;
-    margin-bottom: 2rem;
+#contacto .container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#contacto .form-label {
-    font-weight: bold;
-    color: #ffffff;
-}
-
-#contacto input,
-#contacto textarea {
-    border: 1px solid #ccc;
+#listaPropiedades {
+    border: 1px solid #71C6D4;
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #555;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contacto input:focus,
-#contacto textarea:focus {
+#listaPropiedades:focus {
     border-color: #71C6D4;
     box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
 }
 
+#contacto .form-control, 
+#contacto .form-select {
+    margin-bottom: 1rem;
+}
+
 #contacto button {
-    background-color: #71C6D4;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    transition: 0.3s ease;
-}
-
-#contacto button:hover {
-    text-shadow: 2px 5px 8px #000000;
-    background-color: #ffcc80 !important;
-    transform: translateY(-3px);
-}
-
-/* Redes Sociales */
-#contacto .fab {
-    font-size: 1.5rem;
-    color: #71C6D4;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-#contacto .fab:hover {
-    color: #e0a800;
-    transform: scale(1.2);
-}
-
-/* Responsive */
-@media screen and (max-width: 576px) {
-    #contacto h2 {
-        font-size: 2rem;
-    }
-
-    #contacto .fab {
-        font-size: 1.2rem;
-    }
+    margin-top: 2rem;
 }

@@ -34,4 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Formulario enviado correctamente. Nos pondremos en contacto contigo pronto.");
         form.reset(); // Limpia el formulario después del envío
     });
+
+    
 });
