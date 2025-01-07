@@ -583,29 +583,73 @@
 
 /* --------------------------------- Contacto Section --------------------------------- */
 #contacto {
-    background-color: #5A4E4E !important;
+    background-color: #887878 !important;
     padding: 4rem 0;
 }
 
-#contacto .container {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#contacto h2 {
+    font-family: 'nunito', sans-serif;
+    color: #71C6D4 !important;
+    margin-bottom: 2rem;
+    font-size: 2rem !important;
 }
 
-#listaPropiedades {
-    border: 1px solid #71C6D4;
+#contacto .container {
+    background: linear-gradient(135deg, rgba(90, 78, 78, 0.9), rgba(136, 120, 120, 0.8), rgba(113, 198, 212, 0.7));
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: white; /* Texto blanco para buena legibilidad */
+    padding: 2rem;
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Sombra moderna */
+    backdrop-filter: blur(8px); /* Efecto de Blur */
+    -webkit-backdrop-filter: blur(8px); /* Compatibilidad para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde semitransparente opcional */
+}
+
+#contacto .btn {
+    background-color: #71C6D4;
+    border-color: #fff;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+#contacto .btn:hover{
+    background-color: #ffcc80;
+    transform: translateY(-3px);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#propiedadInteres {
+    border: 1px solid #71C6D4 !important;
     border-radius: 5px;
     padding: 10px;
-    font-size: 1rem;
     color: #555;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#listaPropiedades:focus {
-    border-color: #71C6D4;
+#propiedadInteres:focus {
+    border-color: #71C6D4 !important;
     box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
+}
+
+#formContacto input, #formContacto textarea:focus {
+    border-color: #71C6D4 !important;
+    box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
+}
+
+#formContacto label{
+    border-bottom: 2px solid #ffffff;
 }
 
 #contacto .form-control, 
