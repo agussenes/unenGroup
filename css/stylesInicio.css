@@ -69,12 +69,41 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: #ffcc80;
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #ffcc80; /* Color del icono */
+    border-radius: 50%; /* Forma circular */
+    width: 40px; /* Tamaño del botón */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.botonesSwiperDes{
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    /* background-color: #71c6d4 !important;  */
+    transform: scale(1.1); 
+}
+
+
+.swiper-button-next {
+    right: -5px; 
+    top: 45%; 
     
-    
+}
+
+.swiper-button-prev {
+    left: -5px; 
+    top: 45%; 
+   
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    z-index: 10; 
+    position: absolute; 
 }
 
 .botonesSwiperDes div{
@@ -410,6 +439,29 @@
 
 
 /* •-------------------------Estilos específicos para la sección de propiedades -------------------------•*/
+
+.card-icons {
+    font-size: 14px;
+    color: #606060;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 0;
+    margin-bottom: 1.5rem;
+}
+
+.card-icons span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.card-icons i {
+    color: #71C6D4;
+    font-size: 18px;
+}
+
+
 #propiedades {
     background-color: #5A4E4E !important;
     /* Fondo general de la sección */
@@ -493,9 +545,13 @@
 
 /* Estilo de los botones "Me interesa" y "Vista 360°" */
 #propiedades .btn-primary {
-    background-color: #71C6D4;
-    color: #ffffff;
-    transition: 0.3s ease;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 }
 
 #propiedades .btn-primary:hover {
@@ -504,13 +560,25 @@
 }
 
 #propiedades .btn-secondary {
-    background-color: #5A4E4E;
-    color: #ffffff;
+    background-color: #71C6D4;
+    color: #fff;
+    border: none;
 }
 
 #propiedades .btn-secondary:hover {
+    text-shadow: 2px 5px 8px #000000;
+    background-color: #ffcc80;
+    transform: translateY(-3px);
+}
+
+#propiedades .btn-secondary:last-child {
+    background-color: #5A4E4E;
+}
+
+#propiedades .btn-secondary:last-child:hover {
     background-color: #887878;
 }
+
 
 /* Responsive Design */
 @media (max-width: 576px) {

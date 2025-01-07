@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const propiedad = urlParams.get("propiedad"); // Obtiene el valor del parámetro "propiedad"
+    const propiedad = urlParams.get("propiedad");
 
     if (propiedad) {
         const propiedadInteresInput = document.getElementById("propiedadInteres");
         if (propiedadInteresInput) {
-            propiedadInteresInput.value = propiedad; // Rellena el campo con la propiedad recibida
+            propiedadInteresInput.value = propiedad; 
         }
 
         // Desplazamiento automático al formulario
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Manejar el envío del formulario
     const form = document.getElementById("formContacto");
     form.addEventListener("submit", (e) => {
-        e.preventDefault(); // Evita el envío por defecto
+        e.preventDefault();
 
         const formData = {
             nombre: document.getElementById("nombre").value,

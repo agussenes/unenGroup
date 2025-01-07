@@ -3,21 +3,29 @@ const propiedades = [
     {
         id: 1,
         tipo: "venta",
-        titulo: "Casa Moderna",
-        precio: 150000,
+        titulo: "Vivienda a estrenar en La Deseada",
+        precio: "2000 Alquiler mensual",
         localidad: "Córdoba",
+        metrosCuadrados: 120,
+        habitaciones: 3,
+        banos: 2,
+        petFriendly: true,
         imagenes: [
-            "./images/CasaLD-00-prueba.jpg",
-            "./images/carouselHome/CasaLD-01.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg",
-            "./images/carouselHome/CasaLD-00.jpeg"
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
+            <li><i class="fas fa-bed"></i> 2 Habitaciones</li>
             <li><i class="fas fa-bath"></i> 2 Baños</li>
             <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
-            <li><i class="fas fa-car"></i> Cochera</li>
+            <li><i class="fas fa-car"></i> Cochera con asador</li>
             <li><i class="fas fa-map-marker-alt"></i> Ubicación: Villa Belgrano</li>
             <li><i class="fas fa-paw"></i> Apto para mascotas</li>
         </ul>`,
@@ -28,19 +36,22 @@ const propiedades = [
     {
         id: 9,
         tipo: "terreno",
-        titulo: "Terreno ejemplo",
+        titulo: "Terreno Ejemplo",
         precio: 80000,
         localidad: "Córdoba",
+        metrosCuadrados: 250,
+        habitaciones: 0,
+        banos: 0,
+        petFriendly: false,
         imagenes: [
-            "./images/carouselHome/terrenoEjemplo.jpg",
-            "./images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
+            "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg",
+            "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg"
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
+            <li><i class="fas fa-tree"></i> Ideal para construcción de viviendas</li>
+            <li><i class="fas fa-building"></i> Terreno nivelado y listo para construir</li>
         </ul>`,
         vista360: [
             "https://pannellum.org/images/alma.jpg"
@@ -48,13 +59,17 @@ const propiedades = [
     },
     {
         id: 11,
-        tipo: "local",
-        titulo: "Local Ejemplo",
+        tipo: "local-oficina",
+        titulo: "Local 2",
         precio: 100000,
         localidad: "Córdoba",
+        metrosCuadrados: 120,
+        habitaciones: 1,
+        banos: 1,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/locales/localPrueba1.jpg",
-            "./images/carouselesPropiedades/locales/localPrueba.jpg"
+            "./images/propiedades/locales/localEjemplo2/localFrente.jpg",
+            "./images/propiedades/locales/localEjemplo2/localFrente.jpg"
         ],
         descripcion: `
         <ul>
@@ -68,6 +83,8 @@ const propiedades = [
         ],
     }
 ];
+
+
 
 
 // Función para inicializar Swiper
@@ -84,6 +101,66 @@ function initializeSwiper(id) {
         }
     });
 }
+
+function renderProperties(data) {
+    const container = document.getElementById("propiedadesContainer");
+    container.innerHTML = data
+        .map(
+            (prop) => `
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap g-3">
+            <div class="card shadow d-flex flex-colum">
+                <div class="swiper-container" id="swiper-${prop.id}">
+                    <div class="swiper-wrapper">
+                        ${prop.imagenes
+                            .map(
+                                (img) =>
+                                    `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`
+                            )
+                            .join("")}
+                    </div>
+                    <div class="botonesSwiperDes">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="swiper-pagination visores"></div>
+                </div>
+                <div class="card-body">
+                    <div class="card-icons d-flex justify-content-between py-2">
+                        <span><i class="fas fa-expand"></i> ${prop.metrosCuadrados} m²</span>
+                        ${
+                            prop.habitaciones > 0
+                                ? `<span><i class="fas fa-bed"></i> ${prop.habitaciones}</span>`
+                                : ""
+                        }
+                        ${
+                            prop.banos > 0
+                                ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>`
+                                : ""
+                        }
+                        ${
+                            prop.petFriendly
+                                ? `<span><i class="fas fa-paw" style="color: #71C6D4;"></i> Pet-Friendly</span>`
+                                : ""
+                        }
+                    </div>
+                    <h5 class="card-title py-2">${prop.titulo}</h5>
+                    <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
+                    <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
+                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
+                        <button class="btn btn-secondary" onclick="abrirVista360(${prop.id})">Vista 360°</button>
+                    </div>
+                </div>
+            </div>
+        </div>`
+        )
+        .join("");
+
+    data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
+}
+
+
 
 // Ver detalles de la propiedad
 function viewPropertyDetails(id) {
@@ -185,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Función para abrir Vista 360° en un modal
 function abrirVista360(id) {
-    // Encontrar la propiedad correspondiente
+
     const property = propiedades.find((prop) => prop.id === id);
 
     if (property) {
@@ -212,40 +289,3 @@ function abrirVista360(id) {
 
 
 
-// Modificación del botón en renderProperties
-function renderProperties(data) {
-    const container = document.getElementById("propiedadesContainer");
-    container.innerHTML = data
-        .map(
-            (prop) => `
-        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap g-3">
-            <div class="card shadow d-flex flex-colum">
-                <div class="swiper-container" id="swiper-${prop.id}">
-                    <div class="swiper-wrapper">
-                        ${prop.imagenes
-                    .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-                    .join("")}
-                    </div>
-                     <div class="botonesSwiperDes">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                 </div>
-                    <div class="swiper-pagination visores"></div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">${prop.titulo}</h5>
-                    <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
-                    <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-                        <button class="btn btn-secondary" onclick="abrirVista360(${prop.id})">Vista 360°</button>
-                    </div>
-                </div>
-            </div>
-        </div>`
-        )
-        .join("");
-
-    data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
-}

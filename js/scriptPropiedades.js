@@ -2,43 +2,32 @@
 const propiedades = [
     {
         id: 1,
-        tipo: "venta",
-        titulo: "Casa Moderna en Venta",
-        precio: 150000,
+        tipo: "alquiler",
+        titulo: "Vivienda a estrenar en La Deseada",
+        precio: "2000 Alquiler mensual",
         localidad: "Córdoba",
+        metrosCuadrados: 120,
+        habitaciones: 3,
+        banos: 2,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-01.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg",
-            "./images/carouselHome/CasaLD-00.jpeg"
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
+            <li><i class="fas fa-bed"></i> 2 Habitaciones</li>
             <li><i class="fas fa-bath"></i> 2 Baños</li>
             <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
-            <li><i class="fas fa-car"></i> Cochera</li>
+            <li><i class="fas fa-car"></i> Cochera con asador</li>
             <li><i class="fas fa-map-marker-alt"></i> Ubicación: Villa Belgrano</li>
             <li><i class="fas fa-paw"></i> Apto para mascotas</li>
-        </ul>`
-    },
-    {
-        id: 2,
-        tipo: "alquiler",
-        titulo: "Departamento en Alquiler",
-        precio: 50000,
-        localidad: "Buenos Aires",
-        imagenes: [
-            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-12.jpeg",
-            "./images/carouselHome/CasaLD-00.jpeg"
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-bed"></i> 2 dormitorios y 1 baño completo</li>
-            <li><i class="fas fa-paint-brush"></i> Living-comedor amplio y luminoso</li>
-            <li><i class="fas fa-building"></i> Balcón con vista panorámica</li>
-            <li><i class="fas fa-building"></i> Zona céntrica con acceso rápido a transporte</li>
         </ul>`
     },
     {
@@ -47,14 +36,23 @@ const propiedades = [
         titulo: "Casa en Villa Belgrano",
         precio: 1200,
         localidad: "Villa Belgrano",
+        metrosCuadrados: 100,
+        habitaciones: 2,
+        banos: 1,
+        petFriendly: true,
         imagenes: [
-          "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-01.jpeg",
-            "./images/carouselHome/CasaLD-00.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg"
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frente.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/estar.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/cocina.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/bano.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frentedoscamas.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/habitaciondoscamas.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/camamatrimonial.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/patio.jpg"
         ],
         descripcion: `
         <ul>
+            <li><i class="fas fa-home"></i> Servicios y expensas. (90.000 arg)</li>
             <li><i class="fas fa-paint-brush"></i>Living, comedor y cocina/comedor</li>
             <li><i class="fas fa-expand-arrows-alt"></i> Lavadero y escritorio pequeño</li>
             <li><i class="fas fa-bed"></i> Dormitorio principal en suite con vestidor y baño</li>
@@ -67,10 +65,18 @@ const propiedades = [
         titulo: "Departamento de Lujo",
         precio: 200000,
         localidad: "Rosario",
+        metrosCuadrados: 150,
+        habitaciones: 4,
+        banos: 2,
+        petFriendly: true,
         imagenes: [
-           "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-01.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg"
+           "./images/propiedades/viviendas/ventaEjemplo/frenteVenta.jpg",
+            "./images/propiedades/viviendas/ventaEjemplo/living.jpg",
+            "./images/propiedades/viviendas/ventaEjemplo/ventaComedor.jpg",
+            "./images/propiedades/viviendas/ventaEjemplo/cocinaVenta.jpg",
+            "./images/propiedades/viviendas/ventaEjemplo/matrimonial.jpg",
+            "./images/propiedades/viviendas/ventaEjemplo/ventaHabitaciondos.jpg",
+            "./images/propiedades/viviendas/ventaEjemplo/patioventa.jpg"
         ],
         descripcion: `
         <ul>
@@ -87,11 +93,19 @@ const propiedades = [
         titulo: "Vivienda a Estrenar en La Deseada",
         precio: 2000,
         localidad: "La Deseada",
+        metrosCuadrados: 80,
+        habitaciones: 1,
+        banos: 1,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-01.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg",
-            "./images/carouselHome/CasaLD-00.jpeg"
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
         ],
         descripcion: `
         <ul>
@@ -107,11 +121,19 @@ const propiedades = [
         titulo: "Villa Vacacional en Bariloche",
         precio: 2500,
         localidad: "Bariloche",
+        metrosCuadrados: 110,
+        habitaciones: 3,
+        banos: 2,
+        petFriendly: true,
         imagenes: [
-           "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-12.jpeg",
-            "./images/carouselHome/CasaLD-00.jpeg",
-            "./images/carouselHome/CasaLD-01.jpeg"
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frente.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/estar.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/cocina.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/bano.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frentedoscamas.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/habitaciondoscamas.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/camamatrimonial.jpg",
+            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/patio.jpg"
         ],
         descripcion: `
         <ul>
@@ -127,11 +149,19 @@ const propiedades = [
         titulo: "Casa Familiar en Salta",
         precio: 180000,
         localidad: "Salta",
+        metrosCuadrados: 160,
+        habitaciones: 4,
+        banos: 2,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-01.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg"
-        ],
+            "./images/propiedades/viviendas/ventaEjemplo/frenteVenta.jpg",
+             "./images/propiedades/viviendas/ventaEjemplo/living.jpg",
+             "./images/propiedades/viviendas/ventaEjemplo/ventaComedor.jpg",
+             "./images/propiedades/viviendas/ventaEjemplo/cocinaVenta.jpg",
+             "./images/propiedades/viviendas/ventaEjemplo/matrimonial.jpg",
+             "./images/propiedades/viviendas/ventaEjemplo/ventaHabitaciondos.jpg",
+             "./images/propiedades/viviendas/ventaEjemplo/patioventa.jpg"
+         ],
         descripcion: `
         <ul>
             <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
@@ -146,10 +176,19 @@ const propiedades = [
         titulo: "Apartamento Económico en San Juan",
         precio: 30000,
         localidad: "San Juan",
+        metrosCuadrados:80,
+        habitaciones: 2,
+        banos: 1,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/propiedades/CasaLD-00-p.jpg",
-            "./images/carouselHome/CasaLD-00.jpeg",
-            "./images/carouselHome/CasaLD-12.jpeg"
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
+            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
         ],
         descripcion: `
         <ul>
@@ -165,9 +204,13 @@ const propiedades = [
         titulo: "Terreno ejemplo",
         precio: 80000,
         localidad: "Córdoba",
+        metrosCuadrados: 250,
+        habitaciones: 0,
+        banos: 0,
+        petFriendly: false,
         imagenes: [
-            "/images/carouselHome/terrenoEjemplo.jpg",
-           "/images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
+            "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg",
+            "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg"
         ],
         descripcion: `
         <ul>
@@ -183,9 +226,13 @@ const propiedades = [
         titulo: "Terreno ejemplo2",
         precio: 100000,
         localidad: "Córdoba",
+        metrosCuadrados: 180,
+        habitaciones: 0,
+        banos: 0,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselHome/terrenoEjemplo.jpg",
-            "./images/carouselesPropiedades/terrenos/terrenoEjemplo.jpeg"
+            "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg",
+            "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg"
         ],
         descripcion: `
         <ul>
@@ -198,12 +245,38 @@ const propiedades = [
     {
         id: 11,
         tipo: "local-oficina",
-        titulo: "Local Ejemplo",
+        titulo: "Local ",
         precio: 100000,
         localidad: "Córdoba",
+        metrosCuadrados: 120,
+        habitaciones: 1,
+        banos: 1,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/locales/localPrueba1.jpg",
-            "./images/carouselesPropiedades/locales/localPrueba.jpg"
+            "./images/propiedades/locales/localEjemplo1/localPrueba.jpg",
+            "./images/propiedades/locales/localEjemplo1/localPrueba.jpg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
+            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
+            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
+            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
+        </ul>`
+    },
+    {
+        id: 11,
+        tipo: "local-oficina",
+        titulo: "Local 2",
+        precio: 100000,
+        localidad: "Córdoba",
+        metrosCuadrados: 120,
+        habitaciones: 1,
+        banos: 1,
+        petFriendly: true,
+        imagenes: [
+            "./images/propiedades/locales/localEjemplo2/localFrente.jpg",
+            "./images/propiedades/locales/localEjemplo2/localFrente.jpg"
         ],
         descripcion: `
         <ul>
@@ -216,12 +289,16 @@ const propiedades = [
     {
         id: 12,
         tipo: "local-oficina",
-        titulo: "Local Ejemplo2",
+        titulo: "Oficinas",
         precio: 100000,
         localidad: "Córdoba",
+        metrosCuadrados: 300,
+        habitaciones: 8,
+        banos: 4,
+        petFriendly: true,
         imagenes: [
-            "./images/carouselesPropiedades/locales/localPrueba1.jpg",
-            "./images/carouselesPropiedades/locales/localPrueba.jpg"
+            "./images/propiedades/oficinas/oficinaEjemplo1/oficina.jpg",
+             "./images/propiedades/oficinas/oficinaEjemplo1/oficina2.jpg"
         ],
         descripcion: `
         <ul>
@@ -253,31 +330,36 @@ function initializeSwiper(id) {
 function renderProperties(data) {
     const container = document.getElementById("propiedadesContainer");
     container.innerHTML = data.map((prop) => `
-      <div class=" col-12 col-md-6 col-lg-4 d-flex flex-wrap">
-        <div class="card shadow">
-          <div class="swiper-container" id="swiper-${prop.id}">
-            <div class="swiper-wrapper">
-              ${prop.imagenes
-            .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-            .join("")}
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap">
+            <div class="card shadow">
+                <div class="swiper-container" id="swiper-${prop.id}">
+                    <div class="swiper-wrapper">
+                        ${prop.imagenes
+                            .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
+                            .join("")}
+                    </div>
+                    <div class="botonesSwiperDes">
+                        <div id="botonNextP" class="swiper-button-next"></div>
+                        <div id="botonPrevP" class="swiper-button-prev"></div>
+                    </div>
+                    <div class="swiper-pagination visores"></div>
+                </div>
+                <div class="card-body">
+                    <div class="card-icons d-flex justify-content-between py-2">
+                        <span><i class="fas fa-expand"></i> ${prop.metrosCuadrados} m²</span>
+                        ${prop.habitaciones > 0 ? `<span><i class="fas fa-bed"></i> ${prop.habitaciones}</span>` : ""}
+                        ${prop.banos > 0 ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>` : ""}
+                        ${prop.petFriendly ? `<span><i class="fas fa-paw" style="color: #71C6D4;"></i> Pet-Friendly</span>` : ""}
+                    </div>
+                    <h5 class="card-title py-2">${prop.titulo}</h5>
+                    <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
+                    <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
+                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
+                    <button class="btn btn-info mb-2" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
+                    <button class="btn btn-secondary" onclick="goToContact('${prop.titulo}')">Me interesa</button>
+                </div>
             </div>
-                <div class="botonesSwiperDes">
-                    <div id="botonNextP" class="swiper-button-next"></div>
-                    <div id="botonPrevP" class="swiper-button-prev"></div>
-                 </div>
-            <div class="swiper-pagination visores"></div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">${prop.titulo}</h5>
-            <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
-            <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
-            <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
-           
-            <button class="btn btn-info mb-2" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-            <button class="btn btn-secondary" onclick="goToContact('${prop.titulo}')">Me interesa</button>
-          </div>
         </div>
-      </div>
     `).join("");
 
     data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
