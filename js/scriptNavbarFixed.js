@@ -1,7 +1,7 @@
 document.addEventListener("scroll", function () {
     const navbarImg = document.querySelector("#logoNavbar");
     if (window.scrollY > 50) {
-         navbarImg.style.width = '150px'
+        navbarImg.style.width = '150px'
         navbarImg.style.transition = 'all 0.5s ease';
     } else {
         navbarImg.style.height = 'auto';
@@ -32,6 +32,28 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdownMenu.addEventListener('click', (e) => {
         e.stopPropagation(); // Detiene la propagación del evento para evitar conflictos
     });
+
+    // animacion sections 
+    const sections = document.querySelectorAll("section");
+
+    // Clase inicial para ocultar suavemente
+    sections.forEach((section) => section.style.visibility = "hidden");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.visibility = "visible"; // Se asegura que no haya parpadeo
+                    entry.target.classList.add("animate__animated", "animate__fadeInUp");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px 0px 0px" } // Empieza a animar antes
+    );
+    
+
+    sections.forEach((section) => observer.observe(section));
 });
 
 
@@ -40,15 +62,16 @@ const urlParams = new URLSearchParams(window.location.search);
 const filter = urlParams.get("filter");
 
 if (filter) {
-  // Aplicar lógica según el filtro
-  if (filter === "terrenos") {
-    console.log("Filtrando por terrenos...");
-    // Aquí puedes mostrar solo terrenos
-  } else if (filter === "locales") {
-    console.log("Filtrando por locales...");
-    // Aquí puedes mostrar solo locales
-  }
+    // Aplicar lógica según el filtro
+    if (filter === "terrenos") {
+        console.log("Filtrando por terrenos...");
+        // Aquí puedes mostrar solo terrenos
+    } else if (filter === "locales") {
+        console.log("Filtrando por locales...");
+        // Aquí puedes mostrar solo locales
+    }
 } else {
-  console.log("Mostrando todas las propiedades...");
-  // Muestra todas las propiedades por defecto
+    console.log("Mostrando todas las propiedades...");
+    // Muestra todas las propiedades por defecto
 }
+
