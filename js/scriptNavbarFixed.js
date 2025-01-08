@@ -37,23 +37,60 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
 
     // Clase inicial para ocultar suavemente
-    sections.forEach((section) => section.style.visibility = "hidden");
+    sections.forEach((section) => {
+        section.style.visibility = "hidden"; // Ocultar inicialmente
+        section.style.opacity = "0"; // Asegurar un inicio suave
+    });
 
     const observer = new IntersectionObserver(
-        (entries) => {
+        (entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.visibility = "visible"; // Se asegura que no haya parpadeo
+                    // Asegura que la sección esté visible y aplica animación
+                    entry.target.style.visibility = "visible";
+                    entry.target.style.opacity = "1"; // Asegura visibilidad gradual
                     entry.target.classList.add("animate__animated", "animate__fadeInUp");
+
+                    // Dejar de observar esta sección
                     observer.unobserve(entry.target);
                 }
             });
         },
-        { threshold: 0.2, rootMargin: "0px 0px 0px 0px" } // Empieza a animar antes
+        {
+            threshold: 0.15, // Activar con un 15% de visibilidad
+            rootMargin: "0px 0px -10% 0px", // Hacer que se active antes del viewport completo
+        }
     );
-    
 
+    // Activar el Observer para secciones
     sections.forEach((section) => observer.observe(section));
+
+    // Fallback para móviles en caso de que alguna sección quede sin renderizar
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            sections.forEach((section) => {
+                if (section.style.visibility === "hidden") {
+                    section.style.visibility = "visible";
+                    section.style.opacity = "1";
+                    section.classList.add("animate__animated", "animate__fadeInUp");
+                }
+            });
+        }
+    });
+
+    // Forzar carga en scroll (en caso de problemas en móviles)
+    window.addEventListener("scroll", () => {
+        sections.forEach((section) => {
+            if (
+                section.getBoundingClientRect().top < window.innerHeight &&
+                section.style.visibility === "hidden"
+            ) {
+                section.style.visibility = "visible";
+                section.style.opacity = "1";
+                section.classList.add("animate__animated", "animate__fadeInUp");
+            }
+        });
+    });
 });
 
 

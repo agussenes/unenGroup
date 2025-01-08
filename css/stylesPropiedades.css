@@ -261,20 +261,41 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: #ffcc80 !important;
-    margin-top: -50px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #ffcc80; 
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.1); 
+}
+
+.swiper-button-next {
+    right: -5px;
+    top: 38%;
+}
+.swiper-button-prev {
+    left: -5px;
+    top: 38%;
+   
 }
 
 
-
-.botonesSwiperDes div {
+/* .botonesSwiperDes div {
     background-color: #00000067 !important;
     padding: 1rem;
     border-radius: 50%;
     overflow: hidden;
     color: white;
     z-index: 300;
-}
+} */
 
 
 
