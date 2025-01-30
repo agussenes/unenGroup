@@ -1,581 +1,310 @@
-// Datos de Propiedades
-const propiedades = [
-    {
-        id: 1,
-        tipo: "venta",
-        titulo: "Casa Moderna en Venta",
-        precio: 150000,
-        localidad: "Córdoba",
-        imagenes: [
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
-        ],
-        tieneVista360: false
-    },
-    {
-        id: 2,
-        tipo: "alquiler",
-        titulo: "Departamento en Alquiler",
-        precio: 50000,
-        localidad: "Buenos Aires",
-        imagenes: [
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
-        ]
-    },
-    {
-        id: 3,
-        tipo: "alquiler-temporario",
-        titulo: "Casa de Vacaciones",
-        precio: 120000,
-        localidad: "Mendoza",
-        imagenes: [
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
-        ],
-        tieneVista360: false
-    },
-    {
-        id: 4,
-        tipo: "venta",
-        titulo: "Departamento de Lujo",
-        precio: 200000,
-        localidad: "Rosario",
-        imagenes: [
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
-        ],
-        tieneVista360: false
-    },
-    {
-        id: 5,
-        tipo: "venta",
-        titulo: "Casa con Jardín",
-        precio: 180000,
-        localidad: "Salta",
-        imagenes: [
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
-        ],
-        tieneVista360: false
-    },
-    {
-        id: 6,
-        tipo: "alquiler",
-        titulo: "Apartamento Económico",
-        precio: 30000,
-        localidad: "San Juan",
-        imagenes: [
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-12.jpeg"
-        ]
-    },
-    {
-        id: 7,
-        tipo: "alquiler-temporario",
-        titulo: "Villa Vacacional",
-        precio: 250000,
-        localidad: "Bariloche",
-        imagenes: [
-            "/images/carouselHome/CasaLD-12.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg",
-            "/images/carouselHome/CasaLD-01.jpeg"
-        ],
-        tieneVista360: false
-    },
-    {
-        id: 8,
-        tipo: "venta",
-        titulo: "Casa Familiar",
-        precio: 170000,
-        localidad: "Mar del Plata",
-        imagenes: [
-            "/images/carouselHome/CasaLD-01.jpeg",
-            "/images/carouselHome/CasaLD-00.jpeg"
-        ],
-        tieneVista360: false
-    }
-];
+<!DOCTYPE html>
+<html lang="en">
 
-// Renderizar Propiedades
-function renderProperties(data) {
-    const container = document.getElementById("propiedadesContainer");
-    container.innerHTML = data.map((prop) => `
-      <div class="col-md-4">
-        <div class="card">
-          <div class="swiper-container" id="swiper-${prop.id}">
-            <div class="swiper-wrapper">
-              ${prop.imagenes
-                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-                .join("")}
-            </div>
-            <div class="swiper-pagination visores"></div>
+<head>
+  <!-- Meta Básico -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Meta SEO -->
+  <title>UnenGroup | Propiedades</title>
+  <!-- <meta name="description" content="Descripción breve y precisa para buscadores.">
+  <meta name="keywords" content="palabras clave, separadas, por, comas">
+  <meta name="author" content="Tu Nombre o Empresa">
+  <meta name="robots" content="index, follow"> -->
+
+  <!-- Meta Redes Sociales (Open Graph y Twitter Cards) -->
+  <!-- <meta property="og:title" content="Nombre de tu Sitio | Título de la Página">
+  <meta property="og:description" content="Descripción atractiva para compartir en redes sociales.">
+  <meta property="og:image" content="URL_de_la_imagen_destacada">
+  <meta property="og:url" content="https://tusitioweb.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image"> -->
+
+  <!-- Icono del Sitio -->
+  <link rel="icon" href="./images/logo.png" type="image/x-icon">
+
+  <!-- CSS Frameworks y Librerías -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Fuente  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@300&display=swap"
+    rel="stylesheet">
+  <!-- Estilos Propios -->
+  <link rel="stylesheet" href="./css/stylesGen.css">
+  <link rel="stylesheet" href="./css/stylesPropiedades.css">
+  <!-- <link rel="stylesheet" href="/css/stylesInicio.css"> -->
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a720cb8047.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Contenido de tu página -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="/">
+          <img src="./images/logoNavBarprueba.png" alt="Logo" id="logoNavbar">
+        </a>
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#servicios">Servicios</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/propiedades.html" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Tipos de propiedades
+              </a>
+              <ul class="dropdown-menu animate__animated ulProps" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=alquiler#filtros">Alquiler </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=venta#filtros">Venta</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=alquiler-temporario#filtros">Alquiler
+                    Temporario</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=alquiler-temporario#filtros">Alquiler
+                    Vacacional</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=terreno#filtros">Terrenos</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=local-oficina#filtros">Locales
+                    |
+                    Oficinas</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=all#filtros">Todas</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- Hero Section Mejorado -->
+    <section id="hero-propiedades" class="position-relative">
+      <!-- Imagen de Fondo -->
+      <div class="hero-background"></div>
+
+      <!-- Capa Negra Transparente -->
+      <div class="hero-overlay"></div>
+
+      <!-- Contenido del Hero -->
+      <div class="container text-center text-white position-relative hero-content animate__animated animate__fadeIn">
+        <h1 class="fw-bold display-4 animate__animated animate__fadeInUp"><span style="color: #887878;">Explora</span>
+          Nuestras<span style="color: #71C6D4;"> Propiedades</span></h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+          Encuentra el lugar perfecto para tu hogar o inversión.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- Filtros -->
+    <section id="filtros" class="py-3 bg-white">
+      <div class="container">
+        <form class="row g-3 align-items-end">
+          <div class="col-md-3">
+            <label for="localidad" class="form-label">Localidad</label>
+            <select id="localidad" class="form-select">
+                <option value="">Todas las localidades</option>
+            </select>
+        </div>
+          <div class="col-md-3">
+            <label for="precioMaximo" class="form-label">Precio Máximo</label>
+            <input type="number" id="precioMaximo" class="form-control" placeholder="Ejemplo: 100000">
           </div>
-          <div class="card-body">
-            <h5 class="card-title">${prop.titulo}</h5>
-            <p class="card-text">Precio: $${prop.precio.toLocaleString()}</p>
-            <p class="card-text">Localidad: ${prop.localidad}</p>
-            ${
-              prop.tieneVista360
-                ? `<button class="btn btn-primary mb-2" onclick="open360(${prop.id})">Vista 360°</button>`
-                : ""
-            }
-            <button class="btn btn-info mb-2" onclick="viewPropertyDetails(${prop.id})">Ver más info</button>
-            <button class="btn btn-secondary" onclick="goToContact('${prop.titulo}')">Me interesa</button>
+          <div class="col-md-3">
+            <label for="localidad" class="form-label">Localidad</label>
+            <input type="text" id="localidad" class="form-control" placeholder="Ciudad o Provincia">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Lista de Propiedades -->
+    <section id="propiedades" class="py-5 bg-light">
+      <div class="container mt-5">
+        <div class="row" id="propiedadesContainer"></div>
+      </div>
+    </section>
+
+    <!-- Modal para Ver Más Información -->
+    <div class="modal fade" id="propertyDetailsModal" tabindex="-1" aria-labelledby="propertyDetailsModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="propertyDetailsModalLabel">Detalles de la Propiedad</h5>
+            <button style="background-color: white;" type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido dinámico aquí -->
+            <div id="propertyDetailsContent"></div>
           </div>
         </div>
       </div>
-    `).join("");
+    </div>
 
-    // Inicializar carruseles
-    data.forEach((prop) => {
-        new Swiper(`#swiper-${prop.id}`, {
-            loop: true,
-            pagination: {
-                el: `.swiper-pagination`,
-                clickable: true
-            }
-        });
-    });
-}
 
-// Ver detalles de la propiedad
-function viewPropertyDetails(id) {
-    const property = propiedades.find((prop) => prop.id === id);
-    if (property) {
-        // Rellenar el contenido del modal dinámicamente
-        const content = `
-          <div class="text-center">
-            <h3>${property.titulo}</h3>
-            <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
-            <p><strong>Localidad:</strong> ${property.localidad}</p>
-          </div>
-          <div class="swiper-container" id="modal-swiper-${property.id}">
-            <div class="swiper-wrapper" id="hiddenOverflow">
-              ${property.imagenes
-                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
-                .join("")}
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="fw-bold text-primary text-center mb-4">Contáctanos</h2>
+        <form id="formContacto">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre y Apellido</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre">
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="col-md-6">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input type="email" id="correo" class="form-control" placeholder="tu-correo@correo.com">
+            </div>
+            <div class="col-md-6">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="tel" id="telefono" class="form-control" placeholder="3513894933">
+            </div>
+            <div class="col-md-6">
+              <label for="propiedadInteres" class="form-label">Propiedad de Interés</label>
+              <select id="propiedadInteres" class="form-control">
+                <option class="optionProp" value="">Selecciona una propiedad...</option>
+                <option class="optionProp" value="Casa Moderna en Venta">Casa Moderna en Venta</option>
+                <option class="optionProp" value="Departamento en Alquiler">Departamento en Alquiler</option>
+                <option class="optionProp" value="Casa en Villa Belgrano">Casa en Villa Belgrano</option>
+                <option class="optionProp" value="Departamento de Lujo">Departamento de Lujo</option>
+                <option class="optionProp" value="Vivienda a Estrenar en La Deseada">Vivienda a Estrenar en La Deseada
+                </option>
+                <option class="optionProp" value="Villa Vacacional en Bariloche">Villa Vacacional en Bariloche</option>
+                <option class="optionProp" value="Casa Familiar en Salta">Casa Familiar en Salta</option>
+                <option class="optionProp" value="Apartamento Económico en San Juan">Apartamento Económico en San Juan
+                </option>
+              
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-primary ">Enviar Mensaje <i class="fa fa-paper-plane"
+                  aria-hidden="true"></i></button>
+            </div>
           </div>
-        `;
-        document.getElementById("propertyDetailsContent").innerHTML = content;
-
-        // Inicializar Swiper dentro del modal
-        new Swiper(`#modal-swiper-${property.id}`, {
-            loop: true,
-            pagination: {
-                el: `.swiper-pagination`,
-                clickable: true,
-            },
-        });
-
-        // Mostrar el modal
-        new bootstrap.Modal(document.getElementById("propertyDetailsModal")).show();
-    }
-}
-
-// Render inicial
-renderProperties(propiedades);
+        </form>
+      </div>
+    </section>
 
 
 
-// Redirigir al Formulario de Contacto
-function goToContact(propiedad) {
-    document.getElementById("propiedadInteres").value = propiedad;
-    document.getElementById("contacto").scrollIntoView({ behavior: "smooth" });
-}
+  </main>
 
-// Filtros en Tiempo Real
-document.querySelectorAll("#filtros input, #filtros select").forEach((input) =>
-    input.addEventListener("input", () => {
-        const tipo = document.getElementById("tipoPropiedad").value;
-        const precioMaximo = document.getElementById("precioMaximo").value;
-        const localidad = document.getElementById("localidad").value.toLowerCase();
+  <footer class="text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <!-- About Section -->
+        <div class="col-md-8">
+          <h5 class="text-uppercase mb-3">Sobre Nosotros</h5>
+          <div class="d-flex align-items-center" id="espacioFotoMobile">
+            <img src="./images/fotoEjemploCoty.jpg" alt="logo" class="me-3 ocultarMobile"
+              style="max-width: 150px; border-radius:50%;">
+            <p class="mb-0">Somos una inmobiliaria comprometida con ayudarte a encontrar el hogar de tus
+              sueños. Ofrecemos
+              asesoramiento personalizado y un amplio catálogo de propiedades.</p>
 
-        const filtered = propiedades.filter((prop) => {
-            return (
-                (tipo === "all" || prop.tipo === tipo) &&
-                (!precioMaximo || prop.precio <= precioMaximo) &&
-                (!localidad || prop.localidad.toLowerCase().includes(localidad))
-            );
-        });
+          </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="col-md-4">
+          <h5 class="text-uppercase mb-3">Contacto</h5>
+          <p id="telefonoFooter"><a href="https://wa.me/5493516837691"><i class="fas fa-phone"></i> Teléfono:
+              +54
+              9 351 6837691
+          </p></a>
+          <p id="telefonoFooter"><a href="mailto:info@unengroup.com.ar"><i class="fas fa-envelope"></i>
+              info@unengroup.com.ar</a></p>
+          <p><i class="fas fa-clock"></i> Lunes a Viernes, 9:00 AM - 5:00 PM</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/coty_gg/" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/coty.garcia" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col text-start">
+          <p>
+            <h7 style="color: #71C6D4;" class="text-uppercase fw-bold">Legales</h7><br><small>La información
+              detallada es exclusiva de Unen Group Real Estate y es
+              susceptible a modificación sin previo aviso. Todas las medidas enunciadas son meramente
+              orientativas, las medidas exactas serán las que se expresen en el respectivo título de
+              propiedad de cada inmueble. Todas las fotos, imágenes y videos son meramente ilustrativos,
+              referenciales y no contractuales. Los precios enunciados son meramente orientativos y están
+              sujetos a modificación sin previo aviso, como así también su disponibilidad.</small>
+          </p>
+          <p><small>Constanza Garcia Gomez CPI <img src="./images/logoCPI.jpg" alt="logo CPI Córdoba"
+            style="border-radius: 50%; width: 50px;"> 7873.</small></p>
+          <p class="mb-0 text-center">&copy; 2024 <a class="linkSenestrariDev"
+              href="https://senestraridev.com/">Senestrari
+              Dev.</a> Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Botón de WhatsApp -->
+  <a href="https://wa.me/5493516837691" class="whatsapp-button" target="_blank" aria-label="Chat en WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+  </a>
 
-        renderProperties(filtered);
-    })
-);
+  <!-- Librerías JS al final del body para mejor rendimiento -->
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper.js -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Pannellum  -->
+  <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+  <!-- Script Propio -->
+  <script src="./js/scriptSwiperHome.js"></script>
+  <script src="./js/scriptSwiperTestimonials.js"></script>
+  <script src="./js/scriptNavbarFixed.js"></script>
+  <script src="./js/scriptPropiedades.js"></script>
+  <script src="./js/scriptPorpiedadDestBoton.js"></script>
+</body>
 
-// Render inicial
-renderProperties(propiedades);
-
-
-
-
-
-// Obtén los parámetros de la URL
-function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    return {
-        tipo: params.get('tipo') || 'all',
-    };
-}
-
-// Aplica los filtros iniciales según los parámetros de la URL
-function applyInitialFilters() {
-    const { tipo } = getQueryParams();
-
-    // Selecciona el filtro en el dropdown o input
-    const tipoDropdown = document.getElementById('tipoPropiedad');
-    if (tipoDropdown && tipo !== 'all') {
-        tipoDropdown.value = tipo;
-    }
-
-    // Filtrar las propiedades con los datos iniciales
-    const filtered = propiedades.filter((prop) => tipo === 'all' || prop.tipo === tipo);
-    renderProperties(filtered);
-}
-
-// Ejecuta los filtros iniciales al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    applyInitialFilters();
-});
-
-// Filtros en Tiempo Real (existente)
-document.querySelectorAll("#filtros input, #filtros select").forEach((input) =>
-    input.addEventListener("input", () => {
-        const tipo = document.getElementById("tipoPropiedad").value;
-        const precioMaximo = document.getElementById("precioMaximo").value;
-        const localidad = document.getElementById("localidad").value.toLowerCase();
-
-        const filtered = propiedades.filter((prop) => {
-            return (
-                (tipo === "all" || prop.tipo === tipo) &&
-                (!precioMaximo || prop.precio <= precioMaximo) &&
-                (!localidad || prop.localidad.toLowerCase().includes(localidad))
-            );
-        });
-
-        renderProperties(filtered);
-    })
-);
-
-
-
-
-
-================================================30/01/25=========================================================
-
-
-// Datos de Propiedades
-// const propiedades = [
-//     {
-//         id: 1,
-//         tipo: "alquiler",
-//         titulo: "Vivienda a estrenar en La Deseada",
-//         precio: "2000 Alquiler mensual",
-//         localidad: "Córdoba",
-//         metrosCuadrados: 120,
-//         habitaciones: 3,
-//         banos: 2,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-bed"></i> 2 Habitaciones</li>
-//             <li><i class="fas fa-bath"></i> 2 Baños</li>
-//             <li><i class="fas fa-swimming-pool"></i> Piscina amplia</li>
-//             <li><i class="fas fa-car"></i> Cochera con asador</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Ubicación: Villa Belgrano</li>
-//             <li><i class="fas fa-paw"></i> Apto para mascotas</li>
-//         </ul>`
-//     },
-//     {
-//         id: 3,
-//         tipo: "alquiler-temporario",
-//         titulo: "Casa en Villa Belgrano",
-//         precio: 1200,
-//         localidad: "Villa Belgrano",
-//         metrosCuadrados: 100,
-//         habitaciones: 2,
-//         banos: 1,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frente.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/estar.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/cocina.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/bano.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frentedoscamas.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/habitaciondoscamas.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/camamatrimonial.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/patio.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-home"></i> Servicios y expensas. (90.000 arg)</li>
-//             <li><i class="fas fa-paint-brush"></i>Living, comedor y cocina/comedor</li>
-//             <li><i class="fas fa-expand-arrows-alt"></i> Lavadero y escritorio pequeño</li>
-//             <li><i class="fas fa-bed"></i> Dormitorio principal en suite con vestidor y baño</li>
-//             <li><i class="fas fa-swimming-pool"></i> Amplio jardín con piscina apta para mascotas</li>
-//         </ul>`
-//     },
-//     {
-//         id: 4,
-//         tipo: "venta",
-//         titulo: "Departamento de Lujo",
-//         precio: 200000,
-//         localidad: "Rosario",
-//         metrosCuadrados: 150,
-//         habitaciones: 4,
-//         banos: 2,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/ventaEjemplo/frenteVenta.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/living.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/ventaComedor.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/cocinaVenta.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/matrimonial.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/ventaHabitaciondos.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/patioventa.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-gem"></i> Departamento exclusivo en torre de lujo</li>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor con ventanales</li>
-//             <li><i class="fas fa-bed"></i> 3 dormitorios</li>
-//             <li><i class="fas fa-bath"></i> 2 baños</li>
-//             <li><i class="fas fa-building"></i> Acceso a amenities premium</li>
-//         </ul>`
-//     },
-//     {
-//         id: 5,
-//         tipo: "alquiler",
-//         titulo: "Vivienda a Estrenar en La Deseada",
-//         precio: 2000,
-//         localidad: "La Deseada",
-//         metrosCuadrados: 80,
-//         habitaciones: 1,
-//         banos: 1,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-couch"></i Completamente amoblada</li>
-//             <li><i class="fas fa-bed"></i> Dormitorio principal con baño en suite y vestidor</li>
-//             <li><i class="fas fa-tree"></i> / <i class="fas fa-swimming-pool"></i> Amplia galería y jardín con piscina</li>
-//             <li><i class="fas fa-car"></i> Cochera con asador</li>
-//         </ul>`
-//     },
-//     {
-//         id: 6,
-//         tipo: "alquiler-temporario",
-//         titulo: "Villa Vacacional en Bariloche",
-//         precio: 2500,
-//         localidad: "Bariloche",
-//         metrosCuadrados: 110,
-//         habitaciones: 3,
-//         banos: 2,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frente.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/estar.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/cocina.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/bano.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frentedoscamas.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/habitaciondoscamas.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/camamatrimonial.jpg",
-//             "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/patio.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-binoculars"></i> Casa con vista panorámica</li>
-//             <li><i class="fas fa-bed"></i> 4 dormitorios y 3 baños</li>
-//             <li><i class="fas fa-tree"></i> Rodeada de naturaleza</li>
-//             <li><i class="fas fa-swimming-pool"></i> Piscina climatizada</li>
-//         </ul>`
-//     },
-//     {
-//         id: 7,
-//         tipo: "venta",
-//         titulo: "Casa Familiar en Salta",
-//         precio: 180000,
-//         localidad: "Salta",
-//         metrosCuadrados: 160,
-//         habitaciones: 4,
-//         banos: 2,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/ventaEjemplo/frenteVenta.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/living.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/ventaComedor.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/cocinaVenta.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/matrimonial.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/ventaHabitaciondos.jpg",
-//             "./images/propiedades/viviendas/ventaEjemplo/patioventa.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-bed"></i> 3 Habitaciones</li>
-//             <li><i class="fas fa-bath"></i> 2 Baños completos</li>
-//             <li><i class="fas fa-leaf"></i> Jardín amplio</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Cerca de escuelas y comercios</li>
-//         </ul>`
-//     },
-//     {
-//         id: 8,
-//         tipo: "alquiler",
-//         titulo: "Apartamento Económico en San Juan",
-//         precio: 30000,
-//         localidad: "San Juan",
-//         metrosCuadrados: 80,
-//         habitaciones: 2,
-//         banos: 1,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
-//             "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-//             <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-//             <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-//         </ul>`
-//     },
-//     {
-//         id: 9,
-//         tipo: "terreno",
-//         titulo: "Terreno ejemplo",
-//         precio: 80000,
-//         localidad: "Córdoba",
-//         metrosCuadrados: 250,
-//         habitaciones: 0,
-//         banos: 0,
-//         petFriendly: false,
-//         imagenes: [
-//             "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg",
-//             "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-//             <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-//             <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-//         </ul>`
-//     },
-//     {
-//         id: 10,
-//         tipo: "terreno",
-//         titulo: "Terreno ejemplo2",
-//         precio: 100000,
-//         localidad: "Córdoba",
-//         metrosCuadrados: 180,
-//         habitaciones: 0,
-//         banos: 0,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg",
-//             "./images/propiedades/terrenos/terrenoEjemplo1/terrenoEjemplo.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-//             <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-//             <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-//         </ul>`
-//     },
-//     {
-//         id: 11,
-//         tipo: "local-oficina",
-//         titulo: "Local ",
-//         precio: 100000,
-//         localidad: "Córdoba",
-//         metrosCuadrados: 120,
-//         habitaciones: 1,
-//         banos: 1,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/locales/localEjemplo1/localPrueba.jpg",
-//             "./images/propiedades/locales/localEjemplo1/localPrueba.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-//             <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-//             <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-//         </ul>`
-//     },
-//     {
-//         id: 11,
-//         tipo: "local-oficina",
-//         titulo: "Local 2",
-//         precio: 100000,
-//         localidad: "Córdoba",
-//         metrosCuadrados: 120,
-//         habitaciones: 1,
-//         banos: 1,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/locales/localEjemplo2/localFrente.jpg",
-//             "./images/propiedades/locales/localEjemplo2/localFrente.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-//             <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-//             <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-//         </ul>`
-//     },
-//     {
-//         id: 12,
-//         tipo: "local-oficina",
-//         titulo: "Oficinas",
-//         precio: 100000,
-//         localidad: "Córdoba",
-//         metrosCuadrados: 300,
-//         habitaciones: 8,
-//         banos: 4,
-//         petFriendly: true,
-//         imagenes: [
-//             "./images/propiedades/oficinas/oficinaEjemplo1/oficina.jpg",
-//             "./images/propiedades/oficinas/oficinaEjemplo1/oficina2.jpg"
-//         ],
-//         descripcion: `
-//         <ul>
-//             <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-//             <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-//             <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-//             <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-//         </ul>`
-//     }
-// ];
+</html>

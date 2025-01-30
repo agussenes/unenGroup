@@ -458,6 +458,34 @@ const propiedades = [
     },
 ];
 
+//Dropdown list
+function populateLocalitiesDropdown() {
+    const localidadSelect = document.getElementById("localidad");
+    localidadSelect.innerHTML = `<option value="">Todas las localidades</option>`; // Reset
+
+    const localidadesUnicas = [...new Set(propiedades.map(prop => prop.localidad))];
+    
+    localidadesUnicas.forEach(localidad => {
+        const option = document.createElement("option");
+        option.value = localidad.toLowerCase();
+        option.textContent = localidad;
+        localidadSelect.appendChild(option);
+    });
+}
+
+function populatePropertiesDropdown() {
+    const selectPropiedad = document.getElementById("propiedadInteres");
+    selectPropiedad.innerHTML = `<option value="">Selecciona una propiedad...</option>`; // Reset
+
+    propiedades.forEach(prop => {
+        const option = document.createElement("option");
+        option.value = prop.titulo;
+        option.textContent = prop.titulo;
+        selectPropiedad.appendChild(option);
+    });
+}
+
+
 // Función para inicializar Swiper
 function initializeSwiper(id) {
     new Swiper(`#${id}`, {
@@ -557,7 +585,21 @@ function viewPropertyDetails(id) {
 
 // Redirigir al Formulario de Contacto
 function goToContact(propiedad) {
-    document.getElementById("propiedadInteres").value = propiedad;
+    const selectPropiedad = document.getElementById("propiedadInteres");
+    const opciones = Array.from(selectPropiedad.options);
+
+    // Buscar si la propiedad ya existe en el select, si no, agregarla
+    let opcionExistente = opciones.find(opt => opt.value === propiedad);
+    if (!opcionExistente) {
+        let nuevaOpcion = document.createElement("option");
+        nuevaOpcion.value = propiedad;
+        nuevaOpcion.textContent = propiedad;
+        nuevaOpcion.selected = true;
+        selectPropiedad.appendChild(nuevaOpcion);
+    } else {
+        selectPropiedad.value = propiedad;
+    }
+
     document.getElementById("contacto").scrollIntoView({ behavior: "smooth" });
 }
 
@@ -607,10 +649,13 @@ function applyInitialFilters() {
 // Ejecuta los filtros iniciales al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     applyInitialFilters();
+    populateLocalitiesDropdown();  // Cargar localidades en el filtro
+    populatePropertiesDropdown(); // Cargar propiedades en el formulario de contacto
 
     // Configurar filtros en tiempo real
     document.querySelectorAll("#filtros input, #filtros select").forEach((input) =>
         input.addEventListener("input", applyFilters)
     );
 });
+
 

@@ -144,19 +144,21 @@
               <option value="all">Todas</option>
               <option value="venta">Venta</option>
               <option value="alquiler">Alquiler</option>
-              <option value="terreno">Terrenos</option>
-              <option value="local-oficina-cochera">Locales | Oficinas | Cochera</option>
               <option value="alquiler-temporario">Alquiler Temporario</option>
+              <option value="terreno">Terrenos</option>
+              <option value="local-oficina-cochera">Locales / Oficinas / Cocheras</option>
             </select>
           </div>
           <div class="col-md-3">
+            <label for="localidad" class="form-label">Localidad</label>
+            <select id="localidad" class="form-select">
+              <option value="">Todas las localidades</option>
+            </select>
+          </div>
+          <!-- <div class="col-md-3">
             <label for="precioMaximo" class="form-label">Precio Máximo</label>
             <input type="number" id="precioMaximo" class="form-control" placeholder="Ejemplo: 100000">
-          </div>
-          <div class="col-md-3">
-            <label for="localidad" class="form-label">Localidad</label>
-            <input type="text" id="localidad" class="form-control" placeholder="Ciudad o Provincia">
-          </div>
+          </div> -->
         </form>
       </div>
     </section>
@@ -208,23 +210,8 @@
             <div class="col-md-6">
               <label for="propiedadInteres" class="form-label">Propiedad de Interés</label>
               <select id="propiedadInteres" class="form-control">
-                <option class="optionProp" value="">Selecciona una propiedad...</option>
-                <option class="optionProp" value="Casa Moderna en Venta">Casa Moderna en Venta</option>
-                <option class="optionProp" value="Departamento en Alquiler">Departamento en Alquiler</option>
-                <option class="optionProp" value="Casa en Villa Belgrano">Casa en Villa Belgrano</option>
-                <option class="optionProp" value="Departamento de Lujo">Departamento de Lujo</option>
-                <option class="optionProp" value="Vivienda a Estrenar en La Deseada">Vivienda a Estrenar en La Deseada
-                </option>
-                <option class="optionProp" value="Villa Vacacional en Bariloche">Villa Vacacional en Bariloche</option>
-                <option class="optionProp" value="Casa Familiar en Salta">Casa Familiar en Salta</option>
-                <option class="optionProp" value="Apartamento Económico en San Juan">Apartamento Económico en San Juan
-                </option>
-                <option class="optionProp" value="Terreno ejemplo">Terreno ejemplo</option>
-                <option class="optionProp" value="Terreno ejemplo2">Terreno ejemplo2</option>
-                <option class="optionProp" value="Local ">Local </option>
-                <option class="optionProp" value="Local 2">Local 2</option>
-                <option class="optionProp" value="Oficinas">Oficinas</option>
-              </select>
+                <option value="">Selecciona una propiedad...</option>
+            </select>
             </div>
 
             <div class="col-12">
