@@ -820,9 +820,9 @@
 #propertyDetailsContent .swiper-button-next,
 #propertyDetailsContent .swiper-button-prev {
     background-color: rgba(0, 0, 0, 0.6); 
-    color: #ffcc80; /* Color del icono */
-    border-radius: 50%; /* Forma circular */
-    width: 40px; /* Tamaño del botón */
+    color: #ffcc80; 
+    border-radius: 50%; 
+    width: 40px; 
     height: 40px;
     display: flex;
     justify-content: center;
@@ -832,28 +832,27 @@
 
 #propertyDetailsContent .swiper-button-next:hover,
 #propertyDetailsContent .swiper-button-prev:hover {
-    /* background-color: #71c6d4 !important;  */
     transform: scale(1.1); 
 }
 
 /* Posicionar los botones */
 #propertyDetailsContent .swiper-button-next {
-    right: -5px; /* Ajusta la posición desde el borde derecho */
-    top: 35%; /* Centra verticalmente */
+    right: -5px; 
+    top: 35%; 
     
 }
 
 #propertyDetailsContent .swiper-button-prev {
-    left: -5px; /* Ajusta la posición desde el borde izquierdo */
-    top: 35%; /* Centra verticalmente */
+    left: -5px; 
+    top: 35%; 
    
 }
 
-/* Asegurarse de que no afecten otros Swipers */
+
 #propertyDetailsContent .swiper-button-next,
 #propertyDetailsContent .swiper-button-prev {
-    z-index: 10; /* Asegura que estén encima de las imágenes */
-    position: absolute; /* Asegura que se posicionen dentro del contenedor del Swiper */
+    z-index: 10; 
+    position: absolute; 
 }
 
 
@@ -900,7 +899,6 @@
 /* Swiper Styles */
 .swiper-container {
     min-height: 300px;
-    /* Previene el colapso del contenedor */
 }
 
 .swiper-wrapper {

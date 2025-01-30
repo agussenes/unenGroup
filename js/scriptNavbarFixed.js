@@ -20,17 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener('click', (e) => {
             // Verificar si el clic ocurrió en el dropdown
             if (e.target.closest('.dropdown-menu') || e.target.closest('.dropdown-toggle')) {
-                return; // No cerrar el menú si es un dropdown
+                return; 
             }
             if (window.innerWidth <= 992 && navCollapse.classList.contains('show')) {
-                toggler.click(); // Simula el clic en el botón de toggle para cerrar el menú
+                toggler.click();
             }
         });
     });
 
     // Evitar que el menú hamburguesa se cierre al interactuar con el dropdown
     dropdownMenu.addEventListener('click', (e) => {
-        e.stopPropagation(); // Detiene la propagación del evento para evitar conflictos
+        e.stopPropagation(); 
     });
 
     // animacion sections 
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Clase inicial para ocultar suavemente
     sections.forEach((section) => {
-        section.style.visibility = "hidden"; // Ocultar inicialmente
-        section.style.opacity = "0"; // Asegurar un inicio suave
+        section.style.visibility = "hidden"; 
+        section.style.opacity = "0"; 
     });
 
     const observer = new IntersectionObserver(
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.isIntersecting) {
                     // Asegura que la sección esté visible y aplica animación
                     entry.target.style.visibility = "visible";
-                    entry.target.style.opacity = "1"; // Asegura visibilidad gradual
+                    entry.target.style.opacity = "1"; 
                     entry.target.classList.add("animate__animated", "animate__fadeInUp");
 
                     // Dejar de observar esta sección
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         },
         {
-            threshold: 0.15, // Activar con un 15% de visibilidad
-            rootMargin: "0px 0px -10% 0px", // Hacer que se active antes del viewport completo
+            threshold: 0.15, 
+            rootMargin: "0px 0px -10% 0px",
         }
     );
 
