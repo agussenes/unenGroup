@@ -17,9 +17,9 @@ const propiedades = [
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista2.jpg",
-           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista3.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
+           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
         ],
         descripcion: `
         <ul>

@@ -80,14 +80,14 @@ const propiedades = [
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/escritorioVista.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/galeriaAsador.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitaciojnVentana.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitacion3CamaDoble.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitacion3Camadoble.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitacionCamaDoble.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/livingComedor.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/livinHogar.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/masPatio.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/patio.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/patioPileta.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/sillonVistaPatio.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/sillonVIstaPatio.jpg",
 
         ],
         descripcion: `
@@ -181,7 +181,7 @@ const propiedades = [
             "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/banio2.jpg",
             "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/camaHabitacion.jpg",
             "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/escaoleras.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/piesaCamaIndividiales.jpg",
+            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/piesaCamaIndividuales.jpg",
         ],
         descripcion: `
         <ul>
@@ -274,9 +274,9 @@ const propiedades = [
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista2.jpg",
-           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista3.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
+           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
         ],
         descripcion: `
         <ul>
