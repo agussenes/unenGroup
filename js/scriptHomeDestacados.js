@@ -1,85 +1,103 @@
 // Datos de Propiedades
 const propiedades = [
     {
-        id: 5,
-        tipo: "alquiler",
-        titulo: "Vivienda a Estrenar en La Deseada",
-        precio: 2000,
-        localidad: "La Deseada",
-        metrosCuadrados: 80,
-        habitaciones: 1,
-        banos: 1,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-couch"></i Completamente amoblada</li>
-            <li><i class="fas fa-bed"></i> Dormitorio principal con baño en suite y vestidor</li>
-            <li><i class="fas fa-tree"></i> / <i class="fas fa-swimming-pool"></i> Amplia galería y jardín con piscina</li>
-            <li><i class="fas fa-car"></i> Cochera con asador</li>
-        </ul>`,
-        vista360: [
-            "https://pannellum.org/images/alma.jpg"
-        ],
-    },
-    {
         id: 9,
-        tipo: "terreno",
-        titulo: "Terreno ejemplo",
-        precio: 80000,
-        localidad: "Córdoba",
-        metrosCuadrados: 250,
-        habitaciones: 0,
-        banos: 0,
-        petFriendly: false,
-        imagenes: [
-            "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg",
-            "./images/propiedades/terrenos/terrenoEjemplo2/terreno2.jpg"
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-        </ul>`,
-        vista360: [
-            "https://pannellum.org/images/alma.jpg"
-        ],
-    },
-    {
-        id: 11,
-        tipo: "local-oficina",
-        titulo: "Local 2",
-        precio: 100000,
-        localidad: "Córdoba",
-        metrosCuadrados: 120,
-        habitaciones: 1,
+        tipo: "local-oficina-cochera",
+        titulo: "Departamento en Venta Nueva Córdoba - Uso Comercial",
+        precio: "USD 85.000",
+        localidad: "Nueva Córdoba",
+        metrosCuadrados: 56.06,
+        habitaciones: 2,
         banos: 1,
         petFriendly: true,
         imagenes: [
-            "./images/propiedades/locales/localEjemplo2/localFrente.jpg",
-            "./images/propiedades/locales/localEjemplo2/localFrente.jpg"
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista2.jpg",
+           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtravista3.jpg",
         ],
         descripcion: `
         <ul>
-            <li><i class="fas fa-paint-brush"></i> Living-comedor y cocina integrada</li>
-            <li><i class="fas fa-bed"></i> 2 dormitorios</li>
-            <li><i class="fas fa-map-marker-alt"></i> Excelente ubicación en el centro</li>
-            <li><i class="fas fa-building"></i> Balcón con vista urbana</li>
-        </ul>`,
-        vista360: [
-            "https://pannellum.org/images/alma.jpg"
+            <li><i class="fas fa-map-marker-alt"></i> Ubicación: Buenos Aires esq. Rondeau</li>
+            <li><i class="fas fa-expand"></i> Superficie cubierta: 56.06 m²</li>
+            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
+            <li><i class="fas fa-bath"></i> 1 Baño</li>
+            <li><i class="fas fa-chair"></i> Living</li>
+            <li><i class="fas fa-utensils"></i> Cocina</li>
+            <li><i class="fas fa-money-bill"></i> Expensas: $78.000</li>
+            <li><i class="fas fa-shield-alt"></i> Seguridad y cámaras en ingreso</li>
+        </ul>`
+    },
+    {
+        id: 7,
+        tipo: "venta",
+        titulo: "Casa en Venta Potrerillo de Larreta",
+        precio: "USD 450.000",
+        localidad: "Potrerillo de Larreta",
+        metrosCuadrados: 420,
+        habitaciones: 4,
+        banos: 4,
+        petFriendly: true,
+        imagenes: [
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frenteDelejos.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/ghaleriaAsador.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/pileta.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/cocinaComedor.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/escaleras.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/habitacion.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/habitacionConBestidor.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/bestidor.jpg",
         ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-expand"></i> Superficie cubierta: 420 m²</li>
+            <li><i class="fas fa-ruler-combined"></i> Superficie de terreno: 1800 m²</li>
+            <li><i class="fas fa-couch"></i> Living / Comedor</li>
+            <li><i class="fas fa-bed"></i> 4 Dormitorios (1 en suite)</li>
+            <li><i class="fas fa-bath"></i> 4 Baños</li>
+            <li><i class="fas fa-user-tie"></i> Dependencia de servicio</li>
+            <li><i class="fas fa-car"></i> Cochera para 2 autos</li>
+            <li><i class="fas fa-umbrella-beach"></i> Galería</li>
+            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
+        </ul>`
+    },
+    {
+        id: 4,
+        tipo: "alquiler-temporario",
+        titulo: "Alquiler Casa Villa Warcalde Temporario",
+        precio: "Consultar disponibilidad y precio",
+        localidad: "Villa Warcalde",
+        metrosCuadrados: 250,
+        habitaciones: 2,
+        banos: 4,
+        petFriendly: true,
+        imagenes: [
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/frente.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/mesa.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/cocina.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/bano.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioPileta.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/quincho-galeriaAsador.jpg",
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/sillones.jpg",
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-expand"></i> Superficie cubierta: 250 m²</li>
+            <li><i class="fas fa-ruler-combined"></i> Superficie del terreno: 3000 m²</li>
+            <li><i class="fas fa-couch"></i> Living / Comedor</li>
+            <li><i class="fas fa-utensils"></i> Cocina integrada con desayunador</li>
+            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
+            <li><i class="fas fa-bath"></i> 4 Baños</li>
+            <li><i class="fas fa-fire"></i> Quincho amplio para 12 personas con asador</li>
+            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
+        </ul>`
     }
 ];
 
@@ -148,7 +166,7 @@ function renderProperties(data) {
                     <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-                        <button class="btn btn-secondary" onclick="abrirVista360(${prop.id})">Vista 360°</button>
+                        <button class="btn btn-secondary" onclick="irPropiedades()">Ver todas</button>
                     </div>
                 </div>
             </div>
@@ -260,30 +278,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Función para abrir Vista 360° en un modal
-function abrirVista360(id) {
+// function abrirVista360(id) {
 
-    const property = propiedades.find((prop) => prop.id === id);
+//     const property = propiedades.find((prop) => prop.id === id);
 
-    if (property) {
-        // Configurar el título del modal
-        document.getElementById("property360ModalTitle").innerText = property.titulo;
+//     if (property) {
+       
+//         document.getElementById("property360ModalTitle").innerText = property.titulo;
 
-        // Inicializar Pannellum con la imagen correspondiente
-        pannellum.viewer("pano360", {
-            type: "equirectangular",
-            panorama: property.vista360[0], // Cambia esto si tienes una URL específica para 360
-            autoLoad: true,
-            compass: true,
-            showZoomCtrl: true,
-            showFullscreenCtrl: true,
-        });
+        
+//         pannellum.viewer("pano360", {
+//             type: "equirectangular",
+//             panorama: property.vista360[0], 
+//             autoLoad: true,
+//             compass: true,
+//             showZoomCtrl: true,
+//             showFullscreenCtrl: true,
+//         });
 
-        // Mostrar el modal
-        const modal = new bootstrap.Modal(document.getElementById("property360Modal"));
-        modal.show();
-    } else {
-        console.error("No se encontró la propiedad con ID:", id);
-    }
+     
+//         const modal = new bootstrap.Modal(document.getElementById("property360Modal"));
+//         modal.show();
+//     } else {
+//         console.error("No se encontró la propiedad con ID:", id);
+//     }
+// }
+
+function irPropiedades(){
+    window.location.href = "propiedades.html";
 }
 
 

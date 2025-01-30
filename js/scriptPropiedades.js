@@ -377,10 +377,6 @@ const propiedades = [
             "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/habitacion.jpg",
             "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/patioAsador.jpg",
             "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/patioInterno.jpg",
-
-
-  
-
         ],
         descripcion: `
         <ul>
