@@ -592,3 +592,12 @@ main {
     background-color: #ffcc80 !important;
     transform: scale(1.05);
 }
+
+
+
+@media (min-width: 1440px) {
+    .mismoHeightN img {
+        width: auto;
+        max-height: 350px;
+    }
+}

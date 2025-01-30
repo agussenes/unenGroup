@@ -13,7 +13,7 @@
 
 .swiper-container {
     width: 100%;
-   
+
 }
 
 .main-slider .swiper-slide img {
@@ -60,7 +60,7 @@
     background-color: #ffcc80;
     border-color: transparent;
     text-shadow: 2px 5px 8px #00000000;
-    
+
 }
 
 .swiper-pagination-bullet {
@@ -70,50 +70,54 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    background-color: rgba(0, 0, 0, 0.6); 
-    color: #71C6D4; 
-    border-radius: 5px; 
-    width: 50px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #71C6D4;
+    border-radius: 5px;
+    width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 3;
-   
+
 }
 
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
     font-size: 2.5rem !important;
 }
-.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-prev:after {
     font-size: 2.5rem !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 .swiper-button-next {
     right: -5px;
     top: 50%;
 }
+
 .swiper-button-prev {
     left: -5px;
     top: 50%;
-   
+
 }
 
 
 
 .swiper-button-next,
 .swiper-button-prev {
-    z-index: 10; 
-    position: absolute; 
+    z-index: 10;
+    position: absolute;
 }
 
-.botonesSwiperDes div{
+.botonesSwiperDes div {
     background-color: #00000060 !important;
     padding: 1rem;
     border-radius: 50%;
@@ -278,7 +282,7 @@
         row-gap: 1.5rem;
     }
 
-    #visionText{
+    #visionText {
         padding: 1rem !important;
     }
 
@@ -293,8 +297,8 @@
         row-gap: 2rem;
     }
 
-  }
-  
+}
+
 
 /* •----------------Servicio Section----------------• */
 
@@ -351,7 +355,8 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.admPropiedades button, .admPropiedades a{
+.admPropiedades button,
+.admPropiedades a {
     background-color: #71C6D4;
     color: #ffffff;
     border: none;
@@ -360,7 +365,8 @@
     font-weight: bold;
 }
 
-.admPropiedades button:hover, .admPropiedades a:hover {
+.admPropiedades button:hover,
+.admPropiedades a:hover {
     text-shadow: 2px 5px 8px #000000;
     background-color: #ffcc80;
     transform: translateY(-3px);
@@ -410,13 +416,14 @@
     #servicios i {
         font-size: 3rem;
     }
-    .espacioCardServ{
+
+    .espacioCardServ {
         min-height: 110px;
     }
 }
 
 @media (min-width: 1440px) {
-    .espacioCardServ{
+    .espacioCardServ {
         min-height: auto;
     }
 }
@@ -589,39 +596,43 @@
 
 #propiedades .swiper-button-next,
 #propiedades .swiper-button-prev {
-    background-color: rgba(0, 0, 0, 0.6); 
-    color: #71C6D4; 
-    border-radius: 5px; 
-    width: 30px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #71C6D4;
+    border-radius: 5px;
+    width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 3;
-   
+
 }
 
-#propiedades .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+#propiedades .swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
     font-size: 1.5rem !important;
 }
-#propiedades .swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+
+#propiedades .swiper-button-prev:after,
+.swiper-rtl .swiper-button-prev:after {
     font-size: 1.5rem !important;
 }
 
 #propiedades .swiper-button-next:hover,
 #propiedades .swiper-button-prev:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 #propiedades .swiper-button-next {
     right: -5px;
     top: 38%;
 }
-#propiedades  .swiper-button-prev {
+
+#propiedades .swiper-button-prev {
     left: -5px;
     top: 38%;
-   
+
 }
 
 
@@ -684,7 +695,7 @@
 
 }
 
-   
+
 
 @media (min-width: 992px) {
     #propiedades .swiper-container {
@@ -734,7 +745,7 @@
     color: #000000;
 }
 
-#propertyDetailsContent i{   
+#propertyDetailsContent i {
     color: #71C6D4;
 }
 
@@ -865,39 +876,43 @@
 
 #propertyDetailsContent .swiper-button-next,
 #propertyDetailsContent .swiper-button-prev {
-    background-color: rgba(0, 0, 0, 0.6); 
-    color: #71C6D4; 
-    border-radius: 5px; 
-    width: 30px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #71C6D4;
+    border-radius: 5px;
+    width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 3;
-   
+
 }
 
-#propertyDetailsContent .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+#propertyDetailsContent .swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
     font-size: 1.5rem !important;
 }
-#propertyDetailsContent .swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+
+#propertyDetailsContent .swiper-button-prev:after,
+.swiper-rtl .swiper-button-prev:after {
     font-size: 1.5rem !important;
 }
 
 #propertyDetailsContent .swiper-button-next:hover,
 #propertyDetailsContent .swiper-button-prev:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 #propertyDetailsContent .swiper-button-next {
     right: -5px;
     top: 38%;
 }
+
 #propertyDetailsContent .swiper-button-prev {
     left: -5px;
     top: 38%;
-   
+
 }
 
 
@@ -987,7 +1002,7 @@
 
 #testimoniales {
     padding: 2rem 0;
-    
+
 }
 
 
@@ -1050,7 +1065,7 @@ form button {
 form button:hover {
     text-shadow: 2px 5px 8px #000000;
     background-color: #ffcc80 !important;
-    
+
 }
 
 /* Redes Sociales */
@@ -1078,8 +1093,15 @@ form button:hover {
         font-size: 1.5rem;
     }
 
-    #contenedorSocialHome{
+    #contenedorSocialHome {
         margin-top: 2rem;
     }
 
+}
+
+@media (min-width: 1440px) {
+    .mismoHeight img {
+        width: auto;
+        max-height: 315px;
+    }
 }
