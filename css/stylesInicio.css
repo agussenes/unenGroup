@@ -67,37 +67,44 @@
     background: #71C6D4;
 }
 
+
 .swiper-button-next,
 .swiper-button-prev {
     background-color: rgba(0, 0, 0, 0.6); 
-    color: #ffcc80; /* Color del icono */
-    border-radius: 50%; /* Forma circular */
-    width: 40px; /* Tamaño del botón */
-    height: 40px;
+    color: #71C6D4; 
+    border-radius: 5px; 
+    width: 50px; 
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
+   
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 2.5rem !important;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 2.5rem !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    /* background-color: #71c6d4 !important;  */
     transform: scale(1.1); 
 }
 
-
 .swiper-button-next {
-    right: -5px; 
-    top: 45%; 
-    
+    right: -5px;
+    top: 50%;
 }
-
 .swiper-button-prev {
-    left: -5px; 
-    top: 45%; 
+    left: -5px;
+    top: 50%;
    
 }
+
 
 
 .swiper-button-next,
@@ -580,6 +587,44 @@
 }
 
 
+#propiedades .swiper-button-next,
+#propiedades .swiper-button-prev {
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #71C6D4; 
+    border-radius: 5px; 
+    width: 30px; 
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
+   
+}
+
+#propiedades .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 1.5rem !important;
+}
+#propiedades .swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 1.5rem !important;
+}
+
+#propiedades .swiper-button-next:hover,
+#propiedades .swiper-button-prev:hover {
+    transform: scale(1.1); 
+}
+
+#propiedades .swiper-button-next {
+    right: -5px;
+    top: 38%;
+}
+#propiedades  .swiper-button-prev {
+    left: -5px;
+    top: 38%;
+   
+}
+
+
 /* Responsive Design */
 @media (max-width: 576px) {
     #propiedades .swiper-container {
@@ -817,17 +862,27 @@
 }
 
 /* Estilo específico para los botones del Swiper en el modal */
+
 #propertyDetailsContent .swiper-button-next,
 #propertyDetailsContent .swiper-button-prev {
     background-color: rgba(0, 0, 0, 0.6); 
-    color: #ffcc80; 
-    border-radius: 50%; 
-    width: 40px; 
-    height: 40px;
+    color: #71C6D4; 
+    border-radius: 5px; 
+    width: 30px; 
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
+   
+}
+
+#propertyDetailsContent .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 1.5rem !important;
+}
+#propertyDetailsContent .swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 1.5rem !important;
 }
 
 #propertyDetailsContent .swiper-button-next:hover,
@@ -835,26 +890,15 @@
     transform: scale(1.1); 
 }
 
-/* Posicionar los botones */
 #propertyDetailsContent .swiper-button-next {
-    right: -5px; 
-    top: 35%; 
-    
+    right: -5px;
+    top: 38%;
 }
-
 #propertyDetailsContent .swiper-button-prev {
-    left: -5px; 
-    top: 35%; 
+    left: -5px;
+    top: 38%;
    
 }
-
-
-#propertyDetailsContent .swiper-button-next,
-#propertyDetailsContent .swiper-button-prev {
-    z-index: 10; 
-    position: absolute; 
-}
-
 
 
 
