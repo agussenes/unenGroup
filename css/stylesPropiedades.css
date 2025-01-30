@@ -262,14 +262,23 @@
 .swiper-button-next,
 .swiper-button-prev {
     background-color: rgba(0, 0, 0, 0.6); 
-    color: #ffcc80; 
-    border-radius: 50%; 
-    width: 50px; 
-    height: 50px;
+    color: #71C6D4; 
+    border-radius: 5px; 
+    width: 30px; 
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
+   
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 1.5rem !important;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 1.5rem !important;
 }
 
 .swiper-button-next:hover,
@@ -594,8 +603,16 @@
 /* Asegurarse de que no afecten otros Swipers */
 #propertyDetailsContent .swiper-button-next,
 #propertyDetailsContent .swiper-button-prev {
-    z-index: 10; /* Asegura que estén encima de las imágenes */
-    position: absolute; /* Asegura que se posicionen dentro del contenedor del Swiper */
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #71C6D4; 
+    border-radius: 5px; 
+    width: 30px; 
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
 }
 
 

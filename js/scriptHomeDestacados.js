@@ -213,7 +213,7 @@ function viewPropertyDetails(id) {
                 </div>
             </div>
             <div class="d-flex justify-content-center gap-3 mt-4">
-                <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="abrirVista360(${property.id})">Vista 360°</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="irPropiedades()">Ver todas</button>
                 <button class="btn btn-secondary" onclick="goToContact('${property.titulo}')" data-bs-dismiss="modal">Me interesa</button>
             </div>
         `;
