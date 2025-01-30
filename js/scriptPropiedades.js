@@ -605,17 +605,22 @@ function goToContact(propiedad) {
 
 // Función para aplicar filtros
 function applyFilters() {
+    console.log("🔍 applyFilters ejecutado"); // Ver si la función se ejecuta
+
     const tipo = document.getElementById("tipoPropiedad").value;
-    const precioMaximo = document.getElementById("precioMaximo").value;
     const localidad = document.getElementById("localidad").value.toLowerCase();
+
+    console.log("📌 Tipo seleccionado:", tipo);
+    console.log("📌 Localidad seleccionada:", localidad);
 
     const filtered = propiedades.filter((prop) => {
         return (
             (tipo === "all" || prop.tipo === tipo) &&
-            (!precioMaximo || prop.precio <= precioMaximo) &&
             (!localidad || prop.localidad.toLowerCase().includes(localidad))
         );
     });
+
+    console.log("✅ Propiedades filtradas:", filtered);
 
     if (filtered.length === 0) {
         document.getElementById("propiedadesContainer").innerHTML = `
@@ -627,6 +632,7 @@ function applyFilters() {
         renderProperties(filtered);
     }
 }
+
 
 // Obtén los parámetros de la URL
 function getQueryParams() {
