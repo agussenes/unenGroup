@@ -11,15 +11,15 @@ const propiedades = [
         banos: 1,
         petFriendly: true,
         imagenes: [
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
-           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
         ],
         descripcion: `
         <ul>
@@ -44,8 +44,8 @@ const propiedades = [
         banos: 4,
         petFriendly: true,
         imagenes: [
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frenteDelejos.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/ghaleriaAsador.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/pileta.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/cocinaComedor.jpg",
@@ -78,12 +78,12 @@ const propiedades = [
         banos: 4,
         petFriendly: true,
         imagenes: [
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/frente.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/mesa.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/cocina.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/bano.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioPileta.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/quincho-galeriaAsador.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/sillones.jpg",
         ],
