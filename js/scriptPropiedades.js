@@ -45,6 +45,7 @@ const propiedades = [
         petFriendly: true,
         imagenes: [
             "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/frente.jpg",
+            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/cocina.jpg",
             "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/estar.jpg",
             "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/estar2.jpg",
             "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/bano.jpg",
@@ -116,12 +117,12 @@ const propiedades = [
         banos: 4,
         petFriendly: true,
         imagenes: [
+            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/frente.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/mesa.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/cocina.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/bano.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioPileta.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/quincho-galeriaAsador.jpg",
             "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/sillones.jpg",
         ],
@@ -148,9 +149,11 @@ const propiedades = [
         banos: 0,
         petFriendly: true,
         imagenes: [
-            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frente.jpg",
-            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frenteCerca.jpg",
             "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/vistaLocationPointMap.jpg",
+            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frenteCerca.jpg",
+            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frenteMasCerca.jpg",
+            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frente.jpg",
+
         ],
         descripcion: `
         <ul>
@@ -209,8 +212,8 @@ const propiedades = [
         banos: 4,
         petFriendly: true,
         imagenes: [
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frenteDelejos.jpg",
+            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/ghaleriaAsador.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/pileta.jpg",
             "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/cocinaComedor.jpg",
@@ -243,11 +246,11 @@ const propiedades = [
         banos: 0,
         petFriendly: true,
         imagenes: [
-            "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/cochera1920-1280.jpg",
+            "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/cochera-960-1280.jpg",
             "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/fotoDubsuelo.jpg",
             "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/salidaDesdeAdentro.jpg",
             "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/salidaCochera.jpg",
-           
+
         ],
         descripcion: `
         <ul>
@@ -268,15 +271,15 @@ const propiedades = [
         banos: 1,
         petFriendly: true,
         imagenes: [
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
-           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
         ],
         descripcion: `
         <ul>
@@ -331,6 +334,10 @@ const propiedades = [
         banos: 4,
         petFriendly: true,
         imagenes: [
+            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/principal.jpg",
+            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/holdEdi.jpg",
+            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/interior.jpg",
+            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/living.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/comedoor.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/cocina.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/banio.jpg",
@@ -339,8 +346,8 @@ const propiedades = [
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/habitacion2.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/habitacion3.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/galeria.jpg",
-            
-            
+
+
         ],
         descripcion: `
         <ul>
@@ -452,10 +459,71 @@ const propiedades = [
             <li><i class="fas fa-home"></i> Servicios y expensas. (90.000 arg)</li>
             <li><i class="fas fa-paint-brush"></i>Living, comedor y cocina/comedor</li>
             <li><i class="fas fa-expand-arrows-alt"></i> Lavadero y escritorio pequeÃ±o</li>
-            <li><i class="fas fa-bed"></i> Dormitorio principal en suite con vestidor y baÃ±o</li>
-            <li><i class="fas fa-swimming-pool"></i> Amplio jardÃ­n con piscina apta para mascotas</li>
+            <li><i class="fas fa-bed"></i> Dormitorio principal en suite con vestidor y baño</li>
+            <li><i class="fas fa-swimming-pool"></i> Amplio jardín con piscina apta para mascotas</li>
         </ul>`
     },
+    {
+        id: 15,
+        tipo: "local-oficina-cochera",
+        titulo: "Oficina en venta edificio Los Angeles II",
+        precio: "USD 60.000",
+        localidad: "Centro, Córdoba",
+        metrosCuadrados: 0,
+        habitaciones: 4,
+        banos: 1,
+        petFriendly: true,
+        imagenes: [
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/principal.jpg",
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/frente.jpg",
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/oficina1.jpg",
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/oficina2.jpg",
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/oficina3.jpg",
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/recep.jpg",
+            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/recep2.jpg"
+        ],
+        descripcion: `
+        <ul>
+            <li><i class="fas fa-paint-brush"></i>4 ambientes, se vende amoblada</li>
+            <li><i class="fas fa-shield-alt"></i> El edificio posee seguridad</li>
+        </ul>`
+    },
+    {
+        id: 16,
+        tipo: "venta",
+        titulo: "Duplex a estrenar Chacra del Norte",
+        precio: "USD 240.000",
+        localidad: "Chacra del Norte",
+        metrosCuadrados: 180,
+        habitaciones: 4,
+        banos: 1,
+        petFriendly: true,
+        imagenes: [
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/principal.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/living.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/comedor.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/cocina.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/bano3.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/escritorio.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/habitacion2.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/bano2.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/habitacion.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/bano.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/galeria2.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/galeria.jpg",
+   
+        ],
+        descripcion: `
+        <ul>
+        <li><i class="fas fa-bed"></i> 3 Dormitorios con placard</li>
+        <li><i class="fas fa-bath"></i> 3 Baños</li>
+        <li><i class="fas fa-utensils"></i> Cocina semi-integrada con muebles bajo mesada y alacenas</li>
+        <li><i class="fas fa-couch"></i> Living / Comedor con salida a la Galería</li>
+        <li><i class="fas fa-umbrella-beach"></i> Galería con Asador y bacha</li>
+        <li><i class="fas fa-tree"></i> Patio</li>
+        <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
+        </ul>`
+    }
 ];
 
 //Dropdown list
@@ -464,7 +532,7 @@ function populateLocalitiesDropdown() {
     localidadSelect.innerHTML = `<option value="">Todas las localidades</option>`; // Reset
 
     const localidadesUnicas = [...new Set(propiedades.map(prop => prop.localidad))];
-    
+
     localidadesUnicas.forEach(localidad => {
         const option = document.createElement("option");
         option.value = localidad.toLowerCase();
