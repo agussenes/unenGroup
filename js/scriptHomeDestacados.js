@@ -11,15 +11,15 @@ const propiedades = [
         banos: 1,
         petFriendly: true,
         imagenes: [
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
+           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
         ],
         descripcion: `
         <ul>
@@ -226,9 +226,7 @@ function viewPropertyDetails(id) {
 
 // Redirigir al Formulario de Contacto
 function goToContact(propiedad) {
-    const url = new URL("propiedades.html#contacto", window.location.origin);
-    url.searchParams.set("propiedad", propiedad); // Añade la propiedad como parámetro en la URL
-    window.location.href = url.toString(); // Redirige a la página con el parámetro
+    window.location.href = `propiedades.html?propiedad=${encodeURIComponent(propiedad)}#contacto`;
 }
 
 // Función para aplicar filtros
