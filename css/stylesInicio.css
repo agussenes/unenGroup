@@ -305,7 +305,27 @@
 /* •----------------Servicio Section----------------• */
 
 #servicios {
-    background-color: #5A4E4E !important;
+    position: relative;
+    background-color: #5A4E4E !important; /* Fondo base */
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden; /* Evita que las formas sobresalgan */
+}
+
+
+#servicios::after {
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    top: 30%;
+    left: 0;
+    width:100%;
+    height: 30%;
+    background: #71C6D4;
+    transform: skewY(15deg);
+    z-index: -1;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 #servicios h2 {
@@ -456,6 +476,8 @@
 
 /* •-------------------------Estilos específicos para la sección de propiedades -------------------------•*/
 
+
+
 .card-icons {
     font-size: 14px;
     color: #606060;
@@ -479,10 +501,28 @@
 
 
 #propiedades {
-    background-color: #5A4E4E !important;
-    /* Fondo general de la sección */
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    position: relative;
+    background-color: #5A4E4E !important; /* Fondo base */
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+#propiedades::after {
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    top: 30%;
+    right: 0;
+    width:100%;
+    height: 30%;
+    background: #71C6D4;
+    transform: skewY(15deg);
+    z-index: -1;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 #propiedades h2 {

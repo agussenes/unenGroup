@@ -22,3 +22,39 @@ Color Melón Suave: #ffcc80
 Descripción: Un tono melón claro que ofrece un contraste cálido y suave, ideal para un diseño amigable y acogedor.
 text-shadow: 2px 5px 8px #000000;
     background-color: #ffcc80; !important;
+
+
+
+    mascara historiaHome
+
+    #servicios {
+    position: relative;
+    background-color: #5A4E4E !important; /* Fondo base */
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden; /* Evita que las formas sobresalgan */
+}
+
+#servicios::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #887878;
+    transform: skewY(-20deg);
+    z-index: -1;
+}
+
+#servicios::after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #71C6D4;
+    transform: skewY(15deg);
+    z-index: -1;
+}
