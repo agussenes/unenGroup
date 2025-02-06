@@ -438,7 +438,7 @@ const propiedades = [
         id: 14,
         tipo: "alquiler-temporario",
         titulo: "Casa en Villa Belgrano",
-        precio: 1200,
+        precio: 'USD 1200',
         localidad: "Villa Belgrano",
         metrosCuadrados: 100,
         habitaciones: 2,
@@ -522,6 +522,8 @@ const propiedades = [
         <li><i class="fas fa-umbrella-beach"></i> Galería con Asador y bacha</li>
         <li><i class="fas fa-tree"></i> Patio</li>
         <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
+        <li><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1alOA09w-VvgA2laa5p0RiXwVNvwRexwC/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></li>
+
         </ul>`
     }, 
     {
@@ -559,7 +561,9 @@ const propiedades = [
         <li><i class="fas fa-umbrella-beach"></i> Galería con Asador y bacha</li>
         <li><i class="fas fa-tree"></i> Patio</li>
         <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
-        </ul>`
+        <li><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1VexH3lRIEt-Nn3LWURO4Nh1MORTd7q4x/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></li>
+        </ul>`,
+        video: true
     }
 
 ];
@@ -631,11 +635,14 @@ function renderProperties(data) {
                         ${prop.habitaciones > 0 ? `<span><i class="fas fa-bed"></i> ${prop.habitaciones}</span>` : ""}
                         ${prop.banos > 0 ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>` : ""}
                         ${prop.petFriendly ? `<span><i class="fas fa-paw" style="color: #71C6D4;"></i> Pet-Friendly</span>` : ""}
+                        
                     </div>
                     <h5 class="card-title py-2">${prop.titulo}</h5>
                     <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
                     <p class="card-text"><strong>Precio:</strong> ${prop.precio.toLocaleString()}</p>
                     <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
+                    ${prop.id === 16 ? `<p class="videoprop"><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1alOA09w-VvgA2laa5p0RiXwVNvwRexwC/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></p>` : ""}
+                    ${prop.id === 17 ? `<p class="videoprop"><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1VexH3lRIEt-Nn3LWURO4Nh1MORTd7q4x/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></p>` : ""}
                     <button class="btn btn-info mb-2" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
                     <button class="btn btn-secondary" onclick="goToContact('${prop.titulo}')">Me interesa</button>
                 </div>

@@ -300,6 +300,23 @@
    
 }
 
+.videoprop{
+    transition: all 0.3s ease-in;
+}
+
+.videoprop a{
+    color: #808080 !important;
+}
+
+.videoprop:hover{
+    transform: scale(1.1);
+}
+
+.videoprop a:hover{
+    color: #ffcc80 !important;
+    
+}
+
 
 /* .botonesSwiperDes div {
     background-color: #00000067 !important;
