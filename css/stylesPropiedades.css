@@ -610,9 +610,28 @@
 
 /* --------------------------------- Contacto Section --------------------------------- */
 #contacto {
-    background-color: #887878 !important;
-    padding: 4rem 0;
+    position: relative;
+    background-color: #4b818a !important; /* Color de fondo */
+    padding: 50px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    
 }
+
+#contacto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 85%;
+    background: #5A4E4E; 
+    transform: skewY(-10deg); /* Inclinar la forma */
+    z-index: -1;
+    border: 2px solid #F5F5F5;
+}
+
+
 
 #contacto h2 {
     font-family: 'nunito', sans-serif;
@@ -631,7 +650,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); 
     backdrop-filter: blur(8px); 
     -webkit-backdrop-filter: blur(8px); 
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border: 1px solid #ffffff;
 }
 
 #contacto .btn {
@@ -669,6 +688,7 @@
     border-color: #71C6D4 !important;
     box-shadow: 0 0 8px rgba(113, 198, 212, 0.5);
 }
+
 
 #formContacto input, #formContacto textarea:focus {
     border-color: #71C6D4 !important;

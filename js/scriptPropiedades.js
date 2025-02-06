@@ -495,8 +495,8 @@ const propiedades = [
         precio: "USD 240.000",
         localidad: "Chacra del Norte",
         metrosCuadrados: 180,
-        habitaciones: 4,
-        banos: 1,
+        habitaciones: 3,
+        banos: 3,
         petFriendly: true,
         imagenes: [
             "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/principal.jpg",
@@ -523,7 +523,45 @@ const propiedades = [
         <li><i class="fas fa-tree"></i> Patio</li>
         <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
         </ul>`
+    }, 
+    {
+        id: 17,
+        tipo: "venta",
+        titulo: "Duplex 2 a estrenar Chacra del Norte",
+        precio: "USD 250.000",
+        localidad: "Chacra del Norte",
+        metrosCuadrados: 180,
+        habitaciones: 3,
+        banos: 2,
+        petFriendly: true,
+        imagenes: [
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/principal.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/segunda.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/tercera.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/cuarta.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/quinta.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/sexta.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/septima.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/octaba.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/novena.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/decima.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/onceaba.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/doceaba.jpg",
+            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/terceaba.jpg",
+    
+        ],
+        descripcion: `
+        <ul>
+        <li><i class="fas fa-bed"></i> 3 Dormitorios, 1 dormitorio en suite con vestidor</li>
+        <li><i class="fas fa-bath"></i> 2 baños completos y 1 Toilette</li>
+        <li><i class="fas fa-utensils"></i> Cocina semi-integrada con muebles bajo mesada y alacenas</li>
+        <li><i class="fas fa-couch"></i> Living / Comedor con salida a la Galería</li>
+        <li><i class="fas fa-umbrella-beach"></i> Galería con Asador y bacha</li>
+        <li><i class="fas fa-tree"></i> Patio</li>
+        <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
+        </ul>`
     }
+
 ];
 
 //Dropdown list
