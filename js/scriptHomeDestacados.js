@@ -9,17 +9,17 @@ const propiedades = [
         metrosCuadrados: 56.06,
         habitaciones: 2,
         banos: 1,
-        petFriendly: true,
+        petFriendly: false,
         imagenes: [
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
-           "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
+            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
         ],
         descripcion: `
         <ul>

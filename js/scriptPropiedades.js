@@ -269,7 +269,7 @@ const propiedades = [
         metrosCuadrados: 56.06,
         habitaciones: 2,
         banos: 1,
-        petFriendly: true,
+        petFriendly: false,
         imagenes: [
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
             "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
@@ -438,7 +438,7 @@ const propiedades = [
         id: 14,
         tipo: "alquiler-temporario",
         titulo: "Casa en Villa Belgrano",
-        precio: 'USD 1200',
+        precio: '$1.200.000',
         localidad: "Villa Belgrano",
         metrosCuadrados: 100,
         habitaciones: 2,
