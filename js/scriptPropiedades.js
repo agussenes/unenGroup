@@ -620,12 +620,12 @@ function renderProperties(data) {
                 <div class="swiper-container" id="swiper-${prop.id}">
                     <div class="swiper-wrapper">
                         ${prop.imagenes
-            .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-            .join("")}
+                            .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
+                            .join("")}
                     </div>
                     <div class="botonesSwiperDes">
-                        <div id="botonNextP" class="swiper-button-next"></div>
-                        <div id="botonPrevP" class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                     <div class="swiper-pagination visores"></div>
                 </div>
@@ -635,23 +635,31 @@ function renderProperties(data) {
                         ${prop.habitaciones > 0 ? `<span><i class="fas fa-bed"></i> ${prop.habitaciones}</span>` : ""}
                         ${prop.banos > 0 ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>` : ""}
                         ${prop.petFriendly ? `<span><i class="fas fa-paw" style="color: #71C6D4;"></i> Pet-Friendly</span>` : ""}
-                        
                     </div>
                     <h5 class="card-title py-2">${prop.titulo}</h5>
-                    <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
+                    <p class="card-text"><strong>Categoría:</strong> ${prop.tipo}</p>
                     <p class="card-text"><strong>Precio:</strong> ${prop.precio.toLocaleString()}</p>
                     <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
-                    ${prop.id === 16 ? `<p class="videoprop"><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1alOA09w-VvgA2laa5p0RiXwVNvwRexwC/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></p>` : ""}
-                    ${prop.id === 17 ? `<p class="videoprop"><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1VexH3lRIEt-Nn3LWURO4Nh1MORTd7q4x/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></p>` : ""}
                     <button class="btn btn-info mb-2" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-                    <button class="btn btn-secondary" onclick="goToContact('${prop.titulo}')">Me interesa</button>
+                    <button class="btn btn-secondary btn-me-interesa" data-propiedad="${prop.titulo}">Me interesa</button>
                 </div>
             </div>
         </div>
     `).join("");
 
+    // 🔹 Asignar eventos a los botones "Me interesa" fuera del modal
+    setTimeout(() => {
+        document.querySelectorAll(".btn-me-interesa").forEach(button => {
+            button.addEventListener("click", function() {
+                goToContact(this.getAttribute("data-propiedad"));
+            });
+        });
+    }, 300); // Esperar para asegurar que el DOM se haya actualizado
+
+    // Inicializar Swipers
     data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
 }
+
 
 // Ver detalles de la propiedad
 function viewPropertyDetails(id) {
@@ -698,42 +706,57 @@ function viewPropertyDetails(id) {
 
 // Redirigir al Formulario de Contacto
 function goToContact(propiedad) {
-    const selectPropiedad = document.getElementById("propiedadInteres");
-    const opciones = Array.from(selectPropiedad.options);
+    console.log("🔵 goToContact() ejecutado con propiedad:", propiedad); // Debug
 
+    const selectPropiedad = document.getElementById("propiedadInteres");
+    if (!selectPropiedad) {
+        console.error("⚠️ Error: No se encontró el select de propiedad");
+        return;
+    }
+
+    const opciones = Array.from(selectPropiedad.options);
     let opcionExistente = opciones.find(opt => opt.value === propiedad);
+
     if (!opcionExistente) {
         let nuevaOpcion = document.createElement("option");
         nuevaOpcion.value = propiedad;
         nuevaOpcion.textContent = propiedad;
         nuevaOpcion.selected = true;
         selectPropiedad.appendChild(nuevaOpcion);
+        console.log("✅ Nueva opción agregada:", propiedad);
     } else {
         selectPropiedad.value = propiedad;
+        console.log("✅ Propiedad ya existe, seleccionada:", propiedad);
     }
 
-    // Cerrar el modal primero
+    // Cerrar el modal si está abierto
     const modal = document.getElementById("propertyDetailsModal");
     if (modal) {
         let modalInstance = bootstrap.Modal.getInstance(modal);
-        modalInstance.hide();
+        if (modalInstance) {
+            modalInstance.hide();
+            console.log("✅ Modal cerrado");
+        }
     }
 
-    // Esperar a que el modal termine de cerrarse antes de hacer scroll
+    // 🚀 FORZAR EL SCROLL AL FORMULARIO SIEMPRE
     setTimeout(() => {
         const contactoSection = document.getElementById("contacto");
         if (contactoSection) {
             contactoSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            console.log("✅ Scrolleado a sección de contacto");
 
-            // Si después de 1 segundo el usuario no ha hecho scroll, usa window.location.hash
+            // 🔥 Asegurar que el navegador registre el hash en la URL
             setTimeout(() => {
-                if (window.scrollY === 0) {
-                    window.location.hash = "#contacto";
-                }
-            }, 1000);
+                window.location.hash = "#contacto";
+                console.log("🔗 URL hash cambiado a #contacto");
+            }, 500);
+        } else {
+            console.error("❌ No se encontró la sección de contacto");
         }
     }, 300);
 }
+
 
 
 // Función para aplicar filtros
