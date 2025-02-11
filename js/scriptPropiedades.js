@@ -701,7 +701,6 @@ function goToContact(propiedad) {
     const selectPropiedad = document.getElementById("propiedadInteres");
     const opciones = Array.from(selectPropiedad.options);
 
-    // Buscar si la propiedad ya existe en el select, si no, agregarla
     let opcionExistente = opciones.find(opt => opt.value === propiedad);
     if (!opcionExistente) {
         let nuevaOpcion = document.createElement("option");
@@ -713,8 +712,29 @@ function goToContact(propiedad) {
         selectPropiedad.value = propiedad;
     }
 
-    document.getElementById("contacto").scrollIntoView({ behavior: "smooth" });
+    // Cerrar el modal primero
+    const modal = document.getElementById("propertyDetailsModal");
+    if (modal) {
+        let modalInstance = bootstrap.Modal.getInstance(modal);
+        modalInstance.hide();
+    }
+
+    // Esperar a que el modal termine de cerrarse antes de hacer scroll
+    setTimeout(() => {
+        const contactoSection = document.getElementById("contacto");
+        if (contactoSection) {
+            contactoSection.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            // Si después de 1 segundo el usuario no ha hecho scroll, usa window.location.hash
+            setTimeout(() => {
+                if (window.scrollY === 0) {
+                    window.location.hash = "#contacto";
+                }
+            }, 1000);
+        }
+    }, 300);
 }
+
 
 // Función para aplicar filtros
 function applyFilters() {
