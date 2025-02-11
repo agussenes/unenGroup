@@ -337,7 +337,7 @@ const propiedades = [
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/principal.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/holdEdi.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/interior.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/living.jpg",
+            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/liveng.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/comedoor.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/cocina.jpg",
             "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/banio.jpg",
