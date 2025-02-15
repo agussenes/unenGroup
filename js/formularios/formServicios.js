@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contacto");
+    const form = document.getElementById("formContacto");
 
     if (!form) {
         console.error("❌ ERROR: No se encontró el formulario 'contacto' en el DOM.");
@@ -18,51 +18,49 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value.trim();
         const tipoContacto = document.getElementById("tipoContacto").value;
         const mensaje = document.getElementById("mensaje").value.trim();
-        const recaptchaResponse = document.getElementById("g-recaptcha-response").value; // ✅ Obtener token reCAPTCHA v2
+        const recaptchaResponse = document.querySelector(".g-recaptcha-response")?.value || "";
 
-        // Validaciones
         if (!nombre || !email || !tipoContacto || !mensaje || !recaptchaResponse) {
-            mostrarMensaje("Todos los campos son obligatorios y debes completar el reCAPTCHA.", "danger");
+            mostrarMensaje("❌ Todos los campos son obligatorios y debes completar el reCAPTCHA.", "danger");
             return;
         }
 
-        if (!/^[a-zA-Z\s]+$/.test(nombre)) {
-            mostrarMensaje("El nombre solo puede contener letras y espacios.", "danger");
-            return;
-        }
-
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            mostrarMensaje("Ingrese un correo electrónico válido.", "danger");
-            return;
-        }
+        // **Desactivar el botón para evitar múltiples clics**
+        const submitBtn = form.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Enviando... ⏳";
 
         try {
-            // Enviar formulario con Fetch API
             const formData = new FormData(form);
             formData.append("g-recaptcha-response", recaptchaResponse);
 
-            const response = await fetch("../../php/formServicios.php", {
+            const response = await fetch("/php/formServicios.php", {
                 method: "POST",
                 body: formData
             });
 
-            const result = await response.text();
+            const result = await response.json(); // ✅ Esperamos un JSON válido
+
             console.log("📩 Respuesta del servidor:", result);
 
-            if (result.includes("Mensaje enviado con éxito")) {
+            if (result.status === "success") {
                 form.reset();
-                form.style.display = "none"; // Ocultar formulario tras el envío
-                mostrarMensaje("¡Gracias! Hemos recibido tu mensaje.", "success");
+                grecaptcha.reset();
+                mostrarMensaje("✅ ¡Gracias! Hemos recibido tu mensaje.", "success");
             } else {
-                mostrarMensaje("Error al enviar el mensaje. Inténtelo de nuevo.", "danger");
+                mostrarMensaje(`❌ ${result.message}`, "danger");
             }
         } catch (error) {
             console.error("❌ Error en la solicitud Fetch:", error);
-            mostrarMensaje("Error de conexión. Verifique su conexión a internet.", "danger");
+            mostrarMensaje("❌ Error de conexión. Verifique su conexión a internet.", "danger");
+        } finally {
+            // **Reactivar el botón después de la respuesta**
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Enviar mensaje";
         }
     });
 
     function mostrarMensaje(texto, tipo) {
-        mensajeDiv.innerHTML = <div class="alert alert-${tipo}">${texto}</div>;
+        mensajeDiv.innerHTML = `<div class="alert alert-${tipo}">${texto}</div>`;
     }
 });
