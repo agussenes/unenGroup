@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /private/
+
+# Permitir acceso a todas las páginas públicas
+Allow: /
+
+# Indicar la ubicación del sitemap
+Sitemap: https://unengroup.com.ar/sitemap.xml

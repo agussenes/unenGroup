@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Página Principal -->
+    <url>
+        <loc>https://unengroup.com.ar/</loc>
+        <lastmod>2024-02-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Página de Propiedades -->
+    <url>
+        <loc>https://unengroup.com.ar/propiedades.html</loc>
+        <lastmod>2024-02-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Página de Nosotros -->
+    <url>
+        <loc>https://unengroup.com.ar/nosotros.html</loc>
+        <lastmod>2024-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Página de Contacto -->
+    <url>
+        <loc>https://unengroup.com.ar/#contacto</loc>
+        <lastmod>2024-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Página de Servicios -->
+    <url>
+        <loc>https://unengroup.com.ar/#servicios</loc>
+        <lastmod>2024-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>

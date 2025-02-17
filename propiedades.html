@@ -2,28 +2,47 @@
 <html lang="en">
 
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSES4S50PT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-LSES4S50PT');
+  </script>
+
   <!-- Meta Básico -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Meta SEO -->
-  <title>UnenGroup | Propiedades</title>
-  <!-- <meta name="description" content="Descripción breve y precisa para buscadores.">
-  <meta name="keywords" content="palabras clave, separadas, por, comas">
-  <meta name="author" content="Tu Nombre o Empresa">
-  <meta name="robots" content="index, follow"> -->
+  <title>UnenGroup | Propiedades en Venta y Alquiler</title>
+  <meta name="description"
+    content="Descubre las mejores propiedades en venta y alquiler en Córdoba. Casas, departamentos, terrenos y locales con asesoramiento personalizado. ¡Encontrá tu próximo hogar o inversión con UnenGroup!">
+  <meta name="keywords"
+    content="propiedades en venta, alquiler de casas, alquiler de departamentos, inversión inmobiliaria, bienes raíces, terrenos en venta, locales en alquiler, UnenGroup">
+  <meta name="author" content="UnenGroup">
+  <meta name="robots" content="index, follow">
 
-  <!-- Meta Redes Sociales (Open Graph y Twitter Cards) -->
-  <!-- <meta property="og:title" content="Nombre de tu Sitio | Título de la Página">
-  <meta property="og:description" content="Descripción atractiva para compartir en redes sociales.">
-  <meta property="og:image" content="URL_de_la_imagen_destacada">
-  <meta property="og:url" content="https://tusitioweb.com">
+  <!-- Open Graph (para redes sociales) -->
+  <meta property="og:title" content="Propiedades en Venta y Alquiler | UnenGroup">
+  <meta property="og:description"
+    content="Encuentra propiedades en venta y alquiler en Córdoba. Asesoramiento en bienes raíces para tu hogar o inversión.">
+  <meta property="og:image" content="https://unengroup.com.ar/images/faviCon.jpg">
+  <meta property="og:url" content="https://unengroup.com.ar/propiedades.html">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image"> -->
+  <meta name="twitter:card" content="summary_large_image">
+
+
 
   <!-- Icono del Sitio -->
   <link rel="icon" href="./images/faviCon.jpg" type="image/x-icon">
+
+  <!-- Google Recaptcha  -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- CSS Frameworks y Librerías -->
   <!-- Bootstrap -->
@@ -49,70 +68,68 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand" href="/">
-              <img src="./images/logoNavBarprueba.png" alt="Logo" id="logoNavbar">
-          </a>
-          <!-- Toggle Button for Mobile -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Navigation Links -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" href="/">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#servicios">Servicios</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="/propiedades.html" id="navbarDropdown"
-                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Tipos de propiedades
-                      </a>
-                      <ul class="dropdown-menu animate__animated ulProps" aria-labelledby="navbarDropdown">
-                          <li>
-                              <a class="dropdown-item" href="propiedades.html?tipo=alquiler#filtros">Alquiler </a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item" href="propiedades.html?tipo=venta#filtros">Venta</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item"
-                                  href="propiedades.html?tipo=alquiler-temporario#filtros">Alquiler
-                                  Temporario</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item"
-                                  href="propiedades.html?tipo=alquiler-temporario#filtros">Alquiler
-                                  Vacacional</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item" href="propiedades.html?tipo=terreno#filtros">Terrenos</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item" href="propiedades.html?tipo=local-oficina-cochera#filtros">Locales
-                                  |
-                                  Oficinas | Cocheras</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item" href="propiedades.html?tipo=all">Todas</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/nosotros.html">Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#contacto">Contacto</a>
-                  </li>
+        <!-- Logo -->
+        <a class="navbar-brand" href="/">
+          <img src="./images/logoNavBarprueba.png" alt="Logo" id="logoNavbar">
+        </a>
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/propiedades.html" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Tipos de propiedades
+              </a>
+              <ul class="dropdown-menu animate__animated ulProps" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=alquiler#filtros">Alquiler </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=venta#filtros">Venta</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=alquiler-temporario#filtros">Alquiler
+                    Temporario</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=alquiler-temporario#filtros">Alquiler
+                    Vacacional</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=terreno#filtros">Terrenos</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=local-oficina-cochera#filtros">Locales
+                    |
+                    Oficinas | Cocheras</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="propiedades.html?tipo=all">Todas</a>
+                </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
 
-          </div>
+        </div>
       </div>
-  </nav>
+    </nav>
 
   </header>
 
@@ -196,39 +213,51 @@
     <section id="contacto" class="py-5 bg-white">
       <div class="container">
         <h2 class="fw-bold text-primary text-center mb-4">Contáctanos</h2>
-        <form id="formContacto">
+        <form id="formPropiedades"> <!-- ⚠️ Cambiado de 'formContacto' a 'formPropiedades' -->
           <div class="row g-3">
             <div class="col-md-6">
               <label for="nombre" class="form-label">Nombre y Apellido</label>
-              <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre">
+              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Escribe tu nombre"
+                required>
             </div>
             <div class="col-md-6">
               <label for="correo" class="form-label">Correo Electrónico</label>
-              <input type="email" id="correo" class="form-control" placeholder="tu-correo@correo.com">
+              <input type="email" id="correo" name="correo" class="form-control" placeholder="tu-correo@correo.com"
+                required>
             </div>
             <div class="col-md-6">
               <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" id="telefono" class="form-control" placeholder="3513894933">
+              <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="3513894933" required>
             </div>
             <div class="col-md-6">
               <label for="propiedadInteres" class="form-label">Propiedad de Interés</label>
-              <select id="propiedadInteres" class="form-control">
+              <select id="propiedadInteres" name="propiedadInteres" class="form-control" required>
                 <option value="">Selecciona una propiedad...</option>
-            </select>
+              </select>
             </div>
 
             <div class="col-12">
               <label for="mensaje" class="form-label">Mensaje</label>
-              <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+              <textarea id="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje..."
+                required></textarea>
             </div>
+            <!-- reCAPTCHA -->
+            <div class="g-recaptcha mb-3" data-sitekey="6LduadcqAAAAAMAPmj2iEoWSjgfKXKH3FAnT3D1f"></div>
+
             <div class="col-12 text-center">
-              <button type="submit" class="btn btn-primary ">Enviar Mensaje <i class="fa fa-paper-plane"
+              <button type="submit" class="btn btn-primary">Enviar Mensaje <i class="fa fa-paper-plane"
                   aria-hidden="true"></i></button>
             </div>
           </div>
         </form>
+        <!-- Mensajes de éxito y error -->
+        <div id="mensajeExito" class="alert alert-success mt-3" style="display: none;">✅ ¡Mensaje enviado con éxito! Nos
+          contactaremos pronto.</div>
+        <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">❌ Hubo un error al enviar tu
+          mensaje. Inténtalo nuevamente.</div>
       </div>
     </section>
+
 
 
 
@@ -236,57 +265,55 @@
 
   <footer class="text-light pt-5 pb-3">
     <div class="container">
-        <div class="row">
-            <!-- About Section -->
-            <div class="col-md-8">
-                <h5 class="text-uppercase mb-3">Sobre Nosotros</h5>
-                <div class="d-flex align-items-center" id="espacioFotoMobile">
-                    <img src="./images/fotoEjemploCoty.jpg" alt="logo" class="me-3 ocultarMobile"
-                        style="max-width: 150px; border-radius:50%;">
-                    <p class="mb-0">Somos una inmobiliaria comprometida en ayudarte a encontrar el hogar de tus
-                        sueños. Ofrecemos asesoramiento personalizado y un amplio catálogo de propiedades.</p>
-                </div>
-            </div>
-            <!-- Contact Section -->
-            <div class="col-md-4">
-                <h5 class="text-uppercase mb-3">Contacto</h5>
-                <p id="telefonoFooter"><a href="https://wa.me/5493516837691"><i class="fas fa-phone"></i> Teléfono:
-                        +54
-                        9 351 6837691
-                </p></a>
-                <p id="telefonoFooter"><a href="mailto:info@unengroup.com.ar"><i class="fas fa-envelope"></i>
-                        info@unengroup.com.ar</a></p>
-                <p><i class="fas fa-clock"></i> Lunes a Viernes, 9:00 AM - 5:00 PM</p>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/unengroup/" class="text-light me-2"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.facebook.com/coty.garcia" class="text-light me-2"><i
-                            class="fab fa-instagram"></i></a>
-                </div>
+      <div class="row">
+        <!-- About Section -->
+        <div class="col-md-8">
+          <h5 class="text-uppercase mb-3">Sobre Nosotros</h5>
+          <div class="d-flex align-items-center" id="espacioFotoMobile">
+            <img src="./images/fotoEjemploCoty.jpg" alt="logo" class="me-3 ocultarMobile"
+              style="max-width: 150px; border-radius:50%;">
+            <p class="mb-0">Somos una inmobiliaria comprometida en ayudarte a encontrar el hogar de tus
+              sueños. Ofrecemos asesoramiento personalizado y un amplio catálogo de propiedades.</p>
+          </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="col-md-4">
+          <h5 class="text-uppercase mb-3">Contacto</h5>
+          <p id="telefonoFooter"><a href="https://wa.me/5493516837691"><i class="fas fa-phone"></i> Teléfono:
+              +54
+              9 351 6837691
+          </p></a>
+          <p id="telefonoFooter"><a href="mailto:info@unengroup.com.ar"><i class="fas fa-envelope"></i>
+              info@unengroup.com.ar</a></p>
+          <p><i class="fas fa-clock"></i> Lunes a Viernes, 9:00 AM - 5:00 PM</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/unengroup/" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/coty.garcia" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+          </div>
 
-            </div>
         </div>
-        <hr class="my-4">
-        <div class="row">
-            <div class="col text-start">
-                <p>
-                    <h7 style="color: #71C6D4;" class="text-uppercase fw-bold">Legales</h7><br><small>La información
-                        detallada es exclusiva de Unen Group Real Estate y es
-                        susceptible a modificación sin previo aviso. Todas las medidas enunciadas son meramente
-                        orientativas, las medidas exactas serán las que se expresen en el respectivo título de
-                        propiedad de cada inmueble. Todas las fotos, imágenes y videos son meramente ilustrativos,
-                        referenciales y no contractuales. Los precios enunciados son meramente orientativos y están
-                        sujetos a modificación sin previo aviso, como así también su disponibilidad.</small>
-                </p>
-                <p><small>Constanza Garcia Gomez CPI <img src="./images/logoCPI.jpg" alt="logo CPI Córdoba"
-                            style="border-radius: 50%; width: 50px;"> 7873.</small></p>
-                <p class="mb-0 text-center">&copy; 2025 <a class="linkSenestrariDev"
-                        href="https://senestraridev.com/">Senestrari
-                        Dev.</a> Todos los derechos reservados.</p>
-            </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col text-start">
+          <p>
+            <h7 style="color: #71C6D4;" class="text-uppercase fw-bold">Legales</h7><br><small>La información
+              detallada es exclusiva de Unen Group Real Estate y es
+              susceptible a modificación sin previo aviso. Todas las medidas enunciadas son meramente
+              orientativas, las medidas exactas serán las que se expresen en el respectivo título de
+              propiedad de cada inmueble. Todas las fotos, imágenes y videos son meramente ilustrativos,
+              referenciales y no contractuales. Los precios enunciados son meramente orientativos y están
+              sujetos a modificación sin previo aviso, como así también su disponibilidad.</small>
+          </p>
+          <p><small>Constanza Garcia Gomez CPI <img src="./images/logoCPI.jpg" alt="logo CPI Córdoba"
+                style="border-radius: 50%; width: 50px;"> 7873.</small></p>
+          <p class="mb-0 text-center">&copy; 2025 <a class="linkSenestrariDev"
+              href="https://senestraridev.com/">Senestrari
+              Dev.</a> Todos los derechos reservados.</p>
         </div>
+      </div>
     </div>
-</footer>
+  </footer>
   <!-- Botón de WhatsApp -->
   <a href="https://wa.me/5493516837691" class="whatsapp-button" target="_blank" aria-label="Chat en WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
@@ -305,6 +332,7 @@
   <script src="./js/scriptNavbarFixed.js"></script>
   <script src="./js/scriptPropiedades.js"></script>
   <script src="./js/scriptPorpiedadDestBoton.js"></script>
+  <script src="./js/formularios/formPropiedades.js"></script>
 </body>
 
 </html>

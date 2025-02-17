@@ -2,54 +2,71 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSES4S50PT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LSES4S50PT'); // ✅ Reemplaza con tu ID de Google Analytics
+    </script>
+
     <!-- Meta Básico -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Meta SEO -->
-    <title>UnenGroup | Home</title>
-    <!-- <meta name="description" content="Descripción breve y precisa para buscadores.">
-    <meta name="keywords" content="palabras clave, separadas, por, comas">
-    <meta name="author" content="Tu Nombre o Empresa">
-    <meta name="robots" content="index, follow"> -->
+    <title>UnenGroup - Tu Aliado en Bienes Raíces</title>
+    <meta name="description" content="UnenGroup es tu inmobiliaria de confianza en Córdoba. Encuentra propiedades en venta y alquiler: casas, departamentos, terrenos y locales. Tasaciones online y asesoramiento en inversión inmobiliaria. ¡Hacé realidad tu próxima compra o alquiler con expertos en bienes raíces!">
+    <meta name="keywords" content="inmobiliaria en Córdoba, bienes raíces, compra de casas, venta de departamentos, alquiler temporario, tasaciones online, inversión inmobiliaria, propiedades en venta, alquiler de oficinas, terrenos en venta, casas en country, propiedades exclusivas, real estate, alquiler de locales comerciales">
+    <meta name="author" content="UnenGroup">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://unengroup.com.ar/">
 
-    <!-- Meta Redes Sociales (Open Graph y Twitter Cards) -->
-    <!-- <meta property="og:title" content="Nombre de tu Sitio | Título de la Página">
-    <meta property="og:description" content="Descripción atractiva para compartir en redes sociales.">
-    <meta property="og:image" content="URL_de_la_imagen_destacada">
-    <meta property="og:url" content="https://tusitioweb.com">
+    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+    <meta property="og:title" content="UnenGroup - Tu Aliado en Bienes Raíces">
+    <meta property="og:description" content="Encuentra tu hogar ideal o inversión inmobiliaria con UnenGroup. Descubre propiedades en venta y alquiler con asesoramiento personalizado.">
+    <meta property="og:image" content="https://unengroup.com.ar/images/faviCon.jpg">
+    <meta property="og:url" content="https://unengroup.com.ar/">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image"> -->
+    <meta property="og:site_name" content="UnenGroup">
 
-    <!-- Icono del Sitio -->
-    <link rel="icon" href="./images/faviCon.jpg" type="image/x-icon">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UnenGroup - Tu Aliado en Bienes Raíces">
+    <meta name="twitter:description" content="Encuentra tu hogar ideal o inversión inmobiliaria con UnenGroup. Descubre propiedades en venta y alquiler con asesoramiento personalizado.">
+    <meta name="twitter:image" content="https://unengroup.com.ar/images/faviCon.jpg">
+    <meta name="twitter:site" content="@UnenGroup">
+    <meta name="twitter:creator" content="@UnenGroup">
 
-    <!-- CSS Frameworks y Librerías -->
+    <!-- Favicon -->
+    <link rel="icon" href="https://unengroup.com.ar/images/favicon.ico" type="image/x-icon">
 
-    <!-- Google Recaptcha  -->
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google Verification (Para Search Console) -->
+    <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION">
 
-
-
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Pannellum  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css">
-    <!-- Swiper.js -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Fuente  -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@300&display=swap"
-        rel="stylesheet">
-    <!-- Estilos Propios -->
-    <link rel="stylesheet" href="./css/stylesGen.css">
-    <link rel="stylesheet" href="./css/stylesInicio.css">
-
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/a720cb8047.js" crossorigin="anonymous"></script>
+    <!-- Schema Markup JSON-LD (SEO avanzado para Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "UnenGroup",
+      "url": "https://unengroup.com.ar",
+      "logo": "https://unengroup.com.ar/images/faviCon.jpg",
+      "description": "UnenGroup es tu inmobiliaria de confianza en Córdoba. Encuentra propiedades en venta y alquiler: casas, departamentos, terrenos y locales. Tasaciones online y asesoramiento en inversión inmobiliaria. ¡Hacé realidad tu próxima compra o alquiler con expertos en bienes raíces!",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+54 9 351 6837691",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.instagram.com/unengroup/",
+        "https://www.facebook.com/coty.garcia",
+        "https://www.linkedin.com/company/unengroup"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -854,8 +871,7 @@
                 <div class="row">
                     <!-- Formulario de Contacto -->
                     <div class="col-md-6 animate__animated animate__fadeInLeft">
-                        <form id="formContacto"
-                            class="bg-white mismoHeight p-4 rounded shadow">
+                        <form id="formContacto" class="bg-white mismoHeight p-4 rounded shadow">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
                                 <input type="text" id="nombre" name="nombre" class="form-control"
