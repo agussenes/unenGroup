@@ -5,6 +5,23 @@ const API_BASE = 'https://api.unengroup.com.ar';
 // Estado en memoria
 let propiedades = [];
 
+// 🟢 Reintentos por si la API está fría
+const RETRIES = 2;
+const RETRY_DELAY_MS = 800;
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+// 🟢 Loader centralizado
+function showLoader() {
+  const c = document.getElementById('propiedadesContainer');
+  if (!c) return;
+  c.innerHTML = `
+    <div class="dg-loader">
+      <div class="spinner-border text-info" role="status" aria-label="Cargando"></div>
+      <div class="mt-2 small text-muted">Cargando propiedades…</div>
+    </div>`;
+}
+
+
 // Helpers
 function formatPrice(v) {
   // En tu API, "precio" suele venir como string (ej: "USD 100.000" o "$800.000 + expensas")
@@ -56,19 +73,18 @@ function renderProperties(data) {
         <div class="card shadow w-100">
           <div class="swiper-container" id="${swiperId}">
             <div class="swiper-wrapper">
-              ${
-                imgs.length
-                  ? imgs.map((img) =>
-                      `<div class="swiper-slide">
+              ${imgs.length
+        ? imgs.map((img) =>
+          `<div class="swiper-slide">
                         <img src="${img}" class="img-fluid" alt="${prop.titulo}" loading="lazy">
                       </div>`
-                    ).join('')
-                  : `
+        ).join('')
+        : `
                     <div class="swiper-slide">
                       <img src="/images/placeholder.webp" class="img-fluid" alt="sin-imagen" loading="lazy">
                     </div>
                   `
-              }
+      }
             </div>
             <div class="botonesSwiperDes">
               <div class="swiper-button-next"></div>
@@ -126,17 +142,16 @@ function viewPropertyDetails(id) {
   const content = `
     <div class="swiper-container mb-4" id="modal-swiper-${property.id}">
       <div class="swiper-wrapper">
-        ${
-          imgs.length
-            ? imgs.map(img =>
-                `<div class="swiper-slide">
+        ${imgs.length
+      ? imgs.map(img =>
+        `<div class="swiper-slide">
                   <img src="${img}" class="img-fluid" alt="${property.titulo}" loading="lazy">
                 </div>`
-              ).join('')
-            : `<div class="swiper-slide">
+      ).join('')
+      : `<div class="swiper-slide">
                 <img src="/images/placeholder.webp" class="img-fluid" alt="sin-imagen" loading="lazy">
                </div>`
-        }
+    }
       </div>
       <div class="botonesSwiperDes">
         <div class="swiper-button-next"></div>
@@ -247,46 +262,54 @@ function applyInitialFilters() {
 }
 
 // === Carga desde API ===
-async function fetchPropertiesFromAPI() {
-  // Podés pasar filtros al servidor si querés reducir payload:
-  // const qs = new URLSearchParams();
-  // if (getQueryParams().tipo !== 'all') qs.set('tipo', getQueryParams().tipo);
-  // const url = `${API_BASE}/properties?${qs.toString()}`;
+async function fetchPropertiesFromAPI(tries = RETRIES) {
+  try {
+    const url = `${API_BASE}/properties`; // activas públicas
+    const res = await fetch(url, { cache: 'no-store', credentials: 'omit' });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : [];
 
-  const url = `${API_BASE}/properties`; // traigo todas (ya vienen solo activas)
-  const res = await fetch(url, { credentials: 'omit' });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-  const data = await res.json();
-  if (!Array.isArray(data)) return [];
+    // Si viene vacío, reintento un par de veces
+    if (list.length === 0 && tries > 0) {
+      await sleep(RETRY_DELAY_MS);
+      return fetchPropertiesFromAPI(tries - 1);
+    }
 
-  // Aseguro shape mínimo esperado por tu front
-  return data.map(p => ({
-    id: p.id,
-    tipo: p.tipo || '',
-    titulo: p.titulo || '',
-    precio: p.precio ?? '',
-    localidad: p.localidad || '',
-    metrosCuadrados: Number(p.metrosCuadrados || 0),
-    habitaciones: Number(p.habitaciones || 0),
-    banos: Number(p.banos || 0),
-    petFriendly: !!p.petFriendly,
-    imagenes: Array.isArray(p.imagenes) ? p.imagenes : [],
-    descripcion: p.descripcion || '',
-    destacado: !!p.destacado,
-    active: !!p.active,
-  }));
+    // Normalizo al shape que ya usás en el render
+    return list.map(p => ({
+      id: p.id,
+      tipo: p.tipo || '',
+      titulo: p.titulo || '',
+      precio: p.precio ?? '',
+      localidad: p.localidad || '',
+      metrosCuadrados: Number(p.metrosCuadrados || 0),
+      habitaciones: Number(p.habitaciones || 0),
+      banos: Number(p.banos || 0),
+      petFriendly: !!p.petFriendly,
+      imagenes: Array.isArray(p.imagenes) ? p.imagenes : [],
+      descripcion: p.descripcion || '',
+      destacado: !!p.destacado,
+      active: !!p.active,
+    }));
+  } catch (e) {
+    if (tries > 0) {
+      await sleep(RETRY_DELAY_MS);
+      return fetchPropertiesFromAPI(tries - 1);
+    }
+    throw e;
+  }
 }
+
 
 // === Boot ===
 document.addEventListener('DOMContentLoaded', async () => {
   // Loader opcional
   const container = document.getElementById('propiedadesContainer');
-  if (container) {
-    container.innerHTML = `
-      <div class="d-flex justify-content-center py-5">
-        <div class="spinner-border text-secondary" role="status"></div>
-      </div>`;
-  }
+  if (!container) return;
+
+  // 🟢 Spinner mientras carga
+  showLoader();
 
   try {
     propiedades = await fetchPropertiesFromAPI();
