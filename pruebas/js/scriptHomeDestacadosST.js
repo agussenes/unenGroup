@@ -96,8 +96,8 @@ function mountCarousel(props) {
       <div class="swiper-wrapper">
         ${props.map(p => `<div class="swiper-slide">${buildCard(p)}</div>`).join('')}
       </div>
-      <div class="swiper-button-nextST"></div>
-      <div class="swiper-button-prevST"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>`;
 
@@ -107,8 +107,8 @@ function mountCarousel(props) {
     watchOverflow: true,
     nested: true,
     navigation: {
-      nextEl: '.dg-destacadas-swiper > .swiper-button-nextST',
-      prevEl: '.dg-destacadas-swiper > .swiper-button-prevST',
+      nextEl: '.dg-destacadas-swiper > .swiper-button-next',
+      prevEl: '.dg-destacadas-swiper > .swiper-button-prev',
     },
     pagination: { el: '.dg-destacadas-swiper > .swiper-pagination', clickable: true },
     breakpoints: {
@@ -126,8 +126,8 @@ function initInnerSwipers() {
       nested: true,
       watchOverflow: true,
       navigation: {
-        nextEl: el.querySelector('.swiper-button-nextST'),
-        prevEl: el.querySelector('.swiper-button-prevST'),
+        nextEl: el.querySelector('.swiper-button-next'),
+        prevEl: el.querySelector('.swiper-button-prev'),
       },
       pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
     });
@@ -155,19 +155,30 @@ function openDetailsModal(p) {
                  onerror="this.src='/images/placeholder.webp'">
           </div>`).join('')}
       </div>
-      <div class="swiper-button-nextST"></div>
-      <div class="swiper-button-prevST"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
 
-    <div class="row text-center text-xl-start mt-3">
-      <h3 class="text-center">${p.titulo || ''}</h3>
-      <div class="col-xl-6 detalleProp">
-        <p><strong>Precio:</strong> ${(p.precio ?? '').toString().trim() || 'Consultar'}</p>
-        <p><strong>Categoría:</strong> ${p.tipo || ''}</p>
-        <p><strong>Localidad:</strong> ${p.localidad || ''}</p>
+    <div class="row  mt-3">
+      <h3 class="text-start">${p.titulo || ''}</h3>
+      <div class="col-12 mb-4 border-bottom detalleProp">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12">
+           <p><strong>Precio:</strong> ${(p.precio ?? '').toString().trim() || 'Consultar'}</p>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <p><strong>Categoría:</strong> ${p.tipo || ''}</p>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+           <p><strong>Localidad:</strong> ${p.localidad || ''}</p>
+          </div>
+        </div>
       </div>
-      <div class="col-xl-6"><div id="descripcionDetalle">${p.descripcion || ''}</div></div>
+      <div class="col-12">
+      <div id="descripcionDetalle">${p.descripcion || ''}
+      </div>
+      </div>
     </div>
     <div class="d-flex justify-content-center gap-3 mt-4">
       <a class="btn btn-secondary" href="/propiedades.html">Ver todas</a>
@@ -180,8 +191,8 @@ function openDetailsModal(p) {
     slidesPerView: 1,
     loop: true,
     navigation: {
-      nextEl: `#modal-swiper-${p.id} .swiper-button-nextST`,
-      prevEl: `#modal-swiper-${p.id} .swiper-button-prevST`,
+      nextEl: `#modal-swiper-${p.id} .swiper-button-next`,
+      prevEl: `#modal-swiper-${p.id} .swiper-button-prev`,
     },
     pagination: { el: `#modal-swiper-${p.id} .swiper-pagination`, clickable: true },
   });
