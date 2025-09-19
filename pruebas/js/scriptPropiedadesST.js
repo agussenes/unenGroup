@@ -162,14 +162,22 @@ function viewPropertyDetails(id) {
       </div>
     </div>
 
-    <div class="row text-center text-xl-start">
-      <h3 class="text-center">${property.titulo}</h3>
-      <div class="col-xl-6">
+    <div class="row">
+      <h3 class="text-start">${property.titulo}</h3>
+      <div class="col-12 mb-4 border-bottom">
+        <div class="row">
+        <div class="col-lg-4 col-sm-12">
         <p><strong>Precio:</strong> ${formatPrice(property.precio)}</p>
+        </div>
+        <div class="col-lg-4 col-sm-12">
         <p><strong>Categoría:</strong> ${property.tipo}</p>
+        </div>
+        <div class="col-lg-4 col-sm-12">
         <p><strong>Localidad:</strong> ${property.localidad}</p>
+        </div>
+        </div>
       </div>
-      <div class="col-xl-6">
+      <div class="col-12">
         <div id="descripcionDetalle">${property.descripcion || ''}</div>
       </div>
     </div>
