@@ -125,9 +125,9 @@
 
 .botonesSwiperDes div {
     background-color: #00000060 !important;
-    padding: 1rem;
-    border-radius: 50%;
     overflow: hidden;
+    width: 32px;
+    height: 32px;
 }
 
 
@@ -640,44 +640,31 @@
 }
 
 
-#propiedades .swiper-button-next,
-#propiedades .swiper-button-prev {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #71C6D4;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    z-index: 3;
 
-}
 
-#propiedades .swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
+#propiedades .swiper-button-nextDS:after,
+.swiper-rtl .swiper-button-prevDS:after {
     font-size: 1.5rem !important;
 }
 
-#propiedades .swiper-button-prev:after,
-.swiper-rtl .swiper-button-prev:after {
+#propiedades .swiper-button-prevDS:after,
+.swiper-rtl .swiper-button-prevDS:after {
     font-size: 1.5rem !important;
 }
 
-#propiedades .swiper-button-next:hover,
-#propiedades .swiper-button-prev:hover {
+#propiedades .swiper-button-nextDS:hover,
+#propiedades .swiper-button-prevDS:hover {
     transform: scale(1.1);
 }
 
 #propiedades .swiper-button-next {
-    right: -5px;
-    top: 50%;
+    right: 0px;
+    top: 47%;
 }
 
 #propiedades .swiper-button-prev {
-    left: -5px;
-    top: 50%;
+    left: 0px;
+    top: 47%;
 
 }
 
