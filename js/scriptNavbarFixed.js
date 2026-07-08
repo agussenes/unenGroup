@@ -112,3 +112,11 @@ if (filter) {
     // Muestra todas las propiedades por defecto
 }
 
+// Año dinámico del footer (centralizado para todas las vistas)
+document.addEventListener("DOMContentLoaded", function () {
+    const anioActual = new Date().getFullYear();
+    document.querySelectorAll(".footer-year").forEach((el) => {
+        el.textContent = anioActual;
+    });
+});
+

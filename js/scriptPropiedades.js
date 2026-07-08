@@ -1,823 +1,459 @@
+// scriptPropiedades.js — LISTADO PROPIEDADES (consumo API)
+// Portado desde referencia-produccion/js/scriptPropiedadesST.js
+// Detalle en Offcanvas + Lightbox. Incluye mejoras de lightbox:
+// teclado persistente y foco accesible.
 
-const propiedades = [
-    {
-        id: 1,
-        tipo: "alquiler",
-        titulo: "Casa en Alquiler La Deseada",
-        precio: "$2300 Alquiler mensual",
-        localidad: "La Deseada",
-        metrosCuadrados: 120,
-        habitaciones: 3,
-        banos: 2,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/subidaCochera.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/frente.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/galeria.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/estar.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/cocina.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza1.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/pieza2.jpg",
-            "./images/propiedades/viviendas/casa-La-Deseada-Alquiler/patio.jpg"
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-bed"></i> 3 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 2 Baños completos</li>
-            <li><i class="fas fa-toilet"></i> 1 Toilette</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor</li>
-            <li><i class="fas fa-utensils"></i> Cocina integrada</li>
-            <li><i class="fas fa-car"></i> Cochera para 2 autos</li>
-            <li><i class="fas fa-fire"></i> Asador</li>
-            <li><i class="fas fa-umbrella-beach"></i> Galería</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
-        </ul>`
-    },
-    {
-        id: 2,
-        tipo: "alquiler",
-        titulo: "Semi Piso en Alquiler Marcelo T. de Alvear al 100",
-        precio: "$800.000 + $260.000 expensas",
-        localidad: "Córdoba",
-        metrosCuadrados: 173,
-        habitaciones: 3,
-        banos: 3,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/frente.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/cocina.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/estar.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/estar2.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/bano.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/bano2.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/habitacion.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/habitacion2.jpg",
-            "./images/propiedades/viviendas/alquiler-Semi pisoMarcelo-T-de-alvear-al-100/interior.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-building"></i> Departamento en alquiler</li>
-            <li><i class="fas fa-expand"></i> 173 m² cubiertos</li>
-            <li><i class="fas fa-bed"></i> 3 dormitorios</li>
-            <li><i class="fas fa-bath"></i> 3 baños</li>
-            <li><i class="fas fa-car"></i> Cochera</li>
-            <li><i class="fas fa-clock"></i> 40 años de antigüedad</li>
-            <li><i class="fas fa-th-large"></i> 4 ambientes</li>
-            <li><i class="fas fa-map-marker-alt"></i> Ubicación interna</li>
-        </ul>`
-    },
-    {
-        id: 3,
-        tipo: "alquiler-temporario",
-        titulo: "Alquiler Casa La Carolina Temporario",
-        precio: "U$D 2000 por quincena / U$D 3500 mensual",
-        localidad: "La Carolina",
-        metrosCuadrados: 220,
-        habitaciones: 3,
-        banos: 2,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/frente.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/escritorioVista.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/galeriaAsador.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitaciojnVentana.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitacion3Camadoble.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/habitacionCamaDoble.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/livingComedor.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/livinHogar.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/masPatio.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/patio.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/patioPileta.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-La-Carolina/sillonVIstaPatio.jpg",
+const API_BASE = 'https://api.unengroup.com.ar';
 
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 220 m²</li>
-            <li><i class="fas fa-ruler-combined"></i> Superficie del terreno: 1000 m²</li>
-            <li><i class="fas fa-bed"></i> 3 dormitorios</li>
-            <li><i class="fas fa-bath"></i> 2 baños completos</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor / Cocina integrada</li>
-            <li><i class="fas fa-sun"></i> Terraza</li>
-            <li><i class="fas fa-glass-whiskey"></i> Galería con cerramientos de vidrio</li>
-            <li><i class="fas fa-car"></i> Cochera</li>
-            <li><i class="fas fa-fire"></i> Asador</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
-            <li><i class="fas fa-shield-alt"></i> Guardia 24 hs, cámaras y alarma</li>
-        </ul>`
-    },
-    {
-        id: 4,
-        tipo: "alquiler-temporario",
-        titulo: "Alquiler Casa Villa Warcalde Temporario",
-        precio: "Consultar disponibilidad y precio",
-        localidad: "Villa Warcalde",
-        metrosCuadrados: 250,
-        habitaciones: 2,
-        banos: 4,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/frente.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/mesa.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/cocina.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/bano.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioPileta.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/quincho-galeriaAsador.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/sillones.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 250 m²</li>
-            <li><i class="fas fa-ruler-combined"></i> Superficie del terreno: 3000 m²</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor</li>
-            <li><i class="fas fa-utensils"></i> Cocina integrada con desayunador</li>
-            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 4 Baños</li>
-            <li><i class="fas fa-fire"></i> Quincho amplio para 12 personas con asador</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
-        </ul>`
-    },
-    {
-        id: 5,
-        tipo: "terreno",
-        titulo: "Lote en Venta Alta Córdoba - Apto Desarrollo",
-        precio: "USD 225.000",
-        localidad: "Córdoba",
-        metrosCuadrados: 288,
-        habitaciones: 0,
-        banos: 0,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/vistaLocationPointMap.jpg",
-            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frenteCerca.jpg",
-            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frenteMasCerca.jpg",
-            "./images/propiedades/terrenos/terreno-Lote-en-venta-Alta-Cordoba-apto-Desarrollo/frente.jpg",
+// Estado en memoria
+let propiedades = [];
 
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Dirección: Isabel la Católica 1448, esquina Avellaneda</li>
-            <li><i class="fas fa-expand"></i> Superficie total: 288 m²</li>
-            <li><i class="fas fa-ruler-horizontal"></i> Frente: 8 mts</li>
-            <li><i class="fas fa-ruler-vertical"></i> Fondo: 9,35 mts</li>
-            <li><i class="fas fa-building"></i> Apto desarrollo</li>
-        </ul>`
-    },
-    {
-        id: 6,
-        tipo: "venta",
-        titulo: "Casa Paso de los Andes",
-        precio: "USD 155.000 con escritura",
-        localidad: "Paso de los Andes",
-        metrosCuadrados: 232,
-        habitaciones: 4,
-        banos: 4,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/frente.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/dentroPatioFrente.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/living.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/comedor.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/cocina.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/bano.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/banio2.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/camaHabitacion.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/escaoleras.jpg",
-            "./images/propiedades/viviendas/venta-Casa-Paso-de-los-Andes/piesaCamaIndividuales.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 232 m²</li>
-            <li><i class="fas fa-ruler-combined"></i> Superficie de terreno: 196 m²</li>
-            <li><i class="fas fa-bed"></i> 4 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 4 Baños (1 toilette)</li>
-            <li><i class="fas fa-car"></i> Cochera cubierta pasante para 2 autos con doble portón automático</li>
-            <li><i class="fas fa-utensils"></i> Cocina separada</li>
-            <li><i class="fas fa-chair"></i> Comedor independiente</li>
-            <li><i class="fas fa-couch"></i> Living</li>
-            <li><i class="fas fa-water"></i> Lavadero y pieza de servicio</li>
-            <li><i class="fas fa-fire"></i> Patio con asador</li>
-            <li><i class="fas fa-play"></i> Espacio tipo playroom con salida directa al patio y a la calle</li>
-        </ul>`
-    },
-    {
-        id: 7,
-        tipo: "venta",
-        titulo: "Casa en Venta Potrerillo de Larreta",
-        precio: "USD 450.000",
-        localidad: "Potrerillo de Larreta",
-        metrosCuadrados: 420,
-        habitaciones: 4,
-        banos: 4,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frenteDelejos.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/ghaleriaAsador.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/pileta.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/cocinaComedor.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/escaleras.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/habitacion.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/habitacionConBestidor.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/bestidor.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 420 m²</li>
-            <li><i class="fas fa-ruler-combined"></i> Superficie de terreno: 1800 m²</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor</li>
-            <li><i class="fas fa-bed"></i> 4 Dormitorios (1 en suite)</li>
-            <li><i class="fas fa-bath"></i> 4 Baños</li>
-            <li><i class="fas fa-user-tie"></i> Dependencia de servicio</li>
-            <li><i class="fas fa-car"></i> Cochera para 2 autos</li>
-            <li><i class="fas fa-umbrella-beach"></i> Galería</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
-        </ul>`
-    },
-    {
-        id: 8,
-        tipo: "local-oficina-cochera",
-        titulo: "Cochera en Venta - Edificio San Cristóbal",
-        precio: "USD 10.000",
-        localidad: "Córdoba",
-        metrosCuadrados: 12,
-        habitaciones: 0,
-        banos: 0,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/cochera-960-1280.jpg",
-            "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/fotoDubsuelo.jpg",
-            "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/salidaDesdeAdentro.jpg",
-            "./images/propiedades/oficinas/cochera-VentaEdificioSanCristobal/salidaCochera.jpg",
+// 🟢 Reintentos por si la API está fría
+const RETRIES = 2;
+const RETRY_DELAY_MS = 800;
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Pleno Centro</li>
-            <li><i class="fas fa-expand"></i> Superficie: 12 m²</li>
-            <li><i class="fas fa-shield-alt"></i> Seguridad 24 hs</li>
-            <li><i class="fas fa-level-down-alt"></i> Ubicación: Subsuelo</li>
-        </ul>`
-    },
-    {
-        id: 9,
-        tipo: "local-oficina-cochera",
-        titulo: "Departamento en Venta Nueva Córdoba - Uso Comercial",
-        precio: "USD 85.000",
-        localidad: "Nueva Córdoba",
-        metrosCuadrados: 56.06,
-        habitaciones: 2,
-        banos: 1,
-        petFriendly: false,
-        imagenes: [
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Ubicación: Buenos Aires esq. Rondeau</li>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 56.06 m²</li>
-            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 1 Baño</li>
-            <li><i class="fas fa-chair"></i> Living</li>
-            <li><i class="fas fa-utensils"></i> Cocina</li>
-            <li><i class="fas fa-money-bill"></i> Expensas: $78.000</li>
-            <li><i class="fas fa-shield-alt"></i> Seguridad y cámaras en ingreso</li>
-        </ul>`
-    },
-    {
-        id: 10,
-        tipo: "venta",
-        titulo: "Departamento en Venta - Independencia a mts. Bv. San Juan",
-        precio: "USD 68.000",
-        localidad: "Córdoba",
-        metrosCuadrados: 63,
-        habitaciones: 1,
-        banos: 1,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/ffrente.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/hold.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/living.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/mesaComedor.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/cocina.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/balcon.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/habitacion.jpg",
-            "./images/propiedades/viviendas/venta-Departamento-Independencia-a-mts-boulevar-san-juan/banio2.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 63 m²</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor</li>
-            <li><i class="fas fa-map-marker-alt"></i> Balcón</li>
-            <li><i class="fas fa-utensils"></i> Cocina separada</li>
-            <li><i class="fas fa-bed"></i> 1 Dormitorio</li>
-            <li><i class="fas fa-bath"></i> 1 Baño completo</li>
-        </ul>`
-    },
-    {
-        id: 11,
-        tipo: "venta",
-        titulo: "Piso en Venta - Edificio Roggio, Cofico",
-        precio: "USD 220.000",
-        localidad: "Cofico",
-        metrosCuadrados: 273,
-        habitaciones: 4,
-        banos: 4,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/principal.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/holdEdi.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/interior.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/liveng.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/comedoor.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/cocina.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/banio.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/banio2.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/habitacion.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/habitacion2.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/habitacion3.jpg",
-            "./images/propiedades/viviendas/venta-Piso-edificio-roggio-cofico/galeria.jpg",
+// 🟢 Loader centralizado
+function showLoader() {
+  const c = document.getElementById('propiedadesContainer');
+  if (!c) return;
+  c.innerHTML = `
+    <div class="dg-loader">
+      <div class="spinner-border text-info" role="status" aria-label="Cargando"></div>
+      <div class="mt-2 small text-muted">Cargando propiedades…</div>
+    </div>`;
+}
 
+// Helpers
+function formatPrice(v) {
+  if (typeof v === 'number') return v.toLocaleString('es-AR');
+  return String(v ?? '').trim();
+}
+function byUniqueStrings(arr) {
+  return [...new Set(arr.filter(Boolean).map(String))];
+}
 
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 273 m²</li>
-            <li><i class="fas fa-couch"></i> Living / comedor amplio con salida al balcón</li>
-            <li><i class="fas fa-chair"></i> Comedor</li>
-            <li><i class="fas fa-utensils"></i> Cocina con despensa</li>
-            <li><i class="fas fa-laptop-house"></i> Escritorio</li>
-            <li><i class="fas fa-bed"></i> 4 Dormitorios (principal en suite con vestidor)</li>
-            <li><i class="fas fa-sun"></i> Terraza con cerramiento de aluminio</li>
-            <li><i class="fas fa-bath"></i> 4 Baños completos</li>
-            <li><i class="fas fa-car"></i> Cochera cubierta para 1 auto</li>
-            <li><i class="fas fa-tree"></i> Jardín común</li>
-            <li><i class="fas fa-temperature-high"></i> Calefacción central y 4 aires acondicionados</li>
-        </ul>`
-    },
-    {
-        id: 12,
-        tipo: "venta",
-        titulo: "Dúplex 1 en Venta - Docta Urbanización Inteligente",
-        precio: "USD 98.000",
-        localidad: "Docta",
-        metrosCuadrados: 0,
-        habitaciones: 2,
-        banos: 1,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/entrada.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/living.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/livinggg.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/mesayliving.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/cocina.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/banmoio.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/habitacion.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/patioAsador.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-a-estrenar-Docta-Urbanizacion-Inteligente/patioInterno.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 1 Baño completo</li>
-            <li><i class="fas fa-couch"></i> Living</li>
-            <li><i class="fas fa-utensils"></i> Cocina / Comedor</li>
-            <li><i class="fas fa-tree"></i> Patio de iluminación</li>
-            <li><i class="fas fa-fire"></i> Galería con asador</li>
-            <li><i class="fas fa-car"></i> Cochera para 1 auto</li>
-            <li><i class="fas fa-leaf"></i> Jardín</li>
-             <li><a href="https://drive.google.com/file/d/1hNeJq77WFC_G9xfZJKOizNiZyzH-KfqW/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Proyecto arquitectura PDF</a></li>
-        </ul>`
-    },
-    {
-        id: 13,
-        tipo: "venta",
-        titulo: "Dúplex 2 en Venta a Estrenar - Docta Urbanización Inteligente",
-        precio: "USD 98.000",
-        localidad: "Docta",
-        metrosCuadrados: 0,
-        habitaciones: 2,
-        banos: 1,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/frente.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/living.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/livingComedor.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/patio.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/patioInterno.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/patiointernoo.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/cocina.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/habityacion.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/bano2.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-a-estrenar-Docta-Urbanizacion-Inteligente/interior.jpg",
+// Normaliza la URL de una imagen que llega de la API.
+// - Si ya es absoluta (http/https) → se deja igual.
+// - Si es un asset local (/images/...) → se deja igual.
+// - Si viene relativa (ej. "storage/..." o "/storage/...") → se arma con API_BASE.
+function resolveImg(u) {
+  const s = String(u ?? '').trim();
+  if (!s) return s;
+  if (/^https?:\/\//i.test(s)) return s;
+  if (s.startsWith('/images/')) return s;
+  return API_BASE.replace(/\/+$/, '') + '/' + s.replace(/^\/+/, '');
+}
 
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 1 Baño completo</li>
-            <li><i class="fas fa-couch"></i> Living</li>
-            <li><i class="fas fa-utensils"></i> Cocina / Comedor</li>
-            <li><i class="fas fa-tree"></i> Patio de iluminación</li>
-            <li><i class="fas fa-fire"></i> Galería con asador</li>
-            <li><i class="fas fa-car"></i> Cochera para 1 auto</li>
-            <li><i class="fas fa-leaf"></i> Jardín</li>
-            <li><a href="https://drive.google.com/file/d/1GLQX7XP7AXcBMkyTgDxvWx2stwQYGcR-/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Proyecto arquitectura PDF</a></li>
-        </ul>`
-    },
-    {
-        id: 14,
-        tipo: "alquiler-temporario",
-        titulo: "Casa en Villa Belgrano",
-        precio: '$1.200.000',
-        localidad: "Villa Belgrano",
-        metrosCuadrados: 100,
-        habitaciones: 2,
-        banos: 1,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frente.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/estar.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/cocina.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/bano.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/frentedoscamas.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/habitaciondoscamas.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/camamatrimonial.jpg",
-            "./images/propiedades/viviendas/casa-Housing-Jardines-Villa-Belgrano-Alq-Temp/patio.jpg"
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-home"></i> Servicios y expensas. (90.000 arg)</li>
-            <li><i class="fas fa-paint-brush"></i>Living, comedor y cocina/comedor</li>
-            <li><i class="fas fa-expand-arrows-alt"></i> Lavadero y escritorio pequeÃ±o</li>
-            <li><i class="fas fa-bed"></i> Dormitorio principal en suite con vestidor y baño</li>
-            <li><i class="fas fa-swimming-pool"></i> Amplio jardín con piscina apta para mascotas</li>
-        </ul>`
-    },
-    {
-        id: 15,
-        tipo: "local-oficina-cochera",
-        titulo: "Oficina en venta edificio Los Angeles II",
-        precio: "USD 60.000",
-        localidad: "Centro, Córdoba",
-        metrosCuadrados: 0,
-        habitaciones: 4,
-        banos: 1,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/principal.jpg",
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/frente.jpg",
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/oficina1.jpg",
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/oficina2.jpg",
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/oficina3.jpg",
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/recep.jpg",
-            "./images/propiedades/oficinas/oficina-VentaEdificioLosAngelesII/recep2.jpg"
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-paint-brush"></i>4 ambientes, se vende amoblada</li>
-            <li><i class="fas fa-shield-alt"></i> El edificio posee seguridad</li>
-        </ul>`
-    },
-    {
-        id: 16,
-        tipo: "venta",
-        titulo: "Duplex a estrenar Chacra del Norte",
-        precio: "USD 240.000",
-        localidad: "Chacra del Norte",
-        metrosCuadrados: 180,
-        habitaciones: 3,
-        banos: 3,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/principal.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/living.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/comedor.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/cocina.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/bano3.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/escritorio.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/habitacion2.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/bano2.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/habitacion.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/bano.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/galeria2.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-A-Estrenar-La-Chacra-Del-Norte/galeria.jpg",
-   
-        ],
-        descripcion: `
-        <ul>
-        <li><i class="fas fa-bed"></i> 3 Dormitorios con placard</li>
-        <li><i class="fas fa-bath"></i> 3 Baños</li>
-        <li><i class="fas fa-utensils"></i> Cocina semi-integrada con muebles bajo mesada y alacenas</li>
-        <li><i class="fas fa-couch"></i> Living / Comedor con salida a la Galería</li>
-        <li><i class="fas fa-umbrella-beach"></i> Galería con Asador y bacha</li>
-        <li><i class="fas fa-tree"></i> Patio</li>
-        <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
-        <li><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1alOA09w-VvgA2laa5p0RiXwVNvwRexwC/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></li>
+// Placeholder embebido (no depende de un archivo en el server)
+const PLACEHOLDER_IMG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450">' +
+  '<rect width="100%" height="100%" fill="#e9ecef"/>' +
+  '<text x="50%" y="50%" font-family="Arial,Helvetica,sans-serif" font-size="30" fill="#9aa4ad" text-anchor="middle" dominant-baseline="middle">Sin imagen</text>' +
+  '</svg>'
+);
 
-        </ul>`
-    }, 
-    {
-        id: 17,
-        tipo: "venta",
-        titulo: "Duplex 2 a estrenar Chacra del Norte",
-        precio: "USD 250.000",
-        localidad: "Chacra del Norte",
-        metrosCuadrados: 180,
-        habitaciones: 3,
-        banos: 2,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/principal.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/segunda.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/tercera.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/cuarta.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/quinta.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/sexta.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/septima.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/octaba.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/novena.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/decima.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/onceaba.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/doceaba.jpg",
-            "./images/propiedades/viviendas/venta-Duplex-2-A-Estrenar-La-Chacra-Del-Norte/terceaba.jpg",
-    
-        ],
-        descripcion: `
-        <ul>
-        <li><i class="fas fa-bed"></i> 3 Dormitorios, 1 dormitorio en suite con vestidor</li>
-        <li><i class="fas fa-bath"></i> 2 baños completos y 1 Toilette</li>
-        <li><i class="fas fa-utensils"></i> Cocina semi-integrada con muebles bajo mesada y alacenas</li>
-        <li><i class="fas fa-couch"></i> Living / Comedor con salida a la Galería</li>
-        <li><i class="fas fa-umbrella-beach"></i> Galería con Asador y bacha</li>
-        <li><i class="fas fa-tree"></i> Patio</li>
-        <li><i class="fas fa-car"></i> Cocheras dobles (30 m²)</li>
-        <li><i class="far fa-play-circle"></i> <a href="https://drive.google.com/file/d/1VexH3lRIEt-Nn3LWURO4Nh1MORTd7q4x/view?usp=sharing" style="text-decoration: none;" class="fw-bold">Ver video del recorrido!</a></li>
-        </ul>`,
-        video: true
+// === Swiper: importante scopear los selectores a cada carrusel ===
+function initializeSwiper(containerId) {
+  new Swiper(`#${containerId}`, {
+    loop: true,
+    pagination: { el: `#${containerId} .swiper-pagination`, clickable: true },
+    navigation: {
+      nextEl: `#${containerId} .swiper-button-next`,
+      prevEl: `#${containerId} .swiper-button-prev`,
+    },
+  });
+}
+
+// === Visor fullscreen simple (LIGHTBOX) ===
+let currentLightboxImages = [];
+let currentLightboxIndex = 0;
+let lightboxKeyHandler = null;   // referencia para poder remover el listener
+let lightboxLastFocused = null;  // foco previo, para devolverlo al cerrar
+
+function openLightbox(images, startIndex = 0) {
+  currentLightboxImages = images;
+  currentLightboxIndex = startIndex;
+
+  const overlay = document.getElementById('lightboxOverlay');
+  const imgEl = document.getElementById('lightboxImage');
+  if (!overlay || !imgEl) return;
+
+  // Aseguro que el overlay sea el último hijo del body (queda por encima del offcanvas)
+  document.body.appendChild(overlay);
+
+  const setSrc = () => { imgEl.src = currentLightboxImages[currentLightboxIndex] || ''; };
+  setSrc();
+  overlay.style.display = 'flex';
+
+  const closeBtn = overlay.querySelector('.dg-lightbox-close');
+  const prevBtn = overlay.querySelector('.dg-lightbox-prev');
+  const nextBtn = overlay.querySelector('.dg-lightbox-next');
+
+  const prev = () => { currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length; setSrc(); };
+  const next = () => { currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length; setSrc(); };
+
+  const close = () => {
+    overlay.style.display = 'none';
+    // Mejora 1: remover el listener de teclado al cerrar
+    if (lightboxKeyHandler) {
+      document.removeEventListener('keydown', lightboxKeyHandler);
+      lightboxKeyHandler = null;
     }
+    overlay.onclick = null;
+    // Mejora 3: devolver el foco al elemento previo
+    if (lightboxLastFocused && typeof lightboxLastFocused.focus === 'function') {
+      lightboxLastFocused.focus();
+    }
+  };
 
-];
+  closeBtn.onclick = close;
+  prevBtn.onclick = prev;
+  nextBtn.onclick = next;
 
-//Dropdown list
-function populateLocalitiesDropdown() {
-    const localidadSelect = document.getElementById("localidad");
-    localidadSelect.innerHTML = `<option value="">Todas las localidades</option>`; // Reset
+  overlay.onclick = (e) => { if (e.target === overlay) close(); };
 
-    const localidadesUnicas = [...new Set(propiedades.map(prop => prop.localidad))];
+  // Mejora 1: teclado activo mientras el lightbox esté abierto (sin { once:true })
+  if (lightboxKeyHandler) document.removeEventListener('keydown', lightboxKeyHandler);
+  lightboxKeyHandler = (e) => {
+    if (overlay.style.display !== 'flex') return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') prev();
+    else if (e.key === 'ArrowRight') next();
+  };
+  document.addEventListener('keydown', lightboxKeyHandler);
 
-    localidadesUnicas.forEach(localidad => {
-        const option = document.createElement("option");
-        option.value = localidad.toLowerCase();
-        option.textContent = localidad;
-        localidadSelect.appendChild(option);
+  // Mejora 3: foco al abrir (guardando el previo)
+  lightboxLastFocused = document.activeElement;
+  closeBtn.focus();
+}
+
+// === Render principal de cards ===
+function renderProperties(data) {
+  const container = document.getElementById('propiedadesContainer');
+  if (!container) return;
+
+  if (!data.length) {
+    container.innerHTML = `
+      <div class="alert alert-warning text-center">
+        No se encontraron propiedades. Intenta con otros filtros.
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = data.map((prop) => {
+    const imgs = Array.isArray(prop.imagenes) ? prop.imagenes : [];
+    const swiperId = `swiper-${prop.id}`;
+
+    // Métricas para chips
+    const cub = Number(prop.metrosCubiertos || 0);
+    const m2  = Number(prop.metrosCuadrados || prop.metrosTotales || 0); // usamos metrosCuadrados; si no viene, caemos a totales
+    const hab = Number(prop.habitaciones || 0);
+    const ban = Number(prop.banos || 0);
+
+    const chips = [];
+    if (cub > 0) chips.push(`<span title="Superficie cubierta"><i class="fas fa-th-large"></i> ${cub} m² cub.</span>`);
+    if (m2  > 0) chips.push(`<span title="Superficie"><i class="fas fa-expand"></i> ${m2} m²</span>`);
+    if (hab > 0) chips.push(`<span title="Dormitorios"><i class="fas fa-bed"></i> ${hab}</span>`);
+    if (ban > 0) chips.push(`<span title="Baños"><i class="fas fa-bath"></i> ${ban}</span>`);
+    if (prop.petFriendly) chips.push(`<span title="Pet-Friendly"><i class="fas fa-paw" style="color:#71C6D4;"></i> Pet-Friendly</span>`);
+
+    return `
+      <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap">
+        <div class="card shadow w-100">
+          <div class="swiper-container" id="${swiperId}">
+            <div class="swiper-wrapper">
+              ${imgs.length
+                ? imgs.map((img) =>
+                    `<div class="swiper-slide">
+                      <img src="${img}" class="img-fluid" alt="${prop.titulo}" loading="lazy" decoding="async">
+                    </div>`).join('')
+                : `<div class="swiper-slide">
+                    <img src="${PLACEHOLDER_IMG}" class="img-fluid" alt="sin-imagen" loading="lazy" decoding="async">
+                  </div>`
+              }
+            </div>
+            <div class="botonesSwiperDes">
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <div class="swiper-pagination visores"></div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-icons d-flex justify-content-between align-items-center py-2">
+              ${chips.join('')}
+            </div>
+
+            <h5 class="card-title py-2">${prop.titulo}</h5>
+            <p class="card-text"><strong>Categoría:</strong> ${prop.tipo || '—'}</p>
+            ${prop.precio ? `<p class="card-text"><strong>Precio:</strong> ${formatPrice(prop.precio)}</p>` : ''}
+            ${prop.localidad ? `<p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>` : ''}
+
+            <button class="btn btn-info mb-2" data-view-more="${prop.id}">Ver más</button>
+            <button class="btn btn-secondary btn-me-interesa" data-propiedad="${prop.titulo}">Me interesa</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Eventos de “Ver más”
+  container.querySelectorAll('[data-view-more]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = Number(e.currentTarget.getAttribute('data-view-more'));
+      viewPropertyDetails(id);
     });
+  });
+
+  // Eventos “Me interesa”
+  container.querySelectorAll('.btn-me-interesa').forEach(button => {
+    button.addEventListener('click', function () {
+      goToContact(this.getAttribute('data-propiedad'));
+    });
+  });
+
+  // Inicializar Swipers
+  data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
+}
+
+// === Panel lateral de detalle (Offcanvas) ===
+function viewPropertyDetails(id) {
+  const property = propiedades.find((p) => Number(p.id) === Number(id));
+  if (!property) return;
+
+  const imgs = Array.isArray(property.imagenes) ? property.imagenes : [];
+  const swiperId = `modal-swiper-${property.id}`;
+
+  const gallery = `
+    <div class="swiper-container mb-3" id="${swiperId}">
+      <div class="swiper-wrapper">
+        ${imgs.length
+          ? imgs.map((img,idx) =>
+              `<div class="swiper-slide">
+                 <img src="${img}" class="img-fluid" alt="${property.titulo}" loading="lazy" decoding="async" data-idx="${idx}">
+               </div>`).join('')
+          : `<div class="swiper-slide">
+               <img src="${PLACEHOLDER_IMG}" class="img-fluid" alt="sin-imagen" loading="lazy" decoding="async">
+             </div>`
+        }
+      </div>
+      <div class="botonesSwiperDes">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="pagination"><div class="swiper-pagination"></div></div>
+    </div>
+  `;
+
+  const content = `
+    ${gallery}
+    <div class="row contenedorGen p-1 p-md-5 g-3">
+      <div class="col-12"><h3 class="mb-2 text-start">${property.titulo}</h3></div>
+      <div class="col-12">
+        <div class="row d-flex justify-content-between">
+          <div class="col-md-4">${property.precio ? `<p class="mb-1"><strong>Precio:</strong> ${formatPrice(property.precio)}</p>` : ''}</div>
+          <div class="col-md-4">${property.tipo ? `<p class="mb-1"><strong>Categoría:</strong> ${property.tipo}</p>` : ''}</div>
+          <div class="col-md-4">${property.localidad ? `<p class="mb-1"><strong>Localidad:</strong> ${property.localidad}</p>` : ''}</div>
+        </div>
+      </div>
+      <div class="col-12"><div id="descripcionDetalle">${property.descripcion || ''}</div></div>
+    </div>
+  `;
+
+  const target = document.getElementById('propertyDetailsContent');
+  if (!target) return;
+  target.innerHTML = content;
+
+  // Acciones (abajo)
+  const actions = document.getElementById('propertyDetailsActions');
+  if (actions) {
+    actions.innerHTML = `
+      <button class="btn btn-secondary btn-me-interesa" onclick="goToContact('${property.titulo}')" data-bs-dismiss="offcanvas">Me interesa</button>
+    `;
+  }
+
+  // Mostrar panel
+  const panelEl = document.getElementById('propertyDetailsPanel');
+  try {
+    const BS = (window && window.bootstrap) ? window.bootstrap : bootstrap;
+    BS.Offcanvas.getOrCreateInstance(panelEl).show();
+  } catch (err) {
+    console.error('No pude abrir Offcanvas con Bootstrap, aplico fallback:', err);
+    panelEl.classList.add('show');
+    panelEl.style.visibility = 'visible';
+    panelEl.style.zIndex = 2000;
+    document.body.classList.add('offcanvas-backdrop', 'show');
+  }
+
+  // Iniciar Swiper + fullscreen
+  try {
+    initializeSwiper(swiperId);
+    target.querySelectorAll(`#${swiperId} .swiper-slide img`).forEach(imgEl => {
+      imgEl.addEventListener('click', (e) => {
+        const idx = Number(e.currentTarget.getAttribute('data-idx')) || 0;
+        openLightbox(imgs.length ? imgs : [e.currentTarget.src], idx);
+      });
+    });
+  } catch (err) {
+    console.error('Error iniciando Swiper del panel:', err);
+  }
+}
+
+// === “Me interesa” ===
+function goToContact(propiedad) {
+  const selectPropiedad = document.getElementById('propiedadInteres');
+  if (!selectPropiedad) return;
+
+  const opciones = Array.from(selectPropiedad.options);
+  let opcion = opciones.find(opt => opt.value === propiedad);
+
+  if (!opcion) {
+    const nueva = document.createElement('option');
+    nueva.value = propiedad;
+    nueva.textContent = propiedad;
+    nueva.selected = true;
+    selectPropiedad.appendChild(nueva);
+  } else {
+    selectPropiedad.value = propiedad;
+  }
+
+  // Cerrar el offcanvas de detalle si está abierto
+  const panelEl = document.getElementById('propertyDetailsPanel');
+  if (panelEl) {
+    const inst = bootstrap.Offcanvas.getInstance(panelEl);
+    if (inst) inst.hide();
+  }
+
+  setTimeout(() => {
+    const contactoSection = document.getElementById('contacto');
+    if (contactoSection) {
+      contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => { window.location.hash = '#contacto'; }, 400);
+    }
+  }, 250);
+}
+
+// === Dropdowns (Localidades / Propiedad de interés) ===
+function populateLocalitiesDropdown() {
+  const select = document.getElementById('localidad');
+  if (!select) return;
+
+  const values = byUniqueStrings(propiedades.map(p => p.localidad))
+    .sort((a, b) => String(a).localeCompare(String(b), 'es', { sensitivity: 'base' }));
+
+  select.innerHTML = `<option value="">Todas las localidades</option>` + values
+    .map(loc => `<option value="${String(loc).toLowerCase()}">${loc}</option>`)
+    .join('');
 }
 
 function populatePropertiesDropdown() {
-    const selectPropiedad = document.getElementById("propiedadInteres");
-    selectPropiedad.innerHTML = `<option value="">Selecciona una propiedad...</option>`; // Reset
-
-    propiedades.forEach(prop => {
-        const option = document.createElement("option");
-        option.value = prop.titulo;
-        option.textContent = prop.titulo;
-        selectPropiedad.appendChild(option);
-    });
+  const select = document.getElementById('propiedadInteres');
+  if (!select) return;
+  select.innerHTML = `<option value="">Selecciona una propiedad...</option>` +
+    propiedades.map(p => `<option value="${p.titulo}">${p.titulo}</option>`).join('');
 }
 
-
-// Función para inicializar Swiper
-function initializeSwiper(id) {
-    new Swiper(`#${id}`, {
-        loop: true,
-        pagination: {
-            el: `.swiper-pagination`,
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        }
-    });
-}
-
-// Renderizar Propiedades
-function renderProperties(data) {
-    const container = document.getElementById("propiedadesContainer");
-    container.innerHTML = data.map((prop) => `
-        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap">
-            <div class="card shadow">
-                <div class="swiper-container" id="swiper-${prop.id}">
-                    <div class="swiper-wrapper">
-                        ${prop.imagenes
-                            .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`)
-                            .join("")}
-                    </div>
-                    <div class="botonesSwiperDes">
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div class="swiper-pagination visores"></div>
-                </div>
-                <div class="card-body">
-                    <div class="card-icons d-flex justify-content-between py-2">
-                        <span><i class="fas fa-expand"></i> ${prop.metrosCuadrados} m²</span>
-                        ${prop.habitaciones > 0 ? `<span><i class="fas fa-bed"></i> ${prop.habitaciones}</span>` : ""}
-                        ${prop.banos > 0 ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>` : ""}
-                        ${prop.petFriendly ? `<span><i class="fas fa-paw" style="color: #71C6D4;"></i> Pet-Friendly</span>` : ""}
-                    </div>
-                    <h5 class="card-title py-2">${prop.titulo}</h5>
-                    <p class="card-text"><strong>Categoría:</strong> ${prop.tipo}</p>
-                    <p class="card-text"><strong>Precio:</strong> ${prop.precio.toLocaleString()}</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
-                    <button class="btn btn-info mb-2" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-                    <button class="btn btn-secondary btn-me-interesa" data-propiedad="${prop.titulo}">Me interesa</button>
-                </div>
-            </div>
-        </div>
-    `).join("");
-
-    // 🔹 Asignar eventos a los botones "Me interesa" fuera del modal
-    setTimeout(() => {
-        document.querySelectorAll(".btn-me-interesa").forEach(button => {
-            button.addEventListener("click", function() {
-                goToContact(this.getAttribute("data-propiedad"));
-            });
-        });
-    }, 300); // Esperar para asegurar que el DOM se haya actualizado
-
-    // Inicializar Swipers
-    data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
-}
-
-
-// Ver detalles de la propiedad
-function viewPropertyDetails(id) {
-    const property = propiedades.find((prop) => prop.id === id);
-    if (property) {
-        const content = `
-            <div class="swiper-container mb-4" id="modal-swiper-${property.id}">
-                <div class="swiper-wrapper">
-                    ${property.imagenes
-                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
-                .join("")}
-                </div>
-                 <div class="botonesSwiperDes">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                 </div>
-                <div class="pagination">
-                 <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <div class="row text-center text-xl-start">
-            <h3 class="text-center">${property.titulo}</h3>
-                <div class="col-xl-6">
-                    
-                    <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
-                    <p><strong>Categoría:</strong> ${property.tipo}</p>
-                    <p><strong>Localidad:</strong> ${property.localidad}</p>
-                </div>
-                <div class="col-xl-6">
-                    
-                    <p id="descripcionDetalle">${property.descripcion}</p>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center gap-3 mt-4">
-                <button class="btn btn-secondary" onclick="goToContact('${property.titulo}')" data-bs-dismiss="modal">Me interesa</button>
-            </div>
-        `;
-        document.getElementById("propertyDetailsContent").innerHTML = content;
-        initializeSwiper(`modal-swiper-${property.id}`);
-        new bootstrap.Modal(document.getElementById("propertyDetailsModal")).show();
-    }
-}
-
-
-// Redirigir al Formulario de Contacto
-function goToContact(propiedad) {
-    console.log("🔵 goToContact() ejecutado con propiedad:", propiedad); // Debug
-
-    const selectPropiedad = document.getElementById("propiedadInteres");
-    if (!selectPropiedad) {
-        console.error("⚠️ Error: No se encontró el select de propiedad");
-        return;
-    }
-
-    const opciones = Array.from(selectPropiedad.options);
-    let opcionExistente = opciones.find(opt => opt.value === propiedad);
-
-    if (!opcionExistente) {
-        let nuevaOpcion = document.createElement("option");
-        nuevaOpcion.value = propiedad;
-        nuevaOpcion.textContent = propiedad;
-        nuevaOpcion.selected = true;
-        selectPropiedad.appendChild(nuevaOpcion);
-        console.log("✅ Nueva opción agregada:", propiedad);
-    } else {
-        selectPropiedad.value = propiedad;
-        console.log("✅ Propiedad ya existe, seleccionada:", propiedad);
-    }
-
-    // Cerrar el modal si está abierto
-    const modal = document.getElementById("propertyDetailsModal");
-    if (modal) {
-        let modalInstance = bootstrap.Modal.getInstance(modal);
-        if (modalInstance) {
-            modalInstance.hide();
-            console.log("✅ Modal cerrado");
-        }
-    }
-
-    // 🚀 FORZAR EL SCROLL AL FORMULARIO SIEMPRE
-    setTimeout(() => {
-        const contactoSection = document.getElementById("contacto");
-        if (contactoSection) {
-            contactoSection.scrollIntoView({ behavior: "smooth", block: "start" });
-            console.log("✅ Scrolleado a sección de contacto");
-
-            // 🔥 Asegurar que el navegador registre el hash en la URL
-            setTimeout(() => {
-                window.location.hash = "#contacto";
-                console.log("🔗 URL hash cambiado a #contacto");
-            }, 500);
-        } else {
-            console.error("❌ No se encontró la sección de contacto");
-        }
-    }, 300);
-}
-
-
-
-// Función para aplicar filtros
-function applyFilters() {
-    console.log("🔍 applyFilters ejecutado"); // Ver si la función se ejecuta
-
-    const tipo = document.getElementById("tipoPropiedad").value;
-    const localidad = document.getElementById("localidad").value.toLowerCase();
-
-    console.log("📌 Tipo seleccionado:", tipo);
-    console.log("📌 Localidad seleccionada:", localidad);
-
-    const filtered = propiedades.filter((prop) => {
-        return (
-            (tipo === "all" || prop.tipo === tipo) &&
-            (!localidad || prop.localidad.toLowerCase().includes(localidad))
-        );
-    });
-
-    console.log("✅ Propiedades filtradas:", filtered);
-
-    if (filtered.length === 0) {
-        document.getElementById("propiedadesContainer").innerHTML = `
-            <div class="alert alert-warning text-center">
-                No se encontraron propiedades. Intenta con otros filtros.
-            </div>
-        `;
-    } else {
-        renderProperties(filtered);
-    }
-}
-
-
-// Obtén los parámetros de la URL
+// === Filtros ===
 function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    return { tipo: params.get('tipo') || 'all' };
+  const params = new URLSearchParams(window.location.search);
+  return { tipo: params.get('tipo') || 'all' };
+}
+function applyFilters() {
+  const tipo = (document.getElementById('tipoPropiedad')?.value || 'all').trim();
+  const localidad = (document.getElementById('localidad')?.value || '').toLowerCase();
+
+  const filtered = propiedades.filter((prop) =>
+    (tipo === 'all' || prop.tipo === tipo) &&
+    (!localidad || String(prop.localidad || '').toLowerCase().includes(localidad))
+  );
+  renderProperties(filtered);
+}
+function applyInitialFilters() {
+  const { tipo } = getQueryParams();
+  const tipoDropdown = document.getElementById('tipoPropiedad');
+  if (tipoDropdown && tipo !== 'all') tipoDropdown.value = tipo;
+  applyFilters();
 }
 
-// Aplica los filtros iniciales según los parámetros de la URL
-function applyInitialFilters() {
-    const { tipo } = getQueryParams();
-    const tipoDropdown = document.getElementById('tipoPropiedad');
-    if (tipoDropdown && tipo !== 'all') {
-        tipoDropdown.value = tipo;
+// === Carga desde API ===
+async function fetchPropertiesFromAPI(tries = RETRIES) {
+  try {
+    const url = `${API_BASE}/properties`; // activas públicas
+    const res = await fetch(url, { cache: 'no-store', credentials: 'omit' });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : [];
+
+    if (list.length === 0 && tries > 0) {
+      await sleep(RETRY_DELAY_MS);
+      return fetchPropertiesFromAPI(tries - 1);
     }
 
-    const filtered = propiedades.filter((prop) => tipo === 'all' || prop.tipo === tipo);
-    renderProperties(filtered);
+    // Normalizo al shape
+    return list.map(p => ({
+      id: p.id,
+      tipo: p.tipo || '',
+      titulo: p.titulo || '',
+      precio: p.precio ?? '',
+      localidad: p.localidad || '',
+
+      // Superficies
+      metrosTotales: Number(p.metrosTotales || p.superficieTotal || p.m2Totales || p.metros || p.metrosCuadrados || 0),
+      metrosCubiertos: Number(p.metrosCubiertos || p.superficieCubierta || p.m2Cubiertos || 0),
+      superficieTerreno: Number(p.superficieTerreno || p.terreno || p.m2Terreno || 0),
+
+      // Campo explícito “metrosCuadrados” si te llega así
+      metrosCuadrados: Number(p.metrosCuadrados || 0),
+
+      habitaciones: Number(p.habitaciones || 0),
+      banos: Number(p.banos || 0),
+      petFriendly: !!p.petFriendly,
+      imagenes: (Array.isArray(p.imagenes) ? p.imagenes : []).map(resolveImg).filter(Boolean),
+      descripcion: p.descripcion || '',
+      destacado: !!p.destacado,
+      active: !!p.active,
+    }));
+  } catch (e) {
+    if (tries > 0) {
+      await sleep(RETRY_DELAY_MS);
+      return fetchPropertiesFromAPI(tries - 1);
+    }
+    throw e;
+  }
 }
 
-// Ejecuta los filtros iniciales al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    applyInitialFilters();
-    populateLocalitiesDropdown();  // Cargar localidades en el filtro
-    populatePropertiesDropdown(); // Cargar propiedades en el formulario de contacto
+// === Boot ===
+document.addEventListener('DOMContentLoaded', async () => {
+  const container = document.getElementById('propiedadesContainer');
+  if (!container) return;
 
-    // Configurar filtros en tiempo real
-    document.querySelectorAll("#filtros input, #filtros select").forEach((input) =>
-        input.addEventListener("input", applyFilters)
-    );
+  showLoader();
+
+  try {
+    propiedades = await fetchPropertiesFromAPI();
+  } catch (e) {
+    if (container) {
+      container.innerHTML = `
+        <div class="alert alert-danger text-center">
+          No se pudieron cargar las propiedades. Intenta más tarde.
+        </div>`;
+    }
+    console.error(e);
+    return;
+  }
+
+  populateLocalitiesDropdown();
+  populatePropertiesDropdown();
+  applyInitialFilters();
+
+  document.querySelectorAll('#filtros input, #filtros select').forEach((el) => {
+    el.addEventListener('input', applyFilters);
+    el.addEventListener('change', applyFilters);
+  });
 });
 
-
+// Exponer para onclick inline
+window.viewPropertyDetails = viewPropertyDetails;
+window.goToContact = goToContact;
+window.openLightbox = openLightbox;

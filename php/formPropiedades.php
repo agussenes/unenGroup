@@ -30,21 +30,23 @@ require '../libs/PHPMailer/src/Exception.php';
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-// **Validar datos**
+// **Validar datos** — campos reales del formulario de propiedades:
+// nombre, correo, telefono, propiedadInteres, mensaje
 $nombre = filter_input(INPUT_POST, "nombre", FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-$tipoContacto = filter_input(INPUT_POST, "tipoContacto", FILTER_SANITIZE_STRING);
+$email = filter_input(INPUT_POST, "correo", FILTER_VALIDATE_EMAIL);
+$telefono = filter_input(INPUT_POST, "telefono", FILTER_SANITIZE_STRING);
+$propiedadInteres = filter_input(INPUT_POST, "propiedadInteres", FILTER_SANITIZE_STRING);
 $mensaje = filter_input(INPUT_POST, "mensaje", FILTER_SANITIZE_STRING);
 $recaptchaResponse = $_POST["g-recaptcha-response"] ?? '';
 
-if (!$nombre || !$email || !$tipoContacto || !$mensaje || !$recaptchaResponse) {
+if (!$nombre || !$email || !$telefono || !$propiedadInteres || !$mensaje || !$recaptchaResponse) {
     http_response_code(400);
     echo json_encode(["status" => "error", "message" => "Todos los campos son obligatorios."]);
     exit;
 }
 
 // **Verificar reCAPTCHA con Google**
-$secretKey = "6LduadcqAAAAAM4kGP1xEzLd7l1m-KjFZwr1jCfU"; 
+$secretKey = "6LduadcqAAAAAM4kGP1xEzLd7l1m-KjFZwr1jCfU";
 $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
 $recaptchaData = [
     "secret" => $secretKey,
@@ -81,20 +83,21 @@ try {
     $mail->setFrom('no-reply@unengroup.com.ar', 'Contacto Web');
     $mail->addAddress('desarrollounengroup@gmail.com', 'info@unengroup.com.ar');
 
-    $mail->Subject = "Nuevo mensaje de contacto";
-    $mail->Body = "Nombre: $nombre\nEmail: $email\nTipo de Contacto: $tipoContacto\nMensaje:\n$mensaje";
+    $mail->Subject = "Nueva consulta de propiedad";
+    $mail->Body = "Nombre: $nombre\nEmail: $email\nTeléfono: $telefono\nPropiedad de interés: $propiedadInteres\nMensaje:\n$mensaje";
     $mail->CharSet = 'UTF-8';
 
     if ($mail->send()) {
         // **Actualizar el tiempo del último envío**
         $_SESSION['ultimo_envio'] = $tiempoActual;
 
-        // **Guardar en Google Sheets (Webhook)**  📌 **✅ NUEVO WEBHOOK**
-        $urlWebhook = "https://script.google.com/macros/s/AKfycbxWVBMwZw8cf_91yiZjA7QltyZs5DBnypKgoFCwu4fvPol2Rl3EF5GelgDubRZ5th2C/exec"; // <=== **PON TU NUEVO LINK**
+        // **Guardar en Google Sheets (Webhook)**
+        $urlWebhook = "https://script.google.com/macros/s/AKfycbxWVBMwZw8cf_91yiZjA7QltyZs5DBnypKgoFCwu4fvPol2Rl3EF5GelgDubRZ5th2C/exec";
         $data = json_encode([
             "nombre" => $nombre,
             "email" => $email,
-            "tipoContacto" => $tipoContacto,
+            "telefono" => $telefono,
+            "propiedadInteres" => $propiedadInteres,
             "mensaje" => $mensaje
         ]);
 

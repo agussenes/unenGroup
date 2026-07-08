@@ -174,6 +174,28 @@ footer a:hover {
     font-weight: 600;
 }
 
+/* Powered by Senestrari Dev (logo en footer) */
+.powered-by-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    vertical-align: middle;
+}
+
+.powered-by-link .logo-senestrari {
+    height: 30px;
+    width: auto;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+    .powered-by-link .logo-senestrari {
+        height: 24px;
+    }
+}
+
 /* Adjust layout for "Sobre Nosotros" section */
 .sobre-nosotros-container {
     display: flex;
@@ -459,4 +481,129 @@ html {
 
 .detalleProp{
     color: #000000 !important;
+}
+
+/* ============================================================
+   Migración API: Loader, Offcanvas de detalle, Lightbox
+   ============================================================ */
+
+/* Loader centralizado */
+.dg-loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+/* Placeholder cuando la propiedad no tiene imágenes */
+.card .swiper-slide img[alt="sin-imagen"] {
+    width: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    background: #e9ecef;
+}
+
+/* Panel lateral de detalle (offcanvas) */
+.offcanvas-property {
+    --bs-offcanvas-width: 75vw;
+    width: 75vw;
+}
+
+@media (max-width: 992px) {
+    .offcanvas-property {
+        --bs-offcanvas-width: 85vw;
+        width: 85vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .offcanvas-property {
+        --bs-offcanvas-width: 100vw;
+        width: 100vw;
+    }
+}
+
+/* Botón cerrar a la izquierda del título del offcanvas */
+.offcanvas-property .btn-close-left {
+    margin: 0;
+}
+
+/* ---------------- Lightbox / visor fullscreen ---------------- */
+.dg-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;               /* JS lo pasa a flex al abrir */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+}
+
+.dg-lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.dg-lightbox button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dg-lightbox button:hover,
+.dg-lightbox button:focus-visible {
+    background: rgba(113, 198, 212, 0.9);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.dg-lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
+}
+
+.dg-lightbox-prev,
+.dg-lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    font-size: 2.2rem;
+}
+
+.dg-lightbox-prev {
+    left: 1rem;
+}
+
+.dg-lightbox-next {
+    right: 1rem;
+}
+
+@media (max-width: 576px) {
+
+    .dg-lightbox-prev,
+    .dg-lightbox-next {
+        width: 44px;
+        height: 44px;
+        font-size: 1.8rem;
+    }
 }

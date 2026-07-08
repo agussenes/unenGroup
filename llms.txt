@@ -1,0 +1,47 @@
+# UnenGroup — Real Estate
+
+> Inmobiliaria en Córdoba, Argentina. Compra, venta y alquiler de propiedades
+> (casas, departamentos, terrenos, locales, oficinas y cocheras) con
+> asesoramiento personalizado. Sitio en español.
+
+UnenGroup (Unen Group Real Estate) ofrece propiedades en venta y alquiler y
+servicios inmobiliarios integrales. El catálogo de propiedades se carga de forma
+dinámica y se filtra por tipo de operación y localidad. El detalle de cada
+propiedad se muestra dentro de la vista de Propiedades (no tiene URL propia).
+Matrícula CPI Córdoba Nº 7873 (Constanza García Gómez).
+
+## Páginas principales
+- [Inicio](https://unengroup.com.ar/): presentación, propiedades destacadas, servicios y formulario de contacto.
+- [Propiedades](https://unengroup.com.ar/propiedades/): listado completo con filtros por tipo de operación y localidad.
+- [Nosotros](https://unengroup.com.ar/nosotros/): misión, visión, valores, objetivos y equipo.
+
+## Servicios
+- Venta de propiedades
+- Alquiler (corto y largo plazo)
+- Alquiler temporario
+- Intermediación en compras
+- Administración de propiedades
+- Tasaciones
+
+## Tipos de propiedades
+- Venta
+- Alquiler
+- Alquiler temporario
+- Terrenos
+- Locales / Oficinas / Cocheras
+
+## Cobertura
+- Zona de operación: Córdoba, Argentina
+- Idioma: Español
+- Público: compradores, inquilinos e inversores inmobiliarios
+
+## Contacto
+- WhatsApp / Teléfono: +54 9 351 6837691
+- Email: info@unengroup.com.ar
+- Instagram: https://www.instagram.com/unengroup/
+- Horario de atención: Lunes a Viernes, 9:00–17:00
+
+## Recursos
+- [Sitemap](https://unengroup.com.ar/sitemap.xml)
+- [Robots](https://unengroup.com.ar/robots.txt)
+- [Detalle ampliado para IA](https://unengroup.com.ar/llms-full.txt)

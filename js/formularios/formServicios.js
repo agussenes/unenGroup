@@ -6,10 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const mensajeDiv = document.createElement("div");
-    mensajeDiv.classList.add("mt-3", "text-center", "fw-bold");
-    form.parentElement.appendChild(mensajeDiv);
-
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
@@ -21,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const recaptchaResponse = document.querySelector(".g-recaptcha-response")?.value || "";
 
         if (!nombre || !email || !tipoContacto || !mensaje || !recaptchaResponse) {
-            mostrarMensaje("❌ Todos los campos son obligatorios y debes completar el reCAPTCHA.", "danger");
+            notify("warning", "Faltan datos", "Completá todos los campos y verificá el reCAPTCHA antes de enviar.");
             return;
         }
 
-        // **Desactivar el botón para evitar múltiples clics**
+        // Desactivar el botón para evitar múltiples clics
         const submitBtn = form.querySelector("button[type='submit']");
         submitBtn.disabled = true;
         submitBtn.innerHTML = "Enviando... ⏳";
@@ -39,28 +35,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: formData
             });
 
-            const result = await response.json(); // ✅ Esperamos un JSON válido
-
+            const result = await response.json();
             console.log("📩 Respuesta del servidor:", result);
 
             if (result.status === "success") {
                 form.reset();
-                grecaptcha.reset();
-                mostrarMensaje("✅ ¡Gracias! Hemos recibido tu mensaje.", "success");
+                if (typeof grecaptcha !== "undefined") grecaptcha.reset();
+                notify("success", "¡Mensaje enviado!", "Gracias por contactarte con UnenGroup. Te responderemos a la brevedad.");
             } else {
-                mostrarMensaje(`❌ ${result.message}`, "danger");
+                notify("error", "No se pudo enviar", result.message || "Ocurrió un error al enviar tu mensaje. Intentá nuevamente.");
             }
         } catch (error) {
             console.error("❌ Error en la solicitud Fetch:", error);
-            mostrarMensaje("❌ Error de conexión. Verifique su conexión a internet.", "danger");
+            notify("error", "Error de conexión", "Verificá tu conexión a internet e intentá nuevamente.");
         } finally {
-            // **Reactivar el botón después de la respuesta**
+            // Reactivar el botón después de la respuesta
             submitBtn.disabled = false;
             submitBtn.innerHTML = "Enviar mensaje";
         }
     });
 
-    function mostrarMensaje(texto, tipo) {
-        mensajeDiv.innerHTML = `<div class="alert alert-${tipo}">${texto}</div>`;
+    // Notificación con SweetAlert2 (con fallback a alert si no está cargado)
+    function notify(icon, title, text) {
+        if (typeof Swal !== "undefined") {
+            Swal.fire({
+                icon: icon,
+                title: title,
+                text: text,
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#71C6D4"
+            });
+        } else {
+            alert(`${title}\n\n${text}`);
+        }
     }
 });

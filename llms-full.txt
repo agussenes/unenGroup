@@ -1,0 +1,121 @@
+# UnenGroup — Real Estate (versión completa)
+
+> Inmobiliaria en Córdoba, Argentina. Compra, venta y alquiler de propiedades
+> (casas, departamentos, terrenos, locales, oficinas y cocheras) con
+> asesoramiento personalizado. Sitio en español.
+>
+> Este archivo amplía /llms.txt con el contenido real del sitio para consumo
+> por modelos de IA. Todo el texto proviene de las páginas existentes; no
+> contiene información inventada.
+
+## Sobre UnenGroup
+
+UnenGroup (Unen Group Real Estate) es una inmobiliaria que ofrece propiedades en
+venta y alquiler y servicios inmobiliarios integrales, con asesoramiento
+personalizado. Opera en Córdoba, Argentina. La información de propiedades es
+susceptible a modificación sin previo aviso; las medidas y precios publicados son
+orientativos y las fotos/imágenes/videos son ilustrativos y no contractuales.
+
+Matrícula profesional: Constanza García Gómez — CPI Córdoba Nº 7873.
+
+- Dominio: https://unengroup.com.ar
+- Idioma principal: Español
+- Ubicación / zona de operación: Córdoba, Argentina
+
+## Estructura del sitio
+
+- Inicio — https://unengroup.com.ar/
+  Presentación de la empresa, propiedades destacadas, sección de servicios y
+  formulario de contacto.
+- Propiedades — https://unengroup.com.ar/propiedades/
+  Listado completo de propiedades con filtros. El detalle de cada propiedad se
+  abre en un panel dentro de la misma vista (no tiene URL propia).
+- Nosotros — https://unengroup.com.ar/nosotros/
+  Objetivos, visión, valores, misión y equipo.
+
+Nota: las URLs antiguas terminadas en `.html` (propiedades.html, nosotros.html)
+redirigen con 301 a las rutas con carpeta (/propiedades/, /nosotros/).
+
+## Servicios (descripción real del sitio)
+
+- Venta de propiedades: "Encontrá el hogar perfecto con asesoramiento
+  personalizado y una experiencia sin complicaciones."
+- Alquiler: "Opciones de alquiler flexibles para corto o largo plazo, adaptadas
+  a tus necesidades."
+- Alquiler temporario: "Alquileres temporarios, ideales para estancias cortas,
+  cómodas y completamente equipadas."
+- Intermediación en compras: "Actuamos como el puente confiable entre
+  compradores y vendedores para garantizar negociaciones exitosas."
+- Administración de propiedades: "Tu tranquilidad, nuestra responsabilidad:
+  gestionamos tu propiedad como si fuera nuestra."
+- Tasaciones: "Determinamos el valor real de tu propiedad para garantizar
+  decisiones inteligentes y efectivas."
+
+Lema de la sección de servicios: "En Unen Group garantizamos soluciones
+personalizadas para cada tipo de cliente."
+
+## Tipos de propiedades y buscador
+
+En la vista de Propiedades el catálogo se puede filtrar por:
+
+- Tipo de operación: Venta · Alquiler · Alquiler temporario · Terrenos ·
+  Locales / Oficinas / Cocheras (o "Todas").
+- Localidad: se completa automáticamente con las localidades disponibles en el
+  catálogo.
+
+El listado permite abrir el detalle de cada propiedad ("Ver más") con su galería
+de imágenes y, desde ahí o desde la tarjeta, enviar una consulta con el botón
+"Me interesa", que precarga la propiedad en el formulario de contacto.
+
+También se puede llegar a un tipo ya filtrado mediante el parámetro de URL, por
+ejemplo: https://unengroup.com.ar/propiedades/?tipo=venta
+
+## Nosotros
+
+Objetivos — Corto plazo: "Afianzarnos en el mercado, en
+Venta/Alquileres/Alquileres temporales y vacacionales y Tasaciones. A largo
+plazo, asesoramiento y gestión de inversiones en bienes raíces, identificando
+oportunidades de inversión rentables y proporcionando un enfoque estratégico para
+maximizar los rendimientos."
+
+Objetivos — Largo plazo: "Expandir la red de agentes, buscando una posición
+líder en el mercado, logrando alianzas estratégicas que diversifiquen nuestra
+carta de servicios y apostando a proyectos con sostenibilidad y eficiencia
+energética, alineándose a tendencias mundiales de negocios ecológicos, así como
+asesorar a nuestros clientes en inversiones de Real Estate."
+
+Visión: "Ser líderes en innovación, confianza, calidad y profesionalismo.
+Aspiramos a ser una red sin límites geográficos, comprometidos con un enfoque
+integral en cada solución inmobiliaria que brindemos."
+
+Misión: "Ofrecer soluciones inmobiliarias personalizadas, seguras y confiables,
+adaptadas a las necesidades de nuestros clientes."
+
+Valores: Excelencia, Personalización, Innovación, Compromiso, Integridad,
+Profesionalismo, Orientación al Cliente, Colaboración, Sostenibilidad y
+Crecimiento.
+
+## Público objetivo
+
+Compradores, inquilinos e inversores inmobiliarios interesados en propiedades y
+servicios inmobiliarios en Córdoba, Argentina.
+
+## Contacto
+
+- WhatsApp / Teléfono: +54 9 351 6837691
+- Email: info@unengroup.com.ar
+- Instagram: https://www.instagram.com/unengroup/
+- Horario de atención: Lunes a Viernes, 9:00–17:00
+
+## Recursos
+
+- Sitemap: https://unengroup.com.ar/sitemap.xml
+- Robots: https://unengroup.com.ar/robots.txt
+- Datos estructurados: JSON-LD tipo "Organization" (schema.org) presente en la
+  página de inicio.
+
+## Limitaciones conocidas
+
+- Las propiedades individuales no tienen URL propia (el catálogo es dinámico); no
+  es posible enlazar a una propiedad específica.
+- El sitio no publica dirección física ni FAQ/glosario.

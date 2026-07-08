@@ -3,47 +3,12 @@
 
 <head>
 
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSES4S50PT"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-LSES4S50PT'); // ✅ Reemplaza con tu ID de Google Analytics
-    </script>
-
-    <!-- Meta Básico -->
+    <!-- MAQUETA / PROPUESTA HOME — sin SEO a propósito -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Meta SEO -->
-    <title>UnenGroup - Tu Aliado en Bienes Raíces</title>
-    <meta name="description"
-        content="Encuentra tu hogar ideal o inversión inmobiliaria con UnenGroup. Descubre propiedades en venta y alquiler con asesoramiento personalizado.">
-    <meta name="keywords"
-        content="inmobiliaria, bienes raíces, compra de casas, alquiler de departamentos, propiedades en venta, UnenGroup">
-    <meta name="author" content="UnenGroup">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://unengroup.com.ar/">
-
-    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
-    <meta property="og:title" content="UnenGroup - Tu Aliado en Bienes Raíces">
-    <meta property="og:description"
-        content="Encuentra tu hogar ideal o inversión inmobiliaria con UnenGroup. Descubre propiedades en venta y alquiler con asesoramiento personalizado.">
-    <meta property="og:image" content="https://unengroup.com.ar/images/seo/seoImg.jpg">
-    <meta property="og:url" content="https://unengroup.com.ar/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="UnenGroup">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="UnenGroup - Tu Aliado en Bienes Raíces">
-    <meta name="twitter:description"
-        content="Encuentra tu hogar ideal o inversión inmobiliaria con UnenGroup. Descubre propiedades en venta y alquiler con asesoramiento personalizado.">
-    <meta name="twitter:image" content="https://unengroup.com.ar/images/seo/seoImg.jpg">
-    <meta name="twitter:site" content="@UnenGroup">
-    <meta name="twitter:creator" content="@UnenGroup">
+    <title>UnenGroup · Propuesta Home</title>
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/images/faviCon2.jpg">
@@ -70,25 +35,772 @@
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/a720cb8047.js" crossorigin="anonymous"></script>
 
-    <!-- Schema Markup JSON-LD (SEO avanzado para Google) -->
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "UnenGroup",
-          "url": "https://unengroup.com.ar",
-          "logo": "https://unengroup.com.ar/images/logo.png",
-          "description": "Encuentra tu hogar ideal o inversión inmobiliaria con UnenGroup. Descubre propiedades en venta y alquiler con asesoramiento personalizado.",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+54 9 351 6837691",
-            "contactType": "customer service"
-          },
-          "sameAs": [
-            "https://www.instagram.com/unengroup/"
-          ]
+    <!-- ===== Upgrade premium (evolución, mismo branding) ===== -->
+    <style>
+        :root {
+            --brand: #71C6D4;
+            --brand-dark: #4aa9b8;
+            --brown: #5A4E4E;
+            --brown-2: #887878;
+            --warm: #ffcc80;
+            --line: #ece5dd;
+            --muted: #8a7f7f;
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(90, 78, 78, .12);
+            --shadow-lg: 0 18px 50px rgba(90, 78, 78, .20);
         }
-        </script>
+
+        .up-eyebrow {
+            display: block;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--brand);
+            margin-bottom: .4rem;
+        }
+
+        /* ============ SERVICIOS: mismas cards + modales, mejor presentación ============ */
+        #servicios .servicio-card {
+            border: none;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .13);
+            transition: transform .28s ease, box-shadow .28s ease;
+            height: 100%;
+        }
+
+        #servicios .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, .26);
+        }
+
+        #servicios .servicio-card .card-body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #servicios .servicio-card img {
+            border-radius: 12px;
+            transition: transform .5s ease;
+        }
+
+        #servicios .servicio-card:hover img {
+            transform: scale(1.045);
+        }
+
+        #servicios .servicio-card h4 {
+            position: relative;
+        }
+
+        /* las llamadas a la acción se alinean abajo para cards parejas */
+        #servicios .servicio-card .d-flex {
+            margin-top: auto;
+        }
+
+        #servicios .servicio-card .btn {
+            border-radius: 10px;
+            font-weight: 700;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        #servicios .servicio-card .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ============ DESTACADAS: cards coherentes con /propuesta/ ============ */
+        .prop-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .prop-media {
+            position: relative;
+            height: 220px;
+            /* altura fija: idéntico en grilla y carrusel, sin franjas */
+            flex: 0 0 auto;
+            /* no se estira ni encoge dentro del flex del card */
+            overflow: hidden;
+            background: #efe9e2;
+        }
+
+        .prop-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        /* Anula SOLO la regla de producción "#propiedades .swiper-slide img { height:350px; object-fit:contain }"
+           dentro de mi carrusel (clase única .dest-carousel + alta especificidad). No afecta al resto. */
+        #propiedades .dest-carousel .prop-media img {
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 0 !important;
+        }
+
+        .prop-card:hover .prop-media img {
+            transform: scale(1.06);
+        }
+
+        .badge-op {
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+            background: rgba(90, 78, 78, .88);
+            color: #fdf6ee;
+            padding: .3rem .8rem;
+            border-radius: 999px;
+            font-size: .74rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .badge-fav {
+            position: absolute;
+            top: .8rem;
+            right: .8rem;
+            background: var(--warm);
+            color: #6b4a15;
+            padding: .3rem .7rem;
+            border-radius: 999px;
+            font-size: .72rem;
+            font-weight: 700;
+        }
+
+        .badge-count {
+            position: absolute;
+            bottom: .8rem;
+            right: .8rem;
+            background: rgba(63, 56, 56, .72);
+            color: #fff;
+            padding: .2rem .6rem;
+            border-radius: 8px;
+            font-size: .74rem;
+        }
+
+        .prop-body {
+            padding: 1.1rem 1.2rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            flex: 1;
+        }
+
+        .prop-price {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--brown);
+        }
+
+        .prop-title {
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.3;
+            margin: 0;
+            color: #3f3838;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .prop-loc {
+            color: var(--muted);
+            font-size: .88rem;
+        }
+
+        .prop-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .35rem .9rem;
+            padding-top: .5rem;
+            margin-top: auto;
+            border-top: 1px dashed var(--line);
+            color: var(--brown);
+            font-size: .85rem;
+        }
+
+        .prop-metrics .m {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+        }
+
+        .prop-metrics i {
+            color: var(--brand-dark);
+        }
+
+        .prop-actions {
+            display: flex;
+            gap: .5rem;
+            margin-top: .4rem;
+        }
+
+        .btn-detalle {
+            flex: 1;
+            border: none;
+            background: var(--brown);
+            color: #fff;
+            border-radius: 12px;
+            font-weight: 700;
+            padding: .55rem;
+            transition: .2s;
+        }
+
+        .btn-detalle:hover {
+            background: var(--brown-2);
+            color: #fff;
+        }
+
+        .btn-wa {
+            border-radius: 12px;
+            border: none;
+            background: #25D366;
+            color: #fff;
+            font-weight: 700;
+            padding: .55rem .8rem;
+        }
+
+        .btn-wa:hover {
+            background: #1da851;
+            color: #fff;
+        }
+
+        .card .swiper-slide img[alt="sin-imagen"] {
+            width: 100%;
+            min-height: 220px;
+            object-fit: cover;
+            background: #efe9e2;
+        }
+
+        /* Carrusel de destacadas (clases propias, se activa con >3) */
+        .dest-carousel {
+            position: relative;
+            padding: 6px 0 8px;
+        }
+
+        .dest-swiper {
+            overflow: hidden;
+        }
+
+        .dest-swiper .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .dest-swiper .swiper-slide {
+            height: auto;
+        }
+
+        .dest-swiper .swiper-slide>.prop-card {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dest-nav {
+            position: absolute;
+            top: 34%;
+            transform: translateY(-50%);
+            z-index: 6;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: #fff;
+            color: var(--brown);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background .2s, color .2s, transform .2s;
+        }
+
+        .dest-nav:hover {
+            background: var(--brand);
+            color: #063038;
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .dest-prev {
+            left: -8px;
+        }
+
+        .dest-next {
+            right: -8px;
+        }
+
+        .dest-nav.swiper-button-disabled {
+            opacity: .35;
+            pointer-events: none;
+        }
+
+        .dest-pagination {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .dest-pagination .swiper-pagination-bullet {
+            background: var(--brown-2);
+            opacity: .45;
+            width: 9px;
+            height: 9px;
+            transition: .2s;
+        }
+
+        .dest-pagination .swiper-pagination-bullet-active {
+            background: var(--brand-dark);
+            opacity: 1;
+            width: 26px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 991.98px) {
+
+            .dest-prev,
+            .dest-next {
+                top: auto;
+                bottom: -6px;
+                transform: none;
+            }
+
+            .dest-prev {
+                left: calc(50% - 60px);
+            }
+
+            .dest-next {
+                right: calc(50% - 60px);
+            }
+
+            .dest-nav:hover {
+                transform: scale(1.06);
+            }
+
+            .dest-pagination {
+                margin-top: 8px;
+            }
+        }
+
+        /* Ícono de WhatsApp del panel de contacto en blanco (mayor contraste) */
+        #contacto .wa-cta i {
+            color: #ffffff !important;
+        }
+
+        .spinner-brand {
+            width: 3rem;
+            height: 3rem;
+            border: 4px solid rgba(113, 198, 212, .25);
+            border-top-color: var(--brand);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Detalle (offcanvas premium, igual que /propuesta/) */
+        .offcanvas.detail {
+            --bs-offcanvas-width: min(960px, 92vw);
+        }
+
+        .detail .offcanvas-body {
+            padding: 0;
+        }
+
+        .detail-hero .swiper {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #3f3838;
+        }
+
+        .detail-hero .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: zoom-in;
+        }
+
+        .detail .swiper-button-next,
+        .detail .swiper-button-prev {
+            color: #fff;
+        }
+
+        .detail-content {
+            padding: 1.4rem 1.6rem 6rem;
+        }
+
+        .detail-price {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--brown);
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: .8rem;
+            margin: 1.2rem 0;
+        }
+
+        .fact {
+            background: #faf7f3;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: .8rem;
+            text-align: center;
+        }
+
+        .fact i {
+            color: var(--brand-dark);
+            font-size: 1.1rem;
+        }
+
+        .fact .v {
+            font-weight: 700;
+            margin-top: .2rem;
+            color: #3f3838;
+        }
+
+        .fact .k {
+            font-size: .74rem;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .detail-desc {
+            line-height: 1.7;
+        }
+
+        .detail-desc ul {
+            padding-left: 1.1rem;
+        }
+
+        .detail-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid var(--line);
+            padding: .9rem 1.6rem;
+            display: flex;
+            gap: .7rem;
+            box-shadow: 0 -8px 24px rgba(90, 78, 78, .08);
+        }
+
+        .btn-interes {
+            flex: 1;
+            border: none;
+            background: var(--brand);
+            color: #063038;
+            border-radius: 12px;
+            font-weight: 700;
+            padding: .6rem;
+        }
+
+        .btn-interes:hover {
+            background: var(--brand-dark);
+            color: #fff;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(35, 28, 28, .94);
+            padding: 2rem;
+        }
+
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox button {
+            position: absolute;
+            background: rgba(255, 255, 255, .14);
+            color: #fff;
+            border: none;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox button:hover {
+            background: var(--brand);
+            color: #063038;
+        }
+
+        .lb-close {
+            top: 1.2rem;
+            right: 1.2rem;
+        }
+
+        .lb-prev {
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lb-next {
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* ============ CONTACTO: mismo form, mejor jerarquía y confianza ============ */
+        #contacto .form-control,
+        #contacto .form-select {
+            border-radius: 12px;
+            padding: .65rem .85rem;
+        }
+
+        #contacto .form-control:focus,
+        #contacto .form-select:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 .2rem rgba(113, 198, 212, .25);
+        }
+
+        /* Contacto: shell unificado (imagen + formulario) */
+        .contact-shell {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-aside {
+            position: relative;
+            padding: 2.6rem 2.2rem;
+            color: #fff;
+            background: url('/images/home/imagenContactoUnenGroup.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-aside::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(18, 33, 38, .88);
+        }
+
+        .contact-aside-inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        /* Alta especificidad para vencer a #contacto p / h del CSS del sitio */
+        #contacto .contact-aside-inner,
+        #contacto .contact-aside-inner h3,
+        #contacto .contact-aside-inner p,
+        #contacto .contact-aside-inner .contact-channels li {
+            color: #ffffff !important;
+        }
+
+        #contacto .contact-aside-inner h3 {
+            font-weight: 800;
+            font-size: 1.6rem;
+        }
+
+        #contacto .contact-aside-inner p {
+            font-weight: 400;
+            opacity: .92;
+        }
+
+        .wa-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: #25D366;
+            color: #fff !important;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: .8rem 1.4rem;
+            margin: 1.2rem 0 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 22px rgba(37, 211, 102, .38);
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .wa-cta i {
+            font-size: 1.25rem;
+        }
+
+        .wa-cta:hover {
+            background: #1da851;
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(37, 211, 102, .48);
+        }
+
+        #contacto .contact-social a {
+            text-decoration: none;
+        }
+
+        .contact-channels {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-channels li {
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            margin-bottom: .7rem;
+            font-size: .92rem;
+        }
+
+        .contact-channels li i {
+            flex: 0 0 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .18);
+            display: grid;
+            place-items: center;
+        }
+
+        .contact-social {
+            margin-top: 1.2rem;
+        }
+
+        .contact-social a {
+            color: #fff;
+            font-size: 1.35rem;
+        }
+
+        .contact-form-col {
+            padding: 2.4rem;
+        }
+
+        @media (max-width: 767.98px) {
+            .contact-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-col {
+                padding: 1.6rem;
+            }
+        }
+
+        /* ===== Modales de servicios: presentación premium (contenido intacto) ===== */
+        .modal-content {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(23, 42, 48, .35);
+        }
+
+        .modal-header {
+            background: var(--brown);
+            color: #fff;
+            border-bottom: none;
+            padding: 1.15rem 1.4rem;
+        }
+
+        .modal-header .modal-title {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* La X viene con background:white inline → la volvemos blanca sobre el header marrón */
+        .modal-header .btn-close {
+            background-color: transparent !important;
+            filter: invert(1) grayscale(1) brightness(2.2);
+            opacity: .9;
+        }
+
+        .modal-header .btn-close:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-body ul {
+            padding-left: 0;
+        }
+
+        .modal-body ul li {
+            margin-bottom: .55rem;
+            line-height: 1.5;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--line);
+            padding: 1rem 1.4rem;
+        }
+
+        /* Acento sutil bajo el título de cada card de servicio */
+        #servicios .servicio-card h4::after {
+            content: "";
+            display: block;
+            width: 42px;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--brand);
+            margin-top: .5rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .trust-badges span {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: rgba(113, 198, 212, .14);
+            color: var(--brown);
+            border-radius: 999px;
+            padding: .35rem .8rem;
+            font-size: .82rem;
+            font-weight: 600;
+        }
+
+        .trust-badges span i {
+            color: var(--brand-dark);
+        }
+    </style>
 </head>
 
 <body>
@@ -269,6 +981,7 @@
         <section id="servicios" class="py-5 bg-light">
             <div class="container">
                 <!-- Encabezado -->
+                <span class="up-eyebrow text-center">Lo que hacemos</span>
                 <h2 class="text-center fw-bold mb-4">Nuestros servicios</h2>
                 <p class="text-center mb-5 text-light">En Unen group garantizamos soluciones personalizadas para cada
                     tipo de
@@ -734,40 +1447,40 @@
         <!-- •-----------------porpiedades---------------- -->
 
 
-        <!-- Lista de Propiedades -->
+        <!-- ======= PROPIEDADES DESTACADAS (API + cards /propuesta/ + carrusel automático) ======= -->
         <section id="propiedades" class="py-5 bg-light">
-            <h2 class="text-center fw-bold mb-4">Propiedades destacadas</h2>
-            <div class="container mt-5">
-                <!-- El JS inyecta el grid de destacadas aquí -->
+            <div class="container">
+                <div class="text-center mb-4">
+                    <span class="up-eyebrow" style="color:var(--brand-dark)">Selección UnenGroup</span>
+                    <h2 class="fw-bold">Propiedades destacadas</h2>
+                </div>
+                <!-- El JS decide: grid (pocas) o carrusel Swiper (muchas) -->
                 <div id="destacadasMount"></div>
+                <div id="destacadasState" class="text-center py-4" hidden></div>
+                <div class="text-center mt-4">
+                    <a href="/propiedades/" class="btn btn-warning btn-lg">Ver todas las propiedades</a>
+                </div>
             </div>
         </section>
 
-        <!-- Modal para Ver Más Información -->
-        <div class="modal fade" id="propertyDetailsModal" tabindex="-1" aria-labelledby="propertyDetailsModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="propertyDetailsModalLabel">Detalles de la Propiedad</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"
-                            style="background-color: white;"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Contenido dinámico aquí -->
-                        <div id="propertyDetailsContent"></div>
-                    </div>
-                </div>
+        <!-- Detalle (offcanvas, coherente con /propuesta/) -->
+        <div class="offcanvas offcanvas-end detail" tabindex="-1" id="propertyDetailsPanel"
+            aria-labelledby="detailTitle">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="detailTitle">Detalle de la propiedad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="propertyDetailsContent"></div>
             </div>
         </div>
 
-        <!-- Visor fullscreen sencillo (Lightbox) -->
-        <div id="lightboxOverlay" class="dg-lightbox" style="display:none;" role="dialog" aria-modal="true"
-            aria-label="Visor de imágenes de la propiedad">
-            <button class="dg-lightbox-close" type="button" aria-label="Cerrar visor">×</button>
-            <button class="dg-lightbox-prev" type="button" aria-label="Imagen anterior">‹</button>
-            <img id="lightboxImage" alt="Imagen de propiedad a pantalla completa">
-            <button class="dg-lightbox-next" type="button" aria-label="Imagen siguiente">›</button>
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+            <button class="lb-close" type="button" aria-label="Cerrar">&times;</button>
+            <button class="lb-prev" type="button" aria-label="Anterior">&#8249;</button>
+            <img id="lightboxImg" alt="Imagen de la propiedad ampliada">
+            <button class="lb-next" type="button" aria-label="Siguiente">&#8250;</button>
         </div>
 
         <!-- Modal Vista 360° -->
@@ -895,78 +1608,83 @@
         <section id="contacto" class="py-5 bg-light">
             <div class="container">
                 <div class="text-center mb-5">
+                    <span class="up-eyebrow" style="color:var(--brand-dark)">Estamos para ayudarte</span>
                     <h2 class="animate__animated animate__fadeInDown">Contactanos</h2>
                     <p class="animate__animated animate__fadeInUp">Estamos para ayudarte con todas tus necesidades
                         inmobiliarias</p>
+                    <div class="trust-badges">
+                        <span><i class="fas fa-shield-halved"></i> Matrícula CPI Córdoba Nº 7873</span>
+                        <span><i class="fas fa-bolt"></i> Respuesta rápida</span>
+                        <span><i class="fas fa-lock"></i> Tus datos están protegidos</span>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <!-- Formulario de Contacto -->
-                    <div class="col-md-6 animate__animated animate__fadeInLeft">
-                        <form id="formContacto" class="bg-white mismoHeight p-4 rounded shadow">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control"
-                                    placeholder="Tu Nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Tu Correo"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="tipoContacto" class="form-label">Tipo de contacto</label>
-                                <select id="tipoContacto" name="tipoContacto" class="form-control" required>
-                                    <option value="" disabled selected>Seleccione un tipo de contacto</option>
-                                    <option value="adm-propiedades">Administrar propiedad</option>
-                                    <option value="alquiler">Alquiler</option>
-                                    <option value="quiero-vender">Quiero vender</option>
-                                    <option value="tasaciones">Tasaciones</option>
-                                    <option value="consulta">Consulta</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="mensaje" class="form-label">Mensaje</label>
-                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
-                                    placeholder="Escribí tu mensaje" required></textarea>
-                            </div>
-                            <!-- reCAPTCHA -->
-                            <div class="g-recaptcha mb-3" data-sitekey="6LduadcqAAAAAMAPmj2iEoWSjgfKXKH3FAnT3D1f"></div>
-
-                            <button type="submit" class="btn btn-warning w-100 fw-bold">Enviar mensaje</button>
-                        </form>
-
-                        <!-- Mensajes de éxito y error -->
-                        <div id="mensajeExito" class="alert alert-success mt-3" style="display: none;">✅ ¡Mensaje
-                            enviado con éxito! Nos contactaremos pronto.</div>
-                        <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">❌ Hubo un error al
-                            enviar tu mensaje. Inténtalo nuevamente.</div>
-                    </div>
-
-                    <!-- Redes Sociales -->
-                    <div class="col-md-6  animate__animated animate__fadeInRight" id="contenedorSocialHome">
-                        <div class="bg-white mismoHeight p-4 rounded shadow">
-
-                            <h4 class="text-center mb-4">Seguinos en nuestras redes</h4>
-                            <div class="d-flex justify-content-center gap-3">
-                                <a href="https://www.instagram.com/unengroup/" class="text-decoration-none text-dark">
-                                    <i class="fab fa-instagram fa-2x"></i>
-                                </a>
-                                <a href="https://www.facebook.com/coty.garcia" class="text-decoration-none text-dark">
-                                    <i class="fab fa-facebook-f fa-2x"></i>
-                                </a>
-                                <a href="#" class="text-decoration-none text-dark">
-                                    <i class="fab fa-linkedin-in fa-2x"></i>
-                                </a>
-                            </div>
-                            <p class="text-center mt-4">O llamá al <strong>+54 9 351 6837691</strong></p>
-                            <div class="container">
-                                <img src="/images/home/imagenContactoUnenGroup.jpg"
-                                    alt="imagen para contacto de UnenGroup inmobiliaria - Real Estate"
-                                    style="width: 100%; border-radius: 5px;">
+                <div class="contact-shell animate__animated animate__fadeInUp">
+                    <!-- Aside: imagen real + canales -->
+                    <aside class="contact-aside">
+                        <div class="contact-aside-inner">
+                            <h3 class="mb-2">Hablemos</h3>
+                            <p class="mb-0">Contanos qué estás buscando y te asesoramos de forma personalizada, sin
+                                compromiso.</p>
+                            <a href="https://wa.me/5493516837691" target="_blank" rel="noopener noreferrer"
+                                class="wa-cta"><i class="fab fa-whatsapp"></i> Escribinos por WhatsApp</a>
+                            <ul class="contact-channels">
+                                <li><i class="fas fa-phone"></i> +54 9 351 6837691</li>
+                                <li><i class="fas fa-envelope"></i> info@unengroup.com.ar</li>
+                                <li><i class="fas fa-clock"></i> Lunes a Viernes · 9:00 a 17:00 h</li>
+                            </ul>
+                            <div class="contact-social">
+                                <a href="https://www.instagram.com/unengroup/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
+                    </aside>
+
+                    <!-- Formulario (mismo id/campos/backend real) -->
+                    <div class="contact-form-col">
+                        <form id="formContacto">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-control"
+                                        placeholder="Tu Nombre" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" class="form-control"
+                                        placeholder="Tu Correo" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="tipoContacto" class="form-label">Tipo de contacto</label>
+                                    <select id="tipoContacto" name="tipoContacto" class="form-select" required>
+                                        <option value="" disabled selected>Seleccione un tipo de contacto</option>
+                                        <option value="adm-propiedades">Administrar propiedad</option>
+                                        <option value="alquiler">Alquiler</option>
+                                        <option value="quiero-vender">Quiero vender</option>
+                                        <option value="tasaciones">Tasaciones</option>
+                                        <option value="consulta">Consulta</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
+                                        placeholder="Escribí tu mensaje" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="g-recaptcha" data-sitekey="6LduadcqAAAAAMAPmj2iEoWSjgfKXKH3FAnT3D1f">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-warning w-100 fw-bold">Enviar mensaje <i
+                                            class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="mensajeExito" class="alert alert-success mt-3" style="display: none;">✅ ¡Mensaje enviado
+                            con éxito! Nos contactaremos pronto.</div>
+                        <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">❌ Hubo un error al
+                            enviar tu mensaje. Inténtalo nuevamente.</div>
                     </div>
                 </div>
             </div>
@@ -1050,10 +1768,212 @@
     <!-- <script src="/js/scriptSwiperTestimonials.js"></script> -->
     <script src="/js/scriptNavbarFixed.js"></script>
     <script src="/js/scriptHome.js"></script>
-    <script src="/js/scriptHomeDestacados.js"></script>
     <!-- SweetAlert2 (avisos de formulario) -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/js/formularios/formServicios.js"></script>
+
+    <!-- Upgrade propuesta: destacadas (API + grid/carrusel automático + detalle + lightbox) y form (spinner) -->
+    <script>
+        (function () {
+            'use strict';
+            const API_BASE = 'https://api.unengroup.com.ar';
+            const API_URL = API_BASE + '/properties';
+            const WHATSAPP = '5493516837691';
+            const WA_MSG = 'Hola, me interesa recibir más información sobre la propiedad: ';
+            const RETRIES = 2, RETRY_DELAY = 800;
+            const GRID_MAX = 4; // hasta 4 => grilla (cards tamaño /propuesta/, 3 centradas); más de 4 => carrusel
+
+            let DEST = [], detailSwiper = null, bsOffcanvas = null;
+            const $ = (s, r = document) => r.querySelector(s);
+            const sleep = ms => new Promise(r => setTimeout(r, ms));
+            const TIPO = { 'venta': 'Venta', 'alquiler': 'Alquiler', 'alquiler-temporario': 'Alquiler temporario', 'terreno': 'Terrenos', 'local-oficina-cochera': 'Locales / Oficinas / Cocheras' };
+            const tipoLabel = t => TIPO[t] || (t ? t.replace(/-/g, ' ') : '—');
+            const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+            function sanitize(html) {
+                const t = document.createElement('template'); t.innerHTML = String(html ?? '');
+                t.content.querySelectorAll('script,style,iframe,object,embed,link,meta').forEach(n => n.remove());
+                t.content.querySelectorAll('*').forEach(el => {
+                    [...el.attributes].forEach(a => { const n = a.name.toLowerCase(), v = String(a.value || ''); if (n.startsWith('on') || ((n === 'href' || n === 'src') && /^\s*javascript:/i.test(v))) el.removeAttribute(a.name); });
+                    if (el.tagName === 'A') { el.setAttribute('target', '_blank'); el.setAttribute('rel', 'noopener noreferrer'); }
+                });
+                return t.innerHTML;
+            }
+            function num() { for (const v of arguments) { const n = Number(v); if (n > 0) return n; } return 0; }
+            function money(v) { return (typeof v === 'number') ? '$' + v.toLocaleString('es-AR') : String(v ?? '').trim(); }
+            const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450"><rect width="100%" height="100%" fill="#efe9e2"/><text x="50%" y="50%" font-family="Arial" font-size="26" fill="#a89a8c" text-anchor="middle" dominant-baseline="middle">Sin imagen</text></svg>');
+            function resolveImg(u) { const s = String(u ?? '').trim(); if (!s) return ''; if (/^https?:\/\//i.test(s)) return s; if (s.startsWith('/images/')) return s; return API_BASE.replace(/\/+$/, '') + '/' + s.replace(/^\/+/, ''); }
+            function normalize(p) {
+                return {
+                    id: p.id, tipo: p.tipo || '', titulo: p.titulo || '', precio: p.precio ?? '', localidad: p.localidad || '',
+                    metrosTotales: num(p.metrosTotales, p.superficieTotal, p.m2Totales, p.metros, p.metrosCuadrados),
+                    metrosCubiertos: num(p.metrosCubiertos, p.superficieCubierta, p.m2Cubiertos),
+                    superficieTerreno: num(p.superficieTerreno, p.terreno, p.m2Terreno),
+                    metrosCuadrados: num(p.metrosCuadrados), habitaciones: num(p.habitaciones), banos: num(p.banos),
+                    petFriendly: !!p.petFriendly, imagenes: (Array.isArray(p.imagenes) ? p.imagenes : []).map(resolveImg).filter(Boolean),
+                    descripcion: p.descripcion || '', destacado: !!p.destacado, active: !!p.active
+                };
+            }
+            const supTotal = p => p.metrosCubiertos || p.metrosCuadrados || p.metrosTotales || 0;
+            const waLink = t => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(WA_MSG + (t || ''));
+
+            async function fetchDestacadas(tries = RETRIES) {
+                try {
+                    const res = await fetch(API_URL, { cache: 'no-store', credentials: 'omit' });
+                    if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+                    const data = await res.json(); const list = Array.isArray(data) ? data : [];
+                    if (!list.length && tries > 0) { await sleep(RETRY_DELAY); return fetchDestacadas(tries - 1); }
+                    return list.filter(p => !!p.destacado && !!p.active).map(normalize);
+                } catch (e) { if (tries > 0) { await sleep(RETRY_DELAY); return fetchDestacadas(tries - 1); } throw e; }
+            }
+
+            function showState(html) { const s = $('#destacadasState'); s.hidden = false; s.innerHTML = html; $('#destacadasMount').innerHTML = ''; }
+            function hideState() { $('#destacadasState').hidden = true; }
+
+            function card(p) {
+                const img = p.imagenes[0] || PLACEHOLDER; const sup = supTotal(p); const m = [];
+                if (sup > 0) m.push(`<span class="m"><i class="fas fa-vector-square"></i> ${sup} m²</span>`);
+                if (p.habitaciones > 0) m.push(`<span class="m"><i class="fas fa-bed"></i> ${p.habitaciones}</span>`);
+                if (p.banos > 0) m.push(`<span class="m"><i class="fas fa-bath"></i> ${p.banos}</span>`);
+                if (p.petFriendly) m.push(`<span class="m"><i class="fas fa-paw"></i> Pet</span>`);
+                return `
+                  <article class="prop-card">
+                    <div class="prop-media">
+                      <img src="${esc(img)}" alt="${esc(p.titulo || 'Propiedad')}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${PLACEHOLDER}'">
+                      <span class="badge-op">${esc(tipoLabel(p.tipo))}</span>
+                      <span class="badge-fav"><i class="fas fa-star"></i> Destacada</span>
+                      ${p.imagenes.length > 1 ? `<span class="badge-count"><i class="fas fa-images"></i> ${p.imagenes.length}</span>` : ''}
+                    </div>
+                    <div class="prop-body">
+                      ${p.precio ? `<div class="prop-price">${esc(money(p.precio))}</div>` : ''}
+                      <h3 class="prop-title">${esc(p.titulo || 'Propiedad')}</h3>
+                      ${p.localidad ? `<div class="prop-loc"><i class="fas fa-map-marker-alt" style="color:var(--brand-dark)"></i> ${esc(p.localidad)}</div>` : ''}
+                      <div class="prop-metrics">${m.join('')}</div>
+                      <div class="prop-actions">
+                        <button class="btn-detalle" data-detail="${esc(p.id)}"><i class="fas fa-eye"></i> Ver detalle</button>
+                        <a class="btn btn-wa" target="_blank" rel="noopener noreferrer" href="${esc(waLink(p.titulo))}" aria-label="Consultar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                      </div>
+                    </div>
+                  </article>`;
+            }
+
+            function renderDestacadas() {
+                const mount = $('#destacadasMount');
+                if (!DEST.length) { showState('<div class="alert alert-info d-inline-block">No hay propiedades destacadas por el momento.</div>'); return; }
+                hideState();
+                if (DEST.length <= GRID_MAX) {
+                    // Pocas => grilla (layout actual)
+                    mount.innerHTML = '<div class="row g-4 justify-content-center">' +
+                        DEST.map(p => `<div class="col-12 col-sm-6 col-lg-4 col-xxl-3">${card(p)}</div>`).join('') + '</div>';
+                } else {
+                    // Más de 3 => carrusel Swiper (clases propias, responsive)
+                    mount.innerHTML =
+                        '<div class="dest-carousel">' +
+                        '  <div class="swiper dest-swiper"><div class="swiper-wrapper">' +
+                        DEST.map(p => `<div class="swiper-slide">${card(p)}</div>`).join('') +
+                        '  </div></div>' +
+                        '  <button class="dest-nav dest-prev" type="button" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>' +
+                        '  <button class="dest-nav dest-next" type="button" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>' +
+                        '  <div class="dest-pagination"></div>' +
+                        '</div>';
+                    new Swiper('.dest-swiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 24,
+                        rewind: true, // vuelve al inicio sin duplicar (evita warnings de loop)
+                        navigation: { nextEl: '.dest-next', prevEl: '.dest-prev' },
+                        pagination: { el: '.dest-pagination', clickable: true },
+                        breakpoints: {
+                            576: { slidesPerView: 2, spaceBetween: 18 },
+                            992: { slidesPerView: 3, spaceBetween: 22 },
+                            1200: { slidesPerView: 4, spaceBetween: 24 }
+                        }
+                    });
+                }
+            }
+
+            function fact(icon, v, k) { return `<div class="fact"><i class="fas ${icon}"></i><div class="v">${esc(v)}</div><div class="k">${esc(k)}</div></div>`; }
+            function openDetail(id) {
+                const p = DEST.find(x => String(x.id) === String(id)); if (!p) return;
+                const imgs = p.imagenes.length ? p.imagenes : [PLACEHOLDER]; const facts = [];
+                if (supTotal(p) > 0) facts.push(fact('fa-vector-square', supTotal(p) + ' m²', 'Superficie'));
+                if (p.superficieTerreno > 0) facts.push(fact('fa-ruler-combined', p.superficieTerreno + ' m²', 'Terreno'));
+                if (p.habitaciones > 0) facts.push(fact('fa-bed', p.habitaciones, 'Dormitorios'));
+                if (p.banos > 0) facts.push(fact('fa-bath', p.banos, 'Baños'));
+                if (p.petFriendly) facts.push(fact('fa-paw', 'Sí', 'Pet friendly'));
+                $('#detailTitle').textContent = p.titulo || 'Detalle de la propiedad';
+                $('#propertyDetailsContent').innerHTML = `
+                  <div class="detail-hero"><div class="swiper" id="detailSwiper"><div class="swiper-wrapper">
+                    ${imgs.map((im, i) => `<div class="swiper-slide"><img src="${esc(im)}" data-i="${i}" alt="${esc(p.titulo || 'Propiedad')}" onerror="this.onerror=null;this.src='${PLACEHOLDER}'"></div>`).join('')}
+                  </div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></div>
+                  <div class="detail-content">
+                    <span class="badge-op position-static d-inline-block mb-2">${esc(tipoLabel(p.tipo))}</span>
+                    <span class="badge-fav position-static d-inline-block mb-2 ms-2"><i class="fas fa-star"></i> Destacada</span>
+                    <h2 class="fw-bold h3">${esc(p.titulo || 'Propiedad')}</h2>
+                    ${p.localidad ? `<div class="prop-loc mb-2"><i class="fas fa-map-marker-alt" style="color:var(--brand-dark)"></i> ${esc(p.localidad)}</div>` : ''}
+                    ${p.precio ? `<div class="detail-price">${esc(money(p.precio))}</div>` : ''}
+                    <div class="fact-grid">${facts.join('')}</div>
+                    <h5 class="fw-bold">Descripción</h5>
+                    <div class="detail-desc">${p.descripcion ? sanitize(p.descripcion) : '<p class="text-muted">Sin descripción disponible.</p>'}</div>
+                  </div>
+                  <div class="detail-actions">
+                    <a class="btn btn-interes" href="/propiedades/"><i class="fas fa-layer-group"></i> Ver todas</a>
+                    <a class="btn btn-wa flex-fill" target="_blank" rel="noopener noreferrer" href="${esc(waLink(p.titulo))}"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                  </div>`;
+                if (!bsOffcanvas) bsOffcanvas = new bootstrap.Offcanvas('#propertyDetailsPanel');
+                bsOffcanvas.show();
+                if (detailSwiper) { try { detailSwiper.destroy(true, true); } catch (e) { } }
+                detailSwiper = new Swiper('#detailSwiper', { loop: imgs.length > 1, navigation: { nextEl: '#detailSwiper .swiper-button-next', prevEl: '#detailSwiper .swiper-button-prev' }, pagination: { el: '#detailSwiper .swiper-pagination', clickable: true } });
+                $('#propertyDetailsContent').querySelectorAll('.swiper-slide img').forEach(el => el.addEventListener('click', () => openLightbox(imgs, Number(el.dataset.i) || 0)));
+            }
+
+            let lbImgs = [], lbIdx = 0, lbKey = null, lbFocus = null;
+            function openLightbox(images, start) {
+                lbImgs = images; lbIdx = start || 0; const lb = $('#lightbox'), im = $('#lightboxImg');
+                document.body.appendChild(lb); const set = () => { im.src = lbImgs[lbIdx] || PLACEHOLDER; }; set(); lb.style.display = 'flex';
+                const close = () => { lb.style.display = 'none'; if (lbKey) { document.removeEventListener('keydown', lbKey); lbKey = null; } lb.onclick = null; if (lbFocus && lbFocus.focus) lbFocus.focus(); };
+                const prev = () => { lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length; set(); };
+                const next = () => { lbIdx = (lbIdx + 1) % lbImgs.length; set(); };
+                lb.querySelector('.lb-close').onclick = close; lb.querySelector('.lb-prev').onclick = prev; lb.querySelector('.lb-next').onclick = next;
+                lb.onclick = e => { if (e.target === lb) close(); };
+                if (lbKey) document.removeEventListener('keydown', lbKey);
+                lbKey = e => { if (lb.style.display !== 'flex') return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') prev(); else if (e.key === 'ArrowRight') next(); };
+                document.addEventListener('keydown', lbKey); lbFocus = document.activeElement; lb.querySelector('.lb-close').focus();
+            }
+
+            document.addEventListener('click', e => { const d = e.target.closest('[data-detail]'); if (d) openDetail(d.getAttribute('data-detail')); });
+
+            // ---- Formulario (mismo backend /php/formServicios.php + spinner) ----
+            function bindForm() {
+                const form = document.getElementById('formContacto'); if (!form) return;
+                const btn = form.querySelector('button[type="submit"]'); const orig = btn ? btn.innerHTML : 'Enviar mensaje';
+                function notify(icon, title, text) { if (typeof Swal !== 'undefined') Swal.fire({ icon, title, text, confirmButtonText: 'Aceptar', confirmButtonColor: '#71C6D4' }); else alert(title + '\n\n' + text); }
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    const nombre = document.getElementById('nombre').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const tipoContacto = document.getElementById('tipoContacto').value;
+                    const mensaje = document.getElementById('mensaje').value.trim();
+                    const rc = document.querySelector('.g-recaptcha-response')?.value || '';
+                    if (!nombre || !email || !tipoContacto || !mensaje || !rc) { notify('warning', 'Faltan datos', 'Completá todos los campos y verificá el reCAPTCHA antes de enviar.'); return; }
+                    btn.disabled = true; btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Enviando…';
+                    try {
+                        const fd = new FormData(form); fd.append('g-recaptcha-response', rc);
+                        const res = await fetch('/php/formServicios.php', { method: 'POST', body: fd });
+                        const result = await res.json();
+                        if (result.status === 'success') { form.reset(); if (typeof grecaptcha !== 'undefined') grecaptcha.reset(); notify('success', '¡Mensaje enviado!', 'Gracias por contactarte con UnenGroup. Te responderemos a la brevedad.'); }
+                        else notify('error', 'No se pudo enviar', result.message || 'Ocurrió un error al enviar tu mensaje. Intentá nuevamente.');
+                    } catch (err) { console.error(err); notify('error', 'Error de conexión', 'Verificá tu conexión a internet e intentá nuevamente.'); }
+                    finally { btn.disabled = false; btn.innerHTML = orig; }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', async () => {
+                bindForm();
+                showState('<div class="spinner-brand"></div><p class="text-muted">Cargando destacadas…</p>');
+                try { DEST = await fetchDestacadas(); }
+                catch (e) { console.error(e); showState('<i class="fas fa-triangle-exclamation fa-2x mb-3 text-warning"></i><h5>No se pudieron cargar las destacadas</h5><p class="text-muted">Intentá nuevamente en unos minutos.</p>'); return; }
+                renderDestacadas();
+            });
+        })();
+    </script>
 </body>
 
 </html>

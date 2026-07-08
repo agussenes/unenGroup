@@ -1,0 +1,19 @@
+# ============================================================
+# UnenGroup - Configuración Apache
+# ============================================================
+
+# Servir index.html por defecto en cada carpeta
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# ------------------------------------------------------------
+# Redirecciones 301 de rutas viejas (.html) a las nuevas carpetas
+# Preserva query string (?tipo=...) y evita 404 / pérdida de SEO
+# ------------------------------------------------------------
+RewriteRule ^propiedades\.html$ /propiedades/ [R=301,L,QSA]
+RewriteRule ^nosotros\.html$ /nosotros/ [R=301,L,QSA]
+
+# Normalizar acceso sin barra final a las nuevas vistas
+RewriteRule ^propiedades$ /propiedades/ [R=301,L]
+RewriteRule ^nosotros$ /nosotros/ [R=301,L]

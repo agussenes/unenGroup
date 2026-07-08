@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /admin/
 Disallow: /backend/
 Disallow: /private/
+Disallow: /pruebas/
 
 # Permitir acceso a todas las páginas públicas
 Allow: /

@@ -1,310 +1,371 @@
-// Datos de Propiedades
-const propiedades = [
-    {
-        id: 9,
-        tipo: "local-oficina-cochera",
-        titulo: "Departamento en Venta Nueva Córdoba - Uso Comercial",
-        precio: "USD 85.000",
-        localidad: "Nueva Córdoba",
-        metrosCuadrados: 56.06,
-        habitaciones: 2,
-        banos: 1,
-        petFriendly: false,
-        imagenes: [
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/livinEspera.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/frente.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/espera2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/bano.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentro.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista2.jpg",
-            "./images/propiedades/oficinas/oficina-usoComercial-Depa-Nva-Cba/desdeAdentroOtraVista3.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Ubicación: Buenos Aires esq. Rondeau</li>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 56.06 m²</li>
-            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 1 Baño</li>
-            <li><i class="fas fa-chair"></i> Living</li>
-            <li><i class="fas fa-utensils"></i> Cocina</li>
-            <li><i class="fas fa-money-bill"></i> Expensas: $78.000</li>
-            <li><i class="fas fa-shield-alt"></i> Seguridad y cámaras en ingreso</li>
-        </ul>`
+// scriptHomeDestacados.js — DESTACADOS HOME (consumo API)
+// Portado desde referencia-produccion/js/scriptHomeDestacadosST.js
+// Incluye mejoras de lightbox: teclado persistente, foco accesible.
+
+const API_BASE = 'https://api.unengroup.com.ar';
+
+let propsDestacadas = [];
+
+// Utils
+const RETRIES = 2;
+const RETRY_DELAY_MS = 800;
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+function formatPrice(v) {
+  return (typeof v === 'number') ? v.toLocaleString('es-AR') : String(v ?? '').trim();
+}
+
+// Normaliza la URL de una imagen que llega de la API.
+// - Si ya es absoluta (http/https) → se deja igual.
+// - Si es un asset local (/images/...) → se deja igual.
+// - Si viene relativa (ej. "storage/..." o "/storage/...") → se arma con API_BASE.
+function resolveImg(u) {
+  const s = String(u ?? '').trim();
+  if (!s) return s;
+  if (/^https?:\/\//i.test(s)) return s;
+  if (s.startsWith('/images/')) return s;
+  return API_BASE.replace(/\/+$/, '') + '/' + s.replace(/^\/+/, '');
+}
+
+// Placeholder embebido (no depende de un archivo en el server)
+const PLACEHOLDER_IMG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450">' +
+  '<rect width="100%" height="100%" fill="#e9ecef"/>' +
+  '<text x="50%" y="50%" font-family="Arial,Helvetica,sans-serif" font-size="30" fill="#9aa4ad" text-anchor="middle" dominant-baseline="middle">Sin imagen</text>' +
+  '</svg>'
+);
+
+function initializeSwiper(containerId) {
+  new Swiper(`#${containerId}`, {
+    loop: true,
+    pagination: { el: `#${containerId} .swiper-pagination`, clickable: true },
+    navigation: {
+      nextEl: `#${containerId} .swiper-button-next`,
+      prevEl: `#${containerId} .swiper-button-prev`,
     },
-    {
-        id: 7,
-        tipo: "venta",
-        titulo: "Casa en Venta Potrerillo de Larreta",
-        precio: "USD 450.000",
-        localidad: "Potrerillo de Larreta",
-        metrosCuadrados: 420,
-        habitaciones: 4,
-        banos: 4,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frenteDelejos.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/frente.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/ghaleriaAsador.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/pileta.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/cocinaComedor.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/escaleras.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/habitacion.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/habitacionConBestidor.jpg",
-            "./images/propiedades/viviendas/venta-Casa-venta-Potrerillo-de-Larreta/bestidor.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 420 m²</li>
-            <li><i class="fas fa-ruler-combined"></i> Superficie de terreno: 1800 m²</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor</li>
-            <li><i class="fas fa-bed"></i> 4 Dormitorios (1 en suite)</li>
-            <li><i class="fas fa-bath"></i> 4 Baños</li>
-            <li><i class="fas fa-user-tie"></i> Dependencia de servicio</li>
-            <li><i class="fas fa-car"></i> Cochera para 2 autos</li>
-            <li><i class="fas fa-umbrella-beach"></i> Galería</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
-        </ul>`
-    },
-    {
-        id: 4,
-        tipo: "alquiler-temporario",
-        titulo: "Alquiler Casa Villa Warcalde Temporario",
-        precio: "Consultar disponibilidad y precio",
-        localidad: "Villa Warcalde",
-        metrosCuadrados: 250,
-        habitaciones: 2,
-        banos: 4,
-        petFriendly: true,
-        imagenes: [
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioo.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/frente.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/mesa.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/cocina.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/bano.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/patioPileta.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/quincho-galeriaAsador.jpg",
-            "./images/propiedades/viviendas/alquilerTemporario-Casa-Villa-Warcald/sillones.jpg",
-        ],
-        descripcion: `
-        <ul>
-            <li><i class="fas fa-expand"></i> Superficie cubierta: 250 m²</li>
-            <li><i class="fas fa-ruler-combined"></i> Superficie del terreno: 3000 m²</li>
-            <li><i class="fas fa-couch"></i> Living / Comedor</li>
-            <li><i class="fas fa-utensils"></i> Cocina integrada con desayunador</li>
-            <li><i class="fas fa-bed"></i> 2 Dormitorios</li>
-            <li><i class="fas fa-bath"></i> 4 Baños</li>
-            <li><i class="fas fa-fire"></i> Quincho amplio para 12 personas con asador</li>
-            <li><i class="fas fa-swimming-pool"></i> Piscina</li>
-        </ul>`
+  });
+}
+
+// ========= LIGHTBOX =========
+let currentLightboxImages = [];
+let currentLightboxIndex = 0;
+let lightboxKeyHandler = null;   // referencia para poder remover el listener
+let lightboxLastFocused = null;  // foco previo, para devolverlo al cerrar
+
+function openLightbox(images, startIndex = 0) {
+  currentLightboxImages = images;
+  currentLightboxIndex = startIndex;
+
+  const overlay = document.getElementById('lightboxOverlay');
+  const imgEl = document.getElementById('lightboxImage');
+  if (!overlay || !imgEl) return;
+
+  // Garantizo tope de z-index por encima del modal
+  document.body.appendChild(overlay);
+
+  const setSrc = () => { imgEl.src = currentLightboxImages[currentLightboxIndex] || ''; };
+  setSrc();
+  overlay.style.display = 'flex';
+
+  const closeBtn = overlay.querySelector('.dg-lightbox-close');
+  const prevBtn = overlay.querySelector('.dg-lightbox-prev');
+  const nextBtn = overlay.querySelector('.dg-lightbox-next');
+
+  const prev = () => { currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length; setSrc(); };
+  const next = () => { currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length; setSrc(); };
+
+  const close = () => {
+    overlay.style.display = 'none';
+    // Mejora 1: remover el listener de teclado al cerrar
+    if (lightboxKeyHandler) {
+      document.removeEventListener('keydown', lightboxKeyHandler);
+      lightboxKeyHandler = null;
     }
-];
+    overlay.onclick = null;
+    // Mejora 3: devolver el foco al elemento previo
+    if (lightboxLastFocused && typeof lightboxLastFocused.focus === 'function') {
+      lightboxLastFocused.focus();
+    }
+  };
 
+  closeBtn.onclick = close;
+  prevBtn.onclick = prev;
+  nextBtn.onclick = next;
 
+  overlay.onclick = (e) => { if (e.target === overlay) close(); };
 
+  // Mejora 1: teclado activo mientras el lightbox esté abierto (sin { once:true })
+  if (lightboxKeyHandler) document.removeEventListener('keydown', lightboxKeyHandler);
+  lightboxKeyHandler = (e) => {
+    if (overlay.style.display !== 'flex') return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') prev();
+    else if (e.key === 'ArrowRight') next();
+  };
+  document.addEventListener('keydown', lightboxKeyHandler);
 
-// Función para inicializar Swiper
-function initializeSwiper(id) {
-    new Swiper(`#${id}`, {
-        loop: true,
-        pagination: {
-            el: `.swiper-pagination`,
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+  // Mejora 3: foco al abrir (guardando el previo)
+  lightboxLastFocused = document.activeElement;
+  closeBtn.focus();
+}
+
+// ========= RENDER =========
+function renderDestacadas(list) {
+  const mount = document.getElementById('destacadasMount');
+  if (!mount) return;
+
+  if (!list.length) {
+    mount.innerHTML = `<div class="alert alert-info text-center">No hay propiedades destacadas por ahora.</div>`;
+    return;
+  }
+
+  // envolvemos en .row para respetar el grid
+  mount.innerHTML = `
+    <div class="row g-4" id="destacadasRow">
+      ${list.map((prop) => {
+        const imgs = Array.isArray(prop.imagenes) ? prop.imagenes : [];
+        const swiperId = `destacada-swiper-${prop.id}`;
+
+        // Chips (cubiertos → totales/cuadrados → hab → baños → Pet)
+        const cub = Number(prop.metrosCubiertos || 0);
+        const m2  = Number(prop.metrosCuadrados || prop.metrosTotales || 0);
+        const hab = Number(prop.habitaciones || 0);
+        const ban = Number(prop.banos || 0);
+
+        const chips = [];
+        if (cub > 0) chips.push(`<span title="Superficie cubierta"><i class="fas fa-th-large"></i> ${cub} m² cub.</span>`);
+        if (m2  > 0)  chips.push(`<span title="Superficie"><i class="fas fa-expand"></i> ${m2} m²</span>`);
+        if (hab > 0) chips.push(`<span title="Dormitorios"><i class="fas fa-bed"></i> ${hab}</span>`);
+        if (ban > 0) chips.push(`<span title="Baños"><i class="fas fa-bath"></i> ${ban}</span>`);
+        if (prop.petFriendly) chips.push(`<span title="Pet-Friendly"><i class="fas fa-paw" style="color:#71C6D4;"></i> Pet-Friendly</span>`);
+
+        return `
+        <div class="col-12 col-md-6 col-lg-4 d-flex">
+          <div class="card shadow w-100">
+            <div class="swiper-container" id="${swiperId}">
+              <div class="swiper-wrapper">
+                ${imgs.length
+                  ? imgs.map(img => `
+                      <div class="swiper-slide">
+                        <img src="${img}" class="img-fluid" alt="${prop.titulo}" loading="lazy" decoding="async">
+                      </div>`).join('')
+                  : `<div class="swiper-slide">
+                      <img src="${PLACEHOLDER_IMG}" class="img-fluid" alt="sin-imagen" loading="lazy" decoding="async">
+                    </div>`
+                }
+              </div>
+              <div class="botonesSwiperDes">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div class="swiper-pagination visores"></div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-icons d-flex justify-content-between align-items-center py-2">
+                ${chips.join('')}
+              </div>
+
+              <h5 class="card-title py-2">${prop.titulo}</h5>
+              <p class="card-text"><strong>Categoría:</strong> ${prop.tipo || '—'}</p>
+              ${prop.precio ? `<p class="card-text"><strong>Precio:</strong> ${formatPrice(prop.precio)}</p>` : ''}
+              ${prop.localidad ? `<p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>` : ''}
+
+              <button class="btn btn-info mb-2" data-view-more="${prop.id}">Ver más</button>
+
+            </div>
+
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  `;
+
+  // Listeners
+  mount.querySelectorAll('[data-view-more]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = Number(e.currentTarget.getAttribute('data-view-more'));
+      openDetailsModal(id);
+    });
+  });
+
+  mount.querySelectorAll('.btn-me-interesa').forEach(button => {
+    button.addEventListener('click', function () {
+      goToContactFromHome(this.getAttribute('data-propiedad'));
+    });
+  });
+
+  // Swipers
+  list.forEach((prop) => initializeSwiper(`destacada-swiper-${prop.id}`));
+}
+
+// ========= MODAL DETALLE =========
+function openDetailsModal(id) {
+  const property = propsDestacadas.find(p => Number(p.id) === Number(id));
+  if (!property) return;
+
+  const imgs = Array.isArray(property.imagenes) ? property.imagenes : [];
+  const swiperId = `modal-swiper-${property.id}`;
+
+  const gallery = `
+    <div class="swiper-container mb-3" id="${swiperId}">
+      <div class="swiper-wrapper">
+        ${imgs.length
+          ? imgs.map((img, idx) => `
+              <div class="swiper-slide">
+                <img src="${img}" class="img-fluid" alt="${property.titulo}" loading="lazy" decoding="async" data-idx="${idx}">
+              </div>`).join('')
+          : `<div class="swiper-slide">
+               <img src="${PLACEHOLDER_IMG}" class="img-fluid" alt="sin-imagen" loading="lazy" decoding="async">
+             </div>`
         }
+      </div>
+      <div class="botonesSwiperDes">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="pagination"><div class="swiper-pagination"></div></div>
+    </div>
+  `;
+
+  const content = `
+    ${gallery}
+    <div class="row g-3  p-3">
+      <div class="col-12"><h3 class="mb-2">${property.titulo}</h3></div>
+      <div class="col-12">
+        <div class="row text-center text-md-start">
+          <div class="col-md-4">${property.precio ? `<p class="mb-1"><strong>Precio:</strong> ${formatPrice(property.precio)}</p>` : ''}</div>
+          <div class="col-md-4">${property.tipo ? `<p class="mb-1"><strong>Categoría:</strong> ${property.tipo}</p>` : ''}</div>
+          <div class="col-md-4">${property.localidad ? `<p class="mb-1"><strong>Localidad:</strong> ${property.localidad}</p>` : ''}</div>
+        </div>
+      </div>
+      <div class="col-12"><div id="descripcionDetalle">${property.descripcion || ''}</div></div>
+      <div class="col-12 d-flex justify-content-center">
+        <button class="btn btn-secondary" onclick="goToContactFromHome('${property.titulo}')">Me interesa</button>
+      </div>
+    </div>
+  `;
+
+  const target = document.getElementById('propertyDetailsContent');
+  if (!target) return;
+  target.innerHTML = content;
+
+  // Abrir modal
+  const modalEl = document.getElementById('propertyDetailsModal');
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+
+  // Swiper + Lightbox
+  try {
+    initializeSwiper(swiperId);
+    target.querySelectorAll(`#${swiperId} .swiper-slide img`).forEach(imgEl => {
+      imgEl.addEventListener('click', (e) => {
+        const idx = Number(e.currentTarget.getAttribute('data-idx')) || 0;
+        openLightbox(imgs.length ? imgs : [e.currentTarget.src], idx);
+      });
     });
+  } catch (err) {
+    console.error('Error iniciando Swiper del modal:', err);
+  }
 }
 
-function renderProperties(data) {
-    const container = document.getElementById("propiedadesContainer");
-    container.innerHTML = data
-        .map(
-            (prop) => `
-        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap g-3">
-            <div class="card shadow d-flex flex-colum">
-                <div class="swiper-container" id="swiper-${prop.id}">
-                    <div class="swiper-wrapper">
-                        ${prop.imagenes
-                            .map(
-                                (img) =>
-                                    `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${prop.titulo}"></div>`
-                            )
-                            .join("")}
-                    </div>
-                    <div class="botonesSwiperDes">
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div class="swiper-pagination visores"></div>
-                </div>
-                <div class="card-body">
-                    <div class="card-icons d-flex justify-content-between py-2">
-                        <span><i class="fas fa-expand"></i> ${prop.metrosCuadrados} m²</span>
-                        ${
-                            prop.habitaciones > 0
-                                ? `<span><i class="fas fa-bed"></i> ${prop.habitaciones}</span>`
-                                : ""
-                        }
-                        ${
-                            prop.banos > 0
-                                ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>`
-                                : ""
-                        }
-                        ${
-                            prop.petFriendly
-                                ? `<span><i class="fas fa-paw" style="color: #71C6D4;"></i> Pet-Friendly</span>`
-                                : ""
-                        }
-                    </div>
-                    <h5 class="card-title py-2">${prop.titulo}</h5>
-                    <p class="card-text"><strong>Precio:</strong> $${prop.precio.toLocaleString()}</p>
-                    <p class="card-text"><strong>Categoria:</strong> ${prop.tipo}</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Localidad: ${prop.localidad}</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-info" onclick="viewPropertyDetails(${prop.id})">Ver más</button>
-                        <button class="btn btn-secondary" onclick="irPropiedades()">Ver todas</button>
-                    </div>
-                </div>
-            </div>
-        </div>`
-        )
-        .join("");
+// ========= CONTACTO (fix del scroll cortado) =========
+function goToContactFromHome(propiedadTitulo) {
+  // Si estamos en modal, cerrarlo antes de scrollear
+  const modalEl = document.getElementById('propertyDetailsModal');
+  if (modalEl) {
+    const inst = bootstrap.Modal.getInstance(modalEl);
+    if (inst) inst.hide();
+  }
 
-    data.forEach((prop) => initializeSwiper(`swiper-${prop.id}`));
-}
-
-
-
-// Ver detalles de la propiedad
-function viewPropertyDetails(id) {
-    const property = propiedades.find((prop) => prop.id === id);
-    if (property) {
-        const content = `
-            <div class="swiper-container mb-4" id="modal-swiper-${property.id}">
-                <div class="swiper-wrapper">
-                    ${property.imagenes
-                .map((img) => `<div class="swiper-slide"><img src="${img}" class="img-fluid" alt="${property.titulo}"></div>`)
-                .join("")}
-                </div>
-                <div class="botonesSwiperDes">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                 </div>
-                <div class="pagination">
-                     <div class="swiper-pagination"></div>
-                    
-                </div>
-            </div>
-            
-            <div class="row text-center text-xl-start ">
-            <h3 class="text-center">${property.titulo}</h3>
-                <div class="col-xl-6 detalleProp">                    
-                    <p><strong>Precio:</strong> $${property.precio.toLocaleString()}</p>
-                    <p><strong>Categoría:</strong> ${property.tipo}</p>
-                    <p ><strong>Localidad:</strong> ${property.localidad}</p>
-                </div>
-                <div class="col-xl-6">
-                    
-                    <p id="descripcionDetalle">${property.descripcion}</p>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center gap-3 mt-4">
-                <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="irPropiedades()">Ver todas</button>
-                <button class="btn btn-secondary" onclick="goToContact('${property.titulo}')" data-bs-dismiss="modal">Me interesa</button>
-            </div>
-        `;
-        document.getElementById("propertyDetailsContent").innerHTML = content;
-        initializeSwiper(`modal-swiper-${property.id}`);
-        new bootstrap.Modal(document.getElementById("propertyDetailsModal")).show();
+  // Precargar el título en el mensaje del formulario de home
+  const mensaje = document.getElementById('mensaje');
+  if (mensaje && propiedadTitulo) {
+    if (!mensaje.value.includes(propiedadTitulo)) {
+      mensaje.value = `Consulta por: ${propiedadTitulo}\n${mensaje.value}`.trim();
     }
+  }
+
+  // Scroll con offset por navbar
+  const destino = document.getElementById('contacto');
+  if (!destino) return;
+
+  const NAV_OFFSET = document.querySelector('.navbar')?.offsetHeight || 0;
+  const top = destino.getBoundingClientRect().top + window.scrollY - (NAV_OFFSET + 12);
+
+  // Espero al cierre del modal y al repaint para evitar corte
+  setTimeout(() => {
+    window.scrollTo({ top, behavior: 'smooth' });
+    setTimeout(() => window.scrollTo({ top, behavior: 'smooth' }), 250);
+  }, 200);
 }
 
+// ========= FETCH =========
+async function fetchDestacadas(tries = RETRIES) {
+  try {
+    const res = await fetch(`${API_BASE}/properties`, { cache: 'no-store', credentials: 'omit' });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    const arr = await res.json();
+    const list = Array.isArray(arr) ? arr : [];
 
-// Redirigir al Formulario de Contacto
-function goToContact(propiedad) {
-    window.location.href = `propiedades.html?propiedad=${encodeURIComponent(propiedad)}#contacto`;
-}
-
-// Función para aplicar filtros
-function applyFilters() {
-    const tipo = document.getElementById("tipoPropiedad").value;
-    const precioMaximo = document.getElementById("precioMaximo").value;
-    const localidad = document.getElementById("localidad").value.toLowerCase();
-
-    const filtered = propiedades.filter((prop) => {
-        return (
-            (tipo === "all" || prop.tipo === tipo) &&
-            (!precioMaximo || prop.precio <= precioMaximo) &&
-            (!localidad || prop.localidad.toLowerCase().includes(localidad))
-        );
-    });
-
-    renderProperties(filtered);
-}
-
-// Obtén los parámetros de la URL
-function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    return { tipo: params.get('tipo') || 'all' };
-}
-
-// Aplica los filtros iniciales según los parámetros de la URL
-function applyInitialFilters() {
-    const { tipo } = getQueryParams();
-    const tipoDropdown = document.getElementById('tipoPropiedad');
-    if (tipoDropdown && tipo !== 'all') {
-        tipoDropdown.value = tipo;
+    if (list.length === 0 && tries > 0) {
+      await sleep(RETRY_DELAY_MS);
+      return fetchDestacadas(tries - 1);
     }
 
-    const filtered = propiedades.filter((prop) => tipo === 'all' || prop.tipo === tipo);
-    renderProperties(filtered);
+    return list
+      .filter(p => !!p.destacado && !!p.active) // solo destacados activos
+      .map(p => ({
+        id: p.id,
+        tipo: p.tipo || '',
+        titulo: p.titulo || '',
+        precio: p.precio ?? '',
+        localidad: p.localidad || '',
+        metrosTotales: Number(p.metrosTotales || p.superficieTotal || p.m2Totales || p.metros || p.metrosCuadrados || 0),
+        metrosCubiertos: Number(p.metrosCubiertos || p.superficieCubierta || p.m2Cubiertos || 0),
+        metrosCuadrados: Number(p.metrosCuadrados || 0),
+        superficieTerreno: Number(p.superficieTerreno || p.terreno || p.m2Terreno || 0),
+        habitaciones: Number(p.habitaciones || 0),
+        banos: Number(p.banos || 0),
+        petFriendly: !!p.petFriendly,
+        imagenes: (Array.isArray(p.imagenes) ? p.imagenes : []).map(resolveImg).filter(Boolean),
+        descripcion: p.descripcion || '',
+        destacado: !!p.destacado,
+        active: !!p.active,
+      }));
+  } catch (e) {
+    if (tries > 0) {
+      await sleep(RETRY_DELAY_MS);
+      return fetchDestacadas(tries - 1);
+    }
+    throw e;
+  }
 }
 
-// Ejecuta los filtros iniciales al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    applyInitialFilters();
+// ========= BOOT =========
+document.addEventListener('DOMContentLoaded', async () => {
+  const mount = document.getElementById('destacadasMount');
+  if (mount) {
+    mount.innerHTML = `
+      <div class="dg-loader text-center my-4">
+        <div class="spinner-border text-info" role="status" aria-label="Cargando"></div>
+        <div class="mt-2 small text-muted">Cargando destacadas…</div>
+      </div>`;
+  }
 
-    // Configurar filtros en tiempo real
-    document.querySelectorAll("#filtros input, #filtros select").forEach((input) =>
-        input.addEventListener("input", applyFilters)
-    );
+  try {
+    propsDestacadas = await fetchDestacadas();
+  } catch (err) {
+    console.error(err);
+    if (mount) {
+      mount.innerHTML = `<div class="alert alert-danger text-center">No se pudieron cargar las destacadas.</div>`;
+    }
+    return;
+  }
+
+  renderDestacadas(propsDestacadas);
 });
 
-
-// Función para abrir Vista 360° en un modal
-// function abrirVista360(id) {
-
-//     const property = propiedades.find((prop) => prop.id === id);
-
-//     if (property) {
-       
-//         document.getElementById("property360ModalTitle").innerText = property.titulo;
-
-        
-//         pannellum.viewer("pano360", {
-//             type: "equirectangular",
-//             panorama: property.vista360[0], 
-//             autoLoad: true,
-//             compass: true,
-//             showZoomCtrl: true,
-//             showFullscreenCtrl: true,
-//         });
-
-     
-//         const modal = new bootstrap.Modal(document.getElementById("property360Modal"));
-//         modal.show();
-//     } else {
-//         console.error("No se encontró la propiedad con ID:", id);
-//     }
-// }
-
-function irPropiedades(){
-    window.location.href = "propiedades.html";
-}
-
-
-
+// Expose (por si los necesitás en inline)
+window.openLightbox = openLightbox;
+window.goToContactFromHome = goToContactFromHome;
