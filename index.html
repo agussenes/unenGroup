@@ -54,8 +54,6 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Pannellum  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css">
     <!-- Swiper.js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!-- Animate.css -->
@@ -66,6 +64,12 @@
     <!-- Estilos Propios -->
     <link rel="stylesheet" href="/css/stylesGen.css">
     <link rel="stylesheet" href="/css/stylesInicio.css">
+    <!-- Componentes compartidos (Etapa 3) -->
+    <link rel="stylesheet" href="/css/components/property-cards.css">
+    <link rel="stylesheet" href="/css/components/property-detail.css">
+    <link rel="stylesheet" href="/css/components/lightbox.css">
+    <!-- CSS específico de esta vista -->
+    <link rel="stylesheet" href="/css/home.css">
 
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/a720cb8047.js" crossorigin="anonymous"></script>
@@ -89,6 +93,7 @@
           ]
         }
         </script>
+
 </head>
 
 <body>
@@ -269,6 +274,7 @@
         <section id="servicios" class="py-5 bg-light">
             <div class="container">
                 <!-- Encabezado -->
+                <span class="up-eyebrow text-center">Lo que hacemos</span>
                 <h2 class="text-center fw-bold mb-4">Nuestros servicios</h2>
                 <p class="text-center mb-5 text-light">En Unen group garantizamos soluciones personalizadas para cada
                     tipo de
@@ -734,40 +740,40 @@
         <!-- •-----------------porpiedades---------------- -->
 
 
-        <!-- Lista de Propiedades -->
+        <!-- ======= PROPIEDADES DESTACADAS (API + cards /propuesta/ + carrusel automático) ======= -->
         <section id="propiedades" class="py-5 bg-light">
-            <h2 class="text-center fw-bold mb-4">Propiedades destacadas</h2>
-            <div class="container mt-5">
-                <!-- El JS inyecta el grid de destacadas aquí -->
+            <div class="container">
+                <div class="text-center mb-4">
+                    <span class="up-eyebrow" style="color:var(--brand-dark)">Selección UnenGroup</span>
+                    <h2 class="fw-bold">Propiedades destacadas</h2>
+                </div>
+                <!-- El JS decide: grid (pocas) o carrusel Swiper (muchas) -->
                 <div id="destacadasMount"></div>
+                <div id="destacadasState" class="text-center py-4" hidden></div>
+                <div class="text-center mt-4">
+                    <a href="/propiedades/" class="btn btn-warning btn-lg">Ver todas las propiedades</a>
+                </div>
             </div>
         </section>
 
-        <!-- Modal para Ver Más Información -->
-        <div class="modal fade" id="propertyDetailsModal" tabindex="-1" aria-labelledby="propertyDetailsModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="propertyDetailsModalLabel">Detalles de la Propiedad</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"
-                            style="background-color: white;"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Contenido dinámico aquí -->
-                        <div id="propertyDetailsContent"></div>
-                    </div>
-                </div>
+        <!-- Detalle (offcanvas, coherente con /propuesta/) -->
+        <div class="offcanvas offcanvas-end detail" tabindex="-1" id="propertyDetailsPanel"
+            aria-labelledby="detailTitle">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="detailTitle">Detalle de la propiedad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="propertyDetailsContent"></div>
             </div>
         </div>
 
-        <!-- Visor fullscreen sencillo (Lightbox) -->
-        <div id="lightboxOverlay" class="dg-lightbox" style="display:none;" role="dialog" aria-modal="true"
-            aria-label="Visor de imágenes de la propiedad">
-            <button class="dg-lightbox-close" type="button" aria-label="Cerrar visor">×</button>
-            <button class="dg-lightbox-prev" type="button" aria-label="Imagen anterior">‹</button>
-            <img id="lightboxImage" alt="Imagen de propiedad a pantalla completa">
-            <button class="dg-lightbox-next" type="button" aria-label="Imagen siguiente">›</button>
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+            <button class="lb-close" type="button" aria-label="Cerrar">&times;</button>
+            <button class="lb-prev" type="button" aria-label="Anterior">&#8249;</button>
+            <img id="lightboxImg" alt="Imagen de la propiedad ampliada">
+            <button class="lb-next" type="button" aria-label="Siguiente">&#8250;</button>
         </div>
 
         <!-- Modal Vista 360° -->
@@ -895,78 +901,83 @@
         <section id="contacto" class="py-5 bg-light">
             <div class="container">
                 <div class="text-center mb-5">
+                    <span class="up-eyebrow" style="color:var(--brand-dark)">Estamos para ayudarte</span>
                     <h2 class="animate__animated animate__fadeInDown">Contactanos</h2>
                     <p class="animate__animated animate__fadeInUp">Estamos para ayudarte con todas tus necesidades
                         inmobiliarias</p>
+                    <div class="trust-badges">
+                        <span><i class="fas fa-shield-halved"></i> Matrícula CPI Córdoba Nº 7873</span>
+                        <span><i class="fas fa-bolt"></i> Respuesta rápida</span>
+                        <span><i class="fas fa-lock"></i> Tus datos están protegidos</span>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <!-- Formulario de Contacto -->
-                    <div class="col-md-6 animate__animated animate__fadeInLeft">
-                        <form id="formContacto" class="bg-white mismoHeight p-4 rounded shadow">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control"
-                                    placeholder="Tu Nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Tu Correo"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="tipoContacto" class="form-label">Tipo de contacto</label>
-                                <select id="tipoContacto" name="tipoContacto" class="form-control" required>
-                                    <option value="" disabled selected>Seleccione un tipo de contacto</option>
-                                    <option value="adm-propiedades">Administrar propiedad</option>
-                                    <option value="alquiler">Alquiler</option>
-                                    <option value="quiero-vender">Quiero vender</option>
-                                    <option value="tasaciones">Tasaciones</option>
-                                    <option value="consulta">Consulta</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="mensaje" class="form-label">Mensaje</label>
-                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
-                                    placeholder="Escribí tu mensaje" required></textarea>
-                            </div>
-                            <!-- reCAPTCHA -->
-                            <div class="g-recaptcha mb-3" data-sitekey="6LduadcqAAAAAMAPmj2iEoWSjgfKXKH3FAnT3D1f"></div>
-
-                            <button type="submit" class="btn btn-warning w-100 fw-bold">Enviar mensaje</button>
-                        </form>
-
-                        <!-- Mensajes de éxito y error -->
-                        <div id="mensajeExito" class="alert alert-success mt-3" style="display: none;">✅ ¡Mensaje
-                            enviado con éxito! Nos contactaremos pronto.</div>
-                        <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">❌ Hubo un error al
-                            enviar tu mensaje. Inténtalo nuevamente.</div>
-                    </div>
-
-                    <!-- Redes Sociales -->
-                    <div class="col-md-6  animate__animated animate__fadeInRight" id="contenedorSocialHome">
-                        <div class="bg-white mismoHeight p-4 rounded shadow">
-
-                            <h4 class="text-center mb-4">Seguinos en nuestras redes</h4>
-                            <div class="d-flex justify-content-center gap-3">
-                                <a href="https://www.instagram.com/unengroup/" class="text-decoration-none text-dark">
-                                    <i class="fab fa-instagram fa-2x"></i>
-                                </a>
-                                <a href="https://www.facebook.com/coty.garcia" class="text-decoration-none text-dark">
-                                    <i class="fab fa-facebook-f fa-2x"></i>
-                                </a>
-                                <a href="#" class="text-decoration-none text-dark">
-                                    <i class="fab fa-linkedin-in fa-2x"></i>
-                                </a>
-                            </div>
-                            <p class="text-center mt-4">O llamá al <strong>+54 9 351 6837691</strong></p>
-                            <div class="container">
-                                <img src="/images/home/imagenContactoUnenGroup.jpg"
-                                    alt="imagen para contacto de UnenGroup inmobiliaria - Real Estate"
-                                    style="width: 100%; border-radius: 5px;">
+                <div class="contact-shell animate__animated animate__fadeInUp">
+                    <!-- Aside: imagen real + canales -->
+                    <aside class="contact-aside">
+                        <div class="contact-aside-inner">
+                            <h3 class="mb-2">Hablemos</h3>
+                            <p class="mb-0">Contanos qué estás buscando y te asesoramos de forma personalizada, sin
+                                compromiso.</p>
+                            <a href="https://wa.me/5493516837691" target="_blank" rel="noopener noreferrer"
+                                class="wa-cta"><i class="fab fa-whatsapp"></i> Escribinos por WhatsApp</a>
+                            <ul class="contact-channels">
+                                <li><i class="fas fa-phone"></i> +54 9 351 6837691</li>
+                                <li><i class="fas fa-envelope"></i> info@unengroup.com.ar</li>
+                                <li><i class="fas fa-clock"></i> Lunes a Viernes · 9:00 a 17:00 h</li>
+                            </ul>
+                            <div class="contact-social">
+                                <a href="https://www.instagram.com/unengroup/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
+                    </aside>
+
+                    <!-- Formulario (mismo id/campos/backend real) -->
+                    <div class="contact-form-col">
+                        <form id="formContacto">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-control"
+                                        placeholder="Tu Nombre" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" class="form-control"
+                                        placeholder="Tu Correo" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="tipoContacto" class="form-label">Tipo de contacto</label>
+                                    <select id="tipoContacto" name="tipoContacto" class="form-select" required>
+                                        <option value="" disabled selected>Seleccione un tipo de contacto</option>
+                                        <option value="adm-propiedades">Administrar propiedad</option>
+                                        <option value="alquiler">Alquiler</option>
+                                        <option value="quiero-vender">Quiero vender</option>
+                                        <option value="tasaciones">Tasaciones</option>
+                                        <option value="consulta">Consulta</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
+                                        placeholder="Escribí tu mensaje" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="g-recaptcha" data-sitekey="6LduadcqAAAAAMAPmj2iEoWSjgfKXKH3FAnT3D1f">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-warning w-100 fw-bold">Enviar mensaje <i
+                                            class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="mensajeExito" class="alert alert-success mt-3" style="display: none;">✅ ¡Mensaje enviado
+                            con éxito! Nos contactaremos pronto.</div>
+                        <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">❌ Hubo un error al
+                            enviar tu mensaje. Inténtalo nuevamente.</div>
                     </div>
                 </div>
             </div>
@@ -1043,17 +1054,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Swiper.js -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Pannellum  -->
-    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
-    <!-- Script Propio -->
     <script src="/js/scriptSwiperHome.js"></script>
-    <!-- <script src="/js/scriptSwiperTestimonials.js"></script> -->
     <script src="/js/scriptNavbarFixed.js"></script>
     <script src="/js/scriptHome.js"></script>
-    <script src="/js/scriptHomeDestacados.js"></script>
     <!-- SweetAlert2 (avisos de formulario) -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/js/formularios/formServicios.js"></script>
+    <!-- Lógica de la vista (ES module) -->
+    <script type="module" src="/js/pages/home.js"></script>
+
 </body>
 
 </html>

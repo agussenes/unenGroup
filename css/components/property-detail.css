@@ -1,0 +1,70 @@
+/* Componente compartido: property-detail
+   Reglas byte-idénticas entre Home y Propiedades (Etapa 3 - refactor).
+   Usadas por ambas vistas vía <link>. No duplicar en las hojas de página. */
+
+.spinner-brand {
+            width: 3rem;
+            height: 3rem;
+            border: 4px solid rgba(113, 198, 212, .25);
+            border-top-color: var(--brand);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+.offcanvas.detail {
+            --bs-offcanvas-width: min(960px, 92vw);
+        }
+
+.detail .offcanvas-body {
+            padding: 0;
+        }
+
+.detail-hero .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: zoom-in;
+        }
+
+.detail .swiper-button-next,
+        .detail .swiper-button-prev {
+            color: #fff;
+        }
+
+.detail-content {
+            padding: 1.4rem 1.6rem 6rem;
+        }
+
+.fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: .8rem;
+            margin: 1.2rem 0;
+        }
+
+.fact i {
+            color: var(--brand-dark);
+            font-size: 1.1rem;
+        }
+
+.detail-desc {
+            line-height: 1.7;
+        }
+
+.detail-desc ul {
+            padding-left: 1.1rem;
+        }
+
+.detail-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid var(--line);
+            padding: .9rem 1.6rem;
+            display: flex;
+            gap: .7rem;
+            box-shadow: 0 -8px 24px rgba(90, 78, 78, .08);
+        }

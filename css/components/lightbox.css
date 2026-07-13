@@ -1,0 +1,58 @@
+/* Componente compartido: lightbox
+   Reglas byte-idénticas entre Home y Propiedades (Etapa 3 - refactor).
+   Usadas por ambas vistas vía <link>. No duplicar en las hojas de página. */
+
+.lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(35, 28, 28, .94);
+            padding: 2rem;
+        }
+
+.lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+.lightbox button {
+            position: absolute;
+            background: rgba(255, 255, 255, .14);
+            color: #fff;
+            border: none;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+.lightbox button:hover {
+            background: var(--brand);
+            color: #063038;
+        }
+
+.lb-close {
+            top: 1.2rem;
+            right: 1.2rem;
+        }
+
+.lb-prev {
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+.lb-next {
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }

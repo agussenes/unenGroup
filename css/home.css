@@ -1,0 +1,614 @@
+/* CSS específico de Home — extraído del <style> inline (Etapa 3 refactor). */
+
+:root {
+            --brand: #71C6D4;
+            --brand-dark: #4aa9b8;
+            --brown: #5A4E4E;
+            --brown-2: #887878;
+            --warm: #ffcc80;
+            --line: #ece5dd;
+            --muted: #8a7f7f;
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(90, 78, 78, .12);
+            --shadow-lg: 0 18px 50px rgba(90, 78, 78, .20);
+        }
+
+        .up-eyebrow {
+            display: block;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--brand);
+            margin-bottom: .4rem;
+        }
+
+        /* ============ SERVICIOS: mismas cards + modales, mejor presentación ============ */
+        #servicios .servicio-card {
+            border: none;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .13);
+            transition: transform .28s ease, box-shadow .28s ease;
+            height: 100%;
+        }
+
+        #servicios .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, .26);
+        }
+
+        #servicios .servicio-card .card-body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #servicios .servicio-card img {
+            border-radius: 12px;
+            transition: transform .5s ease;
+        }
+
+        #servicios .servicio-card:hover img {
+            transform: scale(1.045);
+        }
+
+        #servicios .servicio-card h4 {
+            position: relative;
+        }
+
+        /* las llamadas a la acción se alinean abajo para cards parejas */
+        #servicios .servicio-card .d-flex {
+            margin-top: auto;
+        }
+
+        #servicios .servicio-card .btn {
+            border-radius: 10px;
+            font-weight: 700;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        #servicios .servicio-card .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ============ DESTACADAS: cards coherentes con /propuesta/ ============ */
+        .prop-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        
+
+        .prop-media {
+            position: relative;
+            height: 220px;
+            /* altura fija: idéntico en grilla y carrusel, sin franjas */
+            flex: 0 0 auto;
+            /* no se estira ni encoge dentro del flex del card */
+            overflow: hidden;
+            background: #efe9e2;
+        }
+
+        .prop-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        /* Anula SOLO la regla de producción "#propiedades .swiper-slide img { height:350px; object-fit:contain }"
+           dentro de mi carrusel (clase única .dest-carousel + alta especificidad). No afecta al resto. */
+        #propiedades .dest-carousel .prop-media img {
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 0 !important;
+        }
+
+        
+
+        .badge-op {
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+            background: rgba(90, 78, 78, .88);
+            color: #fdf6ee;
+            padding: .3rem .8rem;
+            border-radius: 999px;
+            font-size: .74rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        
+
+        
+
+        
+
+        .prop-price {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--brown);
+        }
+
+        .prop-title {
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.3;
+            margin: 0;
+            color: #3f3838;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        .card .swiper-slide img[alt="sin-imagen"] {
+            width: 100%;
+            min-height: 220px;
+            object-fit: cover;
+            background: #efe9e2;
+        }
+
+        /* Carrusel de destacadas (clases propias, se activa con >3) */
+        .dest-carousel {
+            position: relative;
+            padding: 6px 0 8px;
+        }
+
+        .dest-swiper {
+            overflow: hidden;
+        }
+
+        .dest-swiper .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .dest-swiper .swiper-slide {
+            height: auto;
+        }
+
+        .dest-swiper .swiper-slide>.prop-card {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dest-nav {
+            position: absolute;
+            top: 34%;
+            transform: translateY(-50%);
+            z-index: 6;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: #fff;
+            color: var(--brown);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background .2s, color .2s, transform .2s;
+        }
+
+        .dest-nav:hover {
+            background: var(--brand);
+            color: #063038;
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .dest-prev {
+            left: -8px;
+        }
+
+        .dest-next {
+            right: -8px;
+        }
+
+        .dest-nav.swiper-button-disabled {
+            opacity: .35;
+            pointer-events: none;
+        }
+
+        .dest-pagination {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .dest-pagination .swiper-pagination-bullet {
+            background: var(--brown-2);
+            opacity: .45;
+            width: 9px;
+            height: 9px;
+            transition: .2s;
+        }
+
+        .dest-pagination .swiper-pagination-bullet-active {
+            background: var(--brand-dark);
+            opacity: 1;
+            width: 26px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 991.98px) {
+
+            .dest-prev,
+            .dest-next {
+                top: auto;
+                bottom: -6px;
+                transform: none;
+            }
+
+            .dest-prev {
+                left: calc(50% - 60px);
+            }
+
+            .dest-next {
+                right: calc(50% - 60px);
+            }
+
+            .dest-nav:hover {
+                transform: scale(1.06);
+            }
+
+            .dest-pagination {
+                margin-top: 8px;
+            }
+        }
+
+        /* Ícono de WhatsApp del panel de contacto en blanco (mayor contraste) */
+        #contacto .wa-cta i {
+            color: #ffffff !important;
+        }
+
+        
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Detalle (offcanvas premium, igual que /propuesta/) */
+        
+
+        
+
+        .detail-hero .swiper {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #3f3838;
+        }
+
+        
+
+        /* FIX detalle destacadas (Home): neutraliza la regla legacy de stylesInicio.css
+           (#propertyDetailsContent .swiper-slide img { height:auto; max-height:70vh; object-fit:contain })
+           que letterboxeaba la imagen y dejaba ver el fondo. Iguala el tratamiento de /propiedades/.
+           Especificidad (1,2,1) > (1,1,1); sin !important; solo afecta al detalle del Home. */
+        #propertyDetailsContent .detail-hero .swiper-slide img {
+            height: 100%;
+            max-height: none;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        
+
+        
+
+        .detail-price {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--brown);
+        }
+
+        
+
+        .fact {
+            background: #faf7f3;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: .8rem;
+            text-align: center;
+        }
+
+        
+
+        .fact .v {
+            font-weight: 700;
+            margin-top: .2rem;
+            color: #3f3838;
+        }
+
+        .fact .k {
+            font-size: .74rem;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        
+
+        
+
+        
+
+        .btn-interes {
+            flex: 1;
+            border: none;
+            background: var(--brand);
+            color: #063038;
+            border-radius: 12px;
+            font-weight: 700;
+            padding: .6rem;
+        }
+
+        
+
+        /* Lightbox */
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        /* ============ CONTACTO: mismo form, mejor jerarquía y confianza ============ */
+        #contacto .form-control,
+        #contacto .form-select {
+            border-radius: 12px;
+            padding: .65rem .85rem;
+        }
+
+        #contacto .form-control:focus,
+        #contacto .form-select:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 .2rem rgba(113, 198, 212, .25);
+        }
+
+        /* Contacto: shell unificado (imagen + formulario) */
+        .contact-shell {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-aside {
+            position: relative;
+            padding: 2.6rem 2.2rem;
+            color: #fff;
+            background: url('/images/home/imagenContactoUnenGroup.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-aside::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(18, 33, 38, .88);
+        }
+
+        .contact-aside-inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        /* Alta especificidad para vencer a #contacto p / h del CSS del sitio */
+        #contacto .contact-aside-inner,
+        #contacto .contact-aside-inner h3,
+        #contacto .contact-aside-inner p,
+        #contacto .contact-aside-inner .contact-channels li {
+            color: #ffffff !important;
+        }
+
+        #contacto .contact-aside-inner h3 {
+            font-weight: 800;
+            font-size: 1.6rem;
+        }
+
+        #contacto .contact-aside-inner p {
+            font-weight: 400;
+            opacity: .92;
+        }
+
+        .wa-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: #25D366;
+            color: #fff !important;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: .8rem 1.4rem;
+            margin: 1.2rem 0 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 22px rgba(37, 211, 102, .38);
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .wa-cta i {
+            font-size: 1.25rem;
+        }
+
+        .wa-cta:hover {
+            background: #1da851;
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(37, 211, 102, .48);
+        }
+
+        #contacto .contact-social a {
+            text-decoration: none;
+        }
+
+        .contact-channels {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-channels li {
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            margin-bottom: .7rem;
+            font-size: .92rem;
+        }
+
+        .contact-channels li i {
+            flex: 0 0 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .18);
+            display: grid;
+            place-items: center;
+        }
+
+        .contact-social {
+            margin-top: 1.2rem;
+        }
+
+        .contact-social a {
+            color: #fff;
+            font-size: 1.35rem;
+        }
+
+        .contact-form-col {
+            padding: 2.4rem;
+        }
+
+        @media (max-width: 767.98px) {
+            .contact-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-col {
+                padding: 1.6rem;
+            }
+        }
+
+        /* ===== Modales de servicios: presentación premium (contenido intacto) ===== */
+        .modal-content {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(23, 42, 48, .35);
+        }
+
+        .modal-header {
+            background: var(--brown);
+            color: #fff;
+            border-bottom: none;
+            padding: 1.15rem 1.4rem;
+        }
+
+        .modal-header .modal-title {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* La X viene con background:white inline → la volvemos blanca sobre el header marrón */
+        .modal-header .btn-close {
+            background-color: transparent !important;
+            filter: invert(1) grayscale(1) brightness(2.2);
+            opacity: .9;
+        }
+
+        .modal-header .btn-close:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-body ul {
+            padding-left: 0;
+        }
+
+        .modal-body ul li {
+            margin-bottom: .55rem;
+            line-height: 1.5;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--line);
+            padding: 1rem 1.4rem;
+        }
+
+        /* Acento sutil bajo el título de cada card de servicio */
+        #servicios .servicio-card h4::after {
+            content: "";
+            display: block;
+            width: 42px;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--brand);
+            margin-top: .5rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .trust-badges span {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: rgba(113, 198, 212, .14);
+            color: var(--brown);
+            border-radius: 999px;
+            padding: .35rem .8rem;
+            font-size: .82rem;
+            font-weight: 600;
+        }
+
+        .trust-badges span i {
+            color: var(--brand-dark);
+        }
+    

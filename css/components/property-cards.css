@@ -1,0 +1,110 @@
+/* Componente compartido: property-cards
+   Reglas byte-idénticas entre Home y Propiedades (Etapa 3 - refactor).
+   Usadas por ambas vistas vía <link>. No duplicar en las hojas de página. */
+
+.prop-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+.prop-card:hover .prop-media img {
+            transform: scale(1.06);
+        }
+
+.badge-fav {
+            position: absolute;
+            top: .8rem;
+            right: .8rem;
+            background: var(--warm);
+            color: #6b4a15;
+            padding: .3rem .7rem;
+            border-radius: 999px;
+            font-size: .72rem;
+            font-weight: 700;
+        }
+
+.badge-count {
+            position: absolute;
+            bottom: .8rem;
+            right: .8rem;
+            background: rgba(63, 56, 56, .72);
+            color: #fff;
+            padding: .2rem .6rem;
+            border-radius: 8px;
+            font-size: .74rem;
+        }
+
+.prop-body {
+            padding: 1.1rem 1.2rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            flex: 1;
+        }
+
+.prop-loc {
+            color: var(--muted);
+            font-size: .88rem;
+        }
+
+.prop-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .35rem .9rem;
+            padding-top: .5rem;
+            margin-top: auto;
+            border-top: 1px dashed var(--line);
+            color: var(--brown);
+            font-size: .85rem;
+        }
+
+.prop-metrics .m {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+        }
+
+.prop-metrics i {
+            color: var(--brand-dark);
+        }
+
+.prop-actions {
+            display: flex;
+            gap: .5rem;
+            margin-top: .4rem;
+        }
+
+.btn-detalle {
+            flex: 1;
+            border: none;
+            background: var(--brown);
+            color: #fff;
+            border-radius: 12px;
+            font-weight: 700;
+            padding: .55rem;
+            transition: .2s;
+        }
+
+.btn-detalle:hover {
+            background: var(--brown-2);
+            color: #fff;
+        }
+
+.btn-wa {
+            border-radius: 12px;
+            border: none;
+            background: #25D366;
+            color: #fff;
+            font-weight: 700;
+            padding: .55rem .8rem;
+        }
+
+.btn-wa:hover {
+            background: #1da851;
+            color: #fff;
+        }
+
+.btn-interes:hover {
+            background: var(--brand-dark);
+            color: #fff;
+        }
